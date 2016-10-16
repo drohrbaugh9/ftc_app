@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/home/owner/Android/FTC9899_app/TeamCode/build/intermediates/res/merged/debug/drawable-hdpi-v4/button_shape.xml",
+        "source": "/home/owner/Android/FTC9899_app/TeamCode/build/intermediates/exploded-aar/FtcCommon-release/res/drawable-hdpi-v4/button_shape.xml"
+    },
+    {
+        "merged": "/home/owner/Android/FTC9899_app/TeamCode/build/intermediates/res/merged/debug/drawable-hdpi-v4/ic_launcher.png",
+        "source": "/home/owner/Android/FTC9899_app/TeamCode/build/intermediates/exploded-aar/FTC9899_app/FtcRobotController/unspecified/res/drawable-hdpi-v4/ic_launcher.png"
+    }
+]

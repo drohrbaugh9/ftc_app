@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "/home/owner/Android/FTC9899_app/TeamCode/build/intermediates/res/merged/debug/drawable-xhdpi-v4/icon_robotcontroller.png",
+        "source": "/home/owner/Android/FTC9899_app/TeamCode/build/intermediates/exploded-aar/FTC9899_app/FtcRobotController/unspecified/res/drawable-xhdpi-v4/icon_robotcontroller.png"
+    },
+    {
+        "merged": "/home/owner/Android/FTC9899_app/TeamCode/build/intermediates/res/merged/debug/drawable-xhdpi-v4/icon_menu.png",
+        "source": "/home/owner/Android/FTC9899_app/TeamCode/build/intermediates/exploded-aar/FTC9899_app/FtcRobotController/unspecified/res/drawable-xhdpi-v4/icon_menu.png"
+    },
+    {
+        "merged": "/home/owner/Android/FTC9899_app/TeamCode/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_launcher.png",
+        "source": "/home/owner/Android/FTC9899_app/TeamCode/build/intermediates/exploded-aar/FTC9899_app/FtcRobotController/unspecified/res/drawable-xhdpi-v4/ic_launcher.png"
+    }
+]
