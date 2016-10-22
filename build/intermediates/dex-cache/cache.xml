@@ -1,12 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" >
-
-    <item
-        jar="/home/owner/Android/FTC9899_app/TeamCode/build/intermediates/exploded-aar/FTC9899_app/FtcRobotController/unspecified/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.3"
-        sha1="6dfd0226c1a79acc9e24c64075345acac1b4a7a1">
-        <dex dex="/home/owner/Android/FTC9899_app/TeamCode/build/intermediates/pre-dexed/debug/FTC9899_app-FtcRobotController-unspecified_fc6d04cf20fbe1b10164163803768155c4ab5591.jar" />
-    </item>
-
-</items>
+<items version="2" />
