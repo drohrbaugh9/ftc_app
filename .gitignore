@@ -19,8 +19,8 @@ Thumbs.db
 .DS_Store
 
 # Android Studio
-.idea
-.gradle
+.idea/
+.gradle/
 build/
 
 *ASUS_PC_01*
