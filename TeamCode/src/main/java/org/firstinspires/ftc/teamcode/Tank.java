@@ -9,7 +9,7 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 public class Tank extends OpMode {
 
     DcMotor right, left;
-    final double POWER_FACTOR = 0.3;
+    final double POWER_FACTOR = 0.8;
 
     public void init() {
         right = hardwareMap.dcMotor.get("right"); right.setDirection(DcMotor.Direction.REVERSE);
