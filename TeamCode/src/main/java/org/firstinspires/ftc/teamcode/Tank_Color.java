@@ -10,7 +10,7 @@ import com.qualcomm.robotcore.hardware.I2cDeviceSynchImpl;
 import com.qualcomm.robotcore.hardware.OpticalDistanceSensor;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
-@Autonomous(name = "Color Sensor", group = "Test")
+@Autonomous(name = "Tank_Color", group = "Test")
 //@Disabled
 public class Tank_Color extends LinearOpMode {
 
@@ -44,8 +44,8 @@ public class Tank_Color extends LinearOpMode {
         waitForStart();
 
         runtime.reset();
-        colorCreader.write8(3, 1);
-
+        //colorCreader.write8(3, 1);
+        /*
         grey = ods.getLightDetected();
 
         // move forward
@@ -93,12 +93,25 @@ public class Tank_Color extends LinearOpMode {
         // move forward
         right.setPower(0.3);
         left.setPower(0.3);
-
+        */
         // look for white line
-        while (ods.getLightDetected() < 1.5 /*this value will need to be adjusted*/ * grey) {
-            telemetry.addData("light value", ods.getLightDetected());
-        }
+        //while (ods.getLightDetected() < 1.5 /*this value will need to be adjusted*/ * grey) {
+        //    telemetry.addData("light value", ods.getLightDetected());
+        //}
 
+        right.setPower(-0.21);
+        left.setPower(-0.185);
+
+        Thread.sleep(2750);
+
+        right.setPower(0);
+        left.setPower(0);
+
+        Thread.sleep(200);
+
+        right.setPower(0.3);
+        left.setPower(0.265);
+        Thread.sleep(4500);
         // stop
         right.setPower(0);
         left.setPower(0);
