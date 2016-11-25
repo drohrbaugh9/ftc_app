@@ -2,15 +2,17 @@ package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
+import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.I2cAddr;
 import com.qualcomm.robotcore.hardware.I2cDevice;
 import com.qualcomm.robotcore.hardware.I2cDeviceSynch;
 import com.qualcomm.robotcore.hardware.I2cDeviceSynchImpl;
 import com.qualcomm.robotcore.hardware.OpticalDistanceSensor;
+import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
-@Autonomous(name = "Tank_Color", group = "Test")
+@TeleOp (name = "Tank_Color", group = "Test")
 //@Disabled
 public class Tank_Color extends LinearOpMode {
 
@@ -20,9 +22,10 @@ public class Tank_Color extends LinearOpMode {
     I2cDevice colorC;
     I2cDeviceSynch colorCreader;
 
-    OpticalDistanceSensor ods;
+    //OpticalDistanceSensor ods;
 
     DcMotor right, left;
+    Servo upDown;
 
     double grey;
 
@@ -36,10 +39,12 @@ public class Tank_Color extends LinearOpMode {
         right = hardwareMap.dcMotor.get("right");
         right.setDirection(DcMotor.Direction.REVERSE);
         left = hardwareMap.dcMotor.get("left");
+        upDown = hardwareMap.servo.get("upDown");
+
         right.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         left.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
-        ods = hardwareMap.opticalDistanceSensor.get("ods");
+        //ods = hardwareMap.opticalDistanceSensor.get("ods");
 
         waitForStart();
 
@@ -135,11 +140,13 @@ public class Tank_Color extends LinearOpMode {
         ("forward" does not necessarily mean the front of the robot is moving forward)
          */
 
-        telemetry.addData("light value", ods.getLightDetected());
+        //telemetry.addData("light value", ods.getLightDetected());
 
         while (opModeIsActive()) {
             telemetry.addData("red", I2C_ColorSensor.normalizedRed());
             telemetry.addData("blue", I2C_ColorSensor.normalizedBlue());
+            telemetry.addData("servo", upDown.getPosition());
+            telemetry.addData("test", "test");
         }
     }
 }
