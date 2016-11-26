@@ -1,12 +1,13 @@
 package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.OpticalDistanceSensor;
 
 @Autonomous(name = "Test", group = "Test")
-//@Disabled
+@Disabled
 public class TestAuto extends LinearOpMode {
 
     // WestCoastTank
@@ -19,7 +20,7 @@ public class TestAuto extends LinearOpMode {
 
     final double POWER_FACTOR = 0.8;
 
-    public void runOpMode() {
+    public void runOpMode() throws InterruptedException {
         // WestCoastTank
         /*rightFront = hardwareMap.dcMotor.get("rightFront"); rightFront.setDirection(DcMotor.Direction.REVERSE);
         leftFront = hardwareMap.dcMotor.get("leftFront");
@@ -37,16 +38,24 @@ public class TestAuto extends LinearOpMode {
 
         waitForStart();
 
-        right.setPower(0.3);
-        left.setPower(0.3);
+        right.setPower(0.2);
+        left.setPower(0.2);
 
-        while (ods.getLightDetected() < 0.05) {
+        while (ods.getLightDetected() < 0.25 && right.getCurrentPosition() < 2000) {
             telemetry.addData("light value", ods.getLightDetected());
+            telemetry.update();
         }
 
         telemetry.addData("light value", ods.getLightDetected());
+        telemetry.update();
 
         right.setPower(0);
         left.setPower(0);
+
+        while (opModeIsActive()) {
+            telemetry.addData("light value", ods.getLightDetected());
+            telemetry.update();
+            Thread.sleep(200);
+        }
     }
 }

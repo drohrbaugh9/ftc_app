@@ -1,19 +1,16 @@
 package org.firstinspires.ftc.teamcode;
 
-import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
-import com.qualcomm.robotcore.hardware.I2cAddr;
 import com.qualcomm.robotcore.hardware.I2cDevice;
 import com.qualcomm.robotcore.hardware.I2cDeviceSynch;
-import com.qualcomm.robotcore.hardware.I2cDeviceSynchImpl;
-import com.qualcomm.robotcore.hardware.OpticalDistanceSensor;
 import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
 @TeleOp (name = "Tank_Color", group = "Test")
-//@Disabled
+@Disabled
 public class Tank_Color extends LinearOpMode {
 
     private ElapsedTime runtime = new ElapsedTime();
@@ -34,7 +31,7 @@ public class Tank_Color extends LinearOpMode {
         colorCreader = new I2cDeviceSynchImpl(colorC, I2cAddr.create8bit(0x3c), false);
         colorCreader.engage();*/
 
-        I2C_ColorSensor.init(this);
+        I2C_ColorSensorMethods.init(this);
 
         right = hardwareMap.dcMotor.get("right");
         right.setDirection(DcMotor.Direction.REVERSE);
@@ -143,9 +140,9 @@ public class Tank_Color extends LinearOpMode {
         //telemetry.addData("light value", ods.getLightDetected());
 
         while (opModeIsActive()) {
-            telemetry.addData("red", I2C_ColorSensor.normalizedRed());
-            telemetry.addData("blue", I2C_ColorSensor.normalizedBlue());
-            telemetry.addData("servo", upDown.getPosition());
+            telemetry.addData("red", I2C_ColorSensorMethods.normalizedRed());
+            telemetry.addData("blue", I2C_ColorSensorMethods.normalizedBlue());
+            telemetry.addData("upDown", upDown.getPosition());
             telemetry.addData("test", "test");
         }
     }
