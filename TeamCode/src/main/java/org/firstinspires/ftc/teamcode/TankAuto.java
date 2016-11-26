@@ -3,13 +3,8 @@ package org.firstinspires.ftc.teamcode;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
-import com.qualcomm.robotcore.hardware.HardwareDevice;
-import com.qualcomm.robotcore.hardware.I2cAddr;
-import com.qualcomm.robotcore.hardware.I2cController;
 import com.qualcomm.robotcore.hardware.OpticalDistanceSensor;
 import com.qualcomm.robotcore.hardware.Servo;
-
-import java.util.concurrent.locks.Lock;
 
 @Autonomous (name = "TankAuto", group = "Autonomous")
 //@Disabled
@@ -34,7 +29,7 @@ public class TankAuto extends LinearOpMode {
         right.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
         left.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
 
-        I2C_ColorSensorMethods.init(this);
+        I2C_ColorSensor.init(this);
 
         upDown = hardwareMap.servo.get("upDown");
 
@@ -89,22 +84,22 @@ public class TankAuto extends LinearOpMode {
 
         telemetry.update();
 
-        if (RED_ALLIANCE && I2C_ColorSensorMethods.beaconIsRed()) {
+        if (RED_ALLIANCE && I2C_ColorSensor.beaconIsRed()) {
             telemetry.addData("beacon status", "RED");
             forward();
             upDown.setPosition(0.9);
             backward();
-        } else if (RED_ALLIANCE && I2C_ColorSensorMethods.beaconIsBlue()) {
+        } else if (RED_ALLIANCE && I2C_ColorSensor.beaconIsBlue()) {
             telemetry.addData("beacon status", "BLUE");
             backward();
             upDown.setPosition(0.9);
             forward();
-        } else if (!RED_ALLIANCE && I2C_ColorSensorMethods.beaconIsRed()) {
+        } else if (!RED_ALLIANCE && I2C_ColorSensor.beaconIsRed()) {
             telemetry.addData("beacon status", "RED");
             backward();
             upDown.setPosition(0.9);
             forward();
-        } else if (!RED_ALLIANCE && I2C_ColorSensorMethods.beaconIsBlue()) {
+        } else if (!RED_ALLIANCE && I2C_ColorSensor.beaconIsBlue()) {
             telemetry.addData("beacon status", "BLUE");
             forward();
             upDown.setPosition(0.9);

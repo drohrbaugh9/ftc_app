@@ -29,9 +29,9 @@ public class Tank extends OpMode {
         right.setPower(r * POWER_FACTOR);
         left.setPower(l * POWER_FACTOR);
 
-        telemetry.addData("d", "getLightDetected(): " + ods.getLightDetected());
+        /*telemetry.addData("d", "getLightDetected(): " + ods.getLightDetected());
         telemetry.addData("r", "getRawLightDetected(): " + ods.getRawLightDetected());
 
-        updateTelemetry(telemetry);
+        updateTelemetry(telemetry);*/
     }
 }

@@ -31,7 +31,7 @@ public class Tank_Color extends LinearOpMode {
         colorCreader = new I2cDeviceSynchImpl(colorC, I2cAddr.create8bit(0x3c), false);
         colorCreader.engage();*/
 
-        I2C_ColorSensorMethods.init(this);
+        I2C_ColorSensor.init(this);
 
         right = hardwareMap.dcMotor.get("right");
         right.setDirection(DcMotor.Direction.REVERSE);
@@ -140,8 +140,8 @@ public class Tank_Color extends LinearOpMode {
         //telemetry.addData("light value", ods.getLightDetected());
 
         while (opModeIsActive()) {
-            telemetry.addData("red", I2C_ColorSensorMethods.normalizedRed());
-            telemetry.addData("blue", I2C_ColorSensorMethods.normalizedBlue());
+            telemetry.addData("red", I2C_ColorSensor.normalizedRed());
+            telemetry.addData("blue", I2C_ColorSensor.normalizedBlue());
             telemetry.addData("upDown", upDown.getPosition());
             telemetry.addData("test", "test");
         }
