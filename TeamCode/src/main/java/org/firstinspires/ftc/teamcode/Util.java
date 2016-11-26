@@ -4,8 +4,10 @@ import com.qualcomm.hardware.modernrobotics.ModernRoboticsUsbDcMotorController;
 import com.qualcomm.robotcore.eventloop.opmode.OpModeManager;
 import com.qualcomm.robotcore.hardware.ColorSensor;
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.Gamepad;
 import com.qualcomm.robotcore.hardware.GyroSensor;
+import com.qualcomm.robotcore.hardware.OpticalDistanceSensor;
 import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
@@ -14,25 +16,20 @@ import org.firstinspires.ftc.robotcontroller.internal.FtcRobotControllerActivity
 
 public final class Util {
 
-    protected static DcMotor rightBack, rightFront, leftBack, leftFront, arm, intake, hanger;
-    protected static Servo rightDoor, leftDoor, rightTrigger, leftTrigger;
-    protected static GyroSensor gyro;
-    protected static ColorSensor color;
     protected static boolean init = false;
-    protected static ModernRoboticsUsbDcMotorController c;
     //protected static boolean gyroEnabled = false;
 
-    protected static final double LEFT_DOOR_MIN = 0.02 /*CLOSED*/, LEFT_DOOR_MAX = 0.4; //OPEN
-    protected static final double LEFT_DOOR_CLOSED = LEFT_DOOR_MIN;
-    protected static final double RIGHT_DOOR_MIN = 0.5 /*OPEN*/, RIGHT_DOOR_MAX = 0.89; //CLOSED
-    protected static final double RIGHT_DOOR_CLOSED = RIGHT_DOOR_MAX;
-    protected static final double POWER_LIMIT = 0.7, BACK_SCALE = 1.3;
-    protected static final double STARTING_POWER = 0.5;
-    protected static final double LEFT_TRIGGER_OUT = 0, LEFT_TRIGGER_IN = 0.6, LEFT_TRIGGER_STOW = 0.65;
-    protected static final double RIGHT_TRIGGER_OUT = 0.67, RIGHT_TRIGGER_IN = 0.06, RIGHT_TRIGGER_STOW = 0.04;
+    protected static DcMotor right, left; // Tank motors
+    protected static DcMotor rightBack, leftBack, rightFront, leftFront; // WestCoastTank motors
+
+    protected static Servo upDown;
+
+    protected static OpticalDistanceSensor ods;
+
     protected static final boolean SENSORS = true, SERVOS = true;
 
     protected final static double SEC_TO_NSEC = 1000000000, POWER_FLOAT = 100;
+    protected final static boolean TANK = false;
 
     //private static LinearOpMode linearOpMode;
     protected static LinearOpMode linearOpMode;
@@ -45,44 +42,37 @@ public final class Util {
     public static void init(LinearOpMode opMode) throws InterruptedException {
         linearOpMode = opMode;
 
+        DcMotor[] temp;
+        DcMotor[] tempWithEncoders;
+
         // motors
-        rightBack = getMotor("right");
-        rightBack.setDirection(DcMotor.Direction.REVERSE);
-        leftBack = getMotor("left");
-        rightFront = getMotor("rightFront");
-        rightFront.setDirection(DcMotor.Direction.REVERSE);
-        leftFront = getMotor("leftFront");
-        arm = getMotor("arm");
-        intake = getMotor("intake");
-        hanger = getMotor("hanger");
-
-        c = (ModernRoboticsUsbDcMotorController) rightBack.getController();
-
-        DcMotor[] temp = {rightBack, leftBack, rightFront, leftFront, arm, intake};
-        DcMotor[] tempWithEncoders = {rightBack, leftBack, rightFront, leftFront};//, arm};
+        if (TANK) {
+            right = getMotor(opMode.hardwareMap, "right"); right.setDirection(DcMotorSimple.Direction.REVERSE);
+            left = getMotor(opMode.hardwareMap, "left");
+            temp = new DcMotor[2]; temp[0] = right; temp[1] = left;
+            tempWithEncoders = temp;
+        } else {
+            rightBack = opMode.hardwareMap.dcMotor.get("rightBack"); rightBack.setDirection(DcMotor.Direction.REVERSE);
+            leftBack = opMode.hardwareMap.dcMotor.get("leftBack");
+            rightFront = opMode.hardwareMap.dcMotor.get("rightFront"); rightFront.setDirection(DcMotor.Direction.REVERSE);
+            leftFront = opMode.hardwareMap.dcMotor.get("leftFront");
+            temp = new DcMotor[4]; temp[0] = rightBack; temp[1] = leftBack; temp[2] = rightFront; temp[3] = leftFront;
+            tempWithEncoders = new DcMotor[1]; tempWithEncoders[0] = leftBack;
+        }
 
         motors = temp;
         motorsWithEncoders = tempWithEncoders;
 
         // servos
-        if (SERVOS) {
-            leftDoor = getServo("leftDoor");
-            leftDoor.setPosition(LEFT_DOOR_CLOSED);
-            rightDoor = getServo("rightDoor");
-            rightDoor.setPosition(RIGHT_DOOR_CLOSED);
-            rightTrigger = getServo("rightTrigger");
-            rightTrigger.setPosition(RIGHT_TRIGGER_STOW);
-            leftTrigger = getServo("leftTrigger");
-            leftTrigger.setPosition(LEFT_TRIGGER_STOW);
+        if (SERVOS && TANK) {
+            upDown = getServo(opMode.hardwareMap, "upDown");
+            upDown.setPosition(0.6);
         }
 
         // sensors
-        if (SENSORS) {
-            gyro = linearOpMode.hardwareMap.gyroSensor.get("gyro");
-            //color = linearOpMode.hardwareMap.colorSensor.get("colorSensor1");
-
-            AutoUtil.calibrateGyro(gyro);
-            AutoUtil.resetGyroHeading(gyro);
+        if (SENSORS && TANK) {
+            ods = opMode.hardwareMap.opticalDistanceSensor.get("ods");
+            I2C_ColorSensor.init(opMode);
         }
         
         resetEncoders();
@@ -126,9 +116,9 @@ public final class Util {
         resetEncoders(linearOpMode, motorsWithEncoders);
     }
 
-    public static double getBatteryVoltage() {
+    /*public static double getBatteryVoltage() {
         return c.getVoltage();
-    }
+    }*/
 
     public static double getGamepadRightJoystickY(Gamepad gamepad) {
         double joystick;
