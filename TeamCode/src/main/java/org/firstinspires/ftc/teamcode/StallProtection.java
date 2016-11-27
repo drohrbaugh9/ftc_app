@@ -66,8 +66,6 @@ public class StallProtection {
             }*/
         }
         Util.log("my_debug ratio: " + ratio);
-        Util.log("my_debug gyro_heading " + PID.heading(Util.gyro));
-        Util.linearOpMode.telemetry.addData("gyro heading", PID.heading(Util.gyro));
         /*Util.linearOpMode.telemetry.addData("ratioMax", ratioMax);
         Util.linearOpMode.telemetry.addData("ratioMin", ratioMin);*/
         if ((ratio > STALL_RATIO_THRESHOLD_MAX) ||

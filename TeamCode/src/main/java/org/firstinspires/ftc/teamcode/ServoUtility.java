@@ -19,9 +19,6 @@ public class ServoUtility extends LinearOpMode {
         rightDoor = Util.getServo(hardwareMap, "rightDoor");
         bumper = Util.getServo(hardwareMap, "rightTrigger");
 
-        leftDoor.setPosition(Util.LEFT_DOOR_CLOSED);
-        rightDoor.setPosition(Util.RIGHT_DOOR_CLOSED);
-
         telemetry.addData("left door position", leftDoor.getPosition());
         telemetry.addData("right door position", rightDoor.getPosition());
         telemetry.addData("rightTrigger position", bumper.getPosition());

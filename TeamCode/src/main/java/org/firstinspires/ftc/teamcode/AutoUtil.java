@@ -44,8 +44,7 @@ public final class AutoUtil {
                 }
             }
             //PID.PIsetMotors(gyro, powerFactor * power);
-            Util.setFrontPowers(powerFactor * power);
-            Util.setBackPowers(powerFactor * Util.BACK_SCALE * power);
+            Util.setAllPowers(powerFactor * power);
             Thread.sleep(10);
         }
         Util.setAllPowers(0);
@@ -69,8 +68,7 @@ public final class AutoUtil {
                 }
             }
             //PID.PIsetMotors(gyro, powerFactor * -power);
-            Util.setFrontPowers(powerFactor * -power);
-            Util.setBackPowers(powerFactor * Util.BACK_SCALE * -power);
+            Util.setAllPowers(powerFactor * -power);
             Thread.sleep(10);
         }
         Util.setAllPowers(0);

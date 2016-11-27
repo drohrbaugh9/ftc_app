@@ -19,8 +19,7 @@ public final class Util {
     protected static boolean init = false;
     //protected static boolean gyroEnabled = false;
 
-    protected static DcMotor right, left; // Tank motors
-    protected static DcMotor rightBack, leftBack, rightFront, leftFront; // WestCoastTank motors
+    protected static DcMotor rightBack, leftBack, rightFront, leftFront;
 
     protected static Servo upDown;
 
@@ -29,6 +28,7 @@ public final class Util {
     protected static final boolean SENSORS = true, SERVOS = true;
 
     protected final static double SEC_TO_NSEC = 1000000000, POWER_FLOAT = 100;
+    protected final static double POWER_LIMIT = 1;
     protected final static boolean TANK = false;
 
     //private static LinearOpMode linearOpMode;
@@ -42,26 +42,26 @@ public final class Util {
     public static void init(LinearOpMode opMode) throws InterruptedException {
         linearOpMode = opMode;
 
-        DcMotor[] temp;
-        DcMotor[] tempWithEncoders;
+        /*DcMotor[] temp;
+        DcMotor[] tempWithEncoders;*/
 
         // motors
         if (TANK) {
-            right = getMotor(opMode.hardwareMap, "right"); right.setDirection(DcMotorSimple.Direction.REVERSE);
-            left = getMotor(opMode.hardwareMap, "left");
-            temp = new DcMotor[2]; temp[0] = right; temp[1] = left;
-            tempWithEncoders = temp;
+            rightBack = getMotor(opMode.hardwareMap, "right"); rightBack.setDirection(DcMotorSimple.Direction.REVERSE);
+            leftBack = getMotor(opMode.hardwareMap, "left");
+            /*temp = new DcMotor[2]; temp[0] = rightBack; temp[1] = leftBack;
+            tempWithEncoders = temp;*/
         } else {
             rightBack = opMode.hardwareMap.dcMotor.get("rightBack"); rightBack.setDirection(DcMotor.Direction.REVERSE);
             leftBack = opMode.hardwareMap.dcMotor.get("leftBack");
             rightFront = opMode.hardwareMap.dcMotor.get("rightFront"); rightFront.setDirection(DcMotor.Direction.REVERSE);
             leftFront = opMode.hardwareMap.dcMotor.get("leftFront");
-            temp = new DcMotor[4]; temp[0] = rightBack; temp[1] = leftBack; temp[2] = rightFront; temp[3] = leftFront;
-            tempWithEncoders = new DcMotor[1]; tempWithEncoders[0] = leftBack;
+            /*temp = new DcMotor[4]; temp[0] = rightBack; temp[1] = leftBack; temp[2] = rightFront; temp[3] = leftFront;
+            tempWithEncoders = new DcMotor[1]; tempWithEncoders[0] = leftBack;*/
         }
 
-        motors = temp;
-        motorsWithEncoders = tempWithEncoders;
+        /*motors = temp;
+        motorsWithEncoders = tempWithEncoders;*/
 
         // servos
         if (SERVOS && TANK) {
@@ -75,7 +75,7 @@ public final class Util {
             I2C_ColorSensor.init(opMode);
         }
         
-        resetEncoders();
+        //resetEncoders();
 
         init = true;
     }

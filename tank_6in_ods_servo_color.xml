@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<Robot type="FirstInspires-FTC">
+    <MotorController name="DriveMotors" serialNumber="AI049PKG">
+        <Motor name="right" port="1" />
+        <Motor name="left" port="2" />
+    </MotorController>
+    <ServoController name = "Servos" serialNumber="AL026DDG">
+        <Servo name="upDown" port="1" />
+    </ServoController>
+    <DeviceInterfaceModule name="Sensors" serialNumber="AL00XKU2">
+        <I2cDevice name="color" port="4" />
+	<OpticalDistanceSensor name="ods" port="7" />
+    </DeviceInterfaceModule>
+</Robot>
