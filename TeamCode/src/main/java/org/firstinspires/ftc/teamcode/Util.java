@@ -29,7 +29,7 @@ public final class Util {
 
     protected final static double SEC_TO_NSEC = 1000000000, POWER_FLOAT = 100;
     protected final static double POWER_LIMIT = 1;
-    protected final static boolean TANK = false;
+    protected final static boolean TANK = true;
 
     //private static LinearOpMode linearOpMode;
     protected static LinearOpMode linearOpMode;

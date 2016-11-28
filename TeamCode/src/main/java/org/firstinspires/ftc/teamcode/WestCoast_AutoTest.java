@@ -1,7 +1,6 @@
 package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
-import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
@@ -51,19 +50,9 @@ public class WestCoast_AutoTest extends LinearOpMode {
 
         waitForStart();
 
-        rightFront.setPower(0.3);
-        leftFront.setPower(0.3);
-        rightBack.setPower(0.3);
-        leftBack.setPower(0.3);
+        backward(1100);
 
-        while (leftBack.getCurrentPosition() < 4000);
-
-        rightFront.setPower(0);
-        leftFront.setPower(0);
-        rightBack.setPower(0);
-        leftBack.setPower(0);
-
-        Thread.sleep(400);
+        Thread.sleep(1200);
 
         pos = leftBack.getCurrentPosition();
 
@@ -72,7 +61,27 @@ public class WestCoast_AutoTest extends LinearOpMode {
         rightBack.setPower(-0.3);
         leftBack.setPower(0.3);
 
-        while (leftBack.getCurrentPosition() < (pos + 500));
+        while (leftBack.getCurrentPosition() < (pos + 1500));
+
+        rightFront.setPower(0);
+        leftFront.setPower(0);
+        rightBack.setPower(0);
+        leftBack.setPower(0);
+
+        Thread.sleep(200);
+
+        forward(6000);
+
+        Thread.sleep(200);
+
+        pos = leftBack.getCurrentPosition();
+
+        rightFront.setPower(-0.3);
+        leftFront.setPower(0.3);
+        rightBack.setPower(-0.3);
+        leftBack.setPower(0.3);
+
+        while (leftBack.getCurrentPosition() < (pos + 250));
 
         rightFront.setPower(0);
         leftFront.setPower(0);
@@ -115,41 +124,86 @@ public class WestCoast_AutoTest extends LinearOpMode {
 
         Thread.sleep(200);
 
+        if (RED_ALLIANCE && I2C_ColorSensor.beaconIsRed()) {
+            telemetry.addData("beacon status", "RED");
+            steerBackward(500);
+            upDown.setPosition(0.9);
+            steerForward(250);
+            Thread.sleep(100);
+            steerBackward(500);
+        } else if (RED_ALLIANCE && I2C_ColorSensor.beaconIsBlue()) {
+            telemetry.addData("beacon status", "BLUE");
+            steerForward(500);
+            upDown.setPosition(0.9);
+            steerBackward(500);
+            Thread.sleep(100);
+            steerForward(500);
+        } /*else if (!RED_ALLIANCE && I2C_ColorSensor.beaconIsRed()) {
+            telemetry.addData("beacon status", "RED");
+            steerForward(500);
+            upDown.setPosition(0.9);
+            steerBackward(500);
+        } else if (!RED_ALLIANCE && I2C_ColorSensor.beaconIsBlue()) {
+            telemetry.addData("beacon status", "BLUE");
+            steerBackward(500);
+            upDown.setPosition(0.9);
+            steerForward(500);
+        }*/
+
+        upDown.setPosition(0.6);
+
         pos = leftBack.getCurrentPosition();
 
-        rightBack.setPower(-0.24);
-        leftBack.setPower(-0.16);
-        rightFront.setPower(-0.24);
-        leftFront.setPower(-0.16);
+        rightFront.setPower(-0.33);
+        leftFront.setPower(-0.27);
+        rightBack.setPower(-0.33);
+        leftBack.setPower(-0.27);
 
-        while (leftBack.getCurrentPosition() > (pos - 150));
+        while (leftBack.getCurrentPosition() > (pos - 2500)) ;
+
+        rightFront.setPower(-0.11);
+        leftFront.setPower(-0.09);
+        rightBack.setPower(-0.11);
+        leftBack.setPower(-0.09);
+
+        while (ods.getLightDetected() < 0.50);
 
         rightFront.setPower(0);
         leftFront.setPower(0);
         rightBack.setPower(0);
         leftBack.setPower(0);
 
+        Thread.sleep(100);
+
+        steerForward(300);
+
+        Thread.sleep(100);
+
         if (RED_ALLIANCE && I2C_ColorSensor.beaconIsRed()) {
             telemetry.addData("beacon status", "RED");
-            forward();
-            upDown.setPosition(0.9);
-            backward();
+            steerBackward(750);
+            upDown.setPosition(0.95);
+            steerForward(500);
+            Thread.sleep(100);
+            steerBackward(500);
         } else if (RED_ALLIANCE && I2C_ColorSensor.beaconIsBlue()) {
             telemetry.addData("beacon status", "BLUE");
-            backward();
-            upDown.setPosition(0.9);
-            forward();
-        } else if (!RED_ALLIANCE && I2C_ColorSensor.beaconIsRed()) {
+            steerForward(500);
+            upDown.setPosition(0.95);
+            steerBackward(750);
+            Thread.sleep(100);
+            steerForward(500);
+        } /*else if (!RED_ALLIANCE && I2C_ColorSensor.beaconIsRed()) {
             telemetry.addData("beacon status", "RED");
-            backward();
+            steerForward(500);
             upDown.setPosition(0.9);
-            forward();
+            steerBackward(500);
         } else if (!RED_ALLIANCE && I2C_ColorSensor.beaconIsBlue()) {
             telemetry.addData("beacon status", "BLUE");
-            forward();
+            steerBackward(500);
             upDown.setPosition(0.9);
-            backward();
-        }
+            steerForward(500);
+        }*/
 
         /*while (opModeIsActive()) {
             telemetry.addData("ods", ods.getLightDetected());
@@ -157,15 +211,15 @@ public class WestCoast_AutoTest extends LinearOpMode {
         }*/
     }
 
-    public void forward() {
+    public void forward(int dist) {
         pos = leftBack.getCurrentPosition();
 
-        rightBack.setPower(0.24);
-        leftBack.setPower(0.16);
-        rightFront.setPower(0.24);
-        leftFront.setPower(0.16);
+        rightBack.setPower(0.3);
+        leftBack.setPower(0.3);
+        rightFront.setPower(0.3);
+        leftFront.setPower(0.3);
 
-        while (leftBack.getCurrentPosition() < (pos + 500)) ;
+        while (leftBack.getCurrentPosition() < (pos + dist)) ;
 
         rightBack.setPower(0);
         leftBack.setPower(0);
@@ -173,31 +227,47 @@ public class WestCoast_AutoTest extends LinearOpMode {
         leftFront.setPower(0);
     }
 
-    public void backward() throws InterruptedException {
+    public void backward(int dist) {
         pos = leftBack.getCurrentPosition();
 
-        rightBack.setPower(-0.24);
-        leftBack.setPower(-0.16);
-        rightFront.setPower(-0.24);
-        leftFront.setPower(-0.16);
+        rightBack.setPower(-0.3);
+        leftBack.setPower(-0.3);
+        rightFront.setPower(-0.3);
+        leftFront.setPower(-0.3);
 
-        while (leftBack.getCurrentPosition() > (pos - 250));
+        while (leftBack.getCurrentPosition() > (pos - dist));
 
         rightBack.setPower(0);
         leftBack.setPower(0);
         rightFront.setPower(0);
         leftFront.setPower(0);
+    }
 
-        Thread.sleep(200);
-
+    public void steerForward(int dist) {
         pos = leftBack.getCurrentPosition();
 
-        rightBack.setPower(0.24);
-        leftBack.setPower(0.16);
-        rightFront.setPower(0.24);
-        leftFront.setPower(0.16);
+        rightBack.setPower(0.11);
+        leftBack.setPower(0.09);
+        rightFront.setPower(0.11);
+        leftFront.setPower(0.09);
 
-        while (leftBack.getCurrentPosition() > (pos + 500));
+        while (leftBack.getCurrentPosition() < (pos + dist)) ;
+
+        rightBack.setPower(0);
+        leftBack.setPower(0);
+        rightFront.setPower(0);
+        leftFront.setPower(0);
+    }
+
+    public void steerBackward(int dist) {
+        pos = leftBack.getCurrentPosition();
+
+        rightBack.setPower(-0.11);
+        leftBack.setPower(-0.09);
+        rightFront.setPower(-0.11);
+        leftFront.setPower(-0.09);
+
+        while (leftBack.getCurrentPosition() > (pos - dist));
 
         rightBack.setPower(0);
         leftBack.setPower(0);
