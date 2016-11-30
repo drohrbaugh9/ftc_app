@@ -8,7 +8,7 @@ import com.qualcomm.robotcore.hardware.OpticalDistanceSensor;
 import com.qualcomm.robotcore.hardware.Servo;
 
 @Autonomous (name = "TankAuto", group = "Autonomous")
-@Disabled
+//@Disabled
 public class TankAuto extends LinearOpMode {
 
     DcMotor right, left;
