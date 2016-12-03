@@ -12,7 +12,7 @@ public class EncoderTest extends LinearOpMode {
     DcMotor motor;
 
     public void runOpMode() throws InterruptedException {
-        motor = hardwareMap.dcMotor.get("right");
+        motor = hardwareMap.dcMotor.get("shooter1");
         motor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         Thread.sleep(100);
         motor.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
@@ -20,15 +20,20 @@ public class EncoderTest extends LinearOpMode {
 
         waitForStart();
 
-        motor.setPower(0.4);
+        /*motor.setPower(0.4);
 
         while (motor.getCurrentPosition() < 1010) { //1024
             Thread.sleep(2);
             telemetry.addData("encoder", motor.getCurrentPosition());
         }
 
-        motor.setPower(0);
-        telemetry.addData("encoder", motor.getCurrentPosition());
+        motor.setPower(0);*/
+
+        while(opModeIsActive()) {
+            telemetry.addData("encoder", motor.getCurrentPosition());
+            telemetry.update();
+            Thread.sleep(10);
+        }
 
     }
 }

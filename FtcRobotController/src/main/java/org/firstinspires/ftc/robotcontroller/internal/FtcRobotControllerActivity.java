@@ -104,7 +104,7 @@ public class FtcRobotControllerActivity extends Activity {
   private static final int NUM_GAMEPADS = 2;
 
   public static final String NETWORK_TYPE_FILENAME = "ftc-network-type.txt";
-  public static final boolean LOG = false;
+  public static final boolean LOG = true;
 
   protected WifiManager.WifiLock wifiLock;
   protected RobotConfigFileManager cfgFileMgr;
