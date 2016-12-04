@@ -42,7 +42,7 @@ public class Shooter extends LinearOpMode {
 
         long start = System.nanoTime();
 
-        while (i < 2000) {
+        while (i < 750) {
             /*double stick = gamepad1.right_stick_y;
             if (stick < 0) stick = 0;
 
@@ -64,14 +64,14 @@ public class Shooter extends LinearOpMode {
 
             i++;
 
-            Thread.sleep(2);
+            Thread.sleep(10);
         }
 
         long end = System.nanoTime();
 
         Util.log(DEBUG + "time: " + (end - start));
-        Util.log(DEBUG + "measurements / sec: " + (3000 / ((end - start) / 1000000000.0)));
-        telemetry.addData("measurements / sec", (3000 / ((end - start) / 1000000000.0)));
+        Util.log(DEBUG + "measurements / sec: " + (i / ((end - start) / 1000000000.0)));
+        telemetry.addData("measurements / sec", (i / ((end - start) / 1000000000.0)));
         telemetry.addData("elapsed time", end - start);
         telemetry.update();
 
