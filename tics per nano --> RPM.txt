@@ -1,0 +1,11 @@
+   tics      1 rotation   1,000,000,000 nanoseconds   60 seconds
+---------- x ---------- x ------------------------- x ----------
+nanosecond   44.5 tics            1 second             1 minute
+
+deltat: 10331198 nanoseconds
+tics:   10
+
+tics      / nanosecond: 9.67941956e-7
+rotations / nanosecond: 2.17515046e-8
+rotations / second:     21.7515046293
+rotations / minute:     1305.09027776

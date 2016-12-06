@@ -41,6 +41,9 @@ public class Shooter extends LinearOpMode {
         int oldPos1 = shooter1.getCurrentPosition(), oldPos2 = shooter2.getCurrentPosition(), currentPos1, currentPos2;
 
         long start = System.nanoTime();
+        long old = start;
+        long delta1 = 0, delta2 = 0;
+        long deltat = 0;
 
         while (i < 750) {
             /*double stick = gamepad1.right_stick_y;
@@ -52,15 +55,23 @@ public class Shooter extends LinearOpMode {
             currentPos1 = shooter1.getCurrentPosition();
             currentPos2 = shooter2.getCurrentPosition();
 
+            delta1 = currentPos1 - oldPos1;
+            delta2 = currentPos2 - oldPos2;
+
             long time = System.nanoTime();
 
+            deltat = time - old;
+
             Util.log(DEBUG + "time: " + (time - start));
-            Util.log(DEBUG + "1: " + (currentPos1 - oldPos1));
-            Util.log(DEBUG + "2: " + (currentPos2 - oldPos2));
+            Util.log(DEBUG + "1: " + delta1);
+            Util.log(DEBUG + "2: " + delta2);
+            Util.log(DEBUG + "RPM1: " + ((delta1 * 1000000000 * 60) / (deltat * 44.5)));
+            Util.log(DEBUG + "RPM2: " + ((delta2 * 1000000000 * 60) / (deltat * 44.5)));
             //Util.log(DEBUG + "i: " + i);
 
             oldPos1 = currentPos1;
             oldPos2 = currentPos2;
+            old = time;
 
             i++;
 
@@ -73,6 +84,14 @@ public class Shooter extends LinearOpMode {
         Util.log(DEBUG + "measurements / sec: " + (i / ((end - start) / 1000000000.0)));
         telemetry.addData("measurements / sec", (i / ((end - start) / 1000000000.0)));
         telemetry.addData("elapsed time", end - start);
+
+        telemetry.addData(" ", " ");
+
+        telemetry.addData("last deltat", deltat);
+        telemetry.addData("last delta1", delta1);
+        telemetry.addData("motor 1 tics / second", (1000000000 * delta1) / deltat);
+        telemetry.addData("motor 1 tics / minute", (1000000000 * delta1 * 60) / deltat);
+        telemetry.addData("motor 1 RPM", ((1000000000 * delta1 * 60) / (deltat * 44.5)));
         telemetry.update();
 
         shooter1.setPower(0);
