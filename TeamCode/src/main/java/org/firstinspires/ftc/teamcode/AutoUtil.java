@@ -11,6 +11,7 @@ public final class AutoUtil {
     private static float stallEnabledTime;
     private static double powerFactor = Util.POWER_LIMIT;
     private static final double MOTOR_POWER_THRESHOLD = 0.8 * Util.POWER_LIMIT, TIME_THRESHOLD = 0.3 * Util.SEC_TO_NSEC;
+    private static final double MIN_POWER = 0.2;
 
     private AutoUtil() throws Exception {
         throw new Exception();
@@ -27,6 +28,7 @@ public final class AutoUtil {
 
     public static void moveForward(double distance, double power, GyroSensor gyro) throws InterruptedException {
         resetGyroHeading(gyro);
+        PID.resetIntegral();
         double start = Util.rightBack.getCurrentPosition();
         //stallEnabledTime = System.nanoTime();
         while (Util.rightBack.getCurrentPosition() < (start + (distance * 0.98))) {
@@ -73,16 +75,38 @@ public final class AutoUtil {
         Util.setAllPowers(0);
     }
 
-    public static void turnRight(double distance, float power) {//, GyroSensor gyro) {
-        //resetGyroHeading(gyro);
-        double start = Util.leftBack.getCurrentPosition();
-        Util.setRightPowers(-power);
-        Util.setLeftPowers(power);
-        while (Util.leftBack.getCurrentPosition() < (start + distance * 0.98));
+    public static void turnRight(double degreeTarget, double targetPower, GyroSensor gyro) throws InterruptedException {
+        resetGyroHeading(gyro);
+        double power = MIN_POWER;
+        while (PID.heading(gyro) < (degreeTarget / 2)) {
+            power += 0.02;
+            if (power > targetPower) {
+                Util.setRightPowers(-targetPower);
+                Util.setLeftPowers(targetPower);
+                break;
+            }
+            Util.setRightPowers(-power);
+            Util.setLeftPowers(power);
+            Thread.sleep(10);
+        }
+        power = targetPower;
+        double rampUpDegrees = PID.heading(gyro);
+        while (degreeTarget - PID.heading(gyro) > rampUpDegrees) Thread.sleep(10);
+        while (PID.heading(gyro) - degreeTarget > 1) {
+            power -= 0.02;
+            if (power < MIN_POWER) {
+                Util.setRightPowers(-MIN_POWER);
+                Util.setLeftPowers(MIN_POWER);
+            } else {
+                Util.setRightPowers(-power);
+                Util.setLeftPowers(power);
+            }
+            Thread.sleep(10);
+        }
         Util.setAllPowers(0);
     }
 
-    public static void turnLeft(double distance, float power) {
+    public static void turnLeft(double distance, double power) {
         double start = Util.rightBack.getCurrentPosition();
         Util.setRightPowers(power);
         Util.setLeftPowers(-power);

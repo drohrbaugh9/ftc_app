@@ -14,6 +14,6 @@
     <DeviceInterfaceModule name="Device Interface Module 1" serialNumber="AL00VFK6">
         <I2cDevice name="color" port="4" />
 	<OpticalDistanceSensor name="ods" port="7" />
-	<GyroSensor name="gyro" port="" />
+	<GyroSensor name="gyro" port="3" />
     </DeviceInterfaceModule>
 </Robot>

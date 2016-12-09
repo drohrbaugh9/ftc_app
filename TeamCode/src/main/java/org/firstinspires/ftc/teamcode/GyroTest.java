@@ -1,5 +1,6 @@
 package org.firstinspires.ftc.teamcode;
 
+import com.qualcomm.hardware.modernrobotics.ModernRoboticsI2cGyro;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
@@ -18,8 +19,10 @@ public class GyroTest extends LinearOpMode {
     public void runOpMode() throws InterruptedException {
         Util.init(this);
 
-        right = Util.rightBack;
-        left = Util.leftBack;
+        /*Util.rightBack.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
+        Util.leftBack.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
+        Util.rightFront.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
+        Util.leftFront.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);*/
 
         gyro = hardwareMap.gyroSensor.get("gyro");
 
@@ -31,9 +34,12 @@ public class GyroTest extends LinearOpMode {
 
         waitForStart();
 
-        AutoUtil.moveForward(1000000000, 0.5, gyro);
+        //AutoUtil.moveForward(10000, 0.5, gyro);
+        AutoUtil.turnRight(90, 0.3, gyro);
 
-        right.setPower(0);
-        left.setPower(0);
+        while(opModeIsActive()) {
+            telemetry.addData("gyro", PID.heading(gyro));
+            telemetry.update();
+        }
     }
 }

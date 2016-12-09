@@ -1,7 +1,5 @@
 package org.firstinspires.ftc.teamcode;
 
-import com.qualcomm.hardware.modernrobotics.ModernRoboticsUsbDcMotorController;
-import com.qualcomm.robotcore.eventloop.opmode.OpModeManager;
 import com.qualcomm.robotcore.hardware.ColorSensor;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
@@ -29,7 +27,7 @@ public final class Util {
 
     protected final static double SEC_TO_NSEC = 1000000000, POWER_FLOAT = 100;
     protected final static double POWER_LIMIT = 1;
-    protected final static boolean TANK = true;
+    protected final static boolean TANK = false;
 
     //private static LinearOpMode linearOpMode;
     protected static LinearOpMode linearOpMode;
