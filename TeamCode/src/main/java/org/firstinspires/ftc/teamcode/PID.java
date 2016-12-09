@@ -17,7 +17,7 @@ public final class PID {
     private static double integral = 0;       //variable to hold integral value (accumulated error)
 
     //testing
-    private static boolean log = FtcRobotControllerActivity.LOG;
+    private static boolean log = false;// FtcRobotControllerActivity.LOG;
 
     private PID() throws Exception { throw new Exception(); }
 
@@ -26,7 +26,7 @@ public final class PID {
         int heading = heading(gyro);
         int error = heading - offset;
         double turn = Kp * error;
-        double[] toReturn = {Range.clip(Tp + turn, -1, 1), Range.clip(Tp - turn, -1, 1)};
+        double[] toReturn = {Range.clip(Tp - turn, -1, 1), Range.clip(Tp + turn, -1, 1)};
 
         if (!log) {
             return toReturn;
@@ -51,7 +51,7 @@ public final class PID {
         int heading = heading(gyro);
         int error = heading - offset;
         integral += error;
-        double turn = Kp * error + Ki * error;
+        double turn = Kp * error + Ki * integral;
         double[] toReturn = {Range.clip(Tp + turn, -1, 1), Range.clip(Tp - turn, -1, 1)};
 
         if (!log) {
@@ -72,14 +72,13 @@ public final class PID {
         return toReturn;
     }
 
-    public static void PsetMotors(GyroSensor gyro, float Tp) {
+    public static void PsetMotors(GyroSensor gyro, double Tp) {
         double[] motors = P(gyro, Tp);
         Util.setRightPowers(motors[0]);
         Util.setLeftPowers(motors[1]);
-
     }
 
-    public static void PIsetMotors(GyroSensor gyro, float Tp) {
+    public static void PIsetMotors(GyroSensor gyro, double Tp) {
         double motors[] = PI(gyro, Tp);
         Util.setRightPowers(motors[0]);
         Util.setLeftPowers(motors[1]);

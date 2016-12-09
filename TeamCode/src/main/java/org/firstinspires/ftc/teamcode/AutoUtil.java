@@ -28,11 +28,11 @@ public final class AutoUtil {
     public static void moveForward(double distance, double power, GyroSensor gyro) throws InterruptedException {
         resetGyroHeading(gyro);
         double start = Util.rightBack.getCurrentPosition();
-        stallEnabledTime = System.nanoTime();
+        //stallEnabledTime = System.nanoTime();
         while (Util.rightBack.getCurrentPosition() < (start + (distance * 0.98))) {
-            float currentTime = System.nanoTime();
+            //float currentTime = System.nanoTime();
             //if (TeleOpLinear.stallProtectionGloballyEnabled && (Math.abs(power) > MOTOR_POWER_THRESHOLD) && ((currentTime - stallEnabledTime) > TIME_THRESHOLD)) {
-            if ((Math.abs(power) > MOTOR_POWER_THRESHOLD) && ((currentTime - stallEnabledTime) > TIME_THRESHOLD)) {
+            /*if ((Math.abs(power) > MOTOR_POWER_THRESHOLD) && ((currentTime - stallEnabledTime) > TIME_THRESHOLD)) {
                 int isStalled = StallProtection.stalled();
                 if (isStalled == 1) {
                     powerFactor -= 0.05;
@@ -42,9 +42,8 @@ public final class AutoUtil {
                     powerFactor += 0.02;
                     if (powerFactor > Util.POWER_LIMIT) powerFactor = Util.POWER_LIMIT;
                 }
-            }
-            //PID.PIsetMotors(gyro, powerFactor * power);
-            Util.setAllPowers(powerFactor * power);
+            }*/
+            PID.PIsetMotors(gyro, powerFactor * power);
             Thread.sleep(10);
         }
         Util.setAllPowers(0);

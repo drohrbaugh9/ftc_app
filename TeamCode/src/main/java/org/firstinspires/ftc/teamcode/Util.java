@@ -135,66 +135,36 @@ public final class Util {
     }
 
     public static void setRightPowers(double p) {
-        if (p == POWER_FLOAT) {
-            rightBack.setPowerFloat();
-            rightFront.setPowerFloat();
-            return;
-        }
         rightBack.setPower(p);
-        rightFront.setPower(p);
+        if (!TANK) rightFront.setPower(p);
     }
 
     public static void setLeftPowers(double p) {
-        if (p == POWER_FLOAT) {
-            leftBack.setPowerFloat();
-            leftFront.setPowerFloat();
-            return;
-        }
         leftBack.setPower(p);
-        leftFront.setPower(p);
+        if (!TANK) leftFront.setPower(p);
     }
 
     public static void setFrontPowers(double p) {
-        if (p == POWER_FLOAT) {
-            rightFront.setPowerFloat();
-            leftFront.setPowerFloat();
-            return;
-        }
+        if (TANK) return;
         rightFront.setPower(p);
         leftFront.setPower(p);
     }
 
     public static void setBackPowers(double p) {
-        if (p == POWER_FLOAT) {
-            rightBack.setPowerFloat();
-            leftBack.setPowerFloat();
-            return;
-        }
         rightBack.setPower(p);
         leftBack.setPower(p);
     }
 
     public static void setAllPowers(double p) {
-        if (p == POWER_FLOAT) {
-            rightBack.setPowerFloat();
-            rightFront.setPowerFloat();
-            leftBack.setPowerFloat();
-            leftFront.setPowerFloat();
-            return;
-        }
         rightBack.setPower(p);
-        rightFront.setPower(p);
         leftBack.setPower(p);
-        leftFront.setPower(p);
+        if (!TANK) {
+            rightFront.setPower(p);
+            leftFront.setPower(p);
+        }
     }
     
     public static void setMotorsPowers(DcMotor[] motors, double p) {
-        if (p == POWER_FLOAT) {
-            for (DcMotor motor : motors) {
-                motor.setPowerFloat();
-            }
-            return;
-        }
         for (DcMotor motor : motors) {
             motor.setPower(p);
         }
