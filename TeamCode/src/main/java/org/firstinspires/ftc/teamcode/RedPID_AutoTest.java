@@ -36,7 +36,7 @@ public class RedPID_AutoTest extends LinearOpMode {
         AutoUtil.moveForward(4400, 0.3, gyro);
         AutoUtil.turnRight(75, 0.3, gyro);
         AutoUtil.moveForward(5040, 0.3, gyro); // add steering
-        
+
         /*
         * go slow and look for line
         * do 1st beacon
