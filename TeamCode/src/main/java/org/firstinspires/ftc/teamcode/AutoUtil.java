@@ -30,21 +30,7 @@ public final class AutoUtil {
         resetGyroHeading(gyro);
         PID.resetIntegral();
         double start = Util.rightBack.getCurrentPosition();
-        //stallEnabledTime = System.nanoTime();
         while (Util.rightBack.getCurrentPosition() < (start + (distance * 0.98))) {
-            //float currentTime = System.nanoTime();
-            //if (TeleOpLinear.stallProtectionGloballyEnabled && (Math.abs(power) > MOTOR_POWER_THRESHOLD) && ((currentTime - stallEnabledTime) > TIME_THRESHOLD)) {
-            /*if ((Math.abs(power) > MOTOR_POWER_THRESHOLD) && ((currentTime - stallEnabledTime) > TIME_THRESHOLD)) {
-                int isStalled = StallProtection.stalled();
-                if (isStalled == 1) {
-                    powerFactor -= 0.05;
-                    if (powerFactor < 0) powerFactor = 0;
-                }
-                else if (isStalled == 0) {
-                    powerFactor += 0.02;
-                    if (powerFactor > Util.POWER_LIMIT) powerFactor = Util.POWER_LIMIT;
-                }
-            }*/
             PID.PIsetMotors(gyro, powerFactor * power);
             Thread.sleep(10);
         }
@@ -53,33 +39,23 @@ public final class AutoUtil {
 
     public static void moveBackward(double distance, double power, GyroSensor gyro) throws InterruptedException {
         resetGyroHeading(gyro);
+        PID.resetIntegral();
         double start = Util.rightBack.getCurrentPosition();
-        stallEnabledTime = System.nanoTime();
         while (Util.rightBack.getCurrentPosition() > (start - (distance * 0.98))) {
-            float currentTime = System.nanoTime();
-            if ((Math.abs(power) > MOTOR_POWER_THRESHOLD) && ((currentTime - stallEnabledTime) > TIME_THRESHOLD)) {
-                int isStalled = StallProtection.stalled();
-                if (isStalled == 1) {
-                    powerFactor -= 0.05;
-                    if (powerFactor < 0) powerFactor = 0;
-                }
-                else if (isStalled == 0) {
-                    powerFactor += 0.02;
-                    if (powerFactor > Util.POWER_LIMIT) powerFactor = Util.POWER_LIMIT;
-                }
-            }
-            //PID.PIsetMotors(gyro, powerFactor * -power);
-            Util.setAllPowers(powerFactor * -power);
+            PID.PIsetMotors(gyro, powerFactor * -power);
             Thread.sleep(10);
         }
         Util.setAllPowers(0);
     }
 
+    final static double RAMP_UP_DELTA = 0.02, RAMP_DOWN_DELTA = 0.03;
+    final static int COAST_DEGREES = 3; // 1
+
     public static void turnRight(double degreeTarget, double targetPower, GyroSensor gyro) throws InterruptedException {
         resetGyroHeading(gyro);
         double power = MIN_POWER;
         while (PID.heading(gyro) < (degreeTarget / 2)) {
-            power += 0.02;
+            power += RAMP_UP_DELTA;
             if (power > targetPower) {
                 Util.setRightPowers(-targetPower);
                 Util.setLeftPowers(targetPower);
@@ -92,8 +68,8 @@ public final class AutoUtil {
         power = targetPower;
         double rampUpDegrees = PID.heading(gyro);
         while (degreeTarget - PID.heading(gyro) > rampUpDegrees) Thread.sleep(10);
-        while (PID.heading(gyro) - degreeTarget > 1) {
-            power -= 0.02;
+        while (PID.heading(gyro) - degreeTarget > COAST_DEGREES) {
+            power -= RAMP_DOWN_DELTA;
             if (power < MIN_POWER) {
                 Util.setRightPowers(-MIN_POWER);
                 Util.setLeftPowers(MIN_POWER);
@@ -106,11 +82,35 @@ public final class AutoUtil {
         Util.setAllPowers(0);
     }
 
-    public static void turnLeft(double distance, double power) {
-        double start = Util.rightBack.getCurrentPosition();
-        Util.setRightPowers(power);
-        Util.setLeftPowers(-power);
-        while (Util.rightBack.getCurrentPosition() < (start + distance * 0.98));
+    public static void turnLeft(double degreeTarget, double targetPower, GyroSensor gyro) throws InterruptedException {
+        degreeTarget = -degreeTarget;
+        resetGyroHeading(gyro);
+        double power = MIN_POWER;
+        while (PID.heading(gyro) > (degreeTarget / 2)) {
+            power += RAMP_UP_DELTA;
+            if (power > targetPower) {
+                Util.setRightPowers(targetPower);
+                Util.setLeftPowers(-targetPower);
+                break;
+            }
+            Util.setRightPowers(power);
+            Util.setLeftPowers(-power);
+            Thread.sleep(10);
+        }
+        power = targetPower;
+        double rampUpDegrees = PID.heading(gyro);
+        while (degreeTarget - PID.heading(gyro) < rampUpDegrees) Thread.sleep(10);
+        while (PID.heading(gyro) - degreeTarget > COAST_DEGREES) {
+            power -= RAMP_DOWN_DELTA;
+            if (power < MIN_POWER) {
+                Util.setRightPowers(MIN_POWER);
+                Util.setLeftPowers(-MIN_POWER);
+            } else {
+                Util.setRightPowers(power);
+                Util.setLeftPowers(-power);
+            }
+            Thread.sleep(10);
+        }
         Util.setAllPowers(0);
     }
 

@@ -1,19 +1,15 @@
 package org.firstinspires.ftc.teamcode;
 
-import com.qualcomm.hardware.modernrobotics.ModernRoboticsI2cGyro;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
-import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.GyroSensor;
 
-
-@Autonomous(name="Gyro Test", group="test")
+@Autonomous(name="PID_AutoTest", group="test")
 //@Disabled
-public class GyroTest extends LinearOpMode {
+public class RedPID_AutoTest extends LinearOpMode {
 
-    DcMotor right, left;
     GyroSensor gyro;
 
     public void runOpMode() throws InterruptedException {
@@ -34,12 +30,19 @@ public class GyroTest extends LinearOpMode {
 
         waitForStart();
 
-        //AutoUtil.moveForward(10000, 0.5, gyro);
-        AutoUtil.turnRight(90, 0.3, gyro);
-
-        while(opModeIsActive()) {
-            telemetry.addData("gyro", PID.heading(gyro));
-            telemetry.update();
-        }
+        AutoUtil.moveBackward(1600, 0.3, gyro);
+        // shoot
+        AutoUtil.turnRight(100, 0.3, gyro);
+        AutoUtil.moveForward(4400, 0.3, gyro);
+        AutoUtil.turnRight(75, 0.3, gyro);
+        AutoUtil.moveForward(5040, 0.3, gyro); // add steering
+        
+        /*
+        * go slow and look for line
+        * do 1st beacon
+        * back up, still steering into wall at 0.3 power til close to line
+        * go slow and look for line
+        * do 2nd beacon
+        */
     }
 }
