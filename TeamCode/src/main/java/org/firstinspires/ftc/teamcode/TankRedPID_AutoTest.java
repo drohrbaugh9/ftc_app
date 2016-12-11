@@ -67,8 +67,8 @@ public class TankRedPID_AutoTest extends LinearOpMode {
 
         AutoUtil.turnRight(60, 0.4, gyro);
 
-        /*gyro.calibrate(); while(gyro.isCalibrating());*/
-        gyro.resetZAxisIntegrator();
+        /*gyro.calibrate(); while(gyro.isCalibrating());
+        gyro.resetZAxisIntegrator();*/
 
         Util.setRightPowers(0.44);
         Util.setLeftPowers(0.36);

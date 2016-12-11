@@ -28,7 +28,7 @@ public final class AutoUtil {
 
     public static void moveForward(double distance, double power, GyroSensor gyro) throws InterruptedException {
         resetGyroHeading(gyro);
-        PID.resetIntegral();
+        PID.resetDriveIntegral();
         double start = Util.rightBack.getCurrentPosition();
         while (Util.rightBack.getCurrentPosition() < (start + (distance * 0.98))) {
             PID.PIsetMotors(gyro, powerFactor * power);
@@ -39,7 +39,7 @@ public final class AutoUtil {
 
     public static void moveBackward(double distance, double power, GyroSensor gyro) throws InterruptedException {
         resetGyroHeading(gyro);
-        PID.resetIntegral();
+        PID.resetDriveIntegral();
         double start = Util.rightBack.getCurrentPosition();
         while (Util.rightBack.getCurrentPosition() > (start - (distance * 0.98))) {
             PID.PIsetMotors(gyro, powerFactor * -power);
@@ -49,7 +49,7 @@ public final class AutoUtil {
     }
 
     final static double RAMP_UP_DELTA = 0.02, RAMP_DOWN_DELTA = 0.03;
-    final static int COAST_DEGREES = 3; // 1
+    final static int EXTRA_DEGREES = 3; // 1
 
     public static void turnRight(double degreeTarget, double targetPower, GyroSensor gyro) throws InterruptedException {
         resetGyroHeading(gyro);
@@ -68,7 +68,7 @@ public final class AutoUtil {
         power = targetPower;
         double rampUpDegrees = PID.heading(gyro);
         while (degreeTarget - PID.heading(gyro) > rampUpDegrees * 2) Thread.sleep(10);
-        while (PID.heading(gyro) - degreeTarget > COAST_DEGREES) {
+        while (PID.heading(gyro) - degreeTarget > EXTRA_DEGREES) {
             power -= RAMP_DOWN_DELTA;
             if (power < MIN_POWER) {
                 Util.setRightPowers(-MIN_POWER);
@@ -100,7 +100,7 @@ public final class AutoUtil {
         power = targetPower;
         double rampUpDegrees = PID.heading(gyro);
         while (degreeTarget - PID.heading(gyro) < rampUpDegrees) Thread.sleep(10);
-        while (PID.heading(gyro) - degreeTarget > COAST_DEGREES) {
+        while (PID.heading(gyro) - degreeTarget > EXTRA_DEGREES) {
             power -= RAMP_DOWN_DELTA;
             if (power < MIN_POWER) {
                 Util.setRightPowers(MIN_POWER);

@@ -6,7 +6,7 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 
-@TeleOp(name="Shooter Test", group="Test")
+@TeleOp(name="ShooterData", group="Test")
 //@Disabled
 public class ShooterData extends LinearOpMode {
 

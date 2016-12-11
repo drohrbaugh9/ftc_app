@@ -25,9 +25,9 @@ public final class Util {
 
     protected static final boolean SENSORS = true, SERVOS = true;
 
-    protected final static double SEC_TO_NSEC = 1000000000, POWER_FLOAT = 100;
+    protected final static double SEC_TO_NSEC = 1000000000, NEVEREST_37_TICS_PER_ROTATION = 44.4;
     protected final static double POWER_LIMIT = 1;
-    protected final static boolean TANK = true;
+    protected final static boolean TANK = false;
 
     //private static LinearOpMode linearOpMode;
     protected static LinearOpMode linearOpMode;
