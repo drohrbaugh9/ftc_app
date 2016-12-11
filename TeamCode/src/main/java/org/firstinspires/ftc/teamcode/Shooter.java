@@ -67,7 +67,7 @@ public class Shooter extends LinearOpMode {
             Util.log("SHOOTER ticsDelta1: " + delta1);
             Util.log("SHOOTER ticsDelta2: " + delta2);
 
-            double[] powers = PID.PI_Shooter(delta1, delta2, TICS_TARGET, shooter1Power, shooter2Power);
+            double[] powers = ShooterPID.PI_Shooter(delta1, delta2, TICS_TARGET, shooter1Power, shooter2Power);
 
             shooter1.setPower(powers[0]);
             shooter2.setPower(powers[1]);
