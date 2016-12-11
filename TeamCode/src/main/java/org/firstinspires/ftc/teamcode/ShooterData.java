@@ -8,7 +8,7 @@ import com.qualcomm.robotcore.hardware.DcMotorSimple;
 
 @TeleOp(name="Shooter Test", group="Test")
 //@Disabled
-public class Shooter extends LinearOpMode {
+public class ShooterData extends LinearOpMode {
 
     private final String DEBUG = "SHOOTER ";
 
@@ -40,10 +40,11 @@ public class Shooter extends LinearOpMode {
 
         int oldPos1 = shooter1.getCurrentPosition(), oldPos2 = shooter2.getCurrentPosition(), currentPos1, currentPos2;
 
-        long start = System.nanoTime();
-        long old = start;
         long delta1 = 0, delta2 = 0;
         long deltat = 0;
+
+        long start = System.nanoTime();
+        long old = start;
 
         while (i < 750) {
             /*double stick = gamepad1.right_stick_y;
