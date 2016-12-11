@@ -31,8 +31,8 @@ public class Shooter extends LinearOpMode {
 
         int i = 0;
 
-        shooter1.setPower(0.24);
-        shooter2.setPower(0.24);
+        shooter1.setPower(0.27);
+        shooter2.setPower(0.27);
 
         //Thread.sleep(3000);
 

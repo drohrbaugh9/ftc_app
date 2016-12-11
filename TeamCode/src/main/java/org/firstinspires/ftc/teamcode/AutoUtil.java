@@ -67,7 +67,7 @@ public final class AutoUtil {
         }
         power = targetPower;
         double rampUpDegrees = PID.heading(gyro);
-        while (degreeTarget - PID.heading(gyro) > rampUpDegrees) Thread.sleep(10);
+        while (degreeTarget - PID.heading(gyro) > rampUpDegrees * 2) Thread.sleep(10);
         while (PID.heading(gyro) - degreeTarget > COAST_DEGREES) {
             power -= RAMP_DOWN_DELTA;
             if (power < MIN_POWER) {
