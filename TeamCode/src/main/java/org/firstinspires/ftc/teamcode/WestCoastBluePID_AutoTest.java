@@ -9,9 +9,9 @@ import com.qualcomm.robotcore.hardware.GyroSensor;
 import com.qualcomm.robotcore.hardware.OpticalDistanceSensor;
 import com.qualcomm.robotcore.hardware.Servo;
 
-@Autonomous(name="WestCoastRedPID_AutoTest", group="Test")
-//Disabled
-public class WestCoastRedPID_AutoTest extends LinearOpMode {
+@Autonomous(name="WestCoastBluePID_AutoTest", group="Test")
+//@Disabled
+public class WestCoastBluePID_AutoTest extends LinearOpMode {
 
     Servo ballFeeder, upDown;
     DcMotor rightBack, leftBack, rightFront, leftFront, shooter1, shooter2;
@@ -56,7 +56,7 @@ public class WestCoastRedPID_AutoTest extends LinearOpMode {
         shooter1.setPower(0.25);
         shooter2.setPower(0.25);
 
-        AutoUtil.moveBackward(1600, 0.15, gyro); // assuming this takes 0.5 second for following sleep()
+        AutoUtil.moveBackward(1500, 0.15, gyro); // assuming this takes 0.5 second for following sleep()
 
         Thread.sleep(1500);
 
@@ -69,13 +69,13 @@ public class WestCoastRedPID_AutoTest extends LinearOpMode {
         Util.setRightPowers(-0.2);
         Util.setLeftPowers(0.2);
 
-        while (leftBack.getCurrentPosition() - leftBackPos < 1700) Thread.sleep(10);
+        while (leftBack.getCurrentPosition() - leftBackPos < 1100) Thread.sleep(10);
 
         Util.setAllPowers(0);
 
         Thread.sleep(200);
 
-        AutoUtil.moveForward(3750, 0.2, gyro);
+        AutoUtil.moveBackward(3500, 0.2, gyro);
 
         Thread.sleep(200);
 
@@ -83,10 +83,10 @@ public class WestCoastRedPID_AutoTest extends LinearOpMode {
 
         leftBackPos = leftBack.getCurrentPosition();
 
-        Util.setRightPowers(-0.2);
-        Util.setLeftPowers(0.2);
+        Util.setRightPowers(0.2);
+        Util.setLeftPowers(-0.2);
 
-        while (leftBack.getCurrentPosition() - leftBackPos < 500) Thread.sleep(10);
+        while (leftBack.getCurrentPosition() - leftBackPos > -650) Thread.sleep(10);
 
         Util.setAllPowers(0);
 
@@ -99,19 +99,19 @@ public class WestCoastRedPID_AutoTest extends LinearOpMode {
         rightFront.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
         leftFront.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
 
-        Util.setAllPowers(0.3);
+        Util.setAllPowers(-0.3);
 
-        while (rightBack.getCurrentPosition() - rightBackPos < 2000) Thread.sleep(20);
+        while (rightBack.getCurrentPosition() - rightBackPos > -1500) Thread.sleep(20);
 
         rightBackPos = rightBack.getCurrentPosition();
 
-        Util.setRightPowers(0.31);
-        Util.setLeftPowers(0.29);
+        Util.setRightPowers(-0.31);
+        Util.setLeftPowers(-0.29);
 
-        while (rightBack.getCurrentPosition() - rightBackPos < 1750) Thread.sleep(20);
+        while (rightBack.getCurrentPosition() - rightBackPos > -1250) Thread.sleep(20);
 
-        Util.setRightPowers(0.16);
-        Util.setLeftPowers(0.14);
+        Util.setRightPowers(-0.12);
+        Util.setLeftPowers(-0.10);
 
         while (ods.getLightDetected() < 0.50) Thread.sleep(20);
 
@@ -119,43 +119,45 @@ public class WestCoastRedPID_AutoTest extends LinearOpMode {
 
         rightBackPos = rightBack.getCurrentPosition();
 
-        Util.setRightPowers(0.11);
+        Util.setRightPowers(0.15);
 
-        while (rightBack.getCurrentPosition() - rightBackPos < 160) Thread.sleep(10);
+        while (rightBack.getCurrentPosition() - rightBackPos < 400) Thread.sleep(10);
 
         Util.setAllPowers(0);
 
         if (I2C_ColorSensor.beaconIsRed()) {
             telemetry.addData("beacon status", "RED");
+            steerForward(500);
+            upDown.setPosition(0.9);
+            steerBackward(500);
+            Thread.sleep(100);
+            steerForward(500);
+        } else if (I2C_ColorSensor.beaconIsBlue()) {
+            telemetry.addData("beacon status", "BLUE");
             steerBackward(500);
             upDown.setPosition(0.9);
             steerForward(250);
             Thread.sleep(100);
             steerBackward(500);
-        } else if (I2C_ColorSensor.beaconIsBlue()) {
-            telemetry.addData("beacon status", "BLUE");
-            steerForward(500);
-            upDown.setPosition(0.9);
-            steerBackward(500);
-            Thread.sleep(100);
-            steerForward(500);
         }
+
+        telemetry.update();
 
         upDown.setPosition(0.6);
 
         leftBackPos = leftBack.getCurrentPosition();
 
-        rightFront.setPower(-0.33);
-        leftFront.setPower(-0.27);
-        rightBack.setPower(-0.33);
-        leftBack.setPower(-0.27);
+        rightFront.setPower(0.33);
+        leftFront.setPower(0.27);
+        rightBack.setPower(0.33);
+        leftBack.setPower(0.27);
 
-        while (leftBack.getCurrentPosition() > (leftBackPos - 2500)) ;
+        while (leftBack.getCurrentPosition() < (leftBackPos + 2500)) Thread.sleep(20);
 
-        rightFront.setPower(-0.11);
-        leftFront.setPower(-0.09);
-        rightBack.setPower(-0.11);
-        leftBack.setPower(-0.09);
+        rightFront.setPower(0.12);
+        leftFront.setPower(0.10);
+        rightBack.setPower(0.12);
+        leftBack.setPower(0.10);
 
         while (ods.getLightDetected() < 0.50);
 
@@ -164,26 +166,22 @@ public class WestCoastRedPID_AutoTest extends LinearOpMode {
         rightBack.setPower(0);
         leftBack.setPower(0);
 
-        Thread.sleep(100);
-
-        steerForward(300);
-
-        Thread.sleep(100);
+        Thread.sleep(500);
 
         if (I2C_ColorSensor.beaconIsRed()) {
             telemetry.addData("beacon status", "RED");
+            steerForward(500);
+            upDown.setPosition(0.95);
+            steerBackward(750);
+            Thread.sleep(100);
+            steerForward(500);
+        } else if (I2C_ColorSensor.beaconIsBlue()) {
+            telemetry.addData("beacon status", "BLUE");
             steerBackward(750);
             upDown.setPosition(0.95);
             steerForward(500);
             Thread.sleep(100);
             steerBackward(500);
-        } else if (I2C_ColorSensor.beaconIsBlue()) {
-            telemetry.addData("beacon status", "BLUE");
-            steerForward(500);
-            upDown.setPosition(0.95);
-            steerBackward(750);
-            Thread.sleep(100);
-            steerForward(500);
         }
     }
 
