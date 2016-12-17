@@ -113,7 +113,7 @@ public class WestCoastBluePID_AutoTest extends LinearOpMode {
         Util.setRightPowers(-0.12);
         Util.setLeftPowers(-0.10);
 
-        while (ods.getLightDetected() < 0.50) Thread.sleep(20);
+        while (ods.getLightDetected() < 0.50) Thread.sleep(20); // TODO: change to 0.5, 5, check twice
 
         Util.setAllPowers(0);
 

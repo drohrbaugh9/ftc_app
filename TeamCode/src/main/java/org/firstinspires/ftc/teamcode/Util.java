@@ -23,7 +23,9 @@ public final class Util {
 
     protected static OpticalDistanceSensor ods;
 
-    protected static final boolean SENSORS = true, SERVOS = true;
+    protected static GyroSensor gyro;
+
+    protected static final boolean SENSORS = true, SERVOS = false;
 
     protected final static double SEC_TO_NSEC = 1000000000, NEVEREST_37_TICS_PER_ROTATION = 44.4;
     protected final static double POWER_LIMIT = 1;
@@ -62,15 +64,16 @@ public final class Util {
         motorsWithEncoders = tempWithEncoders;*/
 
         // servos
-        if (SERVOS && TANK) {
+        if (SERVOS) {
             upDown = getServo(opMode.hardwareMap, "upDown");
             upDown.setPosition(0.6);
         }
 
         // sensors
-        if (SENSORS && TANK) {
+        if (SENSORS) {
             ods = opMode.hardwareMap.opticalDistanceSensor.get("ods");
             I2C_ColorSensor.init(opMode);
+            gyro = opMode.hardwareMap.gyroSensor.get("gyro");
         }
         
         //resetEncoders();
@@ -96,10 +99,10 @@ public final class Util {
 
     public static void resetEncoders(LinearOpMode opMode, DcMotor[] motorList) throws InterruptedException {
         for (DcMotor motor : motorList) motor.setMode(DcMotor.RunMode.RESET_ENCODERS);
-        for (int i = 0; i < 11; i++) opMode.waitOneFullHardwareCycle();
+        Thread.sleep(200);
         //while (motorList[0].getMode() != DcMotorController.RunMode.RESET_ENCODERS);
         for (DcMotor motor : motorList) motor.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODERS);
-        for (int i = 0; i < 11; i++) opMode.waitOneFullHardwareCycle();
+        Thread.sleep(200);
     }
 
     public static void resetEncoders(LinearOpMode opMode) throws InterruptedException {
