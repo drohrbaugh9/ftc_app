@@ -179,7 +179,7 @@ public class WestCoastRedPID_AutoTest extends LinearOpMode {
             steerBackward(500);
         } else if (I2C_ColorSensor.beaconIsBlue()) {
             telemetry.addData("beacon status", "BLUE");
-            steerForward(500);
+            steerForward(750);
             upDown.setPosition(0.95);
             steerBackward(750);
             Thread.sleep(100);
