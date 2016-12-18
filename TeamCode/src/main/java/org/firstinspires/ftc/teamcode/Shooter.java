@@ -10,14 +10,13 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 @Autonomous(name="Shooter", group="Test")
-//@Disabled
+@Disabled
 public class Shooter extends LinearOpMode {
 
     DcMotor shooter1, shooter2;
     final int RPM_TARGET = 1250, MOVING_AVERAGE_LENGTH = 10, MEASURING_INTERVAL = 20;
     final double TICS_PER_ROTATION = Util.NEVEREST_37_TICS_PER_ROTATION;
     final double TICS_TARGET = ((RPM_TARGET / 60) / MEASURING_INTERVAL) * TICS_PER_ROTATION; // tics per MEASURING_INTERVAL
-
 
     private static Queue<Integer> shooter1Queue, shooter2Queue;
 

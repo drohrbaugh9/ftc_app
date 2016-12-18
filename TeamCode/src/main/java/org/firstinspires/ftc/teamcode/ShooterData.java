@@ -7,7 +7,7 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 
 @TeleOp(name="ShooterData", group="Test")
-//@Disabled
+@Disabled
 public class ShooterData extends LinearOpMode {
 
     private final String DEBUG = "SHOOTER ";

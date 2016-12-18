@@ -72,7 +72,7 @@ public final class Util {
         // sensors
         if (SENSORS) {
             ods = opMode.hardwareMap.opticalDistanceSensor.get("ods");
-            I2C_ColorSensor.init(opMode);
+            //I2C_ColorSensor.init(opMode); // commented out for gyro testing
             gyro = opMode.hardwareMap.gyroSensor.get("gyro");
         }
         

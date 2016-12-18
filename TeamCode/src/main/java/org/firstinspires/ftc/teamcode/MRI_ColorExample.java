@@ -27,7 +27,7 @@ import com.qualcomm.robotcore.util.ElapsedTime;
 
 
 @TeleOp(name = "MRI_ColorExample", group = "MRI")
-//@Disabled
+@Disabled
 public class MRI_ColorExample extends OpMode {
 
     /* Declare OpMode members. */

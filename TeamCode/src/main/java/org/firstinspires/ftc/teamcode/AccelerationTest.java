@@ -7,7 +7,7 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 
 @Autonomous(name = "Acceleration Test", group = "Test")
-//@Disabled
+@Disabled
 public class AccelerationTest extends LinearOpMode {
 
     DcMotor rightBack, leftBack, rightFront, leftFront;

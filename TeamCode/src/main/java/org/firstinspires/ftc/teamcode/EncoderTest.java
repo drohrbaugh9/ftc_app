@@ -6,7 +6,7 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 
 @Autonomous(name = "Encoder Test", group = "Test")
-//@Disabled
+@Disabled
 public class EncoderTest extends LinearOpMode {
 
     DcMotor motor;

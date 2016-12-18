@@ -9,7 +9,6 @@ import java.util.ArrayList;
 
 @Autonomous(name = "ResetEncoders", group = "Util")
 @Disabled
-
 public class ResetEncoders extends LinearOpMode {
 
     ArrayList<DcMotor> motors;

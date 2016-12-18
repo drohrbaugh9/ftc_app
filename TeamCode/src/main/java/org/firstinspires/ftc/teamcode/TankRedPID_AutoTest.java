@@ -12,7 +12,7 @@ import com.qualcomm.robotcore.hardware.Servo;
 
 
 @Autonomous(name="TankRedPID_AutoTest", group="test")
-//@Disabled
+@Disabled
 public class TankRedPID_AutoTest extends LinearOpMode {
 
     DcMotor right, left, shooter;

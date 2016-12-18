@@ -7,7 +7,6 @@ import com.qualcomm.robotcore.hardware.Servo;
 
 @Autonomous(name = "ServoUtility", group = "Util")
 @Disabled
-
 public class ServoUtility extends LinearOpMode {
 
     Servo leftDoor, rightDoor, bumper;
