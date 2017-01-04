@@ -10,6 +10,7 @@ import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.util.RobotLog;
+
 import org.firstinspires.ftc.robotcontroller.internal.FtcRobotControllerActivity;
 
 public final class Util {
@@ -29,7 +30,6 @@ public final class Util {
 
     protected final static double SEC_TO_NSEC = 1000000000, NEVEREST_37_TICS_PER_ROTATION = 44.4;
     protected final static double POWER_LIMIT = 1;
-    protected final static boolean TANK = false;
 
     //private static LinearOpMode linearOpMode;
     protected static LinearOpMode linearOpMode;
@@ -46,19 +46,14 @@ public final class Util {
         DcMotor[] tempWithEncoders;*/
 
         // motors
-        if (TANK) {
-            rightBack = getMotor(opMode.hardwareMap, "right"); rightBack.setDirection(DcMotorSimple.Direction.REVERSE);
-            leftBack = getMotor(opMode.hardwareMap, "left");
-            /*temp = new DcMotor[2]; temp[0] = rightBack; temp[1] = leftBack;
-            tempWithEncoders = temp;*/
-        } else {
-            rightBack = opMode.hardwareMap.dcMotor.get("rightBack"); rightBack.setDirection(DcMotor.Direction.REVERSE);
-            leftBack = opMode.hardwareMap.dcMotor.get("leftBack");
-            rightFront = opMode.hardwareMap.dcMotor.get("rightFront"); rightFront.setDirection(DcMotor.Direction.REVERSE);
-            leftFront = opMode.hardwareMap.dcMotor.get("leftFront");
-            /*temp = new DcMotor[4]; temp[0] = rightBack; temp[1] = leftBack; temp[2] = rightFront; temp[3] = leftFront;
-            tempWithEncoders = new DcMotor[1]; tempWithEncoders[0] = leftBack;*/
-        }
+        rightBack = opMode.hardwareMap.dcMotor.get("rightBack");
+        rightBack.setDirection(DcMotor.Direction.REVERSE);
+        leftBack = opMode.hardwareMap.dcMotor.get("leftBack");
+        rightFront = opMode.hardwareMap.dcMotor.get("rightFront");
+        rightFront.setDirection(DcMotor.Direction.REVERSE);
+        leftFront = opMode.hardwareMap.dcMotor.get("leftFront");
+        /*temp = new DcMotor[4]; temp[0] = rightBack; temp[1] = leftBack; temp[2] = rightFront; temp[3] = leftFront;
+        tempWithEncoders = new DcMotor[1]; tempWithEncoders[0] = leftBack;*/
 
         /*motors = temp;
         motorsWithEncoders = tempWithEncoders;*/
@@ -75,7 +70,7 @@ public final class Util {
             //I2C_ColorSensor.init(opMode); // commented out for gyro testing
             gyro = opMode.hardwareMap.gyroSensor.get("gyro");
         }
-        
+
         //resetEncoders();
 
         init = true;
@@ -137,16 +132,15 @@ public final class Util {
 
     public static void setRightPowers(double p) {
         rightBack.setPower(p);
-        if (!TANK) rightFront.setPower(p);
+        rightFront.setPower(p);
     }
 
     public static void setLeftPowers(double p) {
         leftBack.setPower(p);
-        if (!TANK) leftFront.setPower(p);
+        leftFront.setPower(p);
     }
 
     public static void setFrontPowers(double p) {
-        if (TANK) return;
         rightFront.setPower(p);
         leftFront.setPower(p);
     }
@@ -159,12 +153,10 @@ public final class Util {
     public static void setAllPowers(double p) {
         rightBack.setPower(p);
         leftBack.setPower(p);
-        if (!TANK) {
-            rightFront.setPower(p);
-            leftFront.setPower(p);
-        }
+        rightFront.setPower(p);
+        leftFront.setPower(p);
     }
-    
+
     public static void setMotorsPowers(DcMotor[] motors, double p) {
         for (DcMotor motor : motors) {
             motor.setPower(p);
