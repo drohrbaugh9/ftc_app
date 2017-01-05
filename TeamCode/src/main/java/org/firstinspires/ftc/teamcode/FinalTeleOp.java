@@ -4,6 +4,7 @@ import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.DcMotorController;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.util.Range;
@@ -12,20 +13,20 @@ import com.qualcomm.robotcore.util.Range;
 //@Disabled
 public class FinalTeleOp extends LinearOpMode {
 
-    DcMotor rightBack, leftBack, rightFront, leftFront;
-    DcMotor intake, shooter1, shooter2;
+    private DcMotor rightBack, leftBack, rightFront, leftFront;
+    private DcMotor intake, shooter1, shooter2;
 
-    Servo ballFeeder;
+    private Servo ballFeeder;
 
     //final String NORMAL = "normal", STRAIGHT = "straight";
-    final double POWER_FACTOR = 1, POSITIVE_STEP = 0.1, NEGATIVE_STEP = 0.3;
-    final double INTAKE_POWER = 0.7;
-    final double SHOOT = 0.5, LOAD = 0.95;
+    private final double POWER_FACTOR = 1, POSITIVE_STEP = 0.2, NEGATIVE_STEP = 0.5;
+    private final double INTAKE_POWER = 0.7;
+    private final double SHOOT = 0.5, LOAD = 0.95;
 
     //String driveMode = NORMAL;
-    long shooterStart = System.nanoTime();
-    double targetPowerR = 1, targetPowerL = 1, currentR = 1, currentL = 1;
-    boolean shooterStatus = false; //, aHasBeenPressed = false;
+    private long shooterStart = System.nanoTime();
+    private double targetPowerR = 1, targetPowerL = 1, currentR = 1, currentL = 1;
+    private boolean shooterStatus = false; //, aHasBeenPressed = false;
 
     private int intakeStatus = 0;
     private boolean intakeChanged = false;
@@ -60,11 +61,56 @@ public class FinalTeleOp extends LinearOpMode {
 
             handleShooter();
 
+            /*telemetry.addData("battery voltage", Util.getBatteryVoltage());
+            telemetry.update();*/
+
             Thread.sleep(10);
         }
     }
 
-    private void handleDriveMotors() {
+    private void handleDriveMotors() throws InterruptedException {
+        if (gamepad1.dpad_up || gamepad1.dpad_down || gamepad1.dpad_left || gamepad1.dpad_right) {
+            DpadDrive();
+        } else if (Math.abs(gamepad1.right_stick_y) > JOYSTICK_DEADZONE_LIMIT ||
+                   Math.abs(gamepad1.left_stick_y) > JOYSTICK_DEADZONE_LIMIT) {
+            joystickDrive();
+        } else if (gamepad1.a || gamepad1.y) {
+            pressBeacon();
+        } else {
+            Util.setAllPowers(0);
+            currentR = 1; currentL = 1;
+        }
+
+        /*telemetry.addData("right speed", r);
+        telemetry.addData("left speed", l);
+        telemetry.update();*/
+    }
+
+    final double DpadPower = 0.2;
+    final int DpadTime = 100;
+
+    private void DpadDrive() throws InterruptedException {
+        if (gamepad1.dpad_up) {
+            if (!gamepad1.dpad_right) Util.setLeftPowers(DpadPower);
+            if (!gamepad1.dpad_left) Util.setRightPowers(DpadPower);
+        } else if (gamepad1.dpad_down) {
+            if (!gamepad1.dpad_right) Util.setLeftPowers(-DpadPower);
+            if (!gamepad1.dpad_left) Util.setRightPowers(-DpadPower);
+        } else if (gamepad1.dpad_right) {
+            Util.setRightPowers(-DpadPower);
+            Util.setLeftPowers(DpadPower);
+        } else if (gamepad1.dpad_left) {
+            Util.setRightPowers(DpadPower);
+            Util.setLeftPowers(-DpadPower);
+        }
+
+        Thread.sleep(DpadTime);
+        Util.setAllPowers(0);
+
+        while (gamepad1.dpad_up || gamepad1.dpad_down || gamepad1.dpad_left || gamepad1.dpad_right) Thread.sleep(10);
+    }
+
+    private void joystickDrive() {
         double r = Util.getGamepadRightJoystickY(gamepad1);
         double l = Util.getGamepadLeftJoystickY(gamepad1);
 
@@ -107,10 +153,6 @@ public class FinalTeleOp extends LinearOpMode {
         leftBack.setPower((currentL - 1) * POWER_FACTOR);
         rightFront.setPower((currentR - 1) * POWER_FACTOR);
         leftFront.setPower((currentL - 1) * POWER_FACTOR);
-
-        telemetry.addData("right speed", r);
-        telemetry.addData("left speed", l);
-        telemetry.update();
     }
 
     private final double JOYSTICK_DEADZONE_LIMIT = 0.1;
@@ -128,6 +170,22 @@ public class FinalTeleOp extends LinearOpMode {
         double power = posOrNeg * A * Math.pow(B, Math.abs(joystickValue));
         if (Math.abs(power) < MIN_POWER) return 0.0;
         return Range.clip(power, -1.0, 1.0);
+    }
+
+    private void pressBeacon() throws InterruptedException {
+        telemetry.addData("beacon status", "beacon routine running");
+        telemetry.update();
+        long startTime = System.nanoTime() / 1000000;
+        while (((System.nanoTime() / 1000000) - startTime) < 2000) {
+            if (Math.abs(gamepad1.right_stick_y) > JOYSTICK_DEADZONE_LIMIT || Math.abs(gamepad1.left_stick_y) > JOYSTICK_DEADZONE_LIMIT) {
+                telemetry.addData("beacon status", "beacon routine interrupted");
+                telemetry.update();
+                return;
+            }
+            Thread.sleep(20);
+        }
+        telemetry.addData("beacon status", "beacon routine finished");
+        telemetry.update();
     }
 
     // intake variables
@@ -210,7 +268,7 @@ public class FinalTeleOp extends LinearOpMode {
             shooterStatus = false;
         }
 
-        if (!shooterStatus) shooterStart = time;
+        //if (!shooterStatus) shooterStart = time;
 
         if (gamepad1.b && shooterStatus && (time - shooterStart) > 2000) {
             ballFeeder.setPosition(SHOOT);

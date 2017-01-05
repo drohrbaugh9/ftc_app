@@ -1,7 +1,9 @@
 package org.firstinspires.ftc.teamcode;
 
+import com.qualcomm.hardware.modernrobotics.ModernRoboticsUsbDcMotorController;
 import com.qualcomm.robotcore.hardware.ColorSensor;
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.DcMotorController;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.Gamepad;
 import com.qualcomm.robotcore.hardware.GyroSensor;
@@ -26,7 +28,7 @@ public final class Util {
 
     protected static GyroSensor gyro;
 
-    protected static final boolean SENSORS = true, SERVOS = false;
+    protected static final boolean SENSORS = true, SERVOS = true;
 
     protected final static double SEC_TO_NSEC = 1000000000, NEVEREST_37_TICS_PER_ROTATION = 44.4;
     protected final static double POWER_LIMIT = 1;
@@ -112,9 +114,9 @@ public final class Util {
         resetEncoders(linearOpMode, motorsWithEncoders);
     }
 
-    /*public static double getBatteryVoltage() {
-        return c.getVoltage();
-    }*/
+    public static double getBatteryVoltage() {
+        return linearOpMode.hardwareMap.voltageSensor.iterator().next().getVoltage();
+    }
 
     public static double getGamepadRightJoystickY(Gamepad gamepad) {
         double joystick;
