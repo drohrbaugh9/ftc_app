@@ -22,6 +22,7 @@ public class FinalTeleOp extends LinearOpMode {
     private final double POWER_FACTOR = 1, POSITIVE_STEP = 0.2, NEGATIVE_STEP = 0.5;
     private final double INTAKE_POWER = 0.7;
     private final double SHOOT = 0.5, LOAD = 0.95;
+    private final long MILLIS_PER_NANO = 1000000;
 
     //String driveMode = NORMAL;
     private long shooterStart = System.nanoTime();
@@ -171,8 +172,8 @@ public class FinalTeleOp extends LinearOpMode {
     private void pressBeacon() throws InterruptedException {
         telemetry.addData("beacon status", "beacon routine running");
         telemetry.update();
-        long startTime = System.nanoTime() / 1000000;
-        while (((System.nanoTime() / 1000000) - startTime) < 2000) {
+        long startTime = System.nanoTime() / MILLIS_PER_NANO;
+        while (((System.nanoTime() / MILLIS_PER_NANO) - startTime) < 2000) {
             if (Math.abs(gamepad1.right_stick_y) > JOYSTICK_DEADZONE_LIMIT || Math.abs(gamepad1.left_stick_y) > JOYSTICK_DEADZONE_LIMIT) {
                 telemetry.addData("beacon status", "beacon routine interrupted");
                 telemetry.update();
