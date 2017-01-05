@@ -162,12 +162,8 @@ public class FinalTeleOp extends LinearOpMode {
     private double scaleDriveJoystick(double joystickValue) {
         // if the joystick is in the deadzone I defined, return 0
         if (Math.abs(joystickValue) < JOYSTICK_DEADZONE_LIMIT) return 0.0;
-        /* because exponentiation can change signs,
-         * store the sign of the joystick position in a separate variable */
-        double posOrNeg = 1;
-        if (joystickValue < 0) posOrNeg = -1;
-        // us the formula A*B^(joystickValue)
-        double power = posOrNeg * A * Math.pow(B, Math.abs(joystickValue));
+        // use the formula A*B^(joystickValue)
+        double power = Math.signum(joystickValue) * A * Math.pow(B, Math.abs(joystickValue));
         if (Math.abs(power) < MIN_POWER) return 0.0;
         return Range.clip(power, -1.0, 1.0);
     }
