@@ -10,7 +10,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 @Autonomous(name="Shooter", group="Test")
-//@Disabled
+@Disabled
 public class Shooter extends LinearOpMode {
 
     DcMotor shooter1, shooter2;
