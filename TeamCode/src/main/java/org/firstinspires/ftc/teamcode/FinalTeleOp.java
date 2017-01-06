@@ -24,6 +24,7 @@ public class FinalTeleOp extends LinearOpMode {
 
     //final String NORMAL = "normal", STRAIGHT = "straight";
     private final double POWER_FACTOR = 1, POSITIVE_STEP = 0.2, NEGATIVE_STEP = 0.5;
+    private final double SHOOTER2_OFFSET = 0.07;
     private final double INTAKE_POWER = 0.7;
     private final double SHOOT = 0.5, LOAD = 0.95;
     private final long MILLIS_PER_NANO = 1000000;
@@ -293,7 +294,7 @@ public class FinalTeleOp extends LinearOpMode {
         if (gamepad1.right_trigger >= 0.5) {
             double power = calculateShooterPower();
             shooter1.setPower(power);
-            shooter2.setPower(power);
+            shooter2.setPower(power + SHOOTER2_OFFSET);
             shooterStart = time;
             shooterStatus = true;
             telemetry.addData("shooter power", power);

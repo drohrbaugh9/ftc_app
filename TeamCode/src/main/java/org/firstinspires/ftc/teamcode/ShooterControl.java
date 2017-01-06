@@ -8,7 +8,7 @@ import com.qualcomm.robotcore.hardware.DcMotorSimple;
 
 
 @TeleOp(name="ShooterControl", group="Test")
-//@Disabled
+@Disabled
 public class ShooterControl extends OpMode {
 
     DcMotor shooter1, shooter2;

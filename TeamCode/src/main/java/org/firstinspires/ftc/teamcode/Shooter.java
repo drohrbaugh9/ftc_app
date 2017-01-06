@@ -10,13 +10,14 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 @Autonomous(name="Shooter", group="Test")
-@Disabled
+//@Disabled
 public class Shooter extends LinearOpMode {
 
     DcMotor shooter1, shooter2;
     final int RPM_TARGET = 1250, MOVING_AVERAGE_LENGTH = 10, MEASURING_INTERVAL = 20;
     final double TICS_PER_ROTATION = Util.NEVEREST_37_TICS_PER_ROTATION;
-    final double TICS_TARGET = ((RPM_TARGET / 60) / MEASURING_INTERVAL) * TICS_PER_ROTATION; // tics per MEASURING_INTERVAL
+    final double TICS_TARGET = ((RPM_TARGET / 60) / MEASURING_INTERVAL) * TICS_PER_ROTATION; // tics per MEASURING_INTERVAL, is 46.25 if target is 1250
+    final String DEBUG = "SHOOTER ";
 
     private static Queue<Integer> shooter1Queue, shooter2Queue;
 
@@ -41,35 +42,45 @@ public class Shooter extends LinearOpMode {
             shooter2Queue.add(0);
         }
 
+        long delta1, delta2;
+        long deltat, time, start, old;
+
         waitForStart();
 
-        for(double i = 0.1; i < 0.36; i+=0.01) {
-            shooter1.setPower(i); shooter2.setPower(i);
-            Thread.sleep(20);
-        }
+        ShooterPID.resetShooterIntegrals();
 
-        double shooter1Power = 0.36, shooter2Power = 0.36;
+        double shooter1Power = 0.24, shooter2Power = 0.24;
 
-        int oldPos1 = shooter1.getCurrentPosition(), oldPos2 = shooter2.getCurrentPosition(), currentPos1, currentPos2;
+        shooter1.setPower(shooter1Power);
+        shooter2.setPower(shooter2Power);
 
-        int delta1, delta2;
-        long deltat;
+        //Thread.sleep(1000);
 
-        while(opModeIsActive()) {
-            long time = System.nanoTime();
+        telemetry.addData("PID status", "PID engaged");
+        telemetry.update();
+
+        start = System.nanoTime();
+        old = start;
+
+        while((old - start) / 1000000000 < 10) {
 
             manageEncoderData();
 
             delta1 = shooter1Sum / MOVING_AVERAGE_LENGTH;
             delta2 = shooter2Sum / MOVING_AVERAGE_LENGTH;
 
-            Util.log("SHOOTER ticsDelta1: " + delta1);
-            Util.log("SHOOTER ticsDelta2: " + delta2);
+            time = System.nanoTime();
+            deltat = time - old;
 
-            double[] powers = ShooterPID.PI_Shooter(delta1, delta2, TICS_TARGET, shooter1Power, shooter2Power);
+            Util.log(DEBUG + "RPM1: " + ((delta1 * 1000000000 * 60) / (deltat * 44.4)));
+            Util.log(DEBUG + "RPM2: " + ((delta2 * 1000000000 * 60) / (deltat * 44.4)));
+
+            /*double[] powers = ShooterPID.PI_Shooter(delta1, delta2, TICS_TARGET, shooter1Power, shooter2Power);
 
             shooter1.setPower(powers[0]);
-            shooter2.setPower(powers[1]);
+            shooter2.setPower(powers[1]);*/
+
+            old = time;
 
             Thread.sleep(MEASURING_INTERVAL);
         }
