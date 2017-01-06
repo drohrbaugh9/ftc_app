@@ -1,11 +1,13 @@
 package org.firstinspires.ftc.teamcode;
 
-import com.qualcomm.robotcore.eventloop.opmode.Disabled;
+import android.app.ApplicationErrorReport;
+import android.os.BatteryManager;
+
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
-import com.qualcomm.robotcore.hardware.DcMotorController;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
+import com.qualcomm.robotcore.hardware.OpticalDistanceSensor;
 import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.util.Range;
 
@@ -17,6 +19,8 @@ public class FinalTeleOp extends LinearOpMode {
     private DcMotor intake, shooter1, shooter2;
 
     private Servo ballFeeder;
+
+    private OpticalDistanceSensor ods;
 
     //final String NORMAL = "normal", STRAIGHT = "straight";
     private final double POWER_FACTOR = 1, POSITIVE_STEP = 0.2, NEGATIVE_STEP = 0.5;
@@ -52,6 +56,8 @@ public class FinalTeleOp extends LinearOpMode {
 
         ballFeeder.setPosition(LOAD);
 
+        this.ods = Util.ods;
+
         waitForStart();
 
         while (opModeIsActive()) {
@@ -62,8 +68,9 @@ public class FinalTeleOp extends LinearOpMode {
 
             handleShooter();
 
-            /*telemetry.addData("battery voltage", Util.getBatteryVoltage());
-            telemetry.update();*/
+            //telemetry.addData("battery voltage", Util.getBatteryVoltage());
+
+            telemetry.update();
 
             Thread.sleep(10);
         }
@@ -170,19 +177,49 @@ public class FinalTeleOp extends LinearOpMode {
     }
 
     private void pressBeacon() throws InterruptedException {
-        telemetry.addData("beacon status", "beacon routine running");
-        telemetry.update();
-        long startTime = System.nanoTime() / MILLIS_PER_NANO;
-        while (((System.nanoTime() / MILLIS_PER_NANO) - startTime) < 2000) {
-            if (Math.abs(gamepad1.right_stick_y) > JOYSTICK_DEADZONE_LIMIT || Math.abs(gamepad1.left_stick_y) > JOYSTICK_DEADZONE_LIMIT) {
-                telemetry.addData("beacon status", "beacon routine interrupted");
-                telemetry.update();
-                return;
-            }
+        Util.upDown.setPosition(0.6);
+        if (gamepad1.y) {
+            if (beaconForward() == -1) return;
+        }
+        else if (gamepad1.a) {
+            if (beaconBackward() == -1) return;
+        }
+    }
+
+    private int beaconForward() throws InterruptedException {
+        Util.setRightPowers(0.16);
+        Util.setLeftPowers(0.14);
+        //if (lookForLineAndCheckJoystick(0.50) == -1) return -1;
+        if (sleepAndCheckJoystick(2000) == -1) return -1;
+        Util.setAllPowers(0);
+        return 0;
+    }
+
+    private int beaconBackward() throws InterruptedException {
+        Util.setRightPowers(-0.16);
+        Util.setLeftPowers(-0.14);
+        //if (lookForLineAndCheckJoystick(0.50) == -1) return -1;
+        if (sleepAndCheckJoystick(2000) == -1) return -1;
+        Util.setAllPowers(0);
+        return 0;
+    }
+
+    private int lookForLineAndCheckJoystick(double lightThreshold) throws InterruptedException {
+        while (ods.getLightDetected() < lightThreshold) {
+            if (Math.abs(gamepad1.right_stick_y) > JOYSTICK_DEADZONE_LIMIT || Math.abs(gamepad1.left_stick_y) > JOYSTICK_DEADZONE_LIMIT) return -1;
             Thread.sleep(20);
         }
-        telemetry.addData("beacon status", "beacon routine finished");
-        telemetry.update();
+        return 0;
+    }
+
+    // Might not need this method in the end
+    private int sleepAndCheckJoystick(int sleepTimeMillis) throws InterruptedException {
+        long startTime = System.nanoTime() / MILLIS_PER_NANO;
+        while (((System.nanoTime() / MILLIS_PER_NANO) - startTime) < sleepTimeMillis) {
+            if (Math.abs(gamepad1.right_stick_y) > JOYSTICK_DEADZONE_LIMIT || Math.abs(gamepad1.left_stick_y) > JOYSTICK_DEADZONE_LIMIT) return -1;
+            Thread.sleep(20);
+        }
+        return 0;
     }
 
     // intake variables
@@ -254,10 +291,12 @@ public class FinalTeleOp extends LinearOpMode {
         long time = System.nanoTime() / 1000000;
 
         if (gamepad1.right_trigger >= 0.5) {
-            shooter1.setPower(0.27);
-            shooter2.setPower(0.27);
+            double power = calculateShooterPower();
+            shooter1.setPower(power);
+            shooter2.setPower(power);
             shooterStart = time;
             shooterStatus = true;
+            telemetry.addData("shooter power", power);
         }
         if (gamepad1.left_trigger >= 0.5) {
             shooter1.setPower(0);
@@ -272,6 +311,10 @@ public class FinalTeleOp extends LinearOpMode {
             Thread.sleep(400);
             ballFeeder.setPosition(LOAD);
         }
+    }
+
+    private double calculateShooterPower() { //TODO better math in this method
+        return -0.04*Util.getBatteryVoltage() + 0.8;
     }
 }
             /*if (driveMode.equals(NORMAL)) {
