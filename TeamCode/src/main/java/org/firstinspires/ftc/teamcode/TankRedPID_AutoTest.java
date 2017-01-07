@@ -82,12 +82,12 @@ public class TankRedPID_AutoTest extends LinearOpMode {
 
         Util.setAllPowers(0);
 
-        if (I2C_ColorSensor.beaconIsRed()) {
+        if (I2C_ColorSensor.beaconIsRed(I2C_ColorSensor.synch1)) {
             //telemetry.addData("beacon status", "RED");
             forward();
             upDown.setPosition(0.9);
             backward();
-        } else if (I2C_ColorSensor.beaconIsBlue()) {
+        } else if (I2C_ColorSensor.beaconIsBlue(I2C_ColorSensor.synch1)) {
             //telemetry.addData("beacon status", "BLUE");
             backward();
             upDown.setPosition(0.9);
@@ -128,12 +128,12 @@ public class TankRedPID_AutoTest extends LinearOpMode {
 
         Thread.sleep(200);
 
-        if (I2C_ColorSensor.beaconIsRed()) {
+        if (I2C_ColorSensor.beaconIsRed(I2C_ColorSensor.synch1)) {
             telemetry.addData("beacon status", "RED");
             forward();
             upDown.setPosition(0.9);
             backward();
-        } else if (I2C_ColorSensor.beaconIsBlue()) {
+        } else if (I2C_ColorSensor.beaconIsBlue(I2C_ColorSensor.synch1)) {
             telemetry.addData("beacon status", "BLUE");
             backward();
             upDown.setPosition(0.9);

@@ -10,6 +10,7 @@ public final class AutoUtil {
     protected static LinearOpMode linearOpMode;
     private static float stallEnabledTime;
     private static double powerFactor = Util.POWER_LIMIT;
+    protected static DcMotor r, l;
     private static final double MOTOR_POWER_THRESHOLD = 0.8 * Util.POWER_LIMIT, TIME_THRESHOLD = 0.3 * Util.SEC_TO_NSEC;
     private static final double MIN_POWER = 0.2;
 
@@ -25,6 +26,49 @@ public final class AutoUtil {
         calibrateGyro(gyro);
         init = true;
     }
+
+    public void encoderForward(int dist) throws InterruptedException {
+        int pos = (r.getCurrentPosition() + l.getCurrentPosition()) / 2;
+
+        Util.setAllPowers(0.3);
+
+        while (((r.getCurrentPosition() + l.getCurrentPosition()) / 2) < (pos + dist)) Thread.sleep(20);
+
+        Util.setAllPowers(0);
+    }
+
+    // TODO fix these methods
+    /*public void backward(int dist) {
+        int pos = leftBack.getCurrentPosition();
+
+        Util.setAllPowers(-0.3);
+
+        while (leftBack.getCurrentPosition() > (pos - dist));
+
+        Util.setAllPowers(0);
+    }
+
+    public void steerForward(int dist) {
+        int pos = leftBack.getCurrentPosition();
+
+        Util.setRightPowers(0.11);
+        Util.setLeftPowers(0.09);
+
+        while (leftBack.getCurrentPosition() < (pos + dist)) ;
+
+        Util.setAllPowers(0);
+    }
+
+    public void steerBackward(int dist) {
+        int pos = leftBack.getCurrentPosition();
+
+        Util.setRightPowers(-0.11);
+        Util.setLeftPowers(-0.09);
+
+        while (leftBack.getCurrentPosition() > (pos - dist));
+
+        Util.setAllPowers(0);
+    }*/
 
     public static void moveForward(double distance, double power, GyroSensor gyro) throws InterruptedException {
         resetGyroHeading(gyro);

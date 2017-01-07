@@ -21,8 +21,9 @@ public final class Util {
     //protected static boolean gyroEnabled = false;
 
     protected static DcMotor rightBack, leftBack, rightFront, leftFront;
+    protected static DcMotor shooter1, shooter2, intake;
 
-    protected static Servo upDown;
+    protected static Servo ballFeeder, upDown;
 
     protected static OpticalDistanceSensor ods;
 
@@ -32,6 +33,7 @@ public final class Util {
 
     protected final static double SEC_TO_NSEC = 1000000000, NEVEREST_37_TICS_PER_ROTATION = 44.4;
     protected final static double POWER_LIMIT = 1;
+    protected static final double SHOOT = 0.5, LOAD = 0.95;
 
     //private static LinearOpMode linearOpMode;
     protected static LinearOpMode linearOpMode;
@@ -47,30 +49,43 @@ public final class Util {
         /*DcMotor[] temp;
         DcMotor[] tempWithEncoders;*/
 
-        // motors
+        // drive motors
         rightBack = opMode.hardwareMap.dcMotor.get("rightBack");
         rightBack.setDirection(DcMotor.Direction.REVERSE);
         leftBack = opMode.hardwareMap.dcMotor.get("leftBack");
         rightFront = opMode.hardwareMap.dcMotor.get("rightFront");
         rightFront.setDirection(DcMotor.Direction.REVERSE);
         leftFront = opMode.hardwareMap.dcMotor.get("leftFront");
+
+        AutoUtil.r = rightFront; AutoUtil.l = leftFront;
+
+
         /*temp = new DcMotor[4]; temp[0] = rightBack; temp[1] = leftBack; temp[2] = rightFront; temp[3] = leftFront;
         tempWithEncoders = new DcMotor[1]; tempWithEncoders[0] = leftBack;*/
 
         /*motors = temp;
         motorsWithEncoders = tempWithEncoders;*/
 
+        // shooter motors
+        shooter1 = getMotor("shooter1");
+        shooter2 = getMotor("shooter2"); shooter2.setDirection(DcMotorSimple.Direction.REVERSE);
+        shooter1.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
+        shooter2.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
+
+        // intake motor
+        intake = getMotor("intake");
+
         // servos
         if (SERVOS) {
-            upDown = getServo(opMode.hardwareMap, "upDown");
-            upDown.setPosition(0.6);
+            ballFeeder = getServo("ballFeeder"); ballFeeder.setPosition(LOAD);
+            upDown = getServo("upDown"); upDown.setPosition(0.6);
         }
 
         // sensors
         if (SENSORS) {
             ods = opMode.hardwareMap.opticalDistanceSensor.get("ods");
-            //I2C_ColorSensor.init(opMode); // commented out for gyro testing
-            gyro = opMode.hardwareMap.gyroSensor.get("gyro");
+            I2C_ColorSensor.init(opMode);
+            //gyro = opMode.hardwareMap.gyroSensor.get("gyro");
         }
 
         //resetEncoders();

@@ -1,8 +1,5 @@
 package org.firstinspires.ftc.teamcode;
 
-import android.app.ApplicationErrorReport;
-import android.os.BatteryManager;
-
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
@@ -26,11 +23,11 @@ public class FinalTeleOp extends LinearOpMode {
     private final double POWER_FACTOR = 1, POSITIVE_STEP = 0.2, NEGATIVE_STEP = 0.5;
     private final double SHOOTER2_OFFSET = 0.07;
     private final double INTAKE_POWER = 0.7;
-    private final double SHOOT = 0.5, LOAD = 0.95;
+    private final double SHOOT = Util.SHOOT, LOAD = Util.LOAD;
     private final long MILLIS_PER_NANO = 1000000;
 
     //String driveMode = NORMAL;
-    private long shooterStart = System.nanoTime();
+    private long shooterStart = System.nanoTime(), shooterLoadTimer = shooterStart;
     private double targetPowerR = 1, targetPowerL = 1, currentR = 1, currentL = 1;
     private boolean shooterStatus = false; //, aHasBeenPressed = false;
 
@@ -224,7 +221,7 @@ public class FinalTeleOp extends LinearOpMode {
     }
 
     // intake variables
-    private final int OFF = 0, INTAKE = 1, OUTTAKE = 2;
+    private final int INTAKE_OFF = 0, INTAKE = 1, OUTTAKE = 2;
 
     private void handleIntake() {
         if ((gamepad1.right_bumper && gamepad1.left_bumper) && !intakeChanged) {
@@ -233,7 +230,7 @@ public class FinalTeleOp extends LinearOpMode {
              * if the intake is outtaking, do nothing
              */
             switch (intakeStatus) {
-                case OFF:
+                case INTAKE_OFF:
                 case INTAKE: outtake(); break;
                 case OUTTAKE: break;
             }
@@ -245,7 +242,7 @@ public class FinalTeleOp extends LinearOpMode {
              * if the intake is outtaking, turn it off
              */
             switch (intakeStatus) {
-                case OFF: break;
+                case INTAKE_OFF: break;
                 case INTAKE:
                 case OUTTAKE: intakeOff(); break;
             }
@@ -257,7 +254,7 @@ public class FinalTeleOp extends LinearOpMode {
              * if the intake is outtaking, intake
              */
             switch (intakeStatus) {
-                case OFF: intake(); break;
+                case INTAKE_OFF: intake(); break;
                 case INTAKE: break;
                 case OUTTAKE: intake(); break;
             }
@@ -285,8 +282,11 @@ public class FinalTeleOp extends LinearOpMode {
 
     private void intakeOff() {
         this.intake.setPower(0);
-        intakeStatus = OFF;
+        intakeStatus = INTAKE_OFF;
     }
+
+    private boolean SHOOTER_ON = true, SHOOTER_OFF = false;
+    private int shooterSpinUp = 2000, shooterLoad = 2000, shooterFire = 400;
 
     private void handleShooter() throws InterruptedException {
         long time = System.nanoTime() / 1000000;
@@ -296,21 +296,20 @@ public class FinalTeleOp extends LinearOpMode {
             shooter1.setPower(power);
             shooter2.setPower(power + SHOOTER2_OFFSET);
             shooterStart = time;
-            shooterStatus = true;
+            shooterStatus = SHOOTER_ON;
             telemetry.addData("shooter power", power);
         }
         if (gamepad1.left_trigger >= 0.5) {
             shooter1.setPower(0);
             shooter2.setPower(0);
-            shooterStatus = false;
+            shooterStatus = SHOOTER_OFF;
         }
 
-        //if (!shooterStatus) shooterStart = time;
-
-        if (gamepad1.b && shooterStatus && (time - shooterStart) > 2000) {
-            ballFeeder.setPosition(SHOOT);
-            Thread.sleep(400);
-            ballFeeder.setPosition(LOAD);
+        if (gamepad1.b && shooterStatus && (time - shooterStart) > shooterSpinUp && (time - shooterLoadTimer) > shooterLoad) {
+            ballFeeder.setPosition(this.SHOOT);
+            Thread.sleep(shooterFire);
+            ballFeeder.setPosition(this.LOAD);
+            shooterLoadTimer = System.nanoTime();
         }
     }
 
