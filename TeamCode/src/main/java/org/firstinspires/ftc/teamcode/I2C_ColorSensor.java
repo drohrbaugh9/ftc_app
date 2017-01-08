@@ -9,8 +9,8 @@ import com.qualcomm.robotcore.hardware.I2cDeviceSynchImpl;
 public class I2C_ColorSensor {
 
     private static byte[] redMSB, redLSB, blueLSB, blueMSB;
-    private static I2cDevice color1, color2;
-    protected static I2cDeviceSynch synch1, synch2;
+    private static I2cDevice colorFront, colorBack;
+    protected static I2cDeviceSynch synchBack, synchFront;
 
     private static int threshold;
 
@@ -27,28 +27,50 @@ public class I2C_ColorSensor {
     }
 
     public static void init(OpMode opMode) {
-        color1 = opMode.hardwareMap.i2cDevice.get("color1");
-        synch1 = new I2cDeviceSynchImpl(color1, I2cAddr.create8bit(0x3c), false);
-        synch1.engage();
+        colorBack = opMode.hardwareMap.i2cDevice.get("colorBack");
+        synchBack = new I2cDeviceSynchImpl(colorBack, I2cAddr.create8bit(0x3c), false);
+        synchBack.engage();
 
-        color2 = opMode.hardwareMap.i2cDevice.get("color2");
-        synch2 = new I2cDeviceSynchImpl(color2, I2cAddr.create8bit(0x3e), false);
-        synch2.engage();
+        colorFront = opMode.hardwareMap.i2cDevice.get("colorFront");
+        synchFront = new I2cDeviceSynchImpl(colorFront, I2cAddr.create8bit(0x3e), false);
+        synchFront.engage();
 
-        synch1.write8(3, 1);
-        synch2.write8(3, 1);
+        synchBack.write8(3, 1);
+        synchFront.write8(3, 1);
     }
 
-    public static boolean beaconIsBlue(I2cDeviceSynch synch) { return beaconIsBlue(synch, threshold); }
+    public static boolean beaconIsRedBlue() { return frontRed() && backBlue(); }
 
-    public static boolean beaconIsBlue(I2cDeviceSynch synch, int t) {
-        return normalizedBlue(synch) > normalizedRed(synch) && normalizedBlue(synch) > t;
+    public static boolean beaconIsRedRed() { return frontRed() && backRed(); }
+
+    public static boolean beaconIsBlueRed() { return frontBlue() && backRed(); }
+
+    public static boolean beaconIsBlueBlue() { return frontBlue() && backBlue(); }
+
+    public static boolean frontRed() { return frontRed(threshold); }
+
+    public static boolean frontRed(int t) {
+        Util.telemetry("front", normalizedRed(synchFront), true);
+        return normalizedBlue(synchFront) < normalizedRed(synchFront) && normalizedRed(synchFront) > t;
     }
 
-    public static boolean beaconIsRed(I2cDeviceSynch synch) { return beaconIsRed(synch, threshold); }
+    public static boolean frontBlue() { return frontBlue(threshold); }
 
-    public static boolean beaconIsRed(I2cDeviceSynch synch, int t) {
-        return normalizedBlue(synch) < normalizedRed(synch) && normalizedRed(synch) > t;
+    public static boolean frontBlue(int t) {
+        return normalizedRed(synchFront) < normalizedBlue(synchFront) && normalizedBlue(synchFront) > t;
+    }
+
+    public static boolean backRed() { return backRed(threshold); }
+
+    public static boolean backRed(int t) {
+        return normalizedBlue(synchBack) < normalizedRed(synchBack) && normalizedRed(synchBack) > t;
+    }
+
+    public static boolean backBlue() { return frontBlue(threshold); }
+
+    public static boolean backBlue(int t) {
+        Util.telemetry("back", normalizedBlue(synchBack), true);
+        return normalizedRed(synchBack) < normalizedBlue(synchBack) && normalizedBlue(synchBack) > t;
     }
 
     public static int normalizedBlue(I2cDeviceSynch synch) {

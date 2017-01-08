@@ -125,14 +125,14 @@ public class WestCoast_AutoTest extends LinearOpMode {
 
         Thread.sleep(200);
 
-        if (RED_ALLIANCE && I2C_ColorSensor.beaconIsRed(I2C_ColorSensor.synch1)) {
+        if (RED_ALLIANCE && I2C_ColorSensor.backRed()) {
             telemetry.addData("beacon status", "RED");
             steerBackward(500);
             upDown.setPosition(0.9);
             steerForward(250);
             Thread.sleep(100);
             steerBackward(500);
-        } else if (RED_ALLIANCE && I2C_ColorSensor.beaconIsBlue(I2C_ColorSensor.synch1)) {
+        } else if (RED_ALLIANCE && I2C_ColorSensor.backBlue()) {
             telemetry.addData("beacon status", "BLUE");
             steerForward(500);
             upDown.setPosition(0.9);
@@ -180,14 +180,14 @@ public class WestCoast_AutoTest extends LinearOpMode {
 
         Thread.sleep(100);
 
-        if (RED_ALLIANCE && I2C_ColorSensor.beaconIsRed(I2C_ColorSensor.synch1)) {
+        if (RED_ALLIANCE && I2C_ColorSensor.backRed()) {
             telemetry.addData("beacon status", "RED");
             steerBackward(750);
             upDown.setPosition(0.95);
             steerForward(500);
             Thread.sleep(100);
             steerBackward(500);
-        } else if (RED_ALLIANCE && I2C_ColorSensor.beaconIsBlue(I2C_ColorSensor.synch1)) {
+        } else if (RED_ALLIANCE && I2C_ColorSensor.backBlue()) {
             telemetry.addData("beacon status", "BLUE");
             steerForward(500);
             upDown.setPosition(0.95);

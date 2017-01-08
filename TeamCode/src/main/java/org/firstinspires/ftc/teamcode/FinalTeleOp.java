@@ -21,7 +21,7 @@ public class FinalTeleOp extends LinearOpMode {
 
     //final String NORMAL = "normal", STRAIGHT = "straight";
     private final double POWER_FACTOR = 1, POSITIVE_STEP = 0.2, NEGATIVE_STEP = 0.5;
-    private final double SHOOTER2_OFFSET = 0.07;
+    protected static final double SHOOTER2_OFFSET = 0.07;
     private final double INTAKE_POWER = 0.7;
     private final double SHOOT = Util.SHOOT, LOAD = Util.LOAD;
     private final long MILLIS_PER_NANO = 1000000;
@@ -35,6 +35,7 @@ public class FinalTeleOp extends LinearOpMode {
     private boolean intakeChanged = false;
 
     public void runOpMode() throws InterruptedException {
+        Util.sensors = false; Util.servos = true;
         Util.init(this);
 
         this.rightBack = Util.rightBack;
@@ -42,19 +43,14 @@ public class FinalTeleOp extends LinearOpMode {
         this.rightFront = Util.rightFront;
         this.leftFront = Util.leftFront;
 
-        shooter1 = hardwareMap.dcMotor.get("shooter1");
-        shooter2 = hardwareMap.dcMotor.get("shooter2"); shooter2.setDirection(DcMotorSimple.Direction.REVERSE);
+        this.shooter1 = Util.shooter1;
+        this.shooter2 = Util.shooter2;
 
-        shooter1.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
-        shooter2.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
+        this.intake = Util.intake;
 
-        intake = Util.getMotor(hardwareMap, "intake1");
+        this.ballFeeder = Util.ballFeeder;
 
-        ballFeeder = hardwareMap.servo.get("ballFeeder");
-
-        ballFeeder.setPosition(LOAD);
-
-        this.ods = Util.ods;
+        this.ods = hardwareMap.opticalDistanceSensor.get("ods");
 
         waitForStart();
 
@@ -305,15 +301,15 @@ public class FinalTeleOp extends LinearOpMode {
             shooterStatus = SHOOTER_OFF;
         }
 
-        if (gamepad1.b && shooterStatus && (time - shooterStart) > shooterSpinUp && (time - shooterLoadTimer) > shooterLoad) {
+        if (gamepad1.b && shooterStatus && (time - shooterStart) > shooterSpinUp) { // && (time - shooterLoadTimer) > shooterLoad) {
             ballFeeder.setPosition(this.SHOOT);
             Thread.sleep(shooterFire);
             ballFeeder.setPosition(this.LOAD);
-            shooterLoadTimer = System.nanoTime();
+            //shooterLoadTimer = System.nanoTime();
         }
     }
 
-    private double calculateShooterPower() { //TODO better math in this method
+    protected static double calculateShooterPower() { //TODO better math in this method
         return -0.04*Util.getBatteryVoltage() + 0.8;
     }
 }

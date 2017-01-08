@@ -27,75 +27,112 @@ public final class AutoUtil {
         init = true;
     }
 
-    public void encoderForward(int dist) throws InterruptedException {
+    public static void encoderForward(int dist, double power, boolean stop) throws InterruptedException {
         int pos = (r.getCurrentPosition() + l.getCurrentPosition()) / 2;
 
-        Util.setAllPowers(0.3);
+        Util.setAllPowers(power);
 
         while (((r.getCurrentPosition() + l.getCurrentPosition()) / 2) < (pos + dist)) Thread.sleep(20);
 
-        Util.setAllPowers(0);
+        if (stop) Util.setAllPowers(0);
     }
 
-    // TODO fix these methods
-    /*public void backward(int dist) {
-        int pos = leftBack.getCurrentPosition();
+    public static void encoderBackward(int dist, double power, boolean stop) throws InterruptedException {
+        int pos = (r.getCurrentPosition() + l.getCurrentPosition()) / 2;
 
-        Util.setAllPowers(-0.3);
+        Util.setAllPowers(-power);
 
-        while (leftBack.getCurrentPosition() > (pos - dist));
+        while (((r.getCurrentPosition() + l.getCurrentPosition()) / 2) > (pos + dist)) Thread.sleep(20);
 
-        Util.setAllPowers(0);
+        if (stop) Util.setAllPowers(0);
     }
 
-    public void steerForward(int dist) {
-        int pos = leftBack.getCurrentPosition();
+    public static void encoderSteerForward(int dist, double power, boolean stop) throws InterruptedException {
+        int pos = (r.getCurrentPosition() + l.getCurrentPosition()) / 2;
 
-        Util.setRightPowers(0.11);
-        Util.setLeftPowers(0.09);
+        Util.setRightPowers(power * 1.08);
+        Util.setLeftPowers(power / 1.08);
 
-        while (leftBack.getCurrentPosition() < (pos + dist)) ;
+        while (((r.getCurrentPosition() + l.getCurrentPosition()) / 2) < (pos + dist)) Thread.sleep(20);
 
-        Util.setAllPowers(0);
+        if (stop) Util.setAllPowers(0);
     }
 
-    public void steerBackward(int dist) {
-        int pos = leftBack.getCurrentPosition();
+    public static void encoderSteerBackward(int dist, double power, boolean stop) throws InterruptedException {
+        int pos = (r.getCurrentPosition() + l.getCurrentPosition()) / 2;
 
-        Util.setRightPowers(-0.11);
-        Util.setLeftPowers(-0.09);
+        Util.setRightPowers(-power * 1.08);
+        Util.setLeftPowers(-power / 1.08);
 
-        while (leftBack.getCurrentPosition() > (pos - dist));
+        while (((r.getCurrentPosition() + l.getCurrentPosition()) / 2) > (pos + dist)) Thread.sleep(20);
 
-        Util.setAllPowers(0);
-    }*/
+        if (stop) Util.setAllPowers(0);
+    }
 
-    public static void moveForward(double distance, double power, GyroSensor gyro) throws InterruptedException {
+    public static void encoderSteerForwardLine(double threshold, double power, boolean stop) throws InterruptedException {
+        Util.setRightPowers(power * 1.08);
+        Util.setLeftPowers(power / 1.08);
+
+        while (Util.ods.getLightDetected() < threshold) Thread.sleep(20);
+
+        if (stop) Util.setAllPowers(0);
+    }
+
+    public static void encoderSteerBackwardLine(double threshold, double power, boolean stop) throws InterruptedException {
+        Util.setRightPowers(-power * 1.08);
+        Util.setLeftPowers(-power / 1.08);
+
+        while (Util.ods.getLightDetected() < threshold) Thread.sleep(20);
+
+        if (stop) Util.setAllPowers(0);
+    }
+
+    public static void PID_Forward(double distance, double power, boolean stop, GyroSensor gyro) throws InterruptedException {
         resetGyroHeading(gyro);
         PID.resetDriveIntegral();
         double start = Util.rightBack.getCurrentPosition();
+        Util.setAllPowers(0.1);
+        Thread.sleep(30);
         while (Util.rightBack.getCurrentPosition() < (start + (distance * 0.98))) {
             PID.PIsetMotors(gyro, powerFactor * power);
             Thread.sleep(10);
         }
-        Util.setAllPowers(0);
+        if (stop) Util.setAllPowers(0);
     }
 
-    public static void moveBackward(double distance, double power, GyroSensor gyro) throws InterruptedException {
+    public static void PID_Backward(double distance, double power, boolean stop, GyroSensor gyro) throws InterruptedException {
         resetGyroHeading(gyro);
         PID.resetDriveIntegral();
         double start = Util.rightBack.getCurrentPosition();
+        Util.setAllPowers(-0.1);
+        Thread.sleep(30);
         while (Util.rightBack.getCurrentPosition() > (start - (distance * 0.98))) {
             PID.PIsetMotors(gyro, powerFactor * -power);
             Thread.sleep(10);
         }
-        Util.setAllPowers(0);
+        if (stop) Util.setAllPowers(0);
     }
 
     final static double RAMP_UP_DELTA = 0.02, RAMP_DOWN_DELTA = 0.03;
     final static int EXTRA_DEGREES = 3; // 1
 
-    public static void turnRight(double degreeTarget, double targetPower, GyroSensor gyro) throws InterruptedException {
+    public static void encoderTurnRight(double degrees, double power) throws InterruptedException {
+        Util.resetEncoders();
+
+        double dist = degrees / 360;
+        dist = dist * 15 / 4 * 1120;
+
+        Util.setRightPowers(-power);
+        Util.setLeftPowers(power);
+
+        while (((Math.abs(r.getCurrentPosition()) + Math.abs(l.getCurrentPosition())) / 2) < dist) Thread.sleep(20);
+
+        Util.setAllPowers(0);
+    }
+
+    public static void encoderTurnLeft(int degrees, double power) throws InterruptedException { encoderTurnRight(degrees, -power); }
+
+    public static void gyroTurnRight(double degreeTarget, double targetPower, GyroSensor gyro) throws InterruptedException {
         resetGyroHeading(gyro);
         double power = MIN_POWER;
         while (PID.heading(gyro) < (degreeTarget / 2)) {
@@ -126,7 +163,7 @@ public final class AutoUtil {
         Util.setAllPowers(0);
     }
 
-    public static void turnLeft(double degreeTarget, double targetPower, GyroSensor gyro) throws InterruptedException {
+    public static void gyroTurnLeft(double degreeTarget, double targetPower, GyroSensor gyro) throws InterruptedException {
         degreeTarget = -degreeTarget;
         resetGyroHeading(gyro);
         double power = MIN_POWER;

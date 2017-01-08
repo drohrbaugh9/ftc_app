@@ -6,12 +6,11 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.GyroSensor;
-import com.qualcomm.robotcore.hardware.I2cDeviceSynchImpl;
 import com.qualcomm.robotcore.hardware.OpticalDistanceSensor;
 import com.qualcomm.robotcore.hardware.Servo;
 
 @Autonomous(name="WestCoastRedPID_AutoTest", group="Test")
-//Disabled
+@Disabled
 public class WestCoastRedPID_AutoTest extends LinearOpMode {
 
     Servo ballFeeder, upDown;
@@ -57,13 +56,13 @@ public class WestCoastRedPID_AutoTest extends LinearOpMode {
         shooter1.setPower(0.25);
         shooter2.setPower(0.25);
 
-        AutoUtil.moveBackward(1600, 0.15, gyro); // assuming this takes 0.5 second for following sleep()
+        AutoUtil.PID_Backward(1600, 0.15, true, gyro); // assuming this takes 0.5 second for following sleep()
 
         Thread.sleep(1500);
 
         shoot2();
 
-        //AutoUtil.turnRight(100, 0.2, gyro);
+        //AutoUtil.gyroTurnRight(100, 0.2, gyro);
 
         int leftBackPos = leftBack.getCurrentPosition();
 
@@ -76,11 +75,11 @@ public class WestCoastRedPID_AutoTest extends LinearOpMode {
 
         Thread.sleep(200);
 
-        AutoUtil.moveForward(3750, 0.2, gyro);
+        AutoUtil.PID_Forward(3750, 0.2, true, gyro);
 
         Thread.sleep(200);
 
-        //AutoUtil.turnRight(37, 0.2, gyro);
+        //AutoUtil.gyroTurnRight(37, 0.2, gyro);
 
         leftBackPos = leftBack.getCurrentPosition();
 
@@ -126,14 +125,14 @@ public class WestCoastRedPID_AutoTest extends LinearOpMode {
 
         Util.setAllPowers(0);
 
-        if (I2C_ColorSensor.beaconIsRed(I2C_ColorSensor.synch1)) {
+        if (I2C_ColorSensor.backRed()) {
             telemetry.addData("beacon status", "RED");
             steerBackward(500);
             upDown.setPosition(0.9);
             steerForward(250);
             Thread.sleep(100);
             steerBackward(500);
-        } else if (I2C_ColorSensor.beaconIsBlue(I2C_ColorSensor.synch1)) {
+        } else if (I2C_ColorSensor.backBlue()) {
             telemetry.addData("beacon status", "BLUE");
             steerForward(500);
             upDown.setPosition(0.9);
@@ -171,14 +170,14 @@ public class WestCoastRedPID_AutoTest extends LinearOpMode {
 
         Thread.sleep(100);
 
-        if (I2C_ColorSensor.beaconIsRed(I2C_ColorSensor.synch1)) {
+        if (I2C_ColorSensor.backRed()) {
             telemetry.addData("beacon status", "RED");
             steerBackward(750);
             upDown.setPosition(0.95);
             steerForward(500);
             Thread.sleep(100);
             steerBackward(500);
-        } else if (I2C_ColorSensor.beaconIsBlue(I2C_ColorSensor.synch1)) {
+        } else if (I2C_ColorSensor.backBlue()) {
             telemetry.addData("beacon status", "BLUE");
             steerForward(750);
             upDown.setPosition(0.95);
@@ -188,7 +187,7 @@ public class WestCoastRedPID_AutoTest extends LinearOpMode {
         }
     }
 
-    public void shoot2() throws InterruptedException {
+    private void shoot2() throws InterruptedException {
         ballFeeder.setPosition(SHOOT);
 
         Thread.sleep(200);

@@ -19,7 +19,7 @@ public class GyroInsanityTest extends LinearOpMode {
 
         waitForStart();
 
-        AutoUtil.turnRight(90, 0.3, Util.gyro);
+        AutoUtil.gyroTurnRight(90, 0.3, Util.gyro);
 
         while (opModeIsActive()) {
             telemetry.addData("gyro", PID.heading(Util.gyro));

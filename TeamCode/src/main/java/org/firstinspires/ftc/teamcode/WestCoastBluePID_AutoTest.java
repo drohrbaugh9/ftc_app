@@ -10,7 +10,7 @@ import com.qualcomm.robotcore.hardware.OpticalDistanceSensor;
 import com.qualcomm.robotcore.hardware.Servo;
 
 @Autonomous(name="WestCoastBluePID_AutoTest", group="Test")
-//@Disabled
+@Disabled
 public class WestCoastBluePID_AutoTest extends LinearOpMode {
 
     Servo ballFeeder, upDown;
@@ -56,13 +56,13 @@ public class WestCoastBluePID_AutoTest extends LinearOpMode {
         shooter1.setPower(0.25);
         shooter2.setPower(0.25);
 
-        AutoUtil.moveBackward(1500, 0.15, gyro); // assuming this takes 0.5 second for following sleep()
+        AutoUtil.PID_Backward(1500, 0.15, true, gyro); // assuming this takes 0.5 second for following sleep()
 
         Thread.sleep(1500);
 
         shoot2();
 
-        //AutoUtil.turnRight(100, 0.2, gyro);
+        //AutoUtil.gyroTurnRight(100, 0.2, gyro);
 
         int leftBackPos = leftBack.getCurrentPosition();
 
@@ -75,11 +75,11 @@ public class WestCoastBluePID_AutoTest extends LinearOpMode {
 
         Thread.sleep(200);
 
-        AutoUtil.moveBackward(3500, 0.2, gyro);
+        AutoUtil.PID_Backward(3500, 0.2, true, gyro);
 
         Thread.sleep(200);
 
-        //AutoUtil.turnRight(37, 0.2, gyro);
+        //AutoUtil.gyroTurnRight(37, 0.2, gyro);
 
         leftBackPos = leftBack.getCurrentPosition();
 
@@ -125,14 +125,14 @@ public class WestCoastBluePID_AutoTest extends LinearOpMode {
 
         Util.setAllPowers(0);
 
-        if (I2C_ColorSensor.beaconIsRed(I2C_ColorSensor.synch1)) {
+        if (I2C_ColorSensor.backRed()) {
             telemetry.addData("beacon status", "RED");
             steerForward(500);
             upDown.setPosition(0.9);
             steerBackward(500);
             Thread.sleep(100);
             steerForward(500);
-        } else if (I2C_ColorSensor.beaconIsBlue(I2C_ColorSensor.synch1)) {
+        } else if (I2C_ColorSensor.backBlue()) {
             telemetry.addData("beacon status", "BLUE");
             steerBackward(500);
             upDown.setPosition(0.9);
@@ -168,14 +168,14 @@ public class WestCoastBluePID_AutoTest extends LinearOpMode {
 
         Thread.sleep(500);
 
-        if (I2C_ColorSensor.beaconIsRed(I2C_ColorSensor.synch1)) {
+        if (I2C_ColorSensor.backRed()) {
             telemetry.addData("beacon status", "RED");
             steerForward(500);
             upDown.setPosition(0.95);
             steerBackward(750);
             Thread.sleep(100);
             steerForward(500);
-        } else if (I2C_ColorSensor.beaconIsBlue(I2C_ColorSensor.synch1)) {
+        } else if (I2C_ColorSensor.backBlue()) {
             telemetry.addData("beacon status", "BLUE");
             steerBackward(750);
             upDown.setPosition(0.95);

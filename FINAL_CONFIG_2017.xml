@@ -5,9 +5,9 @@
         <Servo name="ballFeeder" port="2" />
     </ServoController>
     <DeviceInterfaceModule name="Sensors" serialNumber="AL00VFK6">
+	<I2cDevice name="colorFront" port="2" />
         <Gyro name="gyro" port="3" />
-        <I2cDevice name="color1" port="4" />
-	<I2cDevice name="color2" port="2" />
+        <I2cDevice name="colorBack" port="4" />
         <OpticalDistanceSensor name="ods" port="7" />
     </DeviceInterfaceModule>
     <MotorController name="Back Motors" serialNumber="A104OQ1P">

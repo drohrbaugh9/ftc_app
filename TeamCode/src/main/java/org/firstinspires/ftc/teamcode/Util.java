@@ -1,9 +1,6 @@
 package org.firstinspires.ftc.teamcode;
 
-import com.qualcomm.hardware.modernrobotics.ModernRoboticsUsbDcMotorController;
-import com.qualcomm.robotcore.hardware.ColorSensor;
 import com.qualcomm.robotcore.hardware.DcMotor;
-import com.qualcomm.robotcore.hardware.DcMotorController;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.Gamepad;
 import com.qualcomm.robotcore.hardware.GyroSensor;
@@ -29,15 +26,16 @@ public final class Util {
 
     protected static GyroSensor gyro;
 
-    protected static final boolean SENSORS = true, SERVOS = true;
+    protected static boolean sensors = true, servos = true;
 
     protected final static double SEC_TO_NSEC = 1000000000, NEVEREST_37_TICS_PER_ROTATION = 44.4;
     protected final static double POWER_LIMIT = 1;
     protected static final double SHOOT = 0.5, LOAD = 0.95;
+    protected static final double BEACON_UP = 0.6, BEACON_DOWN = 0.95;
 
     //private static LinearOpMode linearOpMode;
     protected static LinearOpMode linearOpMode;
-    private static DcMotor[] motors, motorsWithEncoders;
+    private static DcMotor[] /*motors,*/ motorsWithEncoders;
 
     private Util() throws Exception {
         throw new Exception();
@@ -46,25 +44,28 @@ public final class Util {
     public static void init(LinearOpMode opMode) throws InterruptedException {
         linearOpMode = opMode;
 
-        /*DcMotor[] temp;
-        DcMotor[] tempWithEncoders;*/
+        DcMotor[] temp;
+        DcMotor[] tempWithEncoders;
 
         // drive motors
-        rightBack = opMode.hardwareMap.dcMotor.get("rightBack");
-        rightBack.setDirection(DcMotor.Direction.REVERSE);
+        rightBack = opMode.hardwareMap.dcMotor.get("rightBack"); rightBack.setDirection(DcMotor.Direction.REVERSE);
         leftBack = opMode.hardwareMap.dcMotor.get("leftBack");
-        rightFront = opMode.hardwareMap.dcMotor.get("rightFront");
-        rightFront.setDirection(DcMotor.Direction.REVERSE);
+        rightFront = opMode.hardwareMap.dcMotor.get("rightFront"); rightFront.setDirection(DcMotor.Direction.REVERSE);
         leftFront = opMode.hardwareMap.dcMotor.get("leftFront");
+
+        rightBack.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        leftBack.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        rightFront.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        leftFront.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
         AutoUtil.r = rightFront; AutoUtil.l = leftFront;
 
 
-        /*temp = new DcMotor[4]; temp[0] = rightBack; temp[1] = leftBack; temp[2] = rightFront; temp[3] = leftFront;
-        tempWithEncoders = new DcMotor[1]; tempWithEncoders[0] = leftBack;*/
+        temp = new DcMotor[4]; temp[0] = rightBack; temp[1] = leftBack; temp[2] = rightFront; temp[3] = leftFront;
+        tempWithEncoders = temp;
 
-        /*motors = temp;
-        motorsWithEncoders = tempWithEncoders;*/
+        //motors = temp;
+        motorsWithEncoders = tempWithEncoders;
 
         // shooter motors
         shooter1 = getMotor("shooter1");
@@ -76,16 +77,16 @@ public final class Util {
         intake = getMotor("intake");
 
         // servos
-        if (SERVOS) {
+        if (servos) {
             ballFeeder = getServo("ballFeeder"); ballFeeder.setPosition(LOAD);
-            upDown = getServo("upDown"); upDown.setPosition(0.6);
+            upDown = getServo("upDown"); upDown.setPosition(BEACON_UP);
         }
 
         // sensors
-        if (SENSORS) {
+        if (sensors) {
             ods = opMode.hardwareMap.opticalDistanceSensor.get("ods");
             I2C_ColorSensor.init(opMode);
-            //gyro = opMode.hardwareMap.gyroSensor.get("gyro");
+            gyro = opMode.hardwareMap.gyroSensor.get("gyro");
         }
 
         //resetEncoders();
@@ -183,5 +184,35 @@ public final class Util {
     public static void log(String message) {
         if (!FtcRobotControllerActivity.LOG) return;
         RobotLog.i(message);
+    }
+
+    public static void telemetry(String key, String data) {
+        Util.linearOpMode.telemetry.addData(key, data);
+        Util.linearOpMode.telemetry.update();
+    }
+
+    public static void telemetry(String key, int data) {
+        Util.linearOpMode.telemetry.addData(key, data);
+        Util.linearOpMode.telemetry.update();
+    }
+
+    public static void telemetry(String key, double data) {
+        Util.linearOpMode.telemetry.addData(key, data);
+        Util.linearOpMode.telemetry.update();
+    }
+
+    public static void telemetry(String key, String data, boolean update) {
+        Util.linearOpMode.telemetry.addData(key, data);
+        if (update) Util.linearOpMode.telemetry.update();
+    }
+
+    public static void telemetry(String key, int data, boolean update) {
+        Util.linearOpMode.telemetry.addData(key, data);
+        if (update) Util.linearOpMode.telemetry.update();
+    }
+
+    public static void telemetry(String key, double data, boolean update) {
+        Util.linearOpMode.telemetry.addData(key, data);
+        if (update) Util.linearOpMode.telemetry.update();
     }
 }
