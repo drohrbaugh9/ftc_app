@@ -92,11 +92,49 @@ public class RedAuto extends LinearOpMode {
 
         AutoUtil.encoderSteerForward(240, 0.1, true);
 
+        //boolean done = false;
+        if (I2C_ColorSensor.beaconIsRedBlue()) {
+            // first try
+            AutoUtil.encoderSteerForward(750, 0.1, true);
+            AutoUtil.beaconDown(upDown);
+            AutoUtil.encoderSteerBackward(750, 0.1, true);
+            Thread.sleep(200);
+            AutoUtil.encoderSteerForward(750, 0.1, true);
+            AutoUtil.beaconUp(upDown);
+            AutoUtil.encoderSteerBackward(2750, 0.3, false);
+        } else if (I2C_ColorSensor.beaconIsBlueRed()) {
+            AutoUtil.encoderSteerBackward(750, 0.1, true);
+            AutoUtil.beaconDown(upDown);
+            AutoUtil.encoderSteerForward(750, 0.1, true);
+            Thread.sleep(200);
+            AutoUtil.encoderSteerBackward(500, 0.1, false);
+            AutoUtil.encoderSteerBackward(1500, 0.3, false);
+            AutoUtil.beaconUp(upDown);
+        }
+
+        AutoUtil.encoderSteerBackwardLine(0.5, 0.1, true);
+
+        Thread.sleep(200);
+
+        AutoUtil.encoderSteerForward(360, 0.1, true);
+
         if (I2C_ColorSensor.beaconIsRedBlue()) {
             AutoUtil.encoderSteerForward(750, 0.1, true);
-            upDown.setPosition(Util.BEACON_DOWN);
+            AutoUtil.beaconDown(upDown);
             AutoUtil.encoderSteerBackward(750, 0.1, true);
+            Thread.sleep(200);
+            AutoUtil.encoderSteerForward(750, 0.1, true);
+            AutoUtil.beaconUp(upDown);
+        } else if (I2C_ColorSensor.beaconIsBlueRed()) {
+            AutoUtil.encoderSteerBackward(750, 0.1, true);
+            AutoUtil.beaconDown(upDown);
+            AutoUtil.encoderSteerForward(750, 0.1, true);
+            Thread.sleep(200);
+            AutoUtil.encoderSteerBackward(750, 0.1, true);
+            AutoUtil.beaconUp(upDown);
         }
+
+        Util.setAllPowers(0);
 
         while(opModeIsActive()) Thread.sleep(100);
     }
@@ -119,3 +157,40 @@ public class RedAuto extends LinearOpMode {
         ballFeeder.setPosition(Util.LOAD);
     }
 }
+
+            /*if (I2C_ColorSensor.beaconIsRedRed()) {
+                AutoUtil.encoderSteerBackward(2000, 0.3, false);
+                AutoUtil.beaconUp(upDown);
+                done = true;
+            }
+            if (!done && I2C_ColorSensor.beaconIsRedBlue()) {
+                // second try
+                Thread.sleep(200);
+                AutoUtil.encoderSteerForward(750, 0.1, true);
+                Thread.sleep(200);
+                AutoUtil.encoderSteerBackward(750, 0.1, true);
+                if (I2C_ColorSensor.beaconIsRedRed()) {
+                    AutoUtil.encoderSteerBackward(2000, 0.3, false);
+                    AutoUtil.beaconUp(upDown);
+                    done = true;
+                } else if (I2C_ColorSensor.beaconIsRedBlue()) {
+                    // free third try while safely giving up
+                    AutoUtil.encoderSteerForward(750, 0.1, true);
+                    AutoUtil.beaconUp(upDown);
+                    AutoUtil.encoderSteerBackward(2000, 0.3, false);
+                    done = true;
+                }
+            }
+            if (!done && I2C_ColorSensor.beaconIsBlueBlue()) {
+                Thread.sleep(5000);
+                AutoUtil.encoderSteerForward(200, 0.1, true); // try to press right-side button
+                Thread.sleep(200);
+                AutoUtil.encoderSteerBackward(1000, 0.1, false); // press both buttons
+                done = true;
+            }
+            if (!done) {
+                // free extra try while safely giving up
+                AutoUtil.encoderSteerForward(750, 0.1, true);
+                AutoUtil.beaconUp(upDown);
+                AutoUtil.encoderSteerBackward(2000, 0.3, false);
+            }*/

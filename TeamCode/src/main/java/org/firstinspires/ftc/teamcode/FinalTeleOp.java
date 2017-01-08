@@ -171,11 +171,11 @@ public class FinalTeleOp extends LinearOpMode {
     }
 
     private void pressBeacon() throws InterruptedException {
-        Util.upDown.setPosition(0.6);
+        Util.upDown.setPosition(Util.BEACON_DOWN);
         if (gamepad1.y) {
             if (beaconForward() == -1) return;
         }
-        else if (gamepad1.a) {
+        else if (gamepad1.a && !gamepad1.start) {
             if (beaconBackward() == -1) return;
         }
     }
@@ -309,9 +309,7 @@ public class FinalTeleOp extends LinearOpMode {
         }
     }
 
-    protected static double calculateShooterPower() { //TODO better math in this method
-        return -0.04*Util.getBatteryVoltage() + 0.8;
-    }
+    protected static double calculateShooterPower() { return -0.039*Util.getBatteryVoltage() + 0.74; }
 }
             /*if (driveMode.equals(NORMAL)) {
                 rightBack.setPower((currentR - 1) * POWER_FACTOR);

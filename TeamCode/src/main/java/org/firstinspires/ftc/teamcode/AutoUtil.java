@@ -3,6 +3,7 @@ package org.firstinspires.ftc.teamcode;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.GyroSensor;
+import com.qualcomm.robotcore.hardware.Servo;
 
 public final class AutoUtil {
 
@@ -212,6 +213,16 @@ public final class AutoUtil {
 
     public static void resetGyroHeading(GyroSensor gyro) {
         gyro.resetZAxisIntegrator();
+    }
+
+    public static void beaconUp(Servo servo) throws InterruptedException {
+        servo.setPosition(Util.BEACON_UP);
+        Thread.sleep(400);
+    }
+
+    public static void beaconDown(Servo servo) throws InterruptedException {
+        servo.setPosition(Util.BEACON_DOWN);
+        Thread.sleep(400);
     }
 
     /*public static double gyroDrift(GyroSensor gyro) throws InterruptedException {
