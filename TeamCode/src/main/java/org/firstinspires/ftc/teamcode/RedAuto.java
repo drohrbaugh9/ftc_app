@@ -1,7 +1,6 @@
 package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
-import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.GyroSensor;
@@ -25,7 +24,7 @@ public class RedAuto extends LinearOpMode {
     GyroSensor gyro;
 
     public void runOpMode() throws InterruptedException {
-        Util.sensors = true; Util.servos = true;
+        Util.colorSensors = true; Util.otherSensors = true; Util.servos = true;
         Util.init(this);
 
         // drive motors
@@ -41,7 +40,7 @@ public class RedAuto extends LinearOpMode {
         this.ballFeeder = Util.ballFeeder;
         this.upDown = Util.upDown;
 
-        // sensors
+        // otherSensors
         this.ods = Util.ods;
         this.gyro = Util.gyro;
         I2C_ColorSensor.init(this);

@@ -3,7 +3,6 @@ package org.firstinspires.ftc.teamcode;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
-import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.OpticalDistanceSensor;
 import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.util.Range;
@@ -35,7 +34,7 @@ public class FinalTeleOp extends LinearOpMode {
     private boolean intakeChanged = false;
 
     public void runOpMode() throws InterruptedException {
-        Util.sensors = false; Util.servos = true;
+        Util.colorSensors = false; Util.otherSensors = true; Util.servos = true;
         Util.init(this);
 
         this.rightBack = Util.rightBack;
@@ -50,7 +49,7 @@ public class FinalTeleOp extends LinearOpMode {
 
         this.ballFeeder = Util.ballFeeder;
 
-        this.ods = hardwareMap.opticalDistanceSensor.get("ods");
+        this.ods = Util.ods;
 
         waitForStart();
 

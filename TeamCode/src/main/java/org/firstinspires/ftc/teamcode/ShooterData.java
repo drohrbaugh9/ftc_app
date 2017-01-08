@@ -1,13 +1,15 @@
 package org.firstinspires.ftc.teamcode;
 
+import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 
-@TeleOp(name="ShooterData", group="Test")
-@Disabled
+//@TeleOp(name="ShooterData", group="Test")
+@Autonomous(name="ShooterData", group="Test")
+//@Disabled
 public class ShooterData extends LinearOpMode {
 
     private final String DEBUG = "SHOOTER ";
@@ -27,17 +29,18 @@ public class ShooterData extends LinearOpMode {
 
         Util.resetEncoders(this, temp);
 
+        Util.linearOpMode = this;
+
         waitForStart();
 
         int i = 1;
         double power = 0.24;
+        boolean change = true;
 
-        //telemetry.addData("battery voltage", Util.getBatteryVoltage());
+        Util.log(DEBUG + "battery voltage: " + Util.getBatteryVoltage());
 
         shooter1.setPower(power);
         shooter2.setPower(power + 0.07);
-
-        Thread.sleep(3000);
 
         //while (!gamepad1.a);
 
@@ -49,7 +52,7 @@ public class ShooterData extends LinearOpMode {
         long start = System.nanoTime();
         long old = start;
 
-        while (i < 1301) {
+        while (i < (500 + 1)) {
             /*double stick = gamepad1.right_stick_y;
             if (stick < 0) stick = 0;
 
@@ -77,10 +80,16 @@ public class ShooterData extends LinearOpMode {
             oldPos2 = currentPos2;
             old = time;
 
-            if (i % 100 == 0) {
+            /*if (i % 100 == 0) {
                 power += 0.01;
                 shooter1.setPower(power);
                 shooter2.setPower(power + 0.07);
+            }*/
+
+            if (change && ((time - start) > 2000)) {
+                shooter1.setPower(0.24);
+                shooter2.setPower(0.24 + 0.07);
+                change = false;
             }
 
             i++;

@@ -26,7 +26,7 @@ public final class Util {
 
     protected static GyroSensor gyro;
 
-    protected static boolean sensors = true, servos = true;
+    protected static boolean colorSensors = false, otherSensors = true, servos = true;
 
     protected final static double SEC_TO_NSEC = 1000000000, NEVEREST_37_TICS_PER_ROTATION = 44.4;
     protected final static double POWER_LIMIT = 1;
@@ -82,10 +82,12 @@ public final class Util {
             upDown = getServo("upDown"); upDown.setPosition(BEACON_UP);
         }
 
-        // sensors
-        if (sensors) {
+        // color sensors
+        if (colorSensors) I2C_ColorSensor.init(opMode);
+
+        // other sensors
+        if (otherSensors) {
             ods = opMode.hardwareMap.opticalDistanceSensor.get("ods");
-            I2C_ColorSensor.init(opMode);
             gyro = opMode.hardwareMap.gyroSensor.get("gyro");
         }
 
