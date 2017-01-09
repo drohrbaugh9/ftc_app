@@ -43,7 +43,7 @@ public final class AutoUtil {
 
         Util.setAllPowers(-power);
 
-        while (((r.getCurrentPosition() + l.getCurrentPosition()) / 2) > (pos + dist)) Thread.sleep(20);
+        while (((r.getCurrentPosition() + l.getCurrentPosition()) / 2) > (pos - dist)) Thread.sleep(20);
 
         if (stop) Util.setAllPowers(0);
     }
@@ -65,7 +65,7 @@ public final class AutoUtil {
         Util.setRightPowers(-power * 1.08);
         Util.setLeftPowers(-power / 1.08);
 
-        while (((r.getCurrentPosition() + l.getCurrentPosition()) / 2) > (pos + dist)) Thread.sleep(20);
+        while (((r.getCurrentPosition() + l.getCurrentPosition()) / 2) > (pos - dist)) Thread.sleep(20);
 
         if (stop) Util.setAllPowers(0);
     }

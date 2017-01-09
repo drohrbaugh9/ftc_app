@@ -8,7 +8,7 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
 //@TeleOp(name = "Test", group = "Test")
 @Autonomous(name = "Test", group = "Test")
-@Disabled
+//@Disabled
 public class TestOpMode extends LinearOpMode {
 
     public void runOpMode() throws InterruptedException {

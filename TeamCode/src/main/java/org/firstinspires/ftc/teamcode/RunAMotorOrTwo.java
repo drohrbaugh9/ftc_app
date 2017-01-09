@@ -6,7 +6,7 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
 
 @TeleOp(name = "RunAMotorOrTwo", group="Test")
-//@Disabled
+@Disabled
 public class RunAMotorOrTwo extends OpMode {
 
     DcMotor motor1, motor2;

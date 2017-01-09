@@ -18,7 +18,6 @@ public class I2C_ColorSensor {
 
     public I2C_ColorSensor(OpMode opmode) {
         init(opmode);
-        setThreshold(DEFAULT_THRESHOLD);
     }
 
     public I2C_ColorSensor(OpMode opmode, int t) {
@@ -27,6 +26,8 @@ public class I2C_ColorSensor {
     }
 
     public static void init(OpMode opMode) {
+        setThreshold(DEFAULT_THRESHOLD);
+
         colorBack = opMode.hardwareMap.i2cDevice.get("colorBack");
         synchBack = new I2cDeviceSynchImpl(colorBack, I2cAddr.create8bit(0x3c), false);
         synchBack.engage();
@@ -39,7 +40,11 @@ public class I2C_ColorSensor {
         synchFront.write8(3, 1);
     }
 
-    public static boolean beaconIsRedBlue() { return frontRed() && backBlue(); }
+    public static boolean beaconIsRedBlue() {
+        boolean red = frontRed();
+        boolean blue = backBlue();
+        return red && blue;
+    }
 
     public static boolean beaconIsRedRed() { return frontRed() && backRed(); }
 
@@ -50,27 +55,33 @@ public class I2C_ColorSensor {
     public static boolean frontRed() { return frontRed(threshold); }
 
     public static boolean frontRed(int t) {
-        Util.telemetry("front", normalizedRed(synchFront), true);
-        return normalizedBlue(synchFront) < normalizedRed(synchFront) && normalizedRed(synchFront) > t;
+        double red = normalizedRed(synchFront);
+        double blue = normalizedBlue(synchFront);
+        return (blue < red) && (red > t);
     }
 
     public static boolean frontBlue() { return frontBlue(threshold); }
 
     public static boolean frontBlue(int t) {
-        return normalizedRed(synchFront) < normalizedBlue(synchFront) && normalizedBlue(synchFront) > t;
+        double red = normalizedRed(synchFront);
+        double blue = normalizedBlue(synchFront);
+        return (red < blue) && (blue > t);
     }
 
     public static boolean backRed() { return backRed(threshold); }
 
     public static boolean backRed(int t) {
-        return normalizedBlue(synchBack) < normalizedRed(synchBack) && normalizedRed(synchBack) > t;
+        double red = normalizedRed(synchBack);
+        double blue = normalizedBlue(synchBack);
+        return (blue < red) && (red > t);
     }
 
-    public static boolean backBlue() { return frontBlue(threshold); }
+    public static boolean backBlue() { return backBlue(threshold); }
 
     public static boolean backBlue(int t) {
-        Util.telemetry("back", normalizedBlue(synchBack), true);
-        return normalizedRed(synchBack) < normalizedBlue(synchBack) && normalizedBlue(synchBack) > t;
+        double red = normalizedRed(synchBack);
+        double blue = normalizedBlue(synchBack);
+        return (red < blue) && (blue > t);
     }
 
     public static int normalizedBlue(I2cDeviceSynch synch) {
