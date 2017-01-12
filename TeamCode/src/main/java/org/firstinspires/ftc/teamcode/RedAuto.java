@@ -63,7 +63,7 @@ public class RedAuto extends LinearOpMode {
         rightFront.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
         leftFront.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
 
-        AutoUtil.PID_Forward(2400, 0.15, true, gyro);
+        AutoUtil.PID_Forward(2200, 0.2, true, gyro);
 
         Thread.sleep(1000);
 

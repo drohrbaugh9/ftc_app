@@ -94,6 +94,8 @@ public final class AutoUtil {
         double start = Util.rightBack.getCurrentPosition();
         Util.setAllPowers(0.1);
         Thread.sleep(30);
+        Util.setAllPowers(0.15);
+        Thread.sleep(75);
         while (Util.rightBack.getCurrentPosition() < (start + (distance * 0.98))) {
             PID.PIsetMotors(gyro, powerFactor * power);
             Thread.sleep(10);
@@ -217,12 +219,12 @@ public final class AutoUtil {
 
     public static void beaconUp(Servo servo) throws InterruptedException {
         servo.setPosition(Util.BEACON_UP);
-        Thread.sleep(400);
+        Thread.sleep(100);
     }
 
     public static void beaconDown(Servo servo) throws InterruptedException {
         servo.setPosition(Util.BEACON_DOWN);
-        Thread.sleep(400);
+        Thread.sleep(100);
     }
 
     /*public static double gyroDrift(GyroSensor gyro) throws InterruptedException {

@@ -40,17 +40,13 @@ public class I2C_ColorSensor {
         synchFront.write8(3, 1);
     }
 
-    public static boolean beaconIsRedBlue() {
-        boolean red = frontRed();
-        boolean blue = backBlue();
-        return red && blue;
-    }
+    public static boolean beaconIsRedBlue() { return frontRed() || backBlue(); }
 
-    public static boolean beaconIsRedRed() { return frontRed() && backRed(); }
+    public static boolean beaconIsRedRed() { return frontRed() || backRed(); }
 
-    public static boolean beaconIsBlueRed() { return frontBlue() && backRed(); }
+    public static boolean beaconIsBlueRed() { return frontBlue() || backRed(); }
 
-    public static boolean beaconIsBlueBlue() { return frontBlue() && backBlue(); }
+    public static boolean beaconIsBlueBlue() { return frontBlue() || backBlue(); }
 
     public static boolean frontRed() { return frontRed(threshold); }
 
