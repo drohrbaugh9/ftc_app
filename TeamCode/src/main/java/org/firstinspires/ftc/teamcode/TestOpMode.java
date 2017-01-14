@@ -12,7 +12,7 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 public class TestOpMode extends LinearOpMode {
 
     public void runOpMode() throws InterruptedException {
-        Util.linearOpMode = this;
+        /*Util.linearOpMode = this;
         I2C_ColorSensor.init(this);
 
         waitForStart();
@@ -22,6 +22,6 @@ public class TestOpMode extends LinearOpMode {
         Util.telemetry("backRed", I2C_ColorSensor.normalizedRed(I2C_ColorSensor.synchBack), false);
         Util.telemetry("backBlue", I2C_ColorSensor.normalizedBlue(I2C_ColorSensor.synchBack), true);
 
-        while(opModeIsActive()) Thread.sleep(100);
+        while(opModeIsActive()) Thread.sleep(100);*/
     }
 }
