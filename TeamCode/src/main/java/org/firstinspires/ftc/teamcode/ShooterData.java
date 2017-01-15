@@ -6,19 +6,22 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
+import com.qualcomm.robotcore.hardware.Servo;
 
 //@TeleOp(name="ShooterData", group="Test")
-@Autonomous(name="ShooterData", group="Test")
-@Disabled
+@Autonomous(name="TestWithData", group="Test")
+//@Disabled
 public class ShooterData extends LinearOpMode {
 
     private final String DEBUG = "SHOOTER ";
 
-    DcMotor shooter1, shooter2;
+    private DcMotor shooter1, shooter2;
+    private Servo ballFeeder;
 
     public void runOpMode() throws InterruptedException {
         shooter1 = hardwareMap.dcMotor.get("shooter1");
         shooter2 = hardwareMap.dcMotor.get("shooter2"); shooter2.setDirection(DcMotorSimple.Direction.REVERSE);
+        ballFeeder = hardwareMap.servo.get("ballFeeder");
 
         shooter1.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
         shooter2.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
@@ -31,16 +34,18 @@ public class ShooterData extends LinearOpMode {
 
         Util.linearOpMode = this;
 
+        ballFeeder.setPosition(Util.LOAD);
+
         waitForStart();
 
         int i = 1;
-        double power = 0.24;
-        boolean change = true;
+        double power = 0.3;
+        boolean shooterStart = true, shoot1 = true, shoot2 = true, load1 = true;
 
-        Util.log(DEBUG + "battery voltage: " + Util.getBatteryVoltage());
+        //Util.log(DEBUG + "battery voltage: " + Util.getBatteryVoltage());
 
-        shooter1.setPower(power);
-        shooter2.setPower(power + 0.07);
+        /*shooter1.setPower(power);
+        shooter2.setPower(power + 0.07);*/
 
         //while (!gamepad1.a);
 
@@ -52,7 +57,7 @@ public class ShooterData extends LinearOpMode {
         long start = System.nanoTime();
         long old = start;
 
-        while (i < (500 + 1)) {
+        while (i < (700 + 1)) {
             /*double stick = gamepad1.right_stick_y;
             if (stick < 0) stick = 0;
 
@@ -72,7 +77,7 @@ public class ShooterData extends LinearOpMode {
             //Util.log(DEBUG + "time: " + (time - start));
             //Util.log(DEBUG + "1: " + delta1);
             //Util.log(DEBUG + "2: " + delta2);
-            Util.log(DEBUG + "power: " + power);
+            Util.log(DEBUG + "batteryVoltage: " + Util.getBatteryVoltage());
             Util.log(DEBUG + "RPM1: " + ((delta1 * 1000000000 * 60) / (deltat * 44.4)));
             Util.log(DEBUG + "RPM2: " + ((delta2 * 1000000000 * 60) / (deltat * 44.4)));
 
@@ -86,10 +91,31 @@ public class ShooterData extends LinearOpMode {
                 shooter2.setPower(power + 0.07);
             }*/
 
-            if (change && ((time - start) > 2000)) {
+            /*if (change && ((time - start) > 2000)) {
                 shooter1.setPower(0.24);
                 shooter2.setPower(0.24 + 0.07);
                 change = false;
+            }*/
+
+            if (shooterStart && (time - start) > 1000000000) {
+                shooter1.setPower(power);
+                shooter2.setPower(power + 0.07);
+                shooterStart = false;
+            }
+
+            if (shoot1 && (time - start) > 3 * 1000000000.0) {
+                ballFeeder.setPosition(Util.SHOOT);
+                shoot1 = false;
+            }
+
+            if (load1 && (time - start) > 3.4 * 1000000000.0) {
+                ballFeeder.setPosition(Util.LOAD);
+                load1 = false;
+            }
+
+            if (shoot2 && (time - start) > 5 * 1000000000.0) {
+                ballFeeder.setPosition(Util.SHOOT);
+                shoot2 = false;
             }
 
             i++;
@@ -99,8 +125,13 @@ public class ShooterData extends LinearOpMode {
 
         long end = System.nanoTime();
 
+        shooter1.setPower(0);
+        shooter2.setPower(0);
+
+        ballFeeder.setPosition(Util.LOAD);
+
         Util.log(DEBUG + "time: " + (end - start));
-        Util.log(DEBUG + "measurements / sec: " + (i / ((end - start) / 1000000000.0)));
+        Util.log(DEBUG + "measurements / sec: " + ((i - 2) / ((end - start) / 1000000000.0)));
         /*telemetry.addData("measurements / sec", (i / ((end - start) / 1000000000.0)));
         telemetry.addData("elapsed time", end - start);
 
@@ -112,9 +143,6 @@ public class ShooterData extends LinearOpMode {
         telemetry.addData("motor 1 tics / minute", (1000000000 * delta1 * 60) / deltat);
         telemetry.addData("motor 1 RPM", ((1000000000 * delta1 * 60) / (deltat * 44.5)));
         telemetry.update();*/
-
-        shooter1.setPower(0);
-        shooter2.setPower(0);
 
         //while (opModeIsActive());
     }
