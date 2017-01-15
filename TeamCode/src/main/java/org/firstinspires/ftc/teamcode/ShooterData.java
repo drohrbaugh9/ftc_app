@@ -15,13 +15,20 @@ public class ShooterData extends LinearOpMode {
 
     private final String DEBUG = "SHOOTER ";
 
-    private DcMotor shooter1, shooter2;
+    private DcMotor shooter1, shooter2, r1, l1, r2, l2, in;
     private Servo ballFeeder;
 
     public void runOpMode() throws InterruptedException {
         shooter1 = hardwareMap.dcMotor.get("shooter1");
         shooter2 = hardwareMap.dcMotor.get("shooter2"); shooter2.setDirection(DcMotorSimple.Direction.REVERSE);
         ballFeeder = hardwareMap.servo.get("ballFeeder");
+
+        r1 = Util.getMotor(hardwareMap, "rightBack"); r1.setDirection(DcMotorSimple.Direction.REVERSE);
+        l1 = Util.getMotor(hardwareMap, "leftBack");
+        r2 = Util.getMotor(hardwareMap, "rightFront"); r2.setDirection(DcMotorSimple.Direction.REVERSE);
+        l2 = Util.getMotor(hardwareMap, "leftFront");
+
+        in = Util.getMotor(hardwareMap, "intake");
 
         shooter1.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
         shooter2.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
@@ -40,7 +47,7 @@ public class ShooterData extends LinearOpMode {
 
         int i = 1;
         double power = 0.3;
-        boolean shooterStart = true, shoot1 = true, shoot2 = true, load1 = true;
+        boolean shooterStart = true, motorsStart = true; //, shoot1 = true, shoot2 = true, load1 = true;
 
         //Util.log(DEBUG + "battery voltage: " + Util.getBatteryVoltage());
 
@@ -57,7 +64,7 @@ public class ShooterData extends LinearOpMode {
         long start = System.nanoTime();
         long old = start;
 
-        while (i < (700 + 1)) {
+        while (i < ((2 * 60 * 10) + 1)) {
             /*double stick = gamepad1.right_stick_y;
             if (stick < 0) stick = 0;
 
@@ -103,24 +110,16 @@ public class ShooterData extends LinearOpMode {
                 shooterStart = false;
             }
 
-            if (shoot1 && (time - start) > 3 * 1000000000.0) {
-                ballFeeder.setPosition(Util.SHOOT);
-                shoot1 = false;
-            }
-
-            if (load1 && (time - start) > 3.4 * 1000000000.0) {
-                ballFeeder.setPosition(Util.LOAD);
-                load1 = false;
-            }
-
-            if (shoot2 && (time - start) > 5 * 1000000000.0) {
-                ballFeeder.setPosition(Util.SHOOT);
-                shoot2 = false;
+            if (motorsStart && (time - start) > 3 * 1000000000.0) {
+                r1.setPower(-0.2); r2.setPower(-0.2);
+                l1.setPower(0.2);  l2.setPower(0.2);
+                in.setPower(0.7);
+                motorsStart = false;
             }
 
             i++;
 
-            Thread.sleep(10);
+            Thread.sleep(100);
         }
 
         long end = System.nanoTime();
