@@ -5,12 +5,12 @@ while (<>)
   if (m/SHOOTER/)
   {
     @fields = split;
-    $my_power = $fields[8] if ($fields[7] =~ m/power:/);
+    $my_power = $fields[8] if ($fields[7] =~ m/batteryVoltage:/);
     $my_motor1 = $fields[8] if ($fields[7] eq "RPM1:");
     if ($fields[7] eq "RPM2:")
     {
-      #print "$my_power,$my_motor1,$fields[8]\n";
-      print "$my_motor1,$fields[8]\n";
+      print "$my_power,$my_motor1,$fields[8]\n";
+      #print "$my_motor1,$fields[8]\n";
     }
   }
 }
