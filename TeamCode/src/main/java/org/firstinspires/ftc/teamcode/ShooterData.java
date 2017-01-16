@@ -16,12 +16,13 @@ public class ShooterData extends LinearOpMode {
     private final String DEBUG = "SHOOTER ";
 
     private DcMotor shooter1, shooter2, r1, l1, r2, l2, in;
-    private Servo ballFeeder;
+    private Servo ballFeeder, upDown;
 
     public void runOpMode() throws InterruptedException {
         shooter1 = hardwareMap.dcMotor.get("shooter1");
         shooter2 = hardwareMap.dcMotor.get("shooter2"); shooter2.setDirection(DcMotorSimple.Direction.REVERSE);
         ballFeeder = hardwareMap.servo.get("ballFeeder");
+        upDown = hardwareMap.servo.get("upDown");
 
         r1 = Util.getMotor(hardwareMap, "rightBack"); r1.setDirection(DcMotorSimple.Direction.REVERSE);
         l1 = Util.getMotor(hardwareMap, "leftBack");
@@ -43,10 +44,12 @@ public class ShooterData extends LinearOpMode {
 
         ballFeeder.setPosition(Util.LOAD);
 
+        upDown.setPosition(Util.BEACON_UP);
+
         waitForStart();
 
         int i = 1;
-        double power = 0.3;
+        double power = 0.24;
         boolean shooterStart = true, motorsStart = true; //, shoot1 = true, shoot2 = true, load1 = true;
 
         //Util.log(DEBUG + "battery voltage: " + Util.getBatteryVoltage());
@@ -113,7 +116,7 @@ public class ShooterData extends LinearOpMode {
             if (motorsStart && (time - start) > 3 * 1000000000.0) {
                 r1.setPower(-0.2); r2.setPower(-0.2);
                 l1.setPower(0.2);  l2.setPower(0.2);
-                in.setPower(0.7);
+                //in.setPower(0.7);
                 motorsStart = false;
             }
 
