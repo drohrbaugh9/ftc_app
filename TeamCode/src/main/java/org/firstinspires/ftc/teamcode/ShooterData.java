@@ -49,7 +49,7 @@ public class ShooterData extends LinearOpMode {
         waitForStart();
 
         int i = 1;
-        double power = 0.24;
+        double power = 0.18;
         boolean shooterStart = true, motorsStart = true; //, shoot1 = true, shoot2 = true, load1 = true;
 
         //Util.log(DEBUG + "battery voltage: " + Util.getBatteryVoltage());
@@ -64,15 +64,15 @@ public class ShooterData extends LinearOpMode {
         long delta1 = 0, delta2 = 0;
         long deltat = 0;
 
-        long start = System.nanoTime();
-        long old = start;
+        //long start = System.nanoTime();
+        //long old = start;
 
-        while (i < ((2 * 60 * 10) + 1)) {
+        /*while (i < ((2 * 60 * 10) + 1)) {
             /*double stick = gamepad1.right_stick_y;
             if (stick < 0) stick = 0;
 
             shooter1.setPower(stick * 0.24);
-            shooter2.setPower(stick * 0.24);*/
+            shooter2.setPower(stick * 0.24);*//*
 
             currentPos1 = shooter1.getCurrentPosition();
             currentPos2 = shooter2.getCurrentPosition();
@@ -105,7 +105,7 @@ public class ShooterData extends LinearOpMode {
                 shooter1.setPower(0.24);
                 shooter2.setPower(0.24 + 0.07);
                 change = false;
-            }*/
+            }*//*
 
             if (shooterStart && (time - start) > 1000000000) {
                 shooter1.setPower(power);
@@ -123,6 +123,57 @@ public class ShooterData extends LinearOpMode {
             i++;
 
             Thread.sleep(100);
+        }*/
+
+        Util.log(DEBUG + "batteryVoltage: " + Util.getBatteryVoltage());
+
+        shooter1.setPower(power);
+        shooter2.setPower(power + 0.07);
+
+        Thread.sleep(3000);
+
+        oldPos1 = shooter1.getCurrentPosition();
+        oldPos2 = shooter2.getCurrentPosition();
+
+        long start = System.nanoTime();
+        long old = start;
+
+        while (i < 1301) {
+            /*double stick = gamepad1.right_stick_y;
+            if (stick < 0) stick = 0;
+            shooter1.setPower(stick * 0.24);
+            shooter2.setPower(stick * 0.24);*/
+
+            currentPos1 = shooter1.getCurrentPosition();
+            currentPos2 = shooter2.getCurrentPosition();
+
+            delta1 = currentPos1 - oldPos1;
+            delta2 = currentPos2 - oldPos2;
+
+            long time = System.nanoTime();
+
+            deltat = time - old;
+
+            //Util.log(DEBUG + "time: " + (time - start));
+            //Util.log(DEBUG + "1: " + delta1);
+            //Util.log(DEBUG + "2: " + delta2);
+            Util.log(DEBUG + "power: " + power);
+            Util.log(DEBUG + "RPM1: " + ((delta1 * 1000000000 * 60) / (deltat * 44.4)));
+            Util.log(DEBUG + "RPM2: " + ((delta2 * 1000000000 * 60) / (deltat * 44.4)));
+
+            oldPos1 = currentPos1;
+            oldPos2 = currentPos2;
+            old = time;
+
+            if (i % 10 == 0) {
+                power += 0.001;
+                shooter1.setPower(power);
+                shooter2.setPower(power + 0.07);
+            }
+
+            i++;
+
+            Thread.sleep(10);
         }
 
         long end = System.nanoTime();
