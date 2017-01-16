@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
 <Robot type="FirstInspires-FTC">
-    <ServoController name="Servos" serialNumber="AL00VSDY">
+    <ServoController name="Servos" serialNumber="AL00VST0">
         <Servo name="upDown" port="1" />
         <Servo name="ballFeeder" port="2" />
     </ServoController>
-    <DeviceInterfaceModule name="Sensors" serialNumber="AL00VFK6">
+    <DeviceInterfaceModule name="Sensors" serialNumber="AI02RHDJ">
 	<I2cDevice name="colorFront" port="2" />
         <Gyro name="gyro" port="3" />
         <I2cDevice name="colorBack" port="4" />
