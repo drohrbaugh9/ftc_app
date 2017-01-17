@@ -182,20 +182,30 @@ public class FinalTeleOp extends LinearOpMode {
     }
 
     private int beaconForward() throws InterruptedException {
-        Util.setRightPowers(0.16);
-        Util.setLeftPowers(0.14);
+        Util.setRightPowers(0.21);
+        Util.setLeftPowers(0.19);
         //if (lookForLineAndCheckJoystick(0.50) == -1) return -1;
-        if (sleepAndCheckJoystick(2000) == -1) return -1;
+        if (lookForLineAndCheckJoystick(0.5) == -1) return -1;
+        if (sleepAndCheckJoystick(250) == -1) return -1;
         Util.setAllPowers(0);
+        if (sleepAndCheckJoystick(50) == -1) return -1;
+        Util.setRightPowers(-0.16);
+        Util.setLeftPowers(-0.14);
+        if (sleepAndCheckJoystick(1000) == -1) return -1;
         return 0;
     }
 
     private int beaconBackward() throws InterruptedException {
-        Util.setRightPowers(-0.16);
-        Util.setLeftPowers(-0.14);
+        Util.setRightPowers(-0.21);
+        Util.setLeftPowers(-0.19);
         //if (lookForLineAndCheckJoystick(0.50) == -1) return -1;
-        if (sleepAndCheckJoystick(2000) == -1) return -1;
+        if (lookForLineAndCheckJoystick(0.5) == -1) return -1;
+        if (sleepAndCheckJoystick(50) == -1) return -1;
         Util.setAllPowers(0);
+        if (sleepAndCheckJoystick(50) == -1) return -1;
+        Util.setRightPowers(0.16);
+        Util.setLeftPowers(0.14);
+        if (sleepAndCheckJoystick(1000) == -1) return -1;
         return 0;
     }
 
@@ -312,8 +322,8 @@ public class FinalTeleOp extends LinearOpMode {
 
     protected static double calculateShooterPower() {
         double voltage = Util.getBatteryVoltage();
-        if (voltage >= 13.8) return 0.21;
-        else return -0.048*Util.getBatteryVoltage() + 0.880;
+        if (voltage >= 13.8) return -0.045*Util.getBatteryVoltage() + 0.75;
+        else return -0.04*Util.getBatteryVoltage() + 0.75;
     }
 }
             /*if (driveMode.equals(NORMAL)) {
