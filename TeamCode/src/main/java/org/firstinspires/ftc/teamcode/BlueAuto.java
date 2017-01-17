@@ -66,7 +66,7 @@ public class BlueAuto extends LinearOpMode {
 
         AutoUtil.PID_Forward(2200, 0.2, true, gyro);
 
-        Thread.sleep(200);
+        Thread.sleep(200 + 500);
 
         rightBack.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         leftBack.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
@@ -129,13 +129,17 @@ public class BlueAuto extends LinearOpMode {
             AutoUtil.encoderSteerForward(BEACON_MOVE, BEACON_POWER, true);
             AutoUtil.beaconDown(upDown);
             AutoUtil.encoderSteerBackward(BEACON_MOVE, BEACON_POWER * 3 / 4, true);
-            // TODO final moves
+            Thread.sleep(100);
+            AutoUtil.encoderSteerForward(BEACON_MOVE, BEACON_POWER * 3 / 4, true);
+            AutoUtil.beaconUp(upDown);
+            AutoUtil.encoderBackward(BEACON_MOVE * 4, 0.3, true);
         } else if (I2C_ColorSensor.beaconIsRedBlue()) {
             Util.telemetry("beacon status", "RED_BLUE", true);
             AutoUtil.encoderSteerBackward(BEACON_MOVE, BEACON_POWER, true);
             AutoUtil.beaconDown(upDown);
             AutoUtil.encoderSteerForward(BEACON_MOVE, BEACON_POWER * 3 / 4, true);
-            // TODO final moves
+            Thread.sleep(100);
+            AutoUtil.encoderSteerBackward(BEACON_MOVE, BEACON_POWER * 3 / 4, true);
         }
 
         Util.setAllPowers(0);

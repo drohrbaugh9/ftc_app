@@ -289,7 +289,7 @@ public class FinalTeleOp extends LinearOpMode {
         long time = System.nanoTime() / 1000000;
 
         if (gamepad1.right_trigger >= 0.5) {
-            double power = 0.23; // calculateShooterPower();
+            double power = calculateShooterPower();
             shooter1.setPower(power);
             shooter2.setPower(power + SHOOTER2_OFFSET);
             shooterStart = time;
@@ -310,7 +310,11 @@ public class FinalTeleOp extends LinearOpMode {
         }
     }
 
-    protected static double calculateShooterPower() { return -0.05*Util.getBatteryVoltage() + 0.88; }
+    protected static double calculateShooterPower() {
+        double voltage = Util.getBatteryVoltage();
+        if (voltage >= 13.8) return 0.21;
+        else return -0.048*Util.getBatteryVoltage() + 0.880;
+    }
 }
             /*if (driveMode.equals(NORMAL)) {
                 rightBack.setPower((currentR - 1) * POWER_FACTOR);

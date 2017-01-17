@@ -25,6 +25,7 @@ public class RedAuto extends LinearOpMode {
 
     // autonomous constants
     final int BEACON_MOVE = 400;
+    final double BEACON_POWER = 0.15;
 
     public void runOpMode() throws InterruptedException {
         Util.colorSensors = true; Util.otherSensors = true; Util.servos = true;
@@ -56,7 +57,7 @@ public class RedAuto extends LinearOpMode {
         shooter1.setPower(shooterPower);
         shooter2.setPower(shooterPower + FinalTeleOp.SHOOTER2_OFFSET);
 
-        Thread.sleep(1000);
+        Thread.sleep(500);
 
         rightBack.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
         leftBack.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
@@ -65,7 +66,7 @@ public class RedAuto extends LinearOpMode {
 
         AutoUtil.PID_Forward(2200, 0.2, true, gyro);
 
-        Thread.sleep(1000);
+        Thread.sleep(200 + 500);
 
         rightBack.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         leftBack.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
@@ -76,15 +77,15 @@ public class RedAuto extends LinearOpMode {
 
         AutoUtil.encoderTurnLeft(70, 0.2);
 
-        Thread.sleep(200);
+        Thread.sleep(100);
 
-        AutoUtil.PID_Forward(4000, 0.2, true, gyro);
+        AutoUtil.PID_Forward(4100, 0.2, true, gyro);
 
-        Thread.sleep(200);
+        Thread.sleep(100);
 
         AutoUtil.encoderTurnRight(60, 0.2);
 
-        Thread.sleep(200);
+        Thread.sleep(100);
 
         AutoUtil.PID_Forward(2250, 0.3, false, gyro);
 
@@ -98,43 +99,43 @@ public class RedAuto extends LinearOpMode {
         if (I2C_ColorSensor.beaconIsRedBlue()) {
             // first try
             Util.telemetry("beacon status", "RED_BLUE", true);
-            AutoUtil.encoderSteerForward(BEACON_MOVE, 0.15, true);
+            AutoUtil.encoderSteerForward(BEACON_MOVE, BEACON_POWER, true);
             AutoUtil.beaconDown(upDown);
-            AutoUtil.encoderSteerBackward(BEACON_MOVE, 0.15, true);
-            Thread.sleep(200);
-            AutoUtil.encoderSteerForward(BEACON_MOVE, 0.15, true);
+            AutoUtil.encoderSteerBackward(BEACON_MOVE, BEACON_POWER, true);
+            Thread.sleep(100);
+            AutoUtil.encoderSteerForward(BEACON_MOVE, BEACON_POWER, true);
             AutoUtil.beaconUp(upDown);
             AutoUtil.encoderSteerBackward(2000 + BEACON_MOVE, 0.3, false);
         } else if (I2C_ColorSensor.beaconIsBlueRed()) {
             Util.telemetry("beacon status", "BLUE_RED", true);
-            AutoUtil.encoderSteerBackward(BEACON_MOVE, 0.15, true);
+            AutoUtil.encoderSteerBackward(BEACON_MOVE, BEACON_POWER, true);
             AutoUtil.beaconDown(upDown);
-            AutoUtil.encoderSteerForward(BEACON_MOVE, 0.15, true);
-            Thread.sleep(200);
-            AutoUtil.encoderSteerBackward(500, 0.15, false);
+            AutoUtil.encoderSteerForward(BEACON_MOVE, BEACON_POWER, true);
+            Thread.sleep(100);
+            AutoUtil.encoderSteerBackward(500, BEACON_POWER, false);
             AutoUtil.encoderSteerBackward(1500, 0.3, false);
             AutoUtil.beaconUp(upDown);
         }
 
         AutoUtil.encoderSteerBackwardLine(0.5, 0.1, true);
 
-        Thread.sleep(200);
+        Thread.sleep(100);
 
         AutoUtil.encoderSteerForward(280, 0.1, true);
 
         if (I2C_ColorSensor.beaconIsRedBlue()) {
-            AutoUtil.encoderSteerForward(BEACON_MOVE, 0.1, true);
+            AutoUtil.encoderSteerForward(BEACON_MOVE, BEACON_POWER, true);
             AutoUtil.beaconDown(upDown);
-            AutoUtil.encoderSteerBackward(BEACON_MOVE, 0.1, true);
-            Thread.sleep(200);
-            AutoUtil.encoderSteerForward(BEACON_MOVE, 0.1, true);
+            AutoUtil.encoderSteerBackward(BEACON_MOVE, BEACON_POWER, true);
+            Thread.sleep(100);
+            AutoUtil.encoderSteerForward(BEACON_MOVE, BEACON_POWER, true);
             AutoUtil.beaconUp(upDown);
         } else if (I2C_ColorSensor.beaconIsBlueRed()) {
-            AutoUtil.encoderSteerBackward(BEACON_MOVE, 0.1, true);
+            AutoUtil.encoderSteerBackward(BEACON_MOVE, BEACON_POWER, true);
             AutoUtil.beaconDown(upDown);
-            AutoUtil.encoderSteerForward(BEACON_MOVE, 0.1, true);
-            Thread.sleep(200);
-            AutoUtil.encoderSteerBackward(BEACON_MOVE, 0.1, true);
+            AutoUtil.encoderSteerForward(BEACON_MOVE, BEACON_POWER, true);
+            Thread.sleep(100);
+            AutoUtil.encoderSteerBackward(BEACON_MOVE, BEACON_POWER, true);
             AutoUtil.beaconUp(upDown);
         }
 
