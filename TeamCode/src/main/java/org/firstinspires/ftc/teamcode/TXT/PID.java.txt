@@ -1,23 +1,19 @@
 package org.firstinspires.ftc.teamcode;
 
-import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.GyroSensor;
 import com.qualcomm.robotcore.util.Range;
 import com.qualcomm.robotcore.util.RobotLog;
-import org.firstinspires.ftc.robotcontroller.internal.FtcRobotControllerActivity;
 
 public final class PID {
 
-    private static final float Ku = 0.15f;    //ultimate gain         //TODO tune
-    private static final float Tu = 0f;       //oscillation period    //TODO tune
-    //private static final float Tp = 50;    //average turn power    //TODO tune
-    private static final float Kp = 0.45f * Ku; //proportional constant //TODO tune
-    private static final float Ki = Tu / 1.2f;  //integral constant     //TODO tune
-    private static final int offset = 0;      //value that <gyroHeading> should be
-    private static double integral = 0;       //variable to hold integral value (accumulated error)
+    // drive
+    private static final float Kp = 0.04f;   //proportional constant      //TODO final tune
+    private static final float Ki = 0.0f;    //integral constant     //TODO tune
+    private static final int offset = 0;          //value that <gyroHeading> should be
+    private static double integral = 0;      //variable to hold integral value (accumulated error)
 
     //testing
-    private static boolean log = FtcRobotControllerActivity.LOG;
+    private static boolean log = false;// FtcRobotControllerActivity.LOG;
 
     private PID() throws Exception { throw new Exception(); }
 
@@ -26,7 +22,7 @@ public final class PID {
         int heading = heading(gyro);
         int error = heading - offset;
         double turn = Kp * error;
-        double[] toReturn = {Range.clip(Tp + turn, -1, 1), Range.clip(Tp - turn, -1, 1)};
+        double[] toReturn = {Range.clip(Tp - turn, -1, 1), Range.clip(Tp + turn, -1, 1)};
 
         if (!log) {
             return toReturn;
@@ -51,7 +47,7 @@ public final class PID {
         int heading = heading(gyro);
         int error = heading - offset;
         integral += error;
-        double turn = Kp * error + Ki * error;
+        double turn = Kp * error + Ki * integral;
         double[] toReturn = {Range.clip(Tp + turn, -1, 1), Range.clip(Tp - turn, -1, 1)};
 
         if (!log) {
@@ -72,14 +68,13 @@ public final class PID {
         return toReturn;
     }
 
-    public static void PsetMotors(GyroSensor gyro, float Tp) {
+    public static void PsetMotors(GyroSensor gyro, double Tp) {
         double[] motors = P(gyro, Tp);
         Util.setRightPowers(motors[0]);
         Util.setLeftPowers(motors[1]);
-
     }
 
-    public static void PIsetMotors(GyroSensor gyro, float Tp) {
+    public static void PIsetMotors(GyroSensor gyro, double Tp) {
         double motors[] = PI(gyro, Tp);
         Util.setRightPowers(motors[0]);
         Util.setLeftPowers(motors[1]);
@@ -90,5 +85,9 @@ public final class PID {
         if (heading > 180) return heading - 360;
         return heading;
         //-179 - 180
+    }
+
+    public static void resetDriveIntegral() {
+        integral = 0;
     }
 }

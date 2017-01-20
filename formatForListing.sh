@@ -1,4 +1,4 @@
-cd /home/owner/Android/Qualcom-test/ftc_app/TeamCode/src/main/java/org/firstinspires/ftc/teamcode
+cd /home/owner/Android/FTC9899_app/TeamCode/src/main/java/org/firstinspires/ftc/teamcode
 rm -rf TXT
 mkdir TXT
 mkdir TEMP_FOLDER
