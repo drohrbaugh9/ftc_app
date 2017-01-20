@@ -1,42 +1,41 @@
 package org.firstinspires.ftc.teamcode;
 
-import com.qualcomm.hardware.modernrobotics.ModernRoboticsUsbDcMotorController;
-import com.qualcomm.robotcore.eventloop.opmode.OpModeManager;
-import com.qualcomm.robotcore.hardware.ColorSensor;
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.Gamepad;
 import com.qualcomm.robotcore.hardware.GyroSensor;
+import com.qualcomm.robotcore.hardware.OpticalDistanceSensor;
 import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.util.RobotLog;
+
 import org.firstinspires.ftc.robotcontroller.internal.FtcRobotControllerActivity;
 
 public final class Util {
 
-    protected static DcMotor rightBack, rightFront, leftBack, leftFront, arm, intake, hanger;
-    protected static Servo rightDoor, leftDoor, rightTrigger, leftTrigger;
-    protected static GyroSensor gyro;
-    protected static ColorSensor color;
     protected static boolean init = false;
-    protected static ModernRoboticsUsbDcMotorController c;
     //protected static boolean gyroEnabled = false;
 
-    protected static final double LEFT_DOOR_MIN = 0.02 /*CLOSED*/, LEFT_DOOR_MAX = 0.4; //OPEN
-    protected static final double LEFT_DOOR_CLOSED = LEFT_DOOR_MIN;
-    protected static final double RIGHT_DOOR_MIN = 0.5 /*OPEN*/, RIGHT_DOOR_MAX = 0.89; //CLOSED
-    protected static final double RIGHT_DOOR_CLOSED = RIGHT_DOOR_MAX;
-    protected static final double POWER_LIMIT = 0.7, BACK_SCALE = 1.3;
-    protected static final double STARTING_POWER = 0.5;
-    protected static final double LEFT_TRIGGER_OUT = 0, LEFT_TRIGGER_IN = 0.6, LEFT_TRIGGER_STOW = 0.65;
-    protected static final double RIGHT_TRIGGER_OUT = 0.67, RIGHT_TRIGGER_IN = 0.06, RIGHT_TRIGGER_STOW = 0.04;
-    protected static final boolean SENSORS = true, SERVOS = true;
+    protected static DcMotor rightBack, leftBack, rightFront, leftFront;
+    protected static DcMotor shooter1, shooter2, intake;
 
-    protected final static double SEC_TO_NSEC = 1000000000, POWER_FLOAT = 100;
+    protected static Servo ballFeeder, upDown;
+
+    protected static OpticalDistanceSensor ods;
+
+    protected static GyroSensor gyro;
+
+    protected static boolean colorSensors = false, otherSensors = true, servos = true;
+
+    protected final static double SEC_TO_NSEC = 1000000000, NEVEREST_37_TICS_PER_ROTATION = 44.4;
+    protected final static double POWER_LIMIT = 1;
+    protected static final double SHOOT = 0.5, LOAD = 0.95;
+    protected static final double BEACON_UP = 0.6, BEACON_DOWN = 0.9; // was 0.95
 
     //private static LinearOpMode linearOpMode;
     protected static LinearOpMode linearOpMode;
-    private static DcMotor[] motors, motorsWithEncoders;
+    private static DcMotor[] /*motors,*/ motorsWithEncoders;
 
     private Util() throws Exception {
         throw new Exception();
@@ -45,47 +44,54 @@ public final class Util {
     public static void init(LinearOpMode opMode) throws InterruptedException {
         linearOpMode = opMode;
 
-        // motors
-        rightBack = getMotor("right");
-        rightBack.setDirection(DcMotor.Direction.REVERSE);
-        leftBack = getMotor("left");
-        rightFront = getMotor("rightFront");
-        rightFront.setDirection(DcMotor.Direction.REVERSE);
-        leftFront = getMotor("leftFront");
-        arm = getMotor("arm");
-        intake = getMotor("intake");
-        hanger = getMotor("hanger");
+        DcMotor[] temp;
+        DcMotor[] tempWithEncoders;
 
-        c = (ModernRoboticsUsbDcMotorController) rightBack.getController();
+        // drive motors
+        rightBack = opMode.hardwareMap.dcMotor.get("rightBack"); rightBack.setDirection(DcMotor.Direction.REVERSE);
+        leftBack = opMode.hardwareMap.dcMotor.get("leftBack");
+        rightFront = opMode.hardwareMap.dcMotor.get("rightFront"); rightFront.setDirection(DcMotor.Direction.REVERSE);
+        leftFront = opMode.hardwareMap.dcMotor.get("leftFront");
 
-        DcMotor[] temp = {rightBack, leftBack, rightFront, leftFront, arm, intake};
-        DcMotor[] tempWithEncoders = {rightBack, leftBack, rightFront, leftFront};//, arm};
+        rightBack.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        leftBack.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        rightFront.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        leftFront.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
-        motors = temp;
+        AutoUtil.r = rightFront; AutoUtil.l = leftFront;
+
+
+        temp = new DcMotor[4]; temp[0] = rightBack; temp[1] = leftBack; temp[2] = rightFront; temp[3] = leftFront;
+        tempWithEncoders = temp;
+
+        //motors = temp;
         motorsWithEncoders = tempWithEncoders;
 
+        // shooter motors
+        shooter1 = getMotor("shooter1");
+        shooter2 = getMotor("shooter2"); shooter2.setDirection(DcMotorSimple.Direction.REVERSE);
+        shooter1.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
+        shooter2.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
+
+        // intake motor
+        intake = getMotor("intake");
+
         // servos
-        if (SERVOS) {
-            leftDoor = getServo("leftDoor");
-            leftDoor.setPosition(LEFT_DOOR_CLOSED);
-            rightDoor = getServo("rightDoor");
-            rightDoor.setPosition(RIGHT_DOOR_CLOSED);
-            rightTrigger = getServo("rightTrigger");
-            rightTrigger.setPosition(RIGHT_TRIGGER_STOW);
-            leftTrigger = getServo("leftTrigger");
-            leftTrigger.setPosition(LEFT_TRIGGER_STOW);
+        if (servos) {
+            ballFeeder = getServo("ballFeeder"); ballFeeder.setPosition(LOAD);
+            upDown = getServo("upDown"); upDown.setPosition(BEACON_UP);
         }
 
-        // sensors
-        if (SENSORS) {
-            gyro = linearOpMode.hardwareMap.gyroSensor.get("gyro");
-            //color = linearOpMode.hardwareMap.colorSensor.get("colorSensor1");
+        // color sensors
+        if (colorSensors) I2C_ColorSensor.init(opMode);
 
-            AutoUtil.calibrateGyro(gyro);
-            AutoUtil.resetGyroHeading(gyro);
+        // other sensors
+        if (otherSensors) {
+            ods = opMode.hardwareMap.opticalDistanceSensor.get("ods");
+            gyro = opMode.hardwareMap.gyroSensor.get("gyro");
         }
-        
-        resetEncoders();
+
+        //resetEncoders();
 
         init = true;
     }
@@ -108,10 +114,10 @@ public final class Util {
 
     public static void resetEncoders(LinearOpMode opMode, DcMotor[] motorList) throws InterruptedException {
         for (DcMotor motor : motorList) motor.setMode(DcMotor.RunMode.RESET_ENCODERS);
-        for (int i = 0; i < 11; i++) opMode.waitOneFullHardwareCycle();
+        Thread.sleep(200);
         //while (motorList[0].getMode() != DcMotorController.RunMode.RESET_ENCODERS);
         for (DcMotor motor : motorList) motor.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODERS);
-        for (int i = 0; i < 11; i++) opMode.waitOneFullHardwareCycle();
+        Thread.sleep(200);
     }
 
     public static void resetEncoders(LinearOpMode opMode) throws InterruptedException {
@@ -127,7 +133,7 @@ public final class Util {
     }
 
     public static double getBatteryVoltage() {
-        return c.getVoltage();
+        return linearOpMode.hardwareMap.voltageSensor.iterator().next().getVoltage();
     }
 
     public static double getGamepadRightJoystickY(Gamepad gamepad) {
@@ -145,77 +151,64 @@ public final class Util {
     }
 
     public static void setRightPowers(double p) {
-        if (p == POWER_FLOAT) {
-            rightBack.setPowerFloat();
-            rightFront.setPowerFloat();
-            return;
-        }
         rightBack.setPower(p);
         rightFront.setPower(p);
     }
 
     public static void setLeftPowers(double p) {
-        if (p == POWER_FLOAT) {
-            leftBack.setPowerFloat();
-            leftFront.setPowerFloat();
-            return;
-        }
         leftBack.setPower(p);
         leftFront.setPower(p);
     }
 
     public static void setFrontPowers(double p) {
-        if (p == POWER_FLOAT) {
-            rightFront.setPowerFloat();
-            leftFront.setPowerFloat();
-            return;
-        }
         rightFront.setPower(p);
         leftFront.setPower(p);
     }
 
     public static void setBackPowers(double p) {
-        if (p == POWER_FLOAT) {
-            rightBack.setPowerFloat();
-            leftBack.setPowerFloat();
-            return;
-        }
         rightBack.setPower(p);
         leftBack.setPower(p);
     }
 
     public static void setAllPowers(double p) {
-        if (p == POWER_FLOAT) {
-            rightBack.setPowerFloat();
-            rightFront.setPowerFloat();
-            leftBack.setPowerFloat();
-            leftFront.setPowerFloat();
-            return;
-        }
         rightBack.setPower(p);
-        rightFront.setPower(p);
         leftBack.setPower(p);
+        rightFront.setPower(p);
         leftFront.setPower(p);
     }
-    
+
     public static void setMotorsPowers(DcMotor[] motors, double p) {
-        if (p == POWER_FLOAT) {
-            for (DcMotor motor : motors) {
-                motor.setPowerFloat();
-            }
-            return;
-        }
         for (DcMotor motor : motors) {
             motor.setPower(p);
         }
     }
 
-    public static void registerOpModes(OpModeManager m) {
-        //register opmodes here
-    }
-
     public static void log(String message) {
         if (!FtcRobotControllerActivity.LOG) return;
         RobotLog.i(message);
+    }
+
+    public static void telemetry(String key, String data) {
+        Util.linearOpMode.telemetry.update();
+    }
+
+    public static void telemetry(String key, int data) {
+        Util.linearOpMode.telemetry.update();
+    }
+
+    public static void telemetry(String key, double data) {
+        Util.linearOpMode.telemetry.update();
+    }
+
+    public static void telemetry(String key, String data, boolean update) {
+        if (update) Util.linearOpMode.telemetry.update();
+    }
+
+    public static void telemetry(String key, int data, boolean update) {
+        if (update) Util.linearOpMode.telemetry.update();
+    }
+
+    public static void telemetry(String key, double data, boolean update) {
+        if (update) Util.linearOpMode.telemetry.update();
     }
 }
