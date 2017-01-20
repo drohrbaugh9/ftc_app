@@ -24,9 +24,13 @@ Thumbs.db
 build/
 TeamCode/build/
 
+# LaTeX
+*.aux
+*.log
+*.synctex.gz
+
 *~
+
 *ASUS_PC_01*
 
-RPM --> tics per nano.txt
-tics per nano --> RPM.txt
-
+*tics per nano*
