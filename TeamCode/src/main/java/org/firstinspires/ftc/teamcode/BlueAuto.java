@@ -154,7 +154,7 @@ public class BlueAuto extends LinearOpMode {
 
         ballFeeder.setPosition(Util.LOAD);
 
-        Thread.sleep(1000);
+        Thread.sleep(1300);
 
         ballFeeder.setPosition(Util.SHOOT);
 
