@@ -64,7 +64,7 @@ public class BlueAuto extends LinearOpMode {
         rightFront.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
         leftFront.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
 
-        AutoUtil.PID_Forward(2200, 0.2, true, gyro);
+        AutoUtil.PID_Forward(900, 0.2, true, gyro);
 
         Thread.sleep(200 + 500);
 
@@ -74,6 +74,10 @@ public class BlueAuto extends LinearOpMode {
         leftFront.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
         shoot2();
+
+        AutoUtil.PID_Forward(1000, 0.2, true, gyro);
+
+        Thread.sleep(100);
 
         AutoUtil.encoderTurnLeft(100, 0.2);
 
