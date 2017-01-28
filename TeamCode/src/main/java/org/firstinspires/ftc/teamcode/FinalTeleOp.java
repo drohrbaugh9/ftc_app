@@ -21,7 +21,7 @@ public class FinalTeleOp extends LinearOpMode {
     //final String NORMAL = "normal", STRAIGHT = "straight";
     private final double POWER_FACTOR = 1, POSITIVE_STEP = 0.2, NEGATIVE_STEP = 0.5;
     protected static final double SHOOTER2_OFFSET = 0.07;
-    private final double INTAKE_POWER = 0.7;
+    private final double INTAKE_POWER = 0.9;
     private final double SHOOT = Util.SHOOT, LOAD = Util.LOAD;
     private final long MILLIS_PER_NANO = 1000000;
 
