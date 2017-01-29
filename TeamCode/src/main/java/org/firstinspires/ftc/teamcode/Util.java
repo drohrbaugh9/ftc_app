@@ -183,10 +183,10 @@ public final class Util {
         }
     }
 
-    public static void log(String message) {
+    /*public static void log(String message) {
         if (!FtcRobotControllerActivity.LOG) return;
         RobotLog.i(message);
-    }
+    }*/
 
     public static void telemetry(String key, String data) {
         Util.linearOpMode.telemetry.addData(key, data);
