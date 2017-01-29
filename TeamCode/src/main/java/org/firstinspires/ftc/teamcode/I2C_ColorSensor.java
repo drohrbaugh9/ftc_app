@@ -44,8 +44,8 @@ public class I2C_ColorSensor {
         synchFront = new I2cDeviceSynchImpl(colorFront, I2cAddr.create8bit(0x3e), false);
         synchFront.engage();
 
-        synchBack.write8(3, 1);
-        synchFront.write8(3, 1);
+        //synchBack.write8(3, 1);
+        //synchFront.write8(3, 1);
     }
 
     public static boolean beaconIsRedBlue() { return frontRed() || backBlue(); }
@@ -110,12 +110,14 @@ public class I2C_ColorSensor {
         if (!enabled) {
             if (backCallback != null) {
                 backController.registerForI2cPortReadyCallback(backCallback, colorBack.getPort());
-                synchBack.engage();
             }
             if (frontCallback != null) {
                 frontController.registerForI2cPortReadyCallback(frontCallback, colorFront.getPort());
-                synchFront.engage();
             }
+
+            synchBack.engage();
+            synchFront.engage();
+
             enabled = true;
         }
     }
@@ -123,12 +125,11 @@ public class I2C_ColorSensor {
     public static void disable() {
         if (enabled) {
             backController.deregisterForPortReadyCallback(colorBack.getPort());
-            synchBack.disengage();
-
             frontController.deregisterForPortReadyCallback(colorFront.getPort());
-            synchFront.disengage();
-
             enabled = false;
         }
+
+        synchBack.disengage();
+        synchFront.disengage();
     }
 }
