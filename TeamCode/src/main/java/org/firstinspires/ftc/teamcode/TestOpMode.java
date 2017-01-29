@@ -6,6 +6,7 @@ import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
+import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.I2cAddr;
 import com.qualcomm.robotcore.hardware.I2cController;
 import com.qualcomm.robotcore.hardware.I2cDevice;
@@ -18,8 +19,26 @@ import static org.firstinspires.ftc.teamcode.I2C_ColorSensor.synchBack;
 //@Disabled
 public class TestOpMode extends LinearOpMode {
 
-    // color sensors test
+    DcMotor shooter1;
+    DcMotor[] motors;
+
+    // encoder test
     /**/
+    public void runOpMode() throws InterruptedException {
+        shooter1 = hardwareMap.dcMotor.get("shooter1");
+        motors = new DcMotor[1]; motors[0] = shooter1;
+
+        AutoUtil.resetEncoders(motors);
+
+        waitForStart();
+
+        while (opModeIsActive()) {
+            Util.telemetry("shooter1 encoder", shooter1.getCurrentPosition(), true);
+        }
+    }/**/
+
+    // color sensors test
+    /*/
     public void runOpMode() throws InterruptedException {
         Util.linearOpMode = this;
         I2C_ColorSensor.init(this);
