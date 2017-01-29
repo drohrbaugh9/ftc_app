@@ -79,6 +79,17 @@ public final class AutoUtil {
         if (stop) Util.setAllPowers(0);
     }
 
+    public static void encoderSteerForwardLineSafe(double threshold, double power, int maxDist, boolean stop) throws InterruptedException {
+        int start = Util.rightFront.getCurrentPosition();
+
+        Util.setRightPowers(power * 1.08);
+        Util.setLeftPowers(power / 1.08);
+
+        while ((Util.ods.getLightDetected() < threshold) && (Util.rightFront.getCurrentPosition() - start) < maxDist) Thread.sleep(20);
+
+        if (stop) Util.setAllPowers(0);
+    }
+
     public static void encoderSteerBackwardLine(double threshold, double power, boolean stop) throws InterruptedException {
         Util.setRightPowers(-power * 1.08);
         Util.setLeftPowers(-power / 1.08);

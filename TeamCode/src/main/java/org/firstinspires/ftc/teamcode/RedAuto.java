@@ -95,7 +95,7 @@ public class RedAuto extends LinearOpMode {
 
         AutoUtil.encoderSteerForward(1500, 0.3, false);
 
-        AutoUtil.encoderSteerForwardLine(0.5, 0.1, false);
+        AutoUtil.encoderSteerForwardLineSafe(0.5, 0.1, 2000, false);
 
         AutoUtil.encoderSteerForward(240, 0.1, true);
 
