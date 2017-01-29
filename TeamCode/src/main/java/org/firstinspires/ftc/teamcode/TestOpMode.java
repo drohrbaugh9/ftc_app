@@ -25,6 +25,8 @@ public class TestOpMode extends LinearOpMode {
     // encoder test
     /**/
     public void runOpMode() throws InterruptedException {
+        Util.linearOpMode = this;
+
         shooter1 = hardwareMap.dcMotor.get("shooter1");
         motors = new DcMotor[1]; motors[0] = shooter1;
 
