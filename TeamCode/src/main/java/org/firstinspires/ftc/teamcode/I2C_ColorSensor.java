@@ -2,6 +2,7 @@ package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.hardware.I2cAddr;
+import com.qualcomm.robotcore.hardware.I2cController;
 import com.qualcomm.robotcore.hardware.I2cDevice;
 import com.qualcomm.robotcore.hardware.I2cDeviceSynch;
 import com.qualcomm.robotcore.hardware.I2cDeviceSynchImpl;
@@ -11,8 +12,11 @@ public class I2C_ColorSensor {
     private static byte[] redMSB, redLSB, blueLSB, blueMSB;
     private static I2cDevice colorFront, colorBack;
     protected static I2cDeviceSynch synchBack, synchFront;
+    protected static I2cController backController, frontController;
+    protected static I2cController.I2cPortReadyCallback backCallback, frontCallback;
 
     private static int threshold;
+    protected static boolean enabled = true;
 
     final static int DEFAULT_THRESHOLD = 30;
 
@@ -29,10 +33,14 @@ public class I2C_ColorSensor {
         setThreshold(DEFAULT_THRESHOLD);
 
         colorBack = opMode.hardwareMap.i2cDevice.get("colorBack");
+        backController = colorBack.getI2cController();
+        backCallback = backController.getI2cPortReadyCallback(colorBack.getPort());
         synchBack = new I2cDeviceSynchImpl(colorBack, I2cAddr.create8bit(0x3c), false);
         synchBack.engage();
 
         colorFront = opMode.hardwareMap.i2cDevice.get("colorFront");
+        frontController = colorFront.getI2cController();
+        frontCallback = frontController.getI2cPortReadyCallback(colorFront.getPort());
         synchFront = new I2cDeviceSynchImpl(colorFront, I2cAddr.create8bit(0x3e), false);
         synchFront.engage();
 
@@ -97,4 +105,30 @@ public class I2C_ColorSensor {
     }
 
     public static void setThreshold(int t) { threshold = t; }
+
+    public static void enable() {
+        if (!enabled) {
+            if (backCallback != null) {
+                backController.registerForI2cPortReadyCallback(backCallback, colorBack.getPort());
+                synchBack.engage();
+            }
+            if (frontCallback != null) {
+                frontController.registerForI2cPortReadyCallback(frontCallback, colorFront.getPort());
+                synchFront.engage();
+            }
+            enabled = true;
+        }
+    }
+
+    public static void disable() {
+        if (enabled) {
+            backController.deregisterForPortReadyCallback(colorBack.getPort());
+            synchBack.disengage();
+
+            frontController.deregisterForPortReadyCallback(colorFront.getPort());
+            synchFront.disengage();
+
+            enabled = false;
+        }
+    }
 }
