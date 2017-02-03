@@ -77,8 +77,8 @@ public class ShooterData extends LinearOpMode {
             //Util.log(DEBUG + "1: " + delta1);
             //Util.log(DEBUG + "2: " + delta2);
             Util.log(DEBUG + "batteryVoltage: " + Util.getBatteryVoltage());
-            Util.log(DEBUG + "RPM1: " + ((delta1 * 1000000000 * 60) / (deltat * 44.4)));
-            Util.log(DEBUG + "RPM2: " + ((delta2 * 1000000000 * 60) / (deltat * 44.4)));
+            Util.log(DEBUG + "RPM1: " + ((delta1 * 1000000000 * 60) / (deltat * 103.6)));
+            Util.log(DEBUG + "RPM2: " + ((delta2 * 1000000000 * 60) / (deltat * 103.6)));
 
             oldPos1 = currentPos1;
             oldPos2 = currentPos2;

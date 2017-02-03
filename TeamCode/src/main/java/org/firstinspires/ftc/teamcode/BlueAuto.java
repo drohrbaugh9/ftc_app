@@ -32,6 +32,8 @@ public class BlueAuto extends LinearOpMode {
         Util.colorSensors = true; Util.otherSensors = true; Util.servos = true;
         Util.init(this);
 
+        I2C_ColorSensor.disable();
+
         DeviceInterfaceModule dim = hardwareMap.deviceInterfaceModule.get("Sensors");
         dim.setLED(1, false);
         dim.setLED(0, true);
@@ -97,6 +99,8 @@ public class BlueAuto extends LinearOpMode {
         Thread.sleep(100);
 
         AutoUtil.PID_Backward(2250, 0.3, false, gyro);
+
+        I2C_ColorSensor.enable();
 
         AutoUtil.encoderSteerBackward(750, 0.3, false);
 

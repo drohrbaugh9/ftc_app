@@ -22,7 +22,7 @@ public class TestOpMode extends LinearOpMode {
     DcMotor shooter1;
     DcMotor[] motors;
 
-    // encoder test
+    // shooter encoder test
     /**/
     public void runOpMode() throws InterruptedException {
         Util.linearOpMode = this;

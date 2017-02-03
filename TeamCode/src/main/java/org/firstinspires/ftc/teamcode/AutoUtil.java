@@ -48,11 +48,13 @@ public final class AutoUtil {
         if (stop) Util.setAllPowers(0);
     }
 
+    private static double FORWARD_STEER = 1.08, BACKWARD_STEER = 1.1;
+
     public static void encoderSteerForward(int dist, double power, boolean stop) throws InterruptedException {
         int pos = (r.getCurrentPosition() + l.getCurrentPosition()) / 2;
 
-        Util.setRightPowers(power * 1.08);
-        Util.setLeftPowers(power / 1.08);
+        Util.setRightPowers(power * FORWARD_STEER);
+        Util.setLeftPowers(power / FORWARD_STEER);
 
         while (((r.getCurrentPosition() + l.getCurrentPosition()) / 2) < (pos + dist)) Thread.sleep(20);
 
@@ -62,8 +64,8 @@ public final class AutoUtil {
     public static void encoderSteerBackward(int dist, double power, boolean stop) throws InterruptedException {
         int pos = (r.getCurrentPosition() + l.getCurrentPosition()) / 2;
 
-        Util.setRightPowers(-power * 1.08);
-        Util.setLeftPowers(-power / 1.08);
+        Util.setRightPowers(-power * BACKWARD_STEER);
+        Util.setLeftPowers(-power / BACKWARD_STEER);
 
         while (((r.getCurrentPosition() + l.getCurrentPosition()) / 2) > (pos - dist)) Thread.sleep(20);
 
@@ -71,8 +73,8 @@ public final class AutoUtil {
     }
 
     public static void encoderSteerForwardLine(double threshold, double power, boolean stop) throws InterruptedException {
-        Util.setRightPowers(power * 1.08);
-        Util.setLeftPowers(power / 1.08);
+        Util.setRightPowers(power * FORWARD_STEER);
+        Util.setLeftPowers(power / FORWARD_STEER);
 
         while (Util.ods.getLightDetected() < threshold) Thread.sleep(20);
 
@@ -82,8 +84,8 @@ public final class AutoUtil {
     public static void encoderSteerForwardLineSafe(double threshold, double power, int maxDist, boolean stop) throws InterruptedException {
         int start = Util.rightFront.getCurrentPosition();
 
-        Util.setRightPowers(power * 1.08);
-        Util.setLeftPowers(power / 1.08);
+        Util.setRightPowers(power * FORWARD_STEER);
+        Util.setLeftPowers(power / FORWARD_STEER);
 
         while ((Util.ods.getLightDetected() < threshold) && (Util.rightFront.getCurrentPosition() - start) < maxDist) Thread.sleep(20);
 
@@ -91,8 +93,8 @@ public final class AutoUtil {
     }
 
     public static void encoderSteerBackwardLine(double threshold, double power, boolean stop) throws InterruptedException {
-        Util.setRightPowers(-power * 1.08);
-        Util.setLeftPowers(-power / 1.08);
+        Util.setRightPowers(-power * BACKWARD_STEER);
+        Util.setLeftPowers(-power / BACKWARD_STEER);
 
         while (Util.ods.getLightDetected() < threshold) Thread.sleep(20);
 

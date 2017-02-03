@@ -33,6 +33,8 @@ public class RedAuto extends LinearOpMode {
         Util.colorSensors = true; Util.otherSensors = true; Util.servos = true;
         Util.init(this);
 
+        I2C_ColorSensor.disable();
+
         DeviceInterfaceModule dim = hardwareMap.deviceInterfaceModule.get("Sensors");
         dim.setLED(0, false);
         dim.setLED(1, true);
@@ -98,6 +100,8 @@ public class RedAuto extends LinearOpMode {
         Thread.sleep(100);
 
         AutoUtil.PID_Forward(2250, 0.3, false, gyro);
+
+        I2C_ColorSensor.enable();
 
         AutoUtil.encoderSteerForward(1500, 0.3, false);
 

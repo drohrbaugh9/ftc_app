@@ -28,7 +28,7 @@ public final class Util {
 
     protected static boolean colorSensors = false, otherSensors = true, servos = true;
 
-    protected final static double SEC_TO_NSEC = 1000000000, NEVEREST_37_TICS_PER_ROTATION = 44.4;
+    protected final static double SEC_TO_NSEC = 1000000000, NEVEREST_37_TICS_PER_ROTATION = 103.6;
     protected final static double POWER_LIMIT = 1;
     protected static final double SHOOT = 0.5, LOAD = 0.95;
     protected static final double BEACON_UP = 0.6, BEACON_DOWN = 0.9; // was 0.95
