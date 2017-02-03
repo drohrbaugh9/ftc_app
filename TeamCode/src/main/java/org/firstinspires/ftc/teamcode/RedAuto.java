@@ -28,8 +28,11 @@ public class RedAuto extends LinearOpMode {
     final double BEACON_POWER = 0.15;
 
     public void runOpMode() throws InterruptedException {
+
         Util.colorSensors = true; Util.otherSensors = true; Util.servos = true;
         Util.init(this);
+
+        hardwareMap.deviceInterfaceModule.get("Sensors").setLED(1, true);
 
         // drive motors
         this.rightBack = Util.rightBack; this.leftBack = Util.leftBack;

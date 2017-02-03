@@ -31,6 +31,8 @@ public class BlueAuto extends LinearOpMode {
         Util.colorSensors = true; Util.otherSensors = true; Util.servos = true;
         Util.init(this);
 
+        hardwareMap.deviceInterfaceModule.get("Sensors").setLED(0, true);
+
         // drive motors
         this.rightBack = Util.rightBack; this.leftBack = Util.leftBack;
         this.rightFront = Util.rightFront; this.leftFront = Util.leftFront;

@@ -7,9 +7,6 @@ import com.qualcomm.robotcore.hardware.GyroSensor;
 import com.qualcomm.robotcore.hardware.OpticalDistanceSensor;
 import com.qualcomm.robotcore.hardware.Servo;
 
-/**
- * Created by owner on 1/21/17.
- */
 @Autonomous(name="BluteAlternate", group = "Competition")
 //@Disabled
 public class BlueAlternate extends LinearOpMode {
@@ -30,6 +27,8 @@ public class BlueAlternate extends LinearOpMode {
         Util.otherSensors = true;
         Util.servos = true;
         Util.init(this);
+
+        hardwareMap.deviceInterfaceModule.get("Sensors").setLED(0, true);
 
         // drive motors
         this.rightBack = Util.rightBack;
