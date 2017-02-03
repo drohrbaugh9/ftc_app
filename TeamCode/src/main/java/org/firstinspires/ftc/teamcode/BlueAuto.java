@@ -3,6 +3,7 @@ package org.firstinspires.ftc.teamcode;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.DeviceInterfaceModule;
 import com.qualcomm.robotcore.hardware.GyroSensor;
 import com.qualcomm.robotcore.hardware.OpticalDistanceSensor;
 import com.qualcomm.robotcore.hardware.Servo;
@@ -31,7 +32,9 @@ public class BlueAuto extends LinearOpMode {
         Util.colorSensors = true; Util.otherSensors = true; Util.servos = true;
         Util.init(this);
 
-        hardwareMap.deviceInterfaceModule.get("Sensors").setLED(0, true);
+        DeviceInterfaceModule dim = hardwareMap.deviceInterfaceModule.get("Sensors");
+        dim.setLED(1, false);
+        dim.setLED(0, true);
 
         // drive motors
         this.rightBack = Util.rightBack; this.leftBack = Util.leftBack;

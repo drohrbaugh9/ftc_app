@@ -4,6 +4,7 @@ import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.DeviceInterfaceModule;
 import com.qualcomm.robotcore.hardware.GyroSensor;
 import com.qualcomm.robotcore.hardware.OpticalDistanceSensor;
 import com.qualcomm.robotcore.hardware.Servo;
@@ -29,7 +30,9 @@ public class RedAlternate extends LinearOpMode {
         Util.servos = true;
         Util.init(this);
 
-        hardwareMap.deviceInterfaceModule.get("Sensors").setLED(1, true);
+        DeviceInterfaceModule dim = hardwareMap.deviceInterfaceModule.get("Sensors");
+        dim.setLED(0, false);
+        dim.setLED(1, true);
 
         // drive motors
         this.rightBack = Util.rightBack;
