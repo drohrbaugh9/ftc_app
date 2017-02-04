@@ -34,6 +34,7 @@ public class BlueAuto extends LinearOpMode {
 
         I2C_ColorSensor.disable();
 
+        // turn on blue LED on Device Interface Module to indicate Blue Auto (and make sure red LED is off)
         DeviceInterfaceModule dim = hardwareMap.deviceInterfaceModule.get("Sensors");
         dim.setLED(1, false);
         dim.setLED(0, true);
@@ -54,7 +55,7 @@ public class BlueAuto extends LinearOpMode {
         // otherSensors
         this.ods = Util.ods;
         this.gyro = Util.gyro;
-        I2C_ColorSensor.init(this);
+        //I2C_ColorSensor.init(this);
 
         Util.resetEncoders(this, motors);
 
@@ -86,6 +87,7 @@ public class BlueAuto extends LinearOpMode {
 
         Thread.sleep(100);
 
+        // consider changing to 110 to mirror RedAuto
         AutoUtil.encoderTurnLeft(100, 0.2);
 
         Thread.sleep(100);
@@ -94,7 +96,7 @@ public class BlueAuto extends LinearOpMode {
 
         Thread.sleep(100);
 
-        AutoUtil.encoderTurnLeft(50, 0.2);
+        AutoUtil.encoderTurnLeft(60, 0.2);
 
         Thread.sleep(100);
 
@@ -152,7 +154,7 @@ public class BlueAuto extends LinearOpMode {
             AutoUtil.beaconDown(upDown);
             AutoUtil.encoderSteerForward(BEACON_MOVE, BEACON_POWER * 3 / 4, true);
             Thread.sleep(100);
-            AutoUtil.encoderSteerBackward(BEACON_MOVE, BEACON_POWER * 3 / 4, true);
+            AutoUtil.encoderBackward(BEACON_MOVE, BEACON_POWER * 3 / 4, true);
         }
 
         Util.setAllPowers(0);

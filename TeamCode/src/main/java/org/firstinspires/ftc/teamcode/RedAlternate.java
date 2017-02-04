@@ -30,6 +30,7 @@ public class RedAlternate extends LinearOpMode {
         Util.servos = true;
         Util.init(this);
 
+        // turn on red LED on Device Interface Module to indicate Red Auto (and make sure blue LED is off)
         DeviceInterfaceModule dim = hardwareMap.deviceInterfaceModule.get("Sensors");
         dim.setLED(0, false);
         dim.setLED(1, true);

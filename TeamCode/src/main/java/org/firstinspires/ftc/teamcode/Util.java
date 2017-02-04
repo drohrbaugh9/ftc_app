@@ -30,7 +30,7 @@ public final class Util {
 
     protected final static double SEC_TO_NSEC = 1000000000, NEVEREST_37_TICS_PER_ROTATION = 103.6;
     protected final static double POWER_LIMIT = 1;
-    protected static final double SHOOT = 0.5, LOAD = 0.95;
+    protected static final double SHOOT = 0.5, LOAD = 1; // 0.95
     protected static final double BEACON_UP = 0.6, BEACON_DOWN = 0.9; // was 0.95
 
     //private static LinearOpMode linearOpMode;
@@ -175,6 +175,20 @@ public final class Util {
         leftBack.setPower(p);
         rightFront.setPower(p);
         leftFront.setPower(p);
+    }
+
+    public static void setDrivePowersFloat() {
+        rightBack.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
+        leftBack.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
+        rightFront.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
+        leftFront.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
+    }
+
+    public static void setDrivePowersBrake() {
+        rightBack.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        leftBack.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        rightFront.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        leftFront.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
     }
 
     public static void setMotorsPowers(DcMotor[] motors, double p) {

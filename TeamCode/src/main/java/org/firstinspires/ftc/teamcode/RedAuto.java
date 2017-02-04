@@ -33,8 +33,10 @@ public class RedAuto extends LinearOpMode {
         Util.colorSensors = true; Util.otherSensors = true; Util.servos = true;
         Util.init(this);
 
+        // disable color sensors to speed up gyro (for now)
         I2C_ColorSensor.disable();
 
+        // turn on red LED on Device Interface Module to indicate Red Auto (and make sure blue LED is off)
         DeviceInterfaceModule dim = hardwareMap.deviceInterfaceModule.get("Sensors");
         dim.setLED(0, false);
         dim.setLED(1, true);
@@ -52,67 +54,81 @@ public class RedAuto extends LinearOpMode {
         this.ballFeeder = Util.ballFeeder;
         this.upDown = Util.upDown;
 
-        // otherSensors
+        // other sensors
         this.ods = Util.ods;
         this.gyro = Util.gyro;
-        I2C_ColorSensor.init(this);
+        //I2C_ColorSensor.init(this);
 
+        // reset the encoders on the drive motors
         Util.resetEncoders(this, motors);
 
         waitForStart();
 
+        // spin up the shooter motors to a power calculated from the battery voltage
         double shooterPower = FinalTeleOp.calculateShooterPower();
         shooter1.setPower(shooterPower);
-        shooter2.setPower(shooterPower + FinalTeleOp.SHOOTER2_OFFSET);
+        shooter2.setPower(shooterPower + FinalTeleOp.SHOOTER2_OFFSET); // shooter 2 is slower than shooter 1
 
         Thread.sleep(500);
 
-        rightBack.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
-        leftBack.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
-        rightFront.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
-        leftFront.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
+        // make the robot coast to a stop in the next movement
+        Util.setDrivePowersFloat();
 
+        // move out from the wall into shooting position
         AutoUtil.PID_Forward(900, 0.2, true, gyro);
 
         Thread.sleep(200 + 500);
 
-        rightBack.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-        leftBack.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-        rightFront.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-        leftFront.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        // make the robot brake when it is set to zero power
+        Util.setDrivePowersBrake();
 
+        // accelerate two particles so that they fall into the center vortex
         shoot2();
 
         AutoUtil.PID_Forward(1000, 0.2, true, gyro);
 
         Thread.sleep(100);
 
+        // turn toward the closer beacon and corner vortex
         AutoUtil.encoderTurnLeft(70, 0.2);
+
+        AutoUtil.outtake(0.4);
 
         Thread.sleep(100);
 
+        // drive near to the closer beacon
         AutoUtil.PID_Forward(4100, 0.2, true, gyro);
 
         Thread.sleep(100);
 
+        // turn toward far beacon
         AutoUtil.encoderTurnRight(60, 0.2);
 
         Thread.sleep(100);
 
+        // move toward the wall
         AutoUtil.PID_Forward(2250, 0.3, false, gyro);
 
+        // enable the color sensors 'cause we're about to use them
         I2C_ColorSensor.enable();
 
+        // follow the wall...
         AutoUtil.encoderSteerForward(1500, 0.3, false);
 
+        AutoUtil.outtake(0);
+
+        // ...find the white line...
         AutoUtil.encoderSteerForwardLineSafe(0.5, 0.1, 2000, false);
 
+        // ...and center the robot on the beacon
         AutoUtil.encoderSteerForward(240, 0.1, true);
 
-        //boolean done = false;
+        /* based on which side is red, move to that side,
+         * lower our button pusher,
+         * and roll over the button
+         */
         if (I2C_ColorSensor.beaconIsRedBlue()) {
-            // first try
-            Util.telemetry("beacon status", "RED_BLUE", true);
+            //Util.telemetry("beacon status", "RED_BLUE", true);
             AutoUtil.encoderSteerForward(BEACON_MOVE, BEACON_POWER, true);
             AutoUtil.beaconDown(upDown);
             AutoUtil.encoderSteerBackward(BEACON_MOVE, BEACON_POWER, true);
@@ -121,7 +137,7 @@ public class RedAuto extends LinearOpMode {
             AutoUtil.beaconUp(upDown);
             AutoUtil.encoderSteerBackward(2000 + BEACON_MOVE, 0.3, false);
         } else if (I2C_ColorSensor.beaconIsBlueRed()) {
-            Util.telemetry("beacon status", "BLUE_RED", true);
+            //Util.telemetry("beacon status", "BLUE_RED", true);
             AutoUtil.encoderSteerBackward(BEACON_MOVE, BEACON_POWER, true);
             AutoUtil.beaconDown(upDown);
             AutoUtil.encoderSteerForward(BEACON_MOVE, BEACON_POWER, true);
@@ -131,18 +147,24 @@ public class RedAuto extends LinearOpMode {
             AutoUtil.beaconUp(upDown);
         }
 
+        // move to the closer beacon
         AutoUtil.encoderSteerBackwardLine(0.5, 0.1, true);
 
         Thread.sleep(100);
 
+        // center the robot on the beacon
         AutoUtil.encoderSteerForward(280, 0.1, true);
 
+        /* based on which side is red, move to that side,
+         * lower our button pusher,
+         * and roll over the button
+         */
         if (I2C_ColorSensor.beaconIsRedBlue()) {
             AutoUtil.encoderSteerForward(BEACON_MOVE, BEACON_POWER, true);
             AutoUtil.beaconDown(upDown);
             AutoUtil.encoderSteerBackward(BEACON_MOVE, BEACON_POWER, true);
             Thread.sleep(100);
-            AutoUtil.encoderSteerForward(BEACON_MOVE, BEACON_POWER, true);
+            AutoUtil.encoderSteerForward(BEACON_MOVE * 2, BEACON_POWER, true);
             AutoUtil.beaconUp(upDown);
         } else if (I2C_ColorSensor.beaconIsBlueRed()) {
             AutoUtil.encoderSteerBackward(BEACON_MOVE, BEACON_POWER, true);
@@ -151,6 +173,8 @@ public class RedAuto extends LinearOpMode {
             Thread.sleep(100);
             AutoUtil.encoderSteerBackward(BEACON_MOVE, BEACON_POWER, true);
             AutoUtil.beaconUp(upDown);
+            // move away from the corner vortex
+            AutoUtil.encoderForward(BEACON_MOVE * 4, BEACON_POWER, true);
         }
 
         Util.setAllPowers(0);
