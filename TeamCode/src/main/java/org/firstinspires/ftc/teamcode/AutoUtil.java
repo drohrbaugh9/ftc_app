@@ -81,7 +81,7 @@ public final class AutoUtil {
         if (stop) Util.setAllPowers(0);
     }
 
-    public static void encoderSteerForwardLineSafe(double threshold, double power, int maxDist, boolean stop) throws InterruptedException {
+    public static int encoderSteerForwardLineSafe(double threshold, double power, int maxDist, boolean stop) throws InterruptedException {
         int start = Util.rightFront.getCurrentPosition();
 
         Util.setRightPowers(power * FORWARD_STEER);
@@ -90,6 +90,9 @@ public final class AutoUtil {
         while ((Util.ods.getLightDetected() < threshold) && (Util.rightFront.getCurrentPosition() - start) < maxDist) Thread.sleep(20);
 
         if (stop) Util.setAllPowers(0);
+
+        if ((Util.rightFront.getCurrentPosition() - start) > maxDist) return -1;
+        return 0;
     }
 
     public static void encoderSteerBackwardLine(double threshold, double power, boolean stop) throws InterruptedException {
@@ -99,6 +102,20 @@ public final class AutoUtil {
         while (Util.ods.getLightDetected() < threshold) Thread.sleep(20);
 
         if (stop) Util.setAllPowers(0);
+    }
+
+    public static int encoderSteerBackwardLineSafe(double threshold, double power, int maxDist, boolean stop) throws InterruptedException {
+        int start = Util.rightFront.getCurrentPosition();
+
+        Util.setRightPowers(-power * FORWARD_STEER);
+        Util.setLeftPowers(-power / FORWARD_STEER);
+
+        while ((Util.ods.getLightDetected() < threshold) && (start - Util.rightFront.getCurrentPosition()) < maxDist) Thread.sleep(20);
+
+        if (stop) Util.setAllPowers(0);
+
+        if (start - (Util.rightFront.getCurrentPosition()) > maxDist) return -1;
+        return 0;
     }
 
     public static void PID_Forward(double distance, double power, boolean stop, GyroSensor gyro) throws InterruptedException {

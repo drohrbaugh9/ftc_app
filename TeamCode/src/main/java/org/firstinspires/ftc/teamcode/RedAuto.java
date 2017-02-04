@@ -102,7 +102,7 @@ public class RedAuto extends LinearOpMode {
         Thread.sleep(100);
 
         // turn toward far beacon
-        AutoUtil.encoderTurnRight(60, 0.2);
+        AutoUtil.encoderTurnRight(55, 0.2);
 
         Thread.sleep(100);
 
@@ -118,7 +118,13 @@ public class RedAuto extends LinearOpMode {
         AutoUtil.outtake(0);
 
         // ...find the white line...
-        AutoUtil.encoderSteerForwardLineSafe(0.5, 0.1, 2000, false);
+        if (AutoUtil.encoderSteerForwardLineSafe(0.5, 0.1, 2000, false) == -1) {
+            Util.telemetry("failsafe", "------FAILSAFE ENGAGED------", true);
+            Util.setDrivePowersFloat();
+            Util.setAllPowers(0);
+            while (opModeIsActive()) Thread.sleep(20);
+        }
+        Util.telemetry("failsafe", "-----FAILSAFE DIDN'T ENGAGE-----", true);
 
         // ...and center the robot on the beacon
         AutoUtil.encoderSteerForward(240, 0.1, true);
@@ -148,7 +154,13 @@ public class RedAuto extends LinearOpMode {
         }
 
         // move to the closer beacon
-        AutoUtil.encoderSteerBackwardLine(0.5, 0.1, true);
+        if (AutoUtil.encoderSteerBackwardLineSafe(0.5, 0.1, 3200, true) == -1) {
+            Util.telemetry("failsafe", "------FAILSAFE ENGAGED------", true);
+            Util.setDrivePowersFloat();
+            Util.setAllPowers(0);
+            while (opModeIsActive()) Thread.sleep(20);
+        }
+        Util.telemetry("failsafe", "-----FAILSAFE DIDN'T ENGAGE-----", true);
 
         Thread.sleep(100);
 

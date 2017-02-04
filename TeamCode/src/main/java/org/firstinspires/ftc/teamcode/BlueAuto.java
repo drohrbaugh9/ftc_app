@@ -106,7 +106,7 @@ public class BlueAuto extends LinearOpMode {
 
         AutoUtil.encoderSteerBackward(750, 0.3, false);
 
-        AutoUtil.encoderSteerBackwardLine(0.5, 0.15, false);
+        AutoUtil.encoderSteerBackwardLineSafe(0.5, 0.15, 500, false); // TODO: adjust maxDist value
 
         Thread.sleep(100);
 
