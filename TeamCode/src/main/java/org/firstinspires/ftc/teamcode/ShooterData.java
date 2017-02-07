@@ -10,7 +10,7 @@ import com.qualcomm.robotcore.hardware.Servo;
 
 //@TeleOp(name="ShooterData", group="Test")
 @Autonomous(name="TestWithData", group="Test")
-//@Disabled
+@Disabled
 public class ShooterData extends LinearOpMode {
 
     private final String DEBUG = "SHOOTER ";
@@ -36,11 +36,14 @@ public class ShooterData extends LinearOpMode {
 
         ballFeeder.setPosition(Util.LOAD);
 
+        shooter1.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        shooter2.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+
         waitForStart();
 
         int i = 1;
-        double power = 0.3;
-        boolean shooterStart = true, shoot1 = true, shoot2 = true, load1 = true;
+        double power = 0.24;
+        boolean shooterStart = true, shooterChange = true, shoot1 = true, shoot2 = true, load1 = true;
 
         //Util.log(DEBUG + "battery voltage: " + Util.getBatteryVoltage());
 
@@ -57,7 +60,7 @@ public class ShooterData extends LinearOpMode {
         long start = System.nanoTime();
         long old = start;
 
-        while (i < (700 + 1)) {
+        while (i < (600 + 1)) {
             /*double stick = gamepad1.right_stick_y;
             if (stick < 0) stick = 0;
             shooter1.setPower(stick * 0.24);
@@ -76,7 +79,7 @@ public class ShooterData extends LinearOpMode {
             //Util.log(DEBUG + "time: " + (time - start));
             //Util.log(DEBUG + "1: " + delta1);
             //Util.log(DEBUG + "2: " + delta2);
-            Util.log(DEBUG + "batteryVoltage: " + Util.getBatteryVoltage());
+            //Util.log(DEBUG + "batteryVoltage: " + Util.getBatteryVoltage());
             Util.log(DEBUG + "RPM1: " + ((delta1 * 1000000000 * 60) / (deltat * 103.6)));
             Util.log(DEBUG + "RPM2: " + ((delta2 * 1000000000 * 60) / (deltat * 103.6)));
 
@@ -101,6 +104,14 @@ public class ShooterData extends LinearOpMode {
                 shooter2.setPower(power + 0.07);
                 shooterStart = false;
             }
+
+            /*if (shooterChange && (time - start) > 3 * 1000000000.0) {
+                shooter1.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+                shooter2.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+                shooter1.setPower(0.1);
+                shooter2.setPower(0.1);
+                shooterChange = false;
+            }*/
 
             if (shoot1 && (time - start) > 3 * 1000000000.0) {
                 ballFeeder.setPosition(Util.SHOOT);
@@ -142,6 +153,8 @@ public class ShooterData extends LinearOpMode {
         telemetry.update();*/
 
         //while (opModeIsActive());
+
+        Thread.sleep(2000);
     }
 
     public void runThatOpMode() throws InterruptedException { // renamed to runThatOpMode() to not conflict with newer runOpMode()

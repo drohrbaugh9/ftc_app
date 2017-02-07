@@ -13,17 +13,43 @@ import com.qualcomm.robotcore.hardware.I2cDevice;
 import com.qualcomm.robotcore.hardware.I2cDeviceSynchImpl;
 
 import static org.firstinspires.ftc.teamcode.I2C_ColorSensor.synchBack;
+import static org.firstinspires.ftc.teamcode.Util.intake;
 
 @TeleOp(name = "Test", group = "Test")
 //@Autonomous(name = "Test", group = "Test")
-//@Disabled
+@Disabled
 public class TestOpMode extends LinearOpMode {
 
-    DcMotor shooter1;
+    DcMotor shooter1, shooter2;
     DcMotor[] motors;
 
-    // shooter encoder test
     /**/
+    public void runOpMode() throws InterruptedException {
+        Util.linearOpMode = this;
+
+        shooter1 = hardwareMap.dcMotor.get("shooter1");
+        shooter2 = hardwareMap.dcMotor.get("shooter2");
+
+        shooter1.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
+        shooter2.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
+
+        shooter1.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        shooter2.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+
+        waitForStart();
+
+        shooter1.setPower(0.05);
+        shooter2.setPower(-0.05);
+
+        Thread.sleep(5000);
+
+        shooter1.setPower(0);
+        shooter2.setPower(0);
+    }
+    /**/
+
+    // shooter encoder test
+    /*/
     public void runOpMode() throws InterruptedException {
         Util.linearOpMode = this;
 

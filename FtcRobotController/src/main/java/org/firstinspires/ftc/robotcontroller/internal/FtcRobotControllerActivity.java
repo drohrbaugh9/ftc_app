@@ -103,7 +103,7 @@ public class FtcRobotControllerActivity extends Activity {
 
   private static final int REQUEST_CONFIG_WIFI_CHANNEL = 1;
   private static final int NUM_GAMEPADS = 2;
-  public static final boolean LOG = false;
+  public static final boolean LOG = true;
 
   public static final String NETWORK_TYPE_FILENAME = "ftc-network-type.txt";
 

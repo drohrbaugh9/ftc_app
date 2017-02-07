@@ -4,7 +4,7 @@ import com.qualcomm.robotcore.util.Range;
 
 public final class ShooterPID {
 
-    private static final float shooterKp = 0.001f;
+    private static final float shooterKp = 0.0001f;
     private static final float shooterKi = 0.0f;
     private static double shooterIntegral1 = 0, shooterIntegral2 = 0;
 
@@ -15,7 +15,7 @@ public final class ShooterPID {
         shooterIntegral1 += error1; shooterIntegral2 += error2;
         double adjust1 = shooterKp * error1 + shooterKi * shooterIntegral1;
         double adjust2 = shooterKp * error2 + shooterKi * shooterIntegral2;
-        double[] toReturn = {Range.clip(power1 + adjust1, -1, 1), Range.clip(power2 + adjust2, -1, 1)};
+        double[] toReturn = {Range.clip(power1 + adjust1, 0, 1), Range.clip(power2 + adjust2, 0, 1)};
         return toReturn;
     }
 
