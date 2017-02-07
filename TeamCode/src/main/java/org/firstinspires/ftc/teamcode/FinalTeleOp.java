@@ -53,7 +53,10 @@ public class FinalTeleOp extends LinearOpMode {
 
         waitForStart();
 
+        //long start = System.nanoTime();
+
         while (opModeIsActive()) {
+        //for (int i = 0; i < 1000; i++) {
 
             handleDriveMotors();
 
@@ -63,12 +66,18 @@ public class FinalTeleOp extends LinearOpMode {
 
             //telemetry.addData("battery voltage", Util.getBatteryVoltage());
 
-            telemetry.addData("shooter power", shooter1.getPower());
-
-            telemetry.update();
+            //Util.telemetry("shooter power", shooter1.getPower(), true);
 
             Thread.sleep(10);
         }
+
+        /*/
+        long end = System.nanoTime();
+
+        Util.telemetry("average loop time (ms)", (end - start) / 1000000000, true);
+
+        while (opModeIsActive()) Thread.sleep(20);
+        /**/
     }
 
     private void handleDriveMotors() throws InterruptedException {
