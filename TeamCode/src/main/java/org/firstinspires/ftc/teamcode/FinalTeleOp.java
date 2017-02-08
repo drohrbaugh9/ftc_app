@@ -32,10 +32,12 @@ public class FinalTeleOp extends LinearOpMode {
 
     private int intakeStatus = 0;
     private boolean intakeChanged = false;
+    private long oldLoopTime;
 
     public void runOpMode() throws InterruptedException {
         Util.colorSensors = false; Util.otherSensors = true; Util.servos = true;
         Util.init(this);
+        ShooterPID.init();
 
         this.rightBack = Util.rightBack;
         this.leftBack = Util.leftBack;
@@ -44,6 +46,13 @@ public class FinalTeleOp extends LinearOpMode {
 
         this.shooter1 = Util.shooter1;
         this.shooter2 = Util.shooter2;
+
+        DcMotor[] temp = new DcMotor[6];
+        temp[0] = this.rightBack; temp[1] = this.leftBack;
+        temp[2] = this.rightFront; temp[3] = this.leftFront;
+        temp[4] = this.shooter1; temp[5] = this.shooter2;
+
+        Util.resetEncoders(this, temp);
 
         this.intake = Util.intake;
 
@@ -54,6 +63,7 @@ public class FinalTeleOp extends LinearOpMode {
         waitForStart();
 
         //long start = System.nanoTime();
+        oldLoopTime = System.nanoTime();
 
         while (opModeIsActive()) {
         //for (int i = 0; i < 1000; i++) {
@@ -302,15 +312,18 @@ public class FinalTeleOp extends LinearOpMode {
     }
 
     private boolean SHOOTER_ON = true, SHOOTER_OFF = false;
-    private int shooterSpinUp = 2000, shooterLoad = 2000, shooterFire = 400;
+    private int shooterPID = 1500, shooterSpinUp = 2000, shooterLoad = 2000, shooterFire = 400;
+    private double shooter1Power = 0, shooter2Power = 0;
 
     private void handleShooter() throws InterruptedException {
-        long time = System.nanoTime() / 1000000;
+        long time = System.nanoTime() / MILLIS_PER_NANO;
 
-        if (gamepad1.right_trigger >= 0.5) {
+        if (!shooterStatus && gamepad1.right_trigger >= 0.5) {
             double power = calculateShooterPower();
-            shooter1.setPower(power);
-            shooter2.setPower(power + SHOOTER2_OFFSET);
+            shooter1Power = power;
+            shooter2Power = power + SHOOTER2_OFFSET;
+            shooter1.setPower(shooter1Power);
+            shooter2.setPower(shooter2Power);
             shooterStart = time;
             shooterStatus = SHOOTER_ON;
             telemetry.addData("shooter power", power);
@@ -318,15 +331,36 @@ public class FinalTeleOp extends LinearOpMode {
         if (gamepad1.left_trigger >= 0.5) {
             shooter1.setPower(0);
             shooter2.setPower(0);
+            shooter1Power = 0;
+            shooter2Power = 0;
             shooterStatus = SHOOTER_OFF;
         }
 
-        if (gamepad1.b && shooterStatus && (time - shooterStart) > shooterSpinUp) { // && (time - shooterLoadTimer) > shooterLoad) {
-            ballFeeder.setPosition(this.SHOOT);
-            Thread.sleep(shooterFire);
-            ballFeeder.setPosition(this.LOAD);
-            //shooterLoadTimer = System.nanoTime();
+        if (shooterStatus) {
+            ShooterPID.manageEncoderData(time - oldLoopTime);
+
+            if ((time - shooterStart) > shooterPID) {
+                Util.telemetry("elapsedTime", time - oldLoopTime, false);
+                double[] powers = ShooterPID.PID_calculateShooterPower(shooter1Power, shooter2Power);
+                shooter1Power = powers[0];
+                shooter2Power = powers[1];
+                shooter1.setPower(shooter1Power);
+                shooter2.setPower(shooter2Power);
+                /*Util.telemetry("power1", powers[0], false);
+                Util.telemetry("power2", powers[1], true);*/
+            }
+
+            if (gamepad1.b && (time - shooterStart) > shooterSpinUp) { // && (time - shooterLoadTimer) > shooterLoad) {
+                ballFeeder.setPosition(this.SHOOT);
+                Thread.sleep(shooterFire);
+                ballFeeder.setPosition(this.LOAD);
+                //shooterLoadTimer = System.nanoTime();
+            }
+        } else {
+            ShooterPID.clearQueue();
         }
+
+        oldLoopTime = time;
     }
 
     protected static double calculateShooterPower() {
