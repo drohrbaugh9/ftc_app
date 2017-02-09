@@ -6,11 +6,13 @@ import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
+import com.qualcomm.robotcore.hardware.CRServo;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.I2cAddr;
 import com.qualcomm.robotcore.hardware.I2cController;
 import com.qualcomm.robotcore.hardware.I2cDevice;
 import com.qualcomm.robotcore.hardware.I2cDeviceSynchImpl;
+import com.qualcomm.robotcore.hardware.Servo;
 
 import static org.firstinspires.ftc.teamcode.I2C_ColorSensor.synchBack;
 import static org.firstinspires.ftc.teamcode.Util.intake;
@@ -23,7 +25,25 @@ public class TestOpMode extends LinearOpMode {
     DcMotor shooter1, shooter2;
     DcMotor[] motors;
 
+    CRServo servo1;
+
+    /**/ // servo test
+    public void runOpMode() throws InterruptedException {
+        Util.linearOpMode = this;
+
+        servo1 = hardwareMap.crservo.get("servo1");
+
+        servo1.setPower(0);
+
+        waitForStart();
+
+        servo1.setPower(0.9);
+
+        while (opModeIsActive()) Thread.sleep(10);
+    }
     /**/
+
+    /*/ // shooter RUN_USING_ENCODER test
     public void runOpMode() throws InterruptedException {
         Util.linearOpMode = this;
 
@@ -48,8 +68,7 @@ public class TestOpMode extends LinearOpMode {
     }
     /**/
 
-    // shooter encoder test
-    /*/
+    /*/ // shooter encoder test
     public void runOpMode() throws InterruptedException {
         Util.linearOpMode = this;
 
@@ -65,8 +84,7 @@ public class TestOpMode extends LinearOpMode {
         }
     }/**/
 
-    // color sensors test
-    /*/
+    /*/ // color sensors test
     public void runOpMode() throws InterruptedException {
         Util.linearOpMode = this;
         I2C_ColorSensor.init(this);
@@ -93,8 +111,7 @@ public class TestOpMode extends LinearOpMode {
         }
     }/**/
 
-    // color sensors test
-    /*/
+    /*/ // color sensors test
     I2cDevice frontColor, backColor;
 
     //I2cAddr backColorAddress  = I2cAddr.create8bit(0x3c);
