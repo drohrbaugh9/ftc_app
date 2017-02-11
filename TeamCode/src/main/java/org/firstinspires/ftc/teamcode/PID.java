@@ -7,7 +7,7 @@ import com.qualcomm.robotcore.util.RobotLog;
 public final class PID {
 
     // drive
-    private static final float Kp = 0.04f;   //proportional constant      //TODO final tune
+    private static final float Kp = 0.01f;   //proportional constant      //TODO final tune
     private static final float Ki = 0.0f;    //integral constant     //TODO tune
     private static final int offset = 0;          //value that <gyroHeading> should be
     private static double integral = 0;      //variable to hold integral value (accumulated error)

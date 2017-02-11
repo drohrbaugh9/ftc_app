@@ -250,26 +250,26 @@ public class FinalTeleOp extends LinearOpMode {
     private final int INTAKE_OFF = 0, INTAKE = 1, OUTTAKE = 2;
 
     private void handleIntake() {
-        if ((gamepad1.right_bumper && gamepad1.left_bumper) && !intakeChanged) {
+        /*if ((gamepad1.right_bumper && gamepad1.left_bumper) && !intakeChanged) {
             /* if the intake is off, outtake
              * if the intake is intaking, outtake
              * if the intake is outtaking, do nothing
-             */
+             *//*
             switch (intakeStatus) {
                 case INTAKE_OFF:
                 case INTAKE: outtake(); break;
                 case OUTTAKE: break;
             }
             intakeChanged = true;
-        }
+        }*/
         if (gamepad1.left_bumper && !intakeChanged) {
             /* if the intake is off, do nothing
              * if the intake is intaking, turn it off
              * if the intake is outtaking, turn it off
              */
             switch (intakeStatus) {
-                case INTAKE_OFF: break;
-                case INTAKE:
+                case INTAKE_OFF: outtake();
+                case INTAKE: break;
                 case OUTTAKE: intakeOff(); break;
             }
             intakeChanged = true;
@@ -281,17 +281,17 @@ public class FinalTeleOp extends LinearOpMode {
              */
             switch (intakeStatus) {
                 case INTAKE_OFF: intake(); break;
-                case INTAKE: break;
-                case OUTTAKE: intake(); break;
+                case INTAKE: intakeOff(); break;
+                //case OUTTAKE: break;
             }
             intakeChanged = true;
         }
         // wait until the user releases all intake-related buttons before allowing the user to change the intake again
         else if (!gamepad1.right_bumper && !gamepad1.left_bumper) {
             intakeChanged = false;
-            if (intakeStatus == OUTTAKE) {
+            /*if (intakeStatus == OUTTAKE) {
                 intakeOff();
-            }
+            }*/
         }
     }
 

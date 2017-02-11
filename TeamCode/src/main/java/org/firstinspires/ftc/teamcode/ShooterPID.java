@@ -7,7 +7,7 @@ import java.util.Queue;
 
 public final class ShooterPID {
 
-    private static final float shooterKp = 0.0001f;
+    private static final float shooterKp = 0.00005f; // Ku = 0.0001
     private static final float shooterKi = 0.0f;
 
     static final double MOVING_AVERAGE_LENGTH = 50, MEASURING_INTERVAL = 10;
@@ -80,6 +80,9 @@ public final class ShooterPID {
 
         lastShooter1Pos = shooter1Pos;
         lastShooter2Pos = shooter2Pos;
+
+        Util.log("SHOOTER " + "RPM1: " + ((shooter1Diff * 1000 * 60) / (elapsedTime * 103.6)));
+        Util.log("SHOOTER " + "RPM2: " + ((shooter2Diff * 1000 * 60) / (elapsedTime * 103.6)));
 
         queueClear = false;
     }
