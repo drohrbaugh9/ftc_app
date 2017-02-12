@@ -67,25 +67,15 @@ public class BlueAuto extends LinearOpMode {
 
         Thread.sleep(500);
 
-        rightBack.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
-        leftBack.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
-        rightFront.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
-        leftFront.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
+        Util.setDrivePowersFloat();
 
-        AutoUtil.PID_Forward(900, 0.2, true, gyro);
+        AutoUtil.PID_Forward(1700, 0.2, true, gyro);
 
         Thread.sleep(200 + 500);
 
-        rightBack.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-        leftBack.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-        rightFront.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-        leftFront.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        Util.setDrivePowersBrake();
 
         shoot2();
-
-        AutoUtil.PID_Forward(1000, 0.2, true, gyro);
-
-        Thread.sleep(100);
 
         // consider changing to 110 to mirror RedAuto
         AutoUtil.encoderTurnLeft(100, 0.2);
@@ -106,7 +96,13 @@ public class BlueAuto extends LinearOpMode {
 
         AutoUtil.encoderSteerBackward(750, 0.3, false);
 
-        AutoUtil.encoderSteerBackwardLineSafe(0.5, 0.15, 500, false); // TODO: adjust maxDist value
+        if (AutoUtil.encoderSteerBackwardLineSafe(0.5, 0.15, 3500, false) == -1) { // TODO: adjust maxDist value
+            Util.telemetry("failsafe", "------FAILSAFE ENGAGED------", true);
+            Util.setDrivePowersFloat();
+            Util.setAllPowers(0);
+            while (opModeIsActive()) Thread.sleep(20);
+        }
+        Util.telemetry("failsafe", "-----FAILSAFE DIDN'T ENGAGE-----", true);
 
         Thread.sleep(100);
 

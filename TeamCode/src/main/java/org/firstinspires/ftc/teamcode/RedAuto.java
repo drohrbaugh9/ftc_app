@@ -75,7 +75,7 @@ public class RedAuto extends LinearOpMode {
         Util.setDrivePowersFloat();
 
         // move out from the wall into shooting position
-        AutoUtil.PID_Forward(900, 0.2, true, gyro);
+        AutoUtil.PID_Forward(2200, 0.2, true, gyro);
 
         Thread.sleep(200 + 500);
 
@@ -85,9 +85,9 @@ public class RedAuto extends LinearOpMode {
         // accelerate two particles so that they fall into the center vortex
         shoot2();
 
-        AutoUtil.PID_Forward(1000, 0.2, true, gyro);
+        /*AutoUtil.PID_Forward(1000, 0.2, true, gyro);
 
-        Thread.sleep(100);
+        Thread.sleep(100);*/
 
         // turn toward the closer beacon and corner vortex
         AutoUtil.encoderTurnLeft(70, 0.2);

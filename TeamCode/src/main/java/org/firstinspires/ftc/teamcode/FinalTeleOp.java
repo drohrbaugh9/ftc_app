@@ -201,8 +201,8 @@ public class FinalTeleOp extends LinearOpMode {
     }
 
     private int beaconForward() throws InterruptedException {
-        Util.setRightPowers(0.21);
-        Util.setLeftPowers(0.19);
+        Util.setRightPowers(0.26);
+        Util.setLeftPowers(0.28);
         //if (lookForLineAndCheckJoystick(0.50) == -1) return -1;
         if (lookForLineAndCheckJoystick(0.5) == -1) return -1;
         if (sleepAndCheckJoystick(250) == -1) return -1;
@@ -215,8 +215,8 @@ public class FinalTeleOp extends LinearOpMode {
     }
 
     private int beaconBackward() throws InterruptedException {
-        Util.setRightPowers(-0.21);
-        Util.setLeftPowers(-0.19);
+        Util.setRightPowers(-0.28);
+        Util.setLeftPowers(-0.26);
         //if (lookForLineAndCheckJoystick(0.50) == -1) return -1;
         if (lookForLineAndCheckJoystick(0.5) == -1) return -1;
         if (sleepAndCheckJoystick(50) == -1) return -1;
