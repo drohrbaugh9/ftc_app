@@ -67,7 +67,7 @@ public class RedAuto extends LinearOpMode {
 
         ShooterPID.init();
 
-        ShooterPID.fillQueue();
+        //ShooterPID.printQueue();
 
         waitForStart();
 
@@ -85,7 +85,13 @@ public class RedAuto extends LinearOpMode {
         // move out from the wall into shooting position
         AutoUtil.PID_Forward(2200, 0.2, true, gyro);
 
-        sleepAndShooterPID(700);
+        ShooterPID.fillQueue();
+
+        sleepAndShooterPID(5000); //700
+
+        shooter1.setPower(0); shooter2.setPower(0);
+
+        while (opModeIsActive()) Thread.sleep(200);
 
         //Thread.sleep(200 + 500);
 
@@ -164,7 +170,7 @@ public class RedAuto extends LinearOpMode {
         }
 
         // move to the closer beacon
-        if (AutoUtil.encoderSteerBackwardLineSafe(0.5, 0.1, 3200, true) == -1) {
+        if (AutoUtil.encoderSteerBackwardLineSafe(0.5, 0.1, 3700, true) == -1) {
             Util.telemetry("failsafe", "------FAILSAFE ENGAGED------", true);
             Util.setDrivePowersFloat();
             Util.setAllPowers(0);
@@ -196,10 +202,21 @@ public class RedAuto extends LinearOpMode {
             AutoUtil.encoderSteerBackward(BEACON_MOVE, BEACON_POWER, true);
             AutoUtil.beaconUp(upDown);
             // move away from the corner vortex
-            AutoUtil.encoderForward(BEACON_MOVE * 4, BEACON_POWER, true);
+            //AutoUtil.encoderForward(BEACON_MOVE * 4, BEACON_POWER, false);
         }
 
+        Util.setRightPowers(0.1);
+        Util.setLeftPowers(0.7);
+
+        Thread.sleep(1000);
+
+        Util.setDrivePowersFloat();
+
         Util.setAllPowers(0);
+
+        Thread.sleep(500);
+
+        Util.setDrivePowersBrake();
 
         while(opModeIsActive()) Thread.sleep(100);
     }
@@ -232,12 +249,14 @@ public class RedAuto extends LinearOpMode {
         long start = System.nanoTime() / FinalTeleOp.MILLIS_PER_NANO;
         long currentTime = start, oldTime = start - 10;
 
-        while (start - currentTime < sleep) {
+        while ((currentTime - start) < sleep) {
             currentTime = System.nanoTime() / FinalTeleOp.MILLIS_PER_NANO;
             ShooterPID.manageEncoderData(currentTime - oldTime);
             double[] powers = ShooterPID.PID_calculateShooterPower(shooter1Power, shooter2Power);
             shooter1Power = powers[0];
             shooter2Power = powers[1];
+            Util.telemetry("1p", shooter1Power, false);
+            Util.telemetry("2p", shooter2Power, true);
             shooter1.setPower(shooter1Power);
             shooter2.setPower(shooter2Power);
             oldTime = currentTime;

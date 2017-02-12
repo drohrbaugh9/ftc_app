@@ -36,9 +36,9 @@ public final class ShooterPID {
         //                  tics per rotation * rotations per second * seconds
         /*double ticsTarget = TICS_PER_ROTATION * (RPM_TARGET / 60.0) * (deltat / 1000.0);
         Util.telemetry("ticsTarget", ticsTarget, false);*/
-        Util.telemetry("delta1", delta1, false);
+        /*Util.telemetry("delta1", delta1, false);
         Util.telemetry("delta2", delta2, false);
-        Util.telemetry("shooter1Sum", shooter1Sum, true);
+        Util.telemetry("shooter1Sum", shooter1Sum, false);*/
 
         return PI_Shooter(delta1, delta2, TICS_TARGET, power1, power2);
     }
@@ -108,22 +108,22 @@ public final class ShooterPID {
     }
 
     public static void fillQueue() {
-        if (queueClear) return;
-
-        shooter1Queue = new LinkedList<>();
-        shooter2Queue = new LinkedList<>();
-        //elapsedTimeQueue = new LinkedList<>();
-
         shooter1Sum = TICS_TARGET * MOVING_AVERAGE_LENGTH;
         shooter2Sum = TICS_TARGET * MOVING_AVERAGE_LENGTH;
-        timeSum = 0;
+
+        /*shooter1Queue.clear();
+        shooter2Queue.clear();*/
 
         for (int i = 0; i < MOVING_AVERAGE_LENGTH; i++) {
+            shooter1Queue.poll();
             shooter1Queue.add(TICS_TARGET);
+            shooter2Queue.poll();
             shooter2Queue.add(TICS_TARGET);
             //elapsedTimeQueue.add((long)0);
         }
+    }
 
-        queueClear = false;
+    public static void printQueue() {
+        Util.telemetry("q", shooter1Queue.toString(), true);
     }
 }
