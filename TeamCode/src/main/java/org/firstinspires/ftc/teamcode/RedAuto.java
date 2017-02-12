@@ -28,6 +28,9 @@ public class RedAuto extends LinearOpMode {
     final int BEACON_MOVE = 400;
     final double BEACON_POWER = 0.15;
 
+    // variables to hold motor powers
+    double shooter1Power, shooter2Power;
+
     public void runOpMode() throws InterruptedException {
 
         Util.colorSensors = true; Util.otherSensors = true; Util.servos = true;
@@ -62,12 +65,17 @@ public class RedAuto extends LinearOpMode {
         // reset the encoders on the drive motors
         Util.resetEncoders(this, motors);
 
+        ShooterPID.init();
+
+        ShooterPID.fillQueue();
+
         waitForStart();
 
         // spin up the shooter motors to a power calculated from the battery voltage
-        double shooterPower = FinalTeleOp.calculateShooterPower();
-        shooter1.setPower(shooterPower);
-        shooter2.setPower(shooterPower + FinalTeleOp.SHOOTER2_OFFSET); // shooter 2 is slower than shooter 1
+        shooter1Power = FinalTeleOp.calculateShooterPower();
+        shooter2Power = shooter1Power + FinalTeleOp.SHOOTER2_OFFSET; // shooter 2 is slower than shooter 1
+        shooter1.setPower(shooter1Power);
+        shooter2.setPower(shooter2Power);
 
         Thread.sleep(500);
 
@@ -77,7 +85,9 @@ public class RedAuto extends LinearOpMode {
         // move out from the wall into shooting position
         AutoUtil.PID_Forward(2200, 0.2, true, gyro);
 
-        Thread.sleep(200 + 500);
+        sleepAndShooterPID(700);
+
+        //Thread.sleep(200 + 500);
 
         // make the robot brake when it is set to zero power
         Util.setDrivePowersBrake();
@@ -197,19 +207,42 @@ public class RedAuto extends LinearOpMode {
     private void shoot2() throws InterruptedException {
         ballFeeder.setPosition(Util.SHOOT);
 
-        Thread.sleep(400);
+        sleepAndShooterPID(400);
+
+        //Thread.sleep(400);
 
         ballFeeder.setPosition(Util.LOAD);
 
-        Thread.sleep(1300);
+        sleepAndShooterPID(1300);
+
+        //Thread.sleep(1300);
 
         ballFeeder.setPosition(Util.SHOOT);
 
-        Thread.sleep(500);
+        sleepAndShooterPID(500);
+
+        //Thread.sleep(500);
 
         shooter1.setPower(0);
         shooter2.setPower(0);
         ballFeeder.setPosition(Util.LOAD);
+    }
+
+    private void sleepAndShooterPID(int sleep) throws InterruptedException {
+        long start = System.nanoTime() / FinalTeleOp.MILLIS_PER_NANO;
+        long currentTime = start, oldTime = start - 10;
+
+        while (start - currentTime < sleep) {
+            currentTime = System.nanoTime() / FinalTeleOp.MILLIS_PER_NANO;
+            ShooterPID.manageEncoderData(currentTime - oldTime);
+            double[] powers = ShooterPID.PID_calculateShooterPower(shooter1Power, shooter2Power);
+            shooter1Power = powers[0];
+            shooter2Power = powers[1];
+            shooter1.setPower(shooter1Power);
+            shooter2.setPower(shooter2Power);
+            oldTime = currentTime;
+            Thread.sleep(10);
+        }
     }
 }
 

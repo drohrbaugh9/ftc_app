@@ -106,4 +106,24 @@ public final class ShooterPID {
 
         queueClear = true;
     }
+
+    public static void fillQueue() {
+        if (queueClear) return;
+
+        shooter1Queue = new LinkedList<>();
+        shooter2Queue = new LinkedList<>();
+        //elapsedTimeQueue = new LinkedList<>();
+
+        shooter1Sum = TICS_TARGET * MOVING_AVERAGE_LENGTH;
+        shooter2Sum = TICS_TARGET * MOVING_AVERAGE_LENGTH;
+        timeSum = 0;
+
+        for (int i = 0; i < MOVING_AVERAGE_LENGTH; i++) {
+            shooter1Queue.add(TICS_TARGET);
+            shooter2Queue.add(TICS_TARGET);
+            //elapsedTimeQueue.add((long)0);
+        }
+
+        queueClear = false;
+    }
 }

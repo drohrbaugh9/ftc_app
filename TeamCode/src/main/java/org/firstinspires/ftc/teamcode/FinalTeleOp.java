@@ -23,7 +23,7 @@ public class FinalTeleOp extends LinearOpMode {
     protected static final double SHOOTER2_OFFSET = 0.07;
     private final double INTAKE_POWER = 0.9;
     private final double SHOOT = Util.SHOOT, LOAD = Util.LOAD;
-    private final long MILLIS_PER_NANO = 1000000;
+    protected static final long MILLIS_PER_NANO = 1000000;
 
     //String driveMode = NORMAL;
     private long shooterStart = System.nanoTime(), shooterLoadTimer = shooterStart;
@@ -340,7 +340,7 @@ public class FinalTeleOp extends LinearOpMode {
             ShooterPID.manageEncoderData(time - oldLoopTime);
 
             if ((time - shooterStart) > shooterPID) {
-                Util.telemetry("elapsedTime", time - oldLoopTime, false);
+                //Util.telemetry("elapsedTime", time - oldLoopTime, false);
                 double[] powers = ShooterPID.PID_calculateShooterPower(shooter1Power, shooter2Power);
                 shooter1Power = powers[0];
                 shooter2Power = powers[1];
@@ -365,35 +365,7 @@ public class FinalTeleOp extends LinearOpMode {
 
     protected static double calculateShooterPower() {
         double voltage = Util.getBatteryVoltage();
-        if (voltage >= 13.6) return -0.033*voltage + 0.696;
-        else return -0.04*Util.getBatteryVoltage() + 0.784;
+        if (voltage >= 13.6) return -0.033*voltage + 0.67; //0.696
+        else return -0.04*Util.getBatteryVoltage() + 0.764; //0.784
     }
 }
-            /*if (driveMode.equals(NORMAL)) {
-                rightBack.setPower((currentR - 1) * POWER_FACTOR);
-                leftBack.setPower((currentL - 1) * POWER_FACTOR);
-                if (!Util.TANK) {
-                    rightFront.setPower((currentR - 1) * POWER_FACTOR);
-                    leftFront.setPower((currentL - 1) * POWER_FACTOR);
-                }
-            } else {
-                rightBack.setPower((currentR - 1) * POWER_FACTOR);
-                leftBack.setPower((currentR - 1) * POWER_FACTOR);
-                if (!Util.TANK) {
-                    rightFront.setPower((currentR - 1) * POWER_FACTOR);
-                    leftFront.setPower((currentR - 1) * POWER_FACTOR);
-                }
-            }
-
-            if (!aHasBeenPressed && gamepad1.a && driveMode.equals(NORMAL)) {
-                driveMode = STRAIGHT;
-                aHasBeenPressed = true;
-            } else if (!aHasBeenPressed && gamepad1.a && driveMode.equals(STRAIGHT)) {
-                driveMode = NORMAL;
-                aHasBeenPressed = true;
-            }
-
-            if (!gamepad1.a) aHasBeenPressed = false;*/
-
-            /*telemetry.addData("drive mode", driveMode);
-            telemetry.update();*/
