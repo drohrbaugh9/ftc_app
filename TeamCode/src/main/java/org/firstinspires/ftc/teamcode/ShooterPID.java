@@ -11,7 +11,7 @@ public final class ShooterPID {
     private static final float shooterKi = 0.0f;
 
     static final double MOVING_AVERAGE_LENGTH = 50, MEASURING_INTERVAL = 10;
-    static final double RPM_TARGET = 1150.0; // 1250.0
+    static final double RPM_TARGET = 1175.0; // 1150.0
     static final double TICS_PER_ROTATION = Util.NEVEREST_37_TICS_PER_ROTATION;
     static final double TICS_TARGET = TICS_PER_ROTATION * (RPM_TARGET / 60.0) * (MEASURING_INTERVAL / 1000.0); // tics per MEASURING_INTERVAL, is 46.25 if target is 1250
 
@@ -107,20 +107,25 @@ public final class ShooterPID {
         queueClear = true;
     }
 
-    public static void fillQueue() {
+    public static void fillQueue() throws InterruptedException {
         shooter1Sum = TICS_TARGET * MOVING_AVERAGE_LENGTH;
         shooter2Sum = TICS_TARGET * MOVING_AVERAGE_LENGTH;
 
-        /*shooter1Queue.clear();
-        shooter2Queue.clear();*/
+        shooter1Queue.clear();
+        shooter2Queue.clear();
 
         for (int i = 0; i < MOVING_AVERAGE_LENGTH; i++) {
-            shooter1Queue.poll();
+            //shooter1Queue.poll();
             shooter1Queue.add(TICS_TARGET);
-            shooter2Queue.poll();
+            //shooter2Queue.poll();
             shooter2Queue.add(TICS_TARGET);
             //elapsedTimeQueue.add((long)0);
         }
+
+        lastShooter1Pos = Util.shooter1.getCurrentPosition();
+        lastShooter2Pos = Util.shooter2.getCurrentPosition();
+
+        Thread.sleep(10);
     }
 
     public static void printQueue() {

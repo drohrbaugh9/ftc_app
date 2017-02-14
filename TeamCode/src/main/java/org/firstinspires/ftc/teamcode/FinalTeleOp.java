@@ -365,7 +365,7 @@ public class FinalTeleOp extends LinearOpMode {
 
     protected static double calculateShooterPower() {
         double voltage = Util.getBatteryVoltage();
-        if (voltage >= 13.6) return -0.033*voltage + 0.67; //0.696
-        else return -0.04*Util.getBatteryVoltage() + 0.764; //0.784
+        if (voltage >= 13.6) return -0.033*voltage + 0.68; //0.696
+        else return -0.04*Util.getBatteryVoltage() + 0.774; //0.784
     }
 }

@@ -15,7 +15,7 @@ public class RedAuto extends LinearOpMode {
     // motors
     DcMotor rightBack, leftBack, rightFront, leftFront;
     DcMotor shooter1, shooter2;
-    DcMotor[] motors;
+    DcMotor[] driveMotors, shooterMotors;
 
     // servos
     Servo ballFeeder, upDown;
@@ -48,10 +48,12 @@ public class RedAuto extends LinearOpMode {
         this.rightBack = Util.rightBack; this.leftBack = Util.leftBack;
         this.rightFront = Util.rightFront; this.leftFront = Util.leftFront;
 
-        motors = new DcMotor[4]; motors[0] = this.rightBack; motors[1] = this.leftBack; motors[2] = this.rightFront; motors[3] = this.leftFront;
+        driveMotors = new DcMotor[4]; driveMotors[0] = this.rightBack; driveMotors[1] = this.leftBack; driveMotors[2] = this.rightFront; driveMotors[3] = this.leftFront;
 
         // shooter motors
         this.shooter1 = Util.shooter1; this.shooter2 = Util.shooter2;
+
+        shooterMotors = new DcMotor[2]; shooterMotors[0] = this.shooter1; shooterMotors[1] = this.shooter2;
 
         // servos
         this.ballFeeder = Util.ballFeeder;
@@ -63,7 +65,8 @@ public class RedAuto extends LinearOpMode {
         //I2C_ColorSensor.init(this);
 
         // reset the encoders on the drive motors
-        Util.resetEncoders(this, motors);
+        Util.resetEncoders(this, driveMotors);
+        Util.resetEncoders(this, shooterMotors);
 
         ShooterPID.init();
 
@@ -83,15 +86,11 @@ public class RedAuto extends LinearOpMode {
         Util.setDrivePowersFloat();
 
         // move out from the wall into shooting position
-        AutoUtil.PID_Forward(2200, 0.2, true, gyro);
+        AutoUtil.PID_Forward(1700, 0.2, true, gyro);
 
         ShooterPID.fillQueue();
 
-        sleepAndShooterPID(5000); //700
-
-        shooter1.setPower(0); shooter2.setPower(0);
-
-        while (opModeIsActive()) Thread.sleep(200);
+        sleepAndShooterPID(1200);
 
         //Thread.sleep(200 + 500);
 
@@ -100,10 +99,6 @@ public class RedAuto extends LinearOpMode {
 
         // accelerate two particles so that they fall into the center vortex
         shoot2();
-
-        /*AutoUtil.PID_Forward(1000, 0.2, true, gyro);
-
-        Thread.sleep(100);*/
 
         // turn toward the closer beacon and corner vortex
         AutoUtil.encoderTurnLeft(70, 0.2);
@@ -230,7 +225,7 @@ public class RedAuto extends LinearOpMode {
 
         ballFeeder.setPosition(Util.LOAD);
 
-        sleepAndShooterPID(1300);
+        sleepAndShooterPID(1500);
 
         //Thread.sleep(1300);
 
@@ -255,8 +250,6 @@ public class RedAuto extends LinearOpMode {
             double[] powers = ShooterPID.PID_calculateShooterPower(shooter1Power, shooter2Power);
             shooter1Power = powers[0];
             shooter2Power = powers[1];
-            Util.telemetry("1p", shooter1Power, false);
-            Util.telemetry("2p", shooter2Power, true);
             shooter1.setPower(shooter1Power);
             shooter2.setPower(shooter2Power);
             oldTime = currentTime;

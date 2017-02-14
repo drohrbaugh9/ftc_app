@@ -257,6 +257,8 @@ public final class AutoUtil {
         Thread.sleep(100);
     }
 
+    public static void intake(double p) { Util.intake.setPower(Math.abs(p)); }
+
     public static void outtake(double p) {
         Util.intake.setPower(-Math.abs(p));
     }

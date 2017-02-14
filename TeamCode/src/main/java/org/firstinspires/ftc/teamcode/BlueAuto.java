@@ -75,7 +75,7 @@ public class BlueAuto extends LinearOpMode {
 
         Util.setDrivePowersBrake();
 
-        shoot2();
+        shoot2(); // TODO update this method from Red
 
         // consider changing to 110 to mirror RedAuto
         AutoUtil.encoderTurnLeft(100, 0.2);
