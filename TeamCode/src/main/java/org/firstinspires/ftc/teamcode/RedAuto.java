@@ -103,8 +103,6 @@ public class RedAuto extends LinearOpMode {
         // turn toward the closer beacon and corner vortex
         AutoUtil.encoderTurnLeft(70, 0.2);
 
-        AutoUtil.outtake(0.4);
-
         Thread.sleep(100);
 
         // drive near to the closer beacon
@@ -125,8 +123,6 @@ public class RedAuto extends LinearOpMode {
 
         // follow the wall...
         AutoUtil.encoderSteerForward(1500, 0.3, false);
-
-        AutoUtil.outtake(0);
 
         // ...find the white line...
         if (AutoUtil.encoderSteerForwardLineSafe(0.5, 0.1, 2000, false) == -1) {
