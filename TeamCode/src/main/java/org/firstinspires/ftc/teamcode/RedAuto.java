@@ -64,7 +64,7 @@ public class RedAuto extends LinearOpMode {
         this.gyro = Util.gyro;
         //I2C_ColorSensor.init(this);
 
-        // reset the encoders on the drive motors
+        // reset the encoders on the DC motors
         Util.resetEncoders(this, driveMotors);
         Util.resetEncoders(this, shooterMotors);
 
