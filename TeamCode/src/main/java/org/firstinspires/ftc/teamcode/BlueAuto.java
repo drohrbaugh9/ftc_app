@@ -84,7 +84,7 @@ public class BlueAuto extends LinearOpMode {
         Util.setDrivePowersFloat();
 
         // move out from the wall into shooting position
-        AutoUtil.PID_Forward(1700, 0.2, true, gyro);
+        AutoUtil.PID_Forward(1900, 0.2, true, gyro);
 
         ShooterPID.fillQueue();
 
@@ -99,7 +99,7 @@ public class BlueAuto extends LinearOpMode {
         shoot2();
 
         // turn toward the closer beacon and corner vortex
-        AutoUtil.encoderTurnLeft(110, 0.2);
+        AutoUtil.encoderTurnLeft(105, 0.2); // 110
 
         Thread.sleep(100);
 
@@ -188,26 +188,37 @@ public class BlueAuto extends LinearOpMode {
             Thread.sleep(100);
             AutoUtil.encoderSteerForward(BEACON_MOVE, BEACON_POWER * 3 / 4, true);
             AutoUtil.beaconUp(upDown);
-            AutoUtil.encoderBackward(BEACON_MOVE * 4, 0.3, true);
+            //AutoUtil.encoderBackward(BEACON_MOVE * 4, 0.3, true);
         } else if (I2C_ColorSensor.beaconIsRedBlue()) {
             Util.telemetry("beacon status", "RED_BLUE", true);
             AutoUtil.encoderSteerBackward(BEACON_MOVE, BEACON_POWER, true);
             AutoUtil.beaconDown(upDown);
             AutoUtil.encoderSteerForward(BEACON_MOVE, BEACON_POWER * 3 / 4, true);
             Thread.sleep(100);
-            AutoUtil.encoderBackward(BEACON_MOVE, BEACON_POWER * 3 / 4, true);
+            AutoUtil.encoderSteerBackward(BEACON_MOVE, BEACON_POWER, true);
         }
 
         Util.setRightPowers(-0.1);
         Util.setLeftPowers(-0.7);
 
-        Thread.sleep(1000);
+        Thread.sleep(1200);
 
-        Util.setDrivePowersFloat();
+        //Util.setDrivePowersFloat();
 
         Util.setAllPowers(0);
 
-        Thread.sleep(500);
+        //Thread.sleep(500);
+        Thread.sleep(100);
+
+        AutoUtil.encoderTurnLeft(65, 0.25);
+
+        Thread.sleep(100);
+
+        Util.setDrivePowersFloat();
+
+        AutoUtil.encoderBackward(3300, 0.5, true);
+
+        Thread.sleep(1000);
 
         Util.setDrivePowersBrake();
 
