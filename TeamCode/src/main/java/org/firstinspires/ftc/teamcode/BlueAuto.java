@@ -210,7 +210,7 @@ public class BlueAuto extends LinearOpMode {
         //Thread.sleep(500);
         Thread.sleep(100);
 
-        AutoUtil.encoderTurnLeft(65, 0.25);
+        AutoUtil.encoderTurnLeft(85, 0.25);
 
         Thread.sleep(100);
 

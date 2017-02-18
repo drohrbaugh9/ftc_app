@@ -210,7 +210,7 @@ public class RedAuto extends LinearOpMode {
 
         //Util.setDrivePowersBrake();
 
-        AutoUtil.encoderTurnRight(90, 0.25);
+        AutoUtil.encoderTurnRight(85, 0.25);
 
         Thread.sleep(100);
 
