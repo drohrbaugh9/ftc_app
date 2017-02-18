@@ -24,7 +24,7 @@
 
 \lstdefinestyle{FTCjava}{tabsize=2, language=java, basicstyle=\ttfamily, keywordstyle=\color{keywordBlue}, commentstyle=\color{commentGrey} }
 
-\lstdefinestyle{FTCxml}{tabsize=2, language = XML, basicstyle=\ttfamily, keywordstyle=\color{keywordBlue}, commentstyle=\color{commentGrey}, morekeywords={Robot, MotorController, Motor, ServoController, Servo, DeviceInterfaceModule, Gyro, ColorSensor} }
+\lstdefinestyle{FTCxml}{tabsize=2, language = XML, basicstyle=\ttfamily, keywordstyle=\color{keywordBlue}, commentstyle=\color{commentGrey}, morekeywords={Robot, MotorController, Motor, ServoController, Servo, DeviceInterfaceModule, Gyro, ColorSensor, I2cDevice, OpticalDistanceSensor} }
 
 \begin{document}
 
@@ -50,6 +50,12 @@ Red Autonomous (Blue Autonomous is very similar)
 
 \pagebreak
 
+Alternate Red Autonomous (Alternate Blue Autonomous is very similar)
+
+\lstinputlisting[style=FTCjava]{./TeamCode/src/main/java/org/firstinspires/ftc/teamcode/TXT/RedAlternate.java.txt}
+
+\pagebreak
+
 Util class:
 
 \lstinputlisting[style=FTCjava]{./TeamCode/src/main/java/org/firstinspires/ftc/teamcode/TXT/Util.java.txt}
@@ -71,6 +77,18 @@ AutoUtil class:
 PID class:
 
 \lstinputlisting[style=FTCjava]{./TeamCode/src/main/java/org/firstinspires/ftc/teamcode/TXT/PID.java.txt}
+
+\pagebreak
+
+ShooterPID class:
+
+\lstinputlisting[style=FTCjava]{./TeamCode/src/main/java/org/firstinspires/ftc/teamcode/TXT/ShooterPID.java.txt}
+
+\pagebreak
+
+Our robot configuration file:
+
+\lstinputlisting[style=FTCxml]{./FINAL_CONFIG_2017.xml}
 
 \end{flushleft}
 
