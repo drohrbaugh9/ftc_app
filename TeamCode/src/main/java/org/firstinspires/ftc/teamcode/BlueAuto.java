@@ -104,12 +104,12 @@ public class BlueAuto extends LinearOpMode {
         Thread.sleep(100);
 
         // drive near to the closer beacon
-        AutoUtil.PID_Backward(4300, 0.3, true, gyro);
+        AutoUtil.PID_Backward(4200, 0.3, true, gyro);
 
         Thread.sleep(100);
 
         // turn toward far beacon
-        AutoUtil.encoderTurnLeft(47, 0.2);
+        AutoUtil.encoderTurnLeft(49, 0.2);
 
         Thread.sleep(100);
 

@@ -106,12 +106,12 @@ public class RedAuto extends LinearOpMode {
         Thread.sleep(100);
 
         // drive near to the closer beacon
-        AutoUtil.PID_Forward(4100, 0.2, true, gyro);
+        AutoUtil.PID_Forward(4000, 0.2, true, gyro);
 
         Thread.sleep(100);
 
         // turn toward far beacon
-        AutoUtil.encoderTurnRight(50, 0.2);
+        AutoUtil.encoderTurnRight(52, 0.2);
 
         Thread.sleep(100);
 

@@ -69,7 +69,7 @@ public class RedAlternate extends LinearOpMode {
 
         Thread.sleep(12 * 1000);
 
-        double shooterPower = FinalTeleOp.calculateShooterPower();
+        double shooterPower = FinalTeleOp.calculateShooterPower() + 0.01;
         shooter1.setPower(shooterPower);
         shooter2.setPower(shooterPower + FinalTeleOp.SHOOTER2_OFFSET);
 
@@ -86,9 +86,9 @@ public class RedAlternate extends LinearOpMode {
         rightFront.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
         leftFront.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
 
-        AutoUtil.PID_Forward(1800, 0.2, true, gyro);
+        AutoUtil.PID_Forward(3000, 0.2, true, gyro); // 1800
 
-        Thread.sleep(700);
+        Thread.sleep(1200);
 
         rightBack.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         leftBack.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
@@ -97,11 +97,15 @@ public class RedAlternate extends LinearOpMode {
 
         shoot();
 
-        AutoUtil.encoderTurnLeft(50, 0.2);
+        AutoUtil.encoderTurnLeft(60, 0.2);
 
         Thread.sleep(200);
 
         AutoUtil.PID_Forward(6000, 0.3, true, gyro);
+
+        Thread.sleep(500);
+
+        Util.setAllPowers(0);
 
         while (opModeIsActive()) {
             Thread.sleep(10);
