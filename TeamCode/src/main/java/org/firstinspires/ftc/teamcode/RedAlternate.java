@@ -67,7 +67,7 @@ public class RedAlternate extends LinearOpMode {
         telemetry.addData("auto status", "waiting 12 seconds");
         telemetry.update();
 
-        Thread.sleep(12 * 1000);
+        Thread.sleep(15 * 1000); // 12
 
         double shooterPower = FinalTeleOp.calculateShooterPower() + 0.01;
         shooter1.setPower(shooterPower);
@@ -97,11 +97,15 @@ public class RedAlternate extends LinearOpMode {
 
         shoot();
 
-        AutoUtil.encoderTurnLeft(60, 0.2);
+        Thread.sleep(2500);
+
+        AutoUtil.PID_Forward(2000, 0.2, true, gyro);
+
+        /*AutoUtil.encoderTurnLeft(60, 0.2);
 
         Thread.sleep(200);
 
-        AutoUtil.PID_Forward(6000, 0.3, true, gyro);
+        AutoUtil.PID_Forward(6000, 0.3, true, gyro);*/
 
         Thread.sleep(500);
 
