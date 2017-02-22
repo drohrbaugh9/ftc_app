@@ -117,7 +117,7 @@ public class AutoLoopTest extends LinearOpMode {
                     break;
             }
 
-            if (state != AutoStates.SHOOTER_SPIN_DOWN && state != AutoStates.DRIVE_STOP && state != AutoStates.END) {
+            if (state == AutoStates.DRIVE_START) {
 
                 ShooterPID.manageEncoderData(currentTime - oldTime);
 
