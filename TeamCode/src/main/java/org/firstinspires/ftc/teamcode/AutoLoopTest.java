@@ -8,25 +8,27 @@ import com.qualcomm.robotcore.hardware.GyroSensor;
 
 @Autonomous(name = "AutoLoopTest", group ="Test")
 //@Disabled
-public class AutoLoopTest extends LinearOpMode {
+
+//public class AutoLoopTest extends LinearOpMode {
+public class AutoLoopTest {
 
     // motors
-    DcMotor rightBack, leftBack, rightFront, leftFront;
-    DcMotor shooter1, shooter2;
+    //DcMotor rightBack, leftBack, rightFront, leftFront;
+    static DcMotor shooter1, shooter2;
     DcMotor[] driveMotors, shooterMotors;
 
-    int driveDistance = 1900;
-    int shotNumber = 2;
+    /*int driveDistance = 1900;
+    int shotNumber = 2;*/
 
-    double shooter1Power, shooter2Power;
+    static double shooter1Power, shooter2Power;
 
-    GyroSensor gyro;
+    static GyroSensor gyro;
 
-    AutoStates state = AutoStates.SHOOTER_SPIN_UP;
+    static AutoStates state = AutoStates.SHOOTER_SPIN_UP;
 
-    boolean firstTime = true, PIDon = false;
+    static boolean firstTime = true, PIDon = false;
 
-    public void runOpMode() throws InterruptedException {
+    /*public void runOpMode() throws InterruptedException {
 
         Util.colorSensors = true; Util.otherSensors = true; Util.servos = true;
         Util.init(this);
@@ -49,7 +51,9 @@ public class AutoLoopTest extends LinearOpMode {
 
         ShooterPID.init();
 
-        waitForStart();
+        waitForStart();*/
+
+    public static void driveAndShoot(int driveDistance, int shotNumber) throws InterruptedException {
 
         long start = System.nanoTime() / FinalTeleOp.MILLIS_PER_NANO, currentTime, oldTime = start - 10;
 
@@ -58,7 +62,7 @@ public class AutoLoopTest extends LinearOpMode {
             switch(state) {
                 case SHOOTER_SPIN_UP:
                     if (firstTime) {
-                        telemetry.addData("state", "SHOOTER_SPIN_UP");
+                        //telemetry.addData("state", "SHOOTER_SPIN_UP");
 
                         start = System.nanoTime() / FinalTeleOp.MILLIS_PER_NANO;
                         shooter1Power = FinalTeleOp.calculateShooterPower();
@@ -68,7 +72,7 @@ public class AutoLoopTest extends LinearOpMode {
 
                         firstTime = false;
                     }
-                    if ((currentTime - start) > 500) {
+                    if ((currentTime - start) > 1000) {
                         state = AutoStates.DRIVE_01;
                         Util.setDrivePowersFloat();
                         firstTime = true;
@@ -76,7 +80,7 @@ public class AutoLoopTest extends LinearOpMode {
                     break;
                 case DRIVE_01:
                     if (firstTime) {
-                        telemetry.addData("state", "DRIVE_01");
+                        //telemetry.addData("state", "DRIVE_01");
 
                         start = System.nanoTime() / FinalTeleOp.MILLIS_PER_NANO;
                         Util.setAllPowers(0.1);
@@ -89,7 +93,7 @@ public class AutoLoopTest extends LinearOpMode {
                     break;
                 case DRIVE_015:
                     if (firstTime) {
-                        telemetry.addData("state", "DRIVE_015");
+                        //telemetry.addData("state", "DRIVE_015");
 
                         start = System.nanoTime() / FinalTeleOp.MILLIS_PER_NANO;
                         Util.setAllPowers(0.15);
@@ -103,8 +107,9 @@ public class AutoLoopTest extends LinearOpMode {
                 case DRIVE_FULL:
                     double startPos = 0;
                     if (firstTime) {
-                        telemetry.addData("state", "DRIVE_FULL");
+                        //telemetry.addData("state", "DRIVE_FULL");
 
+                        start = System.nanoTime() / FinalTeleOp.MILLIS_PER_NANO;
                         AutoUtil.resetGyroHeading(gyro);
                         PID.resetDriveIntegral();
                         startPos = Util.rightBack.getCurrentPosition();
@@ -117,11 +122,12 @@ public class AutoLoopTest extends LinearOpMode {
                     if (Util.rightBack.getCurrentPosition() > (startPos + (driveDistance * 0.98))) {
                         state = AutoStates.DRIVE_COAST;
                         firstTime = true;
+                        Util.telemetry("drive time", (start - currentTime));
                     }
                     break;
                 case DRIVE_COAST:
                     if (firstTime) {
-                        telemetry.addData("state", "DRIVE_COAST");
+                        //telemetry.addData("state", "DRIVE_COAST");
 
                         start = System.nanoTime() / FinalTeleOp.MILLIS_PER_NANO;
                         Util.setAllPowers(0);
@@ -129,27 +135,28 @@ public class AutoLoopTest extends LinearOpMode {
                         PIDon = true;
                         firstTime = false;
                     }
-                    if ((currentTime - start) > 1200) {
+                    if ((currentTime - start) > 700) {
                         state = AutoStates.SHOOT_1;
                         firstTime = true;
                     }
                     break;
                 case SHOOT_1:
                     if (firstTime) {
-                        telemetry.addData("state", "SHOOT_1");
+                        //telemetry.addData("state", "SHOOT_1");
 
                         start = System.nanoTime() / FinalTeleOp.MILLIS_PER_NANO;
                         Util.ballFeeder.setPosition(Util.SHOOT);
                         firstTime = false;
                     }
-                    if ((currentTime - start) > 400) {
-                        state = AutoStates.LOAD_2;
+                    if ((currentTime - start) > 500) {
+                        if (shotNumber == 1) state = AutoStates.SHOOTER_SPIN_DOWN;
+                        else state = AutoStates.LOAD_2;
                         firstTime = true;
                     }
                     break;
                 case LOAD_2:
                     if (firstTime) {
-                        telemetry.addData("state", "LOAD_2");
+                        //telemetry.addData("state", "LOAD_2");
 
                         start = System.nanoTime() / FinalTeleOp.MILLIS_PER_NANO;
                         Util.ballFeeder.setPosition(Util.LOAD);
@@ -162,7 +169,7 @@ public class AutoLoopTest extends LinearOpMode {
                     break;
                 case SHOOT_2:
                     if (firstTime) {
-                        telemetry.addData("state", "SHOOT_2");
+                        //telemetry.addData("state", "SHOOT_2");
 
                         start = System.nanoTime() / FinalTeleOp.MILLIS_PER_NANO;
                         Util.ballFeeder.setPosition(Util.SHOOT);
@@ -175,7 +182,7 @@ public class AutoLoopTest extends LinearOpMode {
                     break;
                 case SHOOTER_SPIN_DOWN:
                     if (firstTime) {
-                        telemetry.addData("state", "SHOOTER_SPIN_DOWN");
+                        //telemetry.addData("state", "SHOOTER_SPIN_DOWN");
 
                         shooter1.setPower(0); shooter2.setPower(0);
 
@@ -185,7 +192,7 @@ public class AutoLoopTest extends LinearOpMode {
                     }
                     break;
                 case END:
-                    telemetry.addData("state", "END");
+                    //telemetry.addData("state", "END");
                     break;
             }
 
@@ -202,5 +209,9 @@ public class AutoLoopTest extends LinearOpMode {
 
             Thread.sleep(10);
         }
+
+        /*telemetry.update();
+
+        while(opModeIsActive()) Thread.sleep(100);*/
     }
 }
