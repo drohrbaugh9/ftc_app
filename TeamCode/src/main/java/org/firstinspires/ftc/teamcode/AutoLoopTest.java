@@ -14,15 +14,15 @@ public class AutoLoopTest {
 
     // motors
     //DcMotor rightBack, leftBack, rightFront, leftFront;
-    static DcMotor shooter1, shooter2;
-    DcMotor[] driveMotors, shooterMotors;
+    //static DcMotor shooter1, shooter2;
+    //DcMotor[] driveMotors, shooterMotors;
 
     /*int driveDistance = 1900;
     int shotNumber = 2;*/
 
     static double shooter1Power, shooter2Power;
 
-    static GyroSensor gyro;
+    //static GyroSensor gyro;
 
     static AutoStates state = AutoStates.SHOOTER_SPIN_UP;
 
@@ -67,8 +67,8 @@ public class AutoLoopTest {
                         start = System.nanoTime() / FinalTeleOp.MILLIS_PER_NANO;
                         shooter1Power = FinalTeleOp.calculateShooterPower();
                         shooter2Power = shooter1Power + FinalTeleOp.SHOOTER2_OFFSET; // shooter 2 is slower than shooter 1
-                        shooter1.setPower(shooter1Power);
-                        shooter2.setPower(shooter2Power);
+                        Util.shooter1.setPower(shooter1Power);
+                        Util.shooter2.setPower(shooter2Power);
 
                         firstTime = false;
                     }
@@ -110,14 +110,14 @@ public class AutoLoopTest {
                         //telemetry.addData("state", "DRIVE_FULL");
 
                         start = System.nanoTime() / FinalTeleOp.MILLIS_PER_NANO;
-                        AutoUtil.resetGyroHeading(gyro);
+                        AutoUtil.resetGyroHeading(Util.gyro);
                         PID.resetDriveIntegral();
                         startPos = Util.rightBack.getCurrentPosition();
 
                         firstTime = false;
                     }
 
-                    PID.PIsetMotors(gyro, 0.2);
+                    PID.PIsetMotors(Util.gyro, 0.2);
 
                     if (Util.rightBack.getCurrentPosition() > (startPos + (driveDistance * 0.98))) {
                         state = AutoStates.DRIVE_COAST;
@@ -184,7 +184,7 @@ public class AutoLoopTest {
                     if (firstTime) {
                         //telemetry.addData("state", "SHOOTER_SPIN_DOWN");
 
-                        shooter1.setPower(0); shooter2.setPower(0);
+                        Util.shooter1.setPower(0); Util.shooter2.setPower(0);
 
                         PIDon = false;
                         firstTime = false;
@@ -203,8 +203,8 @@ public class AutoLoopTest {
                 double[] powers = ShooterPID.PID_calculateShooterPower(shooter1Power, shooter2Power);
                 shooter1Power = powers[0];
                 shooter2Power = powers[1];
-                shooter1.setPower(shooter1Power);
-                shooter2.setPower(shooter2Power);
+                Util.shooter1.setPower(shooter1Power);
+                Util.shooter2.setPower(shooter2Power);
             }
 
             Thread.sleep(10);
