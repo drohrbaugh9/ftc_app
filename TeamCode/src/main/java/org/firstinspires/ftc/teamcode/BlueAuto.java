@@ -72,7 +72,9 @@ public class BlueAuto extends LinearOpMode {
 
         waitForStart();
 
-        // spin up the shooter motors to a power calculated from the battery voltage
+        AutoLoopTest.driveAndShoot(1900, 2);
+
+        /*// spin up the shooter motors to a power calculated from the battery voltage
         shooter1Power = FinalTeleOp.calculateShooterPower();
         shooter2Power = shooter1Power + FinalTeleOp.SHOOTER2_OFFSET;
         shooter1.setPower(shooter1Power);
@@ -96,7 +98,7 @@ public class BlueAuto extends LinearOpMode {
         Util.setDrivePowersBrake();
 
         // accelerate two particles so that they fall into the center vortex
-        shoot2();
+        shoot2();*/
 
         // turn toward the closer beacon and corner vortex
         AutoUtil.encoderTurnLeft(105, 0.2); // 110

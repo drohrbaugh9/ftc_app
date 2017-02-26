@@ -67,8 +67,8 @@ public class AutoLoopTest {
                         start = System.nanoTime() / FinalTeleOp.MILLIS_PER_NANO;
                         shooter1Power = FinalTeleOp.calculateShooterPower();
                         shooter2Power = shooter1Power + FinalTeleOp.SHOOTER2_OFFSET; // shooter 2 is slower than shooter 1
-                        Util.shooter1.setPower(shooter1Power);
-                        Util.shooter2.setPower(shooter2Power);
+                        Util.shooter1.setPower(shooter1Power + 0.01);
+                        Util.shooter2.setPower(shooter2Power + 0.01);
 
                         firstTime = false;
                     }
@@ -203,12 +203,16 @@ public class AutoLoopTest {
                 double[] powers = ShooterPID.PID_calculateShooterPower(shooter1Power, shooter2Power);
                 shooter1Power = powers[0];
                 shooter2Power = powers[1];
-                Util.shooter1.setPower(shooter1Power);
-                Util.shooter2.setPower(shooter2Power);
+                Util.shooter1.setPower(shooter1Power); // + 0.005);
+                Util.shooter2.setPower(shooter2Power); // + 0.005);
             }
 
             Thread.sleep(10);
         }
+
+        Util.setDrivePowersBrake();
+
+        Util.ballFeeder.setPosition(Util.LOAD);
 
         /*telemetry.update();
 
