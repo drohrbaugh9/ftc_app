@@ -55,7 +55,9 @@ public class AutoLoopTest {
 
     public static void driveAndShoot(int driveDistance, int shotNumber) throws InterruptedException {
 
-        long start = System.nanoTime() / FinalTeleOp.MILLIS_PER_NANO, currentTime, oldTime = start - 10;
+        state = AutoStates.SHOOTER_SPIN_UP;
+	
+	long start = System.nanoTime() / FinalTeleOp.MILLIS_PER_NANO, currentTime, oldTime = start - 10;
 
         while (state != AutoStates.END) {
             currentTime = System.nanoTime() / FinalTeleOp.MILLIS_PER_NANO;
