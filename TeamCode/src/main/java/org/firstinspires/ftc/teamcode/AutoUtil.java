@@ -50,13 +50,36 @@ public final class AutoUtil {
 
     private static double FORWARD_STEER = 1.08, BACKWARD_STEER = 1.15;
 
+    public static void encoderSteerForward(int dist, double powerR, double powerL, boolean stop) throws InterruptedException {
+        int pos = (r.getCurrentPosition() + l.getCurrentPosition()) / 2;
+
+        Util.setRightPowers(powerR);
+        Util.setLeftPowers(powerL);
+
+        while (((r.getCurrentPosition() + l.getCurrentPosition()) / 2) < (pos + dist)) Thread.sleep(20);
+
+        if (stop) Util.setAllPowers(0);
+    }
+
     public static void encoderSteerForward(int dist, double power, boolean stop) throws InterruptedException {
+
         int pos = (r.getCurrentPosition() + l.getCurrentPosition()) / 2;
 
         Util.setRightPowers(power * FORWARD_STEER);
         Util.setLeftPowers(power / FORWARD_STEER);
 
         while (((r.getCurrentPosition() + l.getCurrentPosition()) / 2) < (pos + dist)) Thread.sleep(20);
+
+        if (stop) Util.setAllPowers(0);
+    }
+
+    public static void encoderSteerBackward(int dist, double powerR, double powerL, boolean stop) throws InterruptedException {
+        int pos = (r.getCurrentPosition() + l.getCurrentPosition()) / 2;
+
+        Util.setRightPowers(-powerR);
+        Util.setLeftPowers(-powerL);
+
+        while (((r.getCurrentPosition() + l.getCurrentPosition()) / 2) > (pos - dist)) Thread.sleep(20);
 
         if (stop) Util.setAllPowers(0);
     }

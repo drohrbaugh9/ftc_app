@@ -76,38 +76,26 @@ public class RedAuto extends LinearOpMode {
 
         AutoLoopTest.driveAndShoot(1900, 2);
 
-        /*// spin up the shooter motors to a power calculated from the battery voltage
-        shooter1Power = FinalTeleOp.calculateShooterPower();
-        shooter2Power = shooter1Power + FinalTeleOp.SHOOTER2_OFFSET; // shooter 2 is slower than shooter 1
-        shooter1.setPower(shooter1Power);
-        shooter2.setPower(shooter2Power);
-
-        Thread.sleep(500);
-
-        // make the robot coast to a stop in the next movement
-        Util.setDrivePowersFloat();
-
-        // move out from the wall into shooting position
-        AutoUtil.PID_Forward(1900, 0.2, true, gyro);
-
-        ShooterPID.fillQueue();
-
-        sleepAndShooterPID(1200);
-
-        //Thread.sleep(200 + 500);
-
-        // make the robot brake when it is set to zero power
-        Util.setDrivePowersBrake();
-
-        // accelerate two particles so that they fall into the center vortex
-        shoot2();*/
-
         // turn toward the closer beacon and corner vortex
         AutoUtil.encoderTurnLeft(65, 0.25);
 
         Thread.sleep(100);
 
+        /**/
         // drive near to the closer beacon
+        AutoUtil.PID_Forward(2200, 0.3, false, gyro);
+
+        Util.setDrivePowersFloat();
+
+        // begin steer away from wall
+        AutoUtil.encoderSteerForward(2175 , 0.0, 1.0, false);
+
+        AutoUtil.encoderForward(2000, 0.4, true);
+
+        //while (opModeIsActive()) Thread.sleep(100);
+        /**/
+
+        /*/
         AutoUtil.PID_Forward(3000, 0.3, false, gyro);
         AutoUtil.PID_Forward(1000, 0.2, true, gyro);
 
@@ -120,12 +108,13 @@ public class RedAuto extends LinearOpMode {
 
         // move toward the wall
         AutoUtil.PID_Forward(2250, 0.4, false, gyro);
+        /**/
 
         // enable the color sensors 'cause we're about to use them
         I2C_ColorSensor.enable();
 
         // follow the wall...
-        AutoUtil.encoderSteerForward(750, 0.3, false);
+        //AutoUtil.encoderSteerForward(750, 0.3, false);
 
         // ...find the white line...
         if (AutoUtil.encoderSteerForwardLineSafe(0.5, 0.1, 2750, false) == -1) {

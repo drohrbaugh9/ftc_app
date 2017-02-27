@@ -56,8 +56,12 @@ public class AutoLoopTest {
     public static void driveAndShoot(int driveDistance, int shotNumber) throws InterruptedException {
 
         state = AutoStates.SHOOTER_SPIN_UP;
-	
-	long start = System.nanoTime() / FinalTeleOp.MILLIS_PER_NANO, currentTime, oldTime = start - 10;
+
+        shooter1Power = 0; shooter2Power = 0;
+
+        firstTime = true; PIDon = false;
+
+        long start = System.nanoTime() / FinalTeleOp.MILLIS_PER_NANO, currentTime, oldTime = start - 10;
 
         while (state != AutoStates.END) {
             currentTime = System.nanoTime() / FinalTeleOp.MILLIS_PER_NANO;
@@ -74,7 +78,7 @@ public class AutoLoopTest {
 
                         firstTime = false;
                     }
-                    if ((currentTime - start) > 1000) {
+                    if ((currentTime - start) > 1200) {
                         state = AutoStates.DRIVE_01;
                         Util.setDrivePowersFloat();
                         firstTime = true;
@@ -137,7 +141,7 @@ public class AutoLoopTest {
                         PIDon = true;
                         firstTime = false;
                     }
-                    if ((currentTime - start) > 700) {
+                    if ((currentTime - start) > 500) {
                         state = AutoStates.SHOOT_1;
                         firstTime = true;
                     }

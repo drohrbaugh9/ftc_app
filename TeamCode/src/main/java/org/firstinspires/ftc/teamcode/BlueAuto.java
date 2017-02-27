@@ -74,32 +74,6 @@ public class BlueAuto extends LinearOpMode {
 
         AutoLoopTest.driveAndShoot(1900, 2);
 
-        /*// spin up the shooter motors to a power calculated from the battery voltage
-        shooter1Power = FinalTeleOp.calculateShooterPower();
-        shooter2Power = shooter1Power + FinalTeleOp.SHOOTER2_OFFSET;
-        shooter1.setPower(shooter1Power);
-        shooter2.setPower(shooter2Power);
-
-        Thread.sleep(500);
-
-        // make the robot coast to a stop in the next movement
-        Util.setDrivePowersFloat();
-
-        // move out from the wall into shooting position
-        AutoUtil.PID_Forward(1900, 0.2, true, gyro);
-
-        ShooterPID.fillQueue();
-
-        sleepAndShooterPID(1200);
-
-        //Thread.sleep(200 + 500);
-
-        // make the robot brake when it is set to zero power
-        Util.setDrivePowersBrake();
-
-        // accelerate two particles so that they fall into the center vortex
-        shoot2();*/
-
         // turn toward the closer beacon and corner vortex
         AutoUtil.encoderTurnLeft(105, 0.2); // 110
 
