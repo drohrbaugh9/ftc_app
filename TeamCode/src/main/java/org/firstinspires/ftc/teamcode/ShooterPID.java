@@ -81,8 +81,11 @@ public final class ShooterPID {
         lastShooter1Pos = shooter1Pos;
         lastShooter2Pos = shooter2Pos;
 
-        Util.log("SHOOTER " + "RPM1: " + ((shooter1Diff * 1000 * 60) / (elapsedTime * 103.6)));
-        Util.log("SHOOTER " + "RPM2: " + ((shooter2Diff * 1000 * 60) / (elapsedTime * 103.6)));
+        /*Util.log("SHOOTER " + "RPM1: " + ((shooter1Diff * 1000 * 60) / (elapsedTime * 103.6)));
+        Util.log("SHOOTER " + "RPM2: " + ((shooter2Diff * 1000 * 60) / (elapsedTime * 103.6)));*/
+
+        if ((shooter1Sum / MOVING_AVERAGE_LENGTH) > (TICS_TARGET * 0.9)) Util.led.setPower(1);
+        else Util.led.setPower(0);
 
         queueClear = false;
     }
@@ -103,6 +106,8 @@ public final class ShooterPID {
             shooter2Queue.add(0.0);
             //elapsedTimeQueue.add((long)0);
         }
+
+        Util.led.setPower(0);
 
         queueClear = true;
     }

@@ -24,5 +24,6 @@
     </MotorController>
     <MotorController name="Intake" serialNumber="AL00VBIF">
 	<Motor name="intake" port="1" />
+	<Motor name="led" port="2" />
     </MotorController>
 </Robot>

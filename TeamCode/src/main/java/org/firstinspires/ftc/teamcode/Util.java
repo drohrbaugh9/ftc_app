@@ -18,7 +18,7 @@ public final class Util {
     //protected static boolean gyroEnabled = false;
 
     protected static DcMotor rightBack, leftBack, rightFront, leftFront;
-    protected static DcMotor shooter1, shooter2, intake;
+    protected static DcMotor shooter1, shooter2, intake, led;
 
     protected static Servo ballFeeder, upDown;
 
@@ -75,6 +75,10 @@ public final class Util {
 
         // intake motor
         intake = getMotor("intake");
+
+        // shooter indicator
+        led = getMotor("led");
+        led.setPower(0);
 
         // servos
         if (servos) {
