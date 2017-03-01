@@ -20,7 +20,7 @@ public final class ShooterPID {
     private static Queue<Double> shooter1Queue, shooter2Queue;
     private static Queue<Long> elapsedTimeQueue;
 
-    private static boolean queueClear;
+    private static boolean queueClear, ledOn = false;
 
     private ShooterPID() throws Exception { throw new Exception(); }
 
@@ -84,7 +84,14 @@ public final class ShooterPID {
         /*Util.log("SHOOTER " + "RPM1: " + ((shooter1Diff * 1000 * 60) / (elapsedTime * 103.6)));
         Util.log("SHOOTER " + "RPM2: " + ((shooter2Diff * 1000 * 60) / (elapsedTime * 103.6)));*/
 
-        if ((shooter1Sum / MOVING_AVERAGE_LENGTH) > (TICS_TARGET * 0.9)) Util.led.setPower(1);
+        if (!ledOn && (shooter1Sum / MOVING_AVERAGE_LENGTH) > (TICS_TARGET)) {
+            Util.led.setPower(1);
+            ledOn = true;
+        }
+        else if (ledOn &&(shooter1Sum / MOVING_AVERAGE_LENGTH ) < (TICS_TARGET * 0.9)) {
+            Util.led.setPower(0);
+            ledOn = false;
+        }
         else Util.led.setPower(0);
 
         queueClear = false;

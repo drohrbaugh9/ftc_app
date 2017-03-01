@@ -81,7 +81,7 @@ public class RedAuto extends LinearOpMode {
 
         Thread.sleep(100);
 
-        /**/
+        /*/
         // drive near to the closer beacon
         AutoUtil.PID_Forward(2200, 0.3, false, gyro);
 
@@ -95,7 +95,7 @@ public class RedAuto extends LinearOpMode {
         //while (opModeIsActive()) Thread.sleep(100);
         /**/
 
-        /*/
+        /**/
         AutoUtil.PID_Forward(3000, 0.3, false, gyro);
         AutoUtil.PID_Forward(1000, 0.2, true, gyro);
 
@@ -107,14 +107,17 @@ public class RedAuto extends LinearOpMode {
         Thread.sleep(100);
 
         // move toward the wall
-        AutoUtil.PID_Forward(2250, 0.4, false, gyro);
+        //AutoUtil.PID_Forward(2250, 0.4, false, gyro);
+
+        AutoUtil.encoderForward(1120, 0.4, false);
+        AutoUtil.encoderSteerForward(1120, 0.2, 0.6, false);
         /**/
 
         // enable the color sensors 'cause we're about to use them
         I2C_ColorSensor.enable();
 
         // follow the wall...
-        //AutoUtil.encoderSteerForward(750, 0.3, false);
+        AutoUtil.encoderSteerForward(750, 0.3, false);
 
         // ...find the white line...
         if (AutoUtil.encoderSteerForwardLineSafe(0.5, 0.1, 2750, false) == -1) {
@@ -148,7 +151,7 @@ public class RedAuto extends LinearOpMode {
             AutoUtil.beaconUp(upDown);
             AutoUtil.encoderSteerBackward(3000 + BEACON_MOVE, 0.3, false);
         } else if (I2C_ColorSensor.beaconIsBlueRed()) {
-            //Util.telemetry("beacon status", "BLUE_RED", true);
+            //Util.telemetry("beacon status", BLUE_RED", true);
             AutoUtil.encoderSteerBackward(BEACON_MOVE, OFF_BEACON_POWER, true);
             AutoUtil.beaconDown(upDown);
             AutoUtil.encoderSteerForward(BEACON_MOVE, ON_BEACON_POWER, true);
