@@ -83,21 +83,6 @@ public class RedAuto extends LinearOpMode {
 
         Thread.sleep(100);
 
-        /*/
-        // drive near to the closer beacon
-        AutoUtil.PID_Forward(2200, 0.3, false, gyro);
-
-        Util.setDriveModeFloat();
-
-        // begin steer away from wall
-        AutoUtil.encoderSteerForward(2175 , 0.0, 1.0, false);
-
-        AutoUtil.encoderForward(2000, 0.4, true);
-
-        //while (opModeIsActive()) Thread.sleep(100);
-        /**/
-
-        /**/
         AutoUtil.PID_Forward(2900, 0.3, false, gyro);
         AutoUtil.PID_Forward(1000, 0.2, true, gyro);
 
@@ -110,9 +95,6 @@ public class RedAuto extends LinearOpMode {
 
         // move toward the wall
         AutoUtil.PID_Forward(2250, 0.4, false, gyro);
-
-        //AutoUtil.encoderForward(1620, 0.4, false); AutoUtil.encoderSteerForward(620, 0.1, 0.7, false);
-        /**/
 
         // enable the color sensors 'cause we're about to use them
         I2C_ColorSensor.enable();
