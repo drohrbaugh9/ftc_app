@@ -181,14 +181,14 @@ public final class Util {
         leftFront.setPower(p);
     }
 
-    public static void setDrivePowersFloat() {
+    public static void setDriveModeFloat() {
         rightBack.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
         leftBack.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
         rightFront.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
         leftFront.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
     }
 
-    public static void setDrivePowersBrake() {
+    public static void setDriveModeBrake() {
         rightBack.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         leftBack.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         rightFront.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);

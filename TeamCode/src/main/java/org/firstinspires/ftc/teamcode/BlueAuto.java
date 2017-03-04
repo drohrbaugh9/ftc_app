@@ -101,7 +101,7 @@ public class BlueAuto extends LinearOpMode {
         // ...find the white line...
         if (AutoUtil.encoderSteerBackwardLineSafe(0.5, 0.15, 3500, false) == -1) { // TODO: adjust maxDist value
             Util.telemetry("failsafe", "------FAILSAFE ENGAGED------", true);
-            Util.setDrivePowersFloat();
+            Util.setDriveModeFloat();
             Util.setAllPowers(0);
             while (opModeIsActive()) Thread.sleep(20);
         }
@@ -140,7 +140,7 @@ public class BlueAuto extends LinearOpMode {
         // move to the closer beacon
         if (AutoUtil.encoderSteerForwardLineSafe(0.5, 0.1, 3700, false) == -1) {
             Util.telemetry("failsafe", "------FAILSAFE ENGAGED------", true);
-            Util.setDrivePowersFloat();
+            Util.setDriveModeFloat();
             Util.setAllPowers(0);
             while (opModeIsActive()) Thread.sleep(20);
         }
@@ -179,7 +179,7 @@ public class BlueAuto extends LinearOpMode {
 
         Thread.sleep(1200);
 
-        //Util.setDrivePowersFloat();
+        //Util.setDriveModeFloat();
 
         Util.setAllPowers(0);
 
@@ -190,13 +190,13 @@ public class BlueAuto extends LinearOpMode {
 
         Thread.sleep(100);
 
-        Util.setDrivePowersFloat();
+        Util.setDriveModeFloat();
 
         AutoUtil.encoderBackward(3300, 0.5, true);
 
         Thread.sleep(1000);
 
-        Util.setDrivePowersBrake();
+        Util.setDriveModeBrake();
 
         while(opModeIsActive()) Thread.sleep(100);
     }

@@ -1,10 +1,6 @@
 package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
-import com.qualcomm.robotcore.eventloop.opmode.Disabled;
-import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
-import com.qualcomm.robotcore.hardware.DcMotor;
-import com.qualcomm.robotcore.hardware.GyroSensor;
 
 @Autonomous(name = "AutoLoopTest", group ="Test")
 //@Disabled
@@ -80,7 +76,7 @@ public class AutoLoopTest {
                     }
                     if ((currentTime - start) > 1200) {
                         state = AutoStates.DRIVE_01;
-                        Util.setDrivePowersFloat();
+                        Util.setDriveModeFloat();
                         firstTime = true;
                     }
                     break;
@@ -216,7 +212,7 @@ public class AutoLoopTest {
             Thread.sleep(10);
         }
 
-        Util.setDrivePowersBrake();
+        Util.setDriveModeBrake();
 
         Util.ballFeeder.setPosition(Util.LOAD);
 

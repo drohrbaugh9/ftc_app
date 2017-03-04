@@ -24,7 +24,10 @@ public final class ShooterPID {
 
     private ShooterPID() throws Exception { throw new Exception(); }
 
-    public static void init() { clearQueue(); }
+    public static void init() {
+        clearQueue();
+        ledOn = false;
+    }
 
     public static double[] PID_calculateShooterPower(double power1, double power2) {
         double delta1 = shooter1Sum / MOVING_AVERAGE_LENGTH;
@@ -88,11 +91,14 @@ public final class ShooterPID {
             Util.led.setPower(1);
             ledOn = true;
         }
-        else if (ledOn &&(shooter1Sum / MOVING_AVERAGE_LENGTH ) < (TICS_TARGET * 0.9)) {
+        else if (ledOn && (shooter1Sum / MOVING_AVERAGE_LENGTH ) < (TICS_TARGET * 0.9)) {
             Util.led.setPower(0);
             ledOn = false;
         }
-        else Util.led.setPower(0);
+        /*else {
+            Util.led.setPower(0);
+            ledOn = false;
+        }*/
 
         queueClear = false;
     }
@@ -115,6 +121,7 @@ public final class ShooterPID {
         }
 
         Util.led.setPower(0);
+        ledOn = false;
 
         queueClear = true;
     }

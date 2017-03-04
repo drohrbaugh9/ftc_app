@@ -1,25 +1,14 @@
 package org.firstinspires.ftc.teamcode;
 
 
-import com.qualcomm.hardware.modernrobotics.ModernRoboticsI2cColorSensor;
-import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
-import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.CRServo;
 import com.qualcomm.robotcore.hardware.DcMotor;
-import com.qualcomm.robotcore.hardware.I2cAddr;
-import com.qualcomm.robotcore.hardware.I2cController;
-import com.qualcomm.robotcore.hardware.I2cDevice;
-import com.qualcomm.robotcore.hardware.I2cDeviceSynchImpl;
-import com.qualcomm.robotcore.hardware.Servo;
-
-import static org.firstinspires.ftc.teamcode.I2C_ColorSensor.synchBack;
-import static org.firstinspires.ftc.teamcode.Util.intake;
 
 @TeleOp(name = "Test", group = "Test")
 //@Autonomous(name = "Test", group = "Test")
-@Disabled
+//@Disabled
 public class TestOpMode extends LinearOpMode {
 
     DcMotor shooter1, shooter2;
@@ -27,7 +16,29 @@ public class TestOpMode extends LinearOpMode {
 
     CRServo servo1;
 
-    /**/ // servo test
+    /**/ // steering test
+    public void runOpMode() throws InterruptedException {
+        Util.otherSensors = true; Util.colorSensors = false; Util.servos = false;
+        Util.init(this);
+
+        waitForStart();
+
+        Util.setAllPowers(0.2);
+
+        Thread.sleep(1000);
+
+        Util.setRightPowers(0.1);
+        Util.setLeftPowers(0.9);
+
+        Util.setDriveModeFloat();
+
+        Thread.sleep(500);
+
+        Util.setAllPowers(0);
+    }
+    /**/
+
+    /*/ // servo test
     public void runOpMode() throws InterruptedException {
         Util.linearOpMode = this;
 
