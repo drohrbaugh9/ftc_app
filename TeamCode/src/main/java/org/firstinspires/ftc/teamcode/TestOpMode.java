@@ -1,6 +1,7 @@
 package org.firstinspires.ftc.teamcode;
 
 
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.CRServo;
@@ -8,7 +9,7 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 
 @TeleOp(name = "Test", group = "Test")
 //@Autonomous(name = "Test", group = "Test")
-//@Disabled
+@Disabled
 public class TestOpMode extends LinearOpMode {
 
     DcMotor shooter1, shooter2;
@@ -16,7 +17,24 @@ public class TestOpMode extends LinearOpMode {
 
     CRServo servo1;
 
-    /**/ // steering test
+    /**/ // steering method test
+    public void runOpMode() throws InterruptedException {
+        Util.otherSensors = true; Util.colorSensors = false; Util.servos = false;
+        Util.init(this);
+
+        waitForStart();
+
+        AutoUtil.encoderSteerForward(4000, 0.3, true);
+
+        Thread.sleep(10000);
+
+        AutoUtil.encoderSteerBackward(4000, 0.3, true);
+
+        Thread.sleep(300);
+    }
+    /**/
+
+    /*/ // steering test
     public void runOpMode() throws InterruptedException {
         Util.otherSensors = true; Util.colorSensors = false; Util.servos = false;
         Util.init(this);

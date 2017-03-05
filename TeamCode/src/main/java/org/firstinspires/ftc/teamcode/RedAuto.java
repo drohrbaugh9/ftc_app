@@ -70,11 +70,9 @@ public class RedAuto extends LinearOpMode {
 
         ShooterPID.init();
 
-        //ShooterPID.printQueue();
-
         waitForStart();
 
-        AutoLoopTest.driveAndShoot(1900, 1); // 2
+        AutoLoopTest.driveAndShoot(1900, 2);
 
         Util.setDriveModeBrake();
 
@@ -83,6 +81,7 @@ public class RedAuto extends LinearOpMode {
 
         Thread.sleep(100);
 
+        // drive near to the closer beacon
         AutoUtil.PID_Forward(2900, 0.3, false, gyro);
         AutoUtil.PID_Forward(1000, 0.2, true, gyro);
 
@@ -114,8 +113,6 @@ public class RedAuto extends LinearOpMode {
         // ...and center the robot on the beacon
         AutoUtil.encoderSteerForward(150, 0.1, true);
 
-        Thread.sleep(5000);
-
         /* based on which side is red, move to that side,
          * lower our button pusher,
          * and roll over the button
@@ -124,7 +121,6 @@ public class RedAuto extends LinearOpMode {
             AutoUtil.encoderSteerBackward(3000, 0.3, false);
             AutoUtil.beaconUp(upDown);
         } else if (I2C_ColorSensor.beaconIsRedBlue()) {
-            //Util.telemetry("beacon status", "RED_BLUE", true);
             AutoUtil.encoderSteerForward(BEACON_MOVE, OFF_BEACON_POWER, true);
             AutoUtil.beaconDown(upDown);
             AutoUtil.encoderSteerBackward(BEACON_MOVE, ON_BEACON_POWER, true);
@@ -139,7 +135,6 @@ public class RedAuto extends LinearOpMode {
             AutoUtil.beaconUp(upDown);
             AutoUtil.encoderSteerBackward(2800 + BEACON_MOVE, 0.3, false);
         } else if (I2C_ColorSensor.beaconIsBlueRed()) {
-            //Util.telemetry("beacon status", BLUE_RED", true);
             AutoUtil.encoderSteerBackward(BEACON_MOVE, OFF_BEACON_POWER, true);
             AutoUtil.beaconDown(upDown);
             AutoUtil.encoderSteerForward(BEACON_MOVE, ON_BEACON_POWER, true);
@@ -168,8 +163,6 @@ public class RedAuto extends LinearOpMode {
 
         // center the robot on the beacon
         AutoUtil.encoderSteerForward(220, 0.1, true);
-
-        while (opModeIsActive()) Thread.sleep(100);
 
         /* based on which side is red, move to that side,
          * lower our button pusher,
@@ -226,7 +219,7 @@ public class RedAuto extends LinearOpMode {
 
         Util.setDriveModeFloat();
 
-        AutoUtil.encoderForward(3700, 0.5, true);
+        AutoUtil.encoderForward(3700, 0.8, true);
 
         Thread.sleep(1000);
 
