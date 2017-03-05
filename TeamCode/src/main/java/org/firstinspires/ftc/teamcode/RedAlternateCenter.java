@@ -9,9 +9,9 @@ import com.qualcomm.robotcore.hardware.GyroSensor;
 import com.qualcomm.robotcore.hardware.OpticalDistanceSensor;
 import com.qualcomm.robotcore.hardware.Servo;
 
-@Autonomous(name="RedAlternate", group = "Competition")
+@Autonomous(name="RedAlternateCenter", group = "Competition")
 //@Disabled
-public class RedAlternate extends LinearOpMode {
+public class RedAlternateCenter extends LinearOpMode {
     // motors
     DcMotor rightBack, leftBack, rightFront, leftFront;
     DcMotor shooter1, shooter2;
@@ -62,44 +62,22 @@ public class RedAlternate extends LinearOpMode {
 
         Util.resetEncoders(this, motors);
 
+        ShooterPID.init();
+
         waitForStart();
 
-        telemetry.addData("auto status", "waiting 12 seconds");
+        /*telemetry.addData("auto status", "waiting 12 seconds");
         telemetry.update();
 
-        Thread.sleep(15 * 1000); // 12
+        Thread.sleep(15 * 1000); // 12*/
 
-        double shooterPower = FinalTeleOp.calculateShooterPower() + 0.01;
-        shooter1.setPower(shooterPower);
-        shooter2.setPower(shooterPower + FinalTeleOp.SHOOTER2_OFFSET);
+        AutoLoopTest.driveAndShoot(3200, 2);
 
-        telemetry.addData("auto status", "starting shooter motors with 3 secs to go");
-        telemetry.update();
+        //AutoUtil.encoderTurnRight(30, 0.25);
 
-        Thread.sleep(3000);
+        //Thread.sleep(2500);
 
-        telemetry.addData("auto status", "starting movements");
-        telemetry.update();
-
-        rightBack.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
-        leftBack.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
-        rightFront.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
-        leftFront.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
-
-        AutoUtil.PID_Forward(3000, 0.2, true, gyro); // 1800
-
-        Thread.sleep(1200);
-
-        rightBack.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-        leftBack.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-        rightFront.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-        leftFront.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-
-        shoot();
-
-        Thread.sleep(2500);
-
-        AutoUtil.PID_Forward(2000, 0.2, true, gyro);
+        AutoUtil.PID_Forward(2200, 0.3, true, gyro);
 
         /*AutoUtil.encoderTurnLeft(60, 0.2);
 
