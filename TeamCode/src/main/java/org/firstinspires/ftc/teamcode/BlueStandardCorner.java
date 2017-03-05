@@ -7,11 +7,10 @@ import com.qualcomm.robotcore.hardware.DeviceInterfaceModule;
 import com.qualcomm.robotcore.hardware.GyroSensor;
 import com.qualcomm.robotcore.hardware.OpticalDistanceSensor;
 import com.qualcomm.robotcore.hardware.Servo;
-import com.vuforia.ViewerParameters;
 
-@Autonomous(name="BlueAuto", group="Competition")
+@Autonomous(name="BlueStandardCorner", group="Competition")
 //@Disabled
-public class BlueAuto extends LinearOpMode {
+public class BlueStandardCorner extends LinearOpMode {
 
     // motors
     DcMotor rightBack, leftBack, rightFront, leftFront;
@@ -73,7 +72,7 @@ public class BlueAuto extends LinearOpMode {
 
         waitForStart();
 
-        AutoLoopTest.driveAndShoot(1900, 1);
+        AutoLoopTest.driveAndShoot(1900, 2);
 
         Util.setDriveModeBrake();
 
@@ -83,7 +82,7 @@ public class BlueAuto extends LinearOpMode {
         Thread.sleep(100);
 
         // drive near to the closer beacon
-        AutoUtil.PID_Backward(3400, 0.3, false, gyro);
+        AutoUtil.PID_Backward(3300, 0.3, false, gyro);
         AutoUtil.PID_Backward(1000, 0.2, true, gyro);
 
         Thread.sleep(100);
@@ -100,10 +99,10 @@ public class BlueAuto extends LinearOpMode {
         I2C_ColorSensor.enable();
 
         // follow the wall...
-        AutoUtil.encoderSteerBackward(750, 0.3, false);
+        AutoUtil.encoderSteerBackward(900, 0.3, false);
 
         // ...find the white line...
-        if (AutoUtil.encoderSteerBackwardLineSafe(0.5, 0.1, 3500, false) == -1) { // TODO: adjust maxDist value
+        if (AutoUtil.encoderSteerBackwardLineSafe(0.5, 0.1, 3350, false) == -1) { // TODO: adjust maxDist value
             Util.telemetry("failsafe", "------FAILSAFE ENGAGED------", true);
             Util.setDriveModeFloat();
             Util.setAllPowers(0);
@@ -136,7 +135,7 @@ public class BlueAuto extends LinearOpMode {
 
             AutoUtil.encoderSteerForward(BEACON_MOVE, OFF_BEACON_POWER, false);
             AutoUtil.beaconUp(upDown);
-            AutoUtil.encoderSteerForward(2000 - BEACON_MOVE, 0.3, false);
+            AutoUtil.encoderSteerForward(2800 - BEACON_MOVE, 0.3, false);
         } else if (I2C_ColorSensor.beaconIsRedBlue()) {
             AutoUtil.encoderSteerBackward(BEACON_MOVE, 0.2, true);
             AutoUtil.beaconDown(upDown);
@@ -149,13 +148,13 @@ public class BlueAuto extends LinearOpMode {
             Thread.sleep(100);
 
             AutoUtil.encoderSteerBackward(BEACON_MOVE, OFF_BEACON_POWER, true);
-            Thread.sleep(100);
-            AutoUtil.encoderSteerForward(2000 + BEACON_MOVE, 0.3, false);
             AutoUtil.beaconUp(upDown);
+            Thread.sleep(100);
+            AutoUtil.encoderSteerForward(2800 + BEACON_MOVE, 0.3, false);
         }
 
         // move to the closer beacon
-        if (AutoUtil.encoderSteerForwardLineSafe(0.5, 0.1, 3700, false) == -1) {
+        if (AutoUtil.encoderSteerForwardLineSafe(0.5, 0.1, 3200, false) == -1) {
             Util.telemetry("failsafe", "------FAILSAFE ENGAGED------", true);
             Util.setDriveModeFloat();
             Util.setAllPowers(0);
@@ -184,8 +183,10 @@ public class BlueAuto extends LinearOpMode {
             AutoUtil.encoderSteerBackward(BEACON_MOVE / 2, ON_BEACON_POWER, true);
             Thread.sleep(100);
 
-            AutoUtil.encoderSteerForward(BEACON_MOVE * 2, ON_BEACON_POWER, true);
+            AutoUtil.encoderSteerForward(BEACON_MOVE, ON_BEACON_POWER, true);
             AutoUtil.beaconUp(upDown);
+            Thread.sleep(100);
+            AutoUtil.encoderSteerBackward(BEACON_MOVE * 3, 0.3, true);
         } else if (I2C_ColorSensor.beaconIsRedBlue()) {
             AutoUtil.encoderSteerBackward(BEACON_MOVE, OFF_BEACON_POWER, true);
             AutoUtil.beaconDown(upDown);
@@ -197,21 +198,28 @@ public class BlueAuto extends LinearOpMode {
             AutoUtil.encoderSteerForward(BEACON_MOVE / 2, ON_BEACON_POWER, true);
             Thread.sleep(100);
 
-            AutoUtil.encoderSteerBackward(BEACON_MOVE, OFF_BEACON_POWER, true);
+            AutoUtil.encoderSteerBackward(BEACON_MOVE, OFF_BEACON_POWER, false);
             AutoUtil.beaconUp(upDown);
+            AutoUtil.encoderSteerBackward(BEACON_MOVE, 0.3, true);
         }
 
-        Util.setRightPowers(-0.1);
-        Util.setLeftPowers(-0.7);
+        Util.setDriveModeBrake();
 
-        Thread.sleep(1200);
+        Thread.sleep(100);
+
+        AutoUtil.encoderSteerForward(1200, 0.05, 0.9, false);
+
+        Util.setRightPowers(0.6);
+        Util.setLeftPowers(0.1);
+
+        Thread.sleep(1000);
 
         //Util.setDriveModeFloat();
 
         Util.setAllPowers(0);
 
         //Thread.sleep(500);
-        Thread.sleep(100);
+        /*Thread.sleep(100);
 
         AutoUtil.encoderTurnLeft(85, 0.25);
 
@@ -221,7 +229,7 @@ public class BlueAuto extends LinearOpMode {
 
         AutoUtil.encoderBackward(3700, 0.8, true);
 
-        Thread.sleep(1000);
+        Thread.sleep(1000);*/
 
         Util.setDriveModeBrake();
 

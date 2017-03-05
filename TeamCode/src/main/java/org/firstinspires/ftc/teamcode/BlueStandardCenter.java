@@ -7,10 +7,11 @@ import com.qualcomm.robotcore.hardware.DeviceInterfaceModule;
 import com.qualcomm.robotcore.hardware.GyroSensor;
 import com.qualcomm.robotcore.hardware.OpticalDistanceSensor;
 import com.qualcomm.robotcore.hardware.Servo;
+import com.vuforia.ViewerParameters;
 
-@Autonomous(name="RedAuto", group="Competition")
+@Autonomous(name="BlueStandardCenter", group="Competition")
 //@Disabled
-public class RedAuto extends LinearOpMode {
+public class BlueStandardCenter extends LinearOpMode {
 
     // motors
     DcMotor rightBack, leftBack, rightFront, leftFront;
@@ -28,7 +29,7 @@ public class RedAuto extends LinearOpMode {
     final int BEACON_MOVE = 400;
     final double OFF_BEACON_POWER = 0.15, ON_BEACON_POWER = OFF_BEACON_POWER * 0.75;
 
-    // variables to hold motor powers,
+    // variables to hold motor powers
     double shooter1Power, shooter2Power;
 
     public void runOpMode() throws InterruptedException {
@@ -39,10 +40,10 @@ public class RedAuto extends LinearOpMode {
         // disable color sensors to speed up gyro (for now)
         I2C_ColorSensor.disable();
 
-        // turn on red LED on Device Interface Module to indicate Red Auto (and make sure blue LED is off)
+        // turn on blue LED on Device Interface Module to indicate Blue Auto (and make sure red LED is off)
         DeviceInterfaceModule dim = hardwareMap.deviceInterfaceModule.get("Sensors");
-        dim.setLED(0, false);
-        dim.setLED(1, true);
+        dim.setLED(1, false);
+        dim.setLED(0, true);
 
         // drive motors
         this.rightBack = Util.rightBack; this.leftBack = Util.leftBack;
@@ -59,7 +60,7 @@ public class RedAuto extends LinearOpMode {
         this.ballFeeder = Util.ballFeeder;
         this.upDown = Util.upDown;
 
-        // other sensors
+        // otherSensors
         this.ods = Util.ods;
         this.gyro = Util.gyro;
         //I2C_ColorSensor.init(this);
@@ -77,81 +78,32 @@ public class RedAuto extends LinearOpMode {
         Util.setDriveModeBrake();
 
         // turn toward the closer beacon and corner vortex
-        AutoUtil.encoderTurnLeft(65, 0.25);
+        AutoUtil.encoderTurnLeft(105, 0.25); // 110
 
         Thread.sleep(100);
 
         // drive near to the closer beacon
-        AutoUtil.PID_Forward(2900, 0.3, false, gyro);
-        AutoUtil.PID_Forward(1000, 0.2, true, gyro);
+        AutoUtil.PID_Backward(3300, 0.3, false, gyro);
+        AutoUtil.PID_Backward(1000, 0.2, true, gyro);
 
         Thread.sleep(100);
 
         // turn toward far beacon
-        AutoUtil.encoderTurnRight(52, 0.25);
+        AutoUtil.encoderTurnLeft(46, 0.25);
 
         Thread.sleep(100);
 
         // move toward the wall
-        AutoUtil.PID_Forward(2250, 0.4, false, gyro);
+        AutoUtil.PID_Backward(2250, 0.4, false, gyro);
 
         // enable the color sensors 'cause we're about to use them
         I2C_ColorSensor.enable();
 
         // follow the wall...
-        AutoUtil.encoderSteerForward(750, 0.3, false);
+        AutoUtil.encoderSteerBackward(750, 0.3, false);
 
         // ...find the white line...
-        if (AutoUtil.encoderSteerForwardLineSafe(0.5, 0.1, 2750, false) == -1) {
-            Util.telemetry("failsafe", "------FAILSAFE ENGAGED------", true);
-            Util.setDriveModeFloat();
-            Util.setAllPowers(0);
-            while (opModeIsActive()) Thread.sleep(20);
-        }
-        Util.telemetry("failsafe", "-----FAILSAFE DIDN'T ENGAGE-----", true);
-
-        // ...and center the robot on the beacon
-        AutoUtil.encoderSteerForward(150, 0.1, true);
-
-        /* based on which side is red, move to that side,
-         * lower our button pusher,
-         * and roll over the button
-         */
-        if (I2C_ColorSensor.beaconIsRedRed()) {
-            AutoUtil.encoderSteerBackward(3000, 0.3, false);
-            AutoUtil.beaconUp(upDown);
-        } else if (I2C_ColorSensor.beaconIsRedBlue()) {
-            AutoUtil.encoderSteerForward(BEACON_MOVE, OFF_BEACON_POWER, true);
-            AutoUtil.beaconDown(upDown);
-            AutoUtil.encoderSteerBackward(BEACON_MOVE, ON_BEACON_POWER, true);
-            Thread.sleep(100);
-
-            AutoUtil.encoderSteerForward(BEACON_MOVE / 2, ON_BEACON_POWER, true);
-            Thread.sleep(100);
-            AutoUtil.encoderSteerBackward(BEACON_MOVE / 2, ON_BEACON_POWER, true);
-            Thread.sleep(100);
-
-            AutoUtil.encoderSteerForward(BEACON_MOVE, ON_BEACON_POWER, true);
-            AutoUtil.beaconUp(upDown);
-            AutoUtil.encoderSteerBackward(2800 + BEACON_MOVE, 0.3, false);
-        } else if (I2C_ColorSensor.beaconIsBlueRed()) {
-            AutoUtil.encoderSteerBackward(BEACON_MOVE, OFF_BEACON_POWER, true);
-            AutoUtil.beaconDown(upDown);
-            AutoUtil.encoderSteerForward(BEACON_MOVE, ON_BEACON_POWER, true);
-            Thread.sleep(100);
-
-            AutoUtil.encoderSteerBackward(BEACON_MOVE / 2, ON_BEACON_POWER, true);
-            Thread.sleep(100);
-            AutoUtil.encoderSteerForward(BEACON_MOVE / 2, ON_BEACON_POWER, true);
-            Thread.sleep(100);
-
-            AutoUtil.encoderSteerBackward(BEACON_MOVE, OFF_BEACON_POWER, false);
-            AutoUtil.encoderSteerBackward(2800 - BEACON_MOVE, 0.3, false);
-            AutoUtil.beaconUp(upDown);
-        }
-
-        // move to the closer beacon
-        if (AutoUtil.encoderSteerBackwardLineSafe(0.5, 0.1, 3700, true) == -1) {
+        if (AutoUtil.encoderSteerBackwardLineSafe(0.5, 0.1, 3500, false) == -1) { // TODO: adjust maxDist value
             Util.telemetry("failsafe", "------FAILSAFE ENGAGED------", true);
             Util.setDriveModeFloat();
             Util.setAllPowers(0);
@@ -161,46 +113,78 @@ public class RedAuto extends LinearOpMode {
 
         Thread.sleep(100);
 
-        // center the robot on the beacon
-        AutoUtil.encoderSteerForward(220, 0.1, true);
+        // ...and center the robot on the beacon
+        AutoUtil.encoderSteerForward(200, 0.1, true);
 
-        /* based on which side is red, move to that side,
+        /* based on which side is blue, move to that side,
          * lower our button pusher,
          * and roll over the button
          */
-        if (I2C_ColorSensor.beaconIsRedRed()) AutoUtil.beaconUp(upDown);
-        else if (I2C_ColorSensor.beaconIsRedBlue()) {
+        if (I2C_ColorSensor.beaconIsBlueBlue()) {
+            AutoUtil.encoderSteerForward(2000, 0.3, false);
+            AutoUtil.beaconUp(upDown);
+        } else if (I2C_ColorSensor.beaconIsBlueRed()) {
             AutoUtil.encoderSteerForward(BEACON_MOVE, OFF_BEACON_POWER, true);
             AutoUtil.beaconDown(upDown);
             AutoUtil.encoderSteerBackward(BEACON_MOVE, ON_BEACON_POWER, true);
             Thread.sleep(100);
 
-            AutoUtil.encoderSteerForward(BEACON_MOVE / 2, ON_BEACON_POWER, true);
-            Thread.sleep(100);
-            AutoUtil.encoderSteerBackward(BEACON_MOVE / 2, ON_BEACON_POWER, true);
+            AutoUtil.encoderSteerForward(BEACON_MOVE, OFF_BEACON_POWER, false);
+            AutoUtil.beaconUp(upDown);
+            AutoUtil.encoderSteerForward(2000 - BEACON_MOVE, 0.3, false);
+        } else if (I2C_ColorSensor.beaconIsRedBlue()) {
+            AutoUtil.encoderSteerBackward(BEACON_MOVE, 0.2, true);
+            AutoUtil.beaconDown(upDown);
+            AutoUtil.encoderSteerForward(BEACON_MOVE * 3 / 4, OFF_BEACON_POWER, true);
             Thread.sleep(100);
 
-            AutoUtil.encoderSteerForward(BEACON_MOVE * 2, ON_BEACON_POWER, true);
+            AutoUtil.encoderSteerBackward(BEACON_MOVE, OFF_BEACON_POWER, true);
             AutoUtil.beaconUp(upDown);
-        } else if (I2C_ColorSensor.beaconIsBlueRed()) {
+            Thread.sleep(100);
+            AutoUtil.encoderSteerForward(2000 + BEACON_MOVE, 0.3, false);
+        }
+
+        // move to the closer beacon
+        if (AutoUtil.encoderSteerForwardLineSafe(0.5, 0.1, 3700, false) == -1) {
+            Util.telemetry("failsafe", "------FAILSAFE ENGAGED------", true);
+            Util.setDriveModeFloat();
+            Util.setAllPowers(0);
+            while (opModeIsActive()) Thread.sleep(20);
+        }
+        Util.telemetry("failsafe", "-----FAILSAFE DIDN'T ENGAGE-----", true);
+
+        // center the robot on the beacon
+        AutoUtil.encoderSteerForward(150, 0.15, true);
+
+        Thread.sleep(100);
+
+        /* based on which side is blue, move to that side,
+         * lower our button pusher,
+         * and roll over the button
+         */
+        if (I2C_ColorSensor.beaconIsBlueBlue()) AutoUtil.beaconUp(upDown);
+        else if (I2C_ColorSensor.beaconIsBlueRed()) {
+            AutoUtil.encoderSteerForward(BEACON_MOVE, OFF_BEACON_POWER, true);
+            AutoUtil.beaconDown(upDown);
+            AutoUtil.encoderSteerBackward(BEACON_MOVE, ON_BEACON_POWER, true);
+            Thread.sleep(100);
+
+            AutoUtil.encoderSteerForward(BEACON_MOVE, ON_BEACON_POWER, true);
+            AutoUtil.beaconUp(upDown);
+            Thread.sleep(100);
+            AutoUtil.encoderSteerBackward(BEACON_MOVE * 2, 0.3, false);
+        } else if (I2C_ColorSensor.beaconIsRedBlue()) {
             AutoUtil.encoderSteerBackward(BEACON_MOVE, OFF_BEACON_POWER, true);
             AutoUtil.beaconDown(upDown);
             AutoUtil.encoderSteerForward(BEACON_MOVE, ON_BEACON_POWER, true);
             Thread.sleep(100);
 
-            AutoUtil.encoderSteerBackward(BEACON_MOVE / 2, ON_BEACON_POWER, true);
-            Thread.sleep(100);
-            AutoUtil.encoderSteerForward(BEACON_MOVE / 2, ON_BEACON_POWER, true);
-            Thread.sleep(100);
-
-            AutoUtil.encoderSteerBackward(BEACON_MOVE, OFF_BEACON_POWER, true);
+            AutoUtil.encoderSteerBackward(BEACON_MOVE, OFF_BEACON_POWER, false);
             AutoUtil.beaconUp(upDown);
-            // move away from the corner vortex
-            //AutoUtil.encoderForward(BEACON_MOVE * 4, ON_BEACON_POWER, false);
         }
 
-        Util.setRightPowers(0.1);
-        Util.setLeftPowers(0.7);
+        Util.setRightPowers(-0.1);
+        Util.setLeftPowers(-0.7);
 
         Thread.sleep(1200);
 
@@ -211,15 +195,13 @@ public class RedAuto extends LinearOpMode {
         //Thread.sleep(500);
         Thread.sleep(100);
 
-        //Util.setDriveModeBrake();
-
-        AutoUtil.encoderTurnRight(85, 0.25);
+        AutoUtil.encoderTurnLeft(85, 0.25);
 
         Thread.sleep(100);
 
         Util.setDriveModeFloat();
 
-        AutoUtil.encoderForward(3700, 0.8, true);
+        AutoUtil.encoderBackward(3700, 0.8, true);
 
         Thread.sleep(1000);
 
