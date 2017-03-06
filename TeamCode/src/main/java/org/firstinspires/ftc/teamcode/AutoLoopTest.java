@@ -69,8 +69,8 @@ public class AutoLoopTest {
                         start = System.nanoTime() / FinalTeleOp.MILLIS_PER_NANO;
                         shooter1Power = FinalTeleOp.calculateShooterPower();
                         shooter2Power = shooter1Power + FinalTeleOp.SHOOTER2_OFFSET; // shooter 2 is slower than shooter 1
-                        Util.shooter1.setPower(shooter1Power + 0.01);
-                        Util.shooter2.setPower(shooter2Power + 0.01);
+                        Util.shooter1.setPower(shooter1Power); // + 0.01);
+                        Util.shooter2.setPower(shooter2Power); // + 0.01);
 
                         firstTime = false;
                     }
@@ -86,6 +86,8 @@ public class AutoLoopTest {
 
                         start = System.nanoTime() / FinalTeleOp.MILLIS_PER_NANO;
                         Util.setAllPowers(0.1);
+
+                        PIDon = true;
                         firstTime = false;
                     }
                     if ((currentTime - start) > 30) {
@@ -133,8 +135,6 @@ public class AutoLoopTest {
 
                         start = System.nanoTime() / FinalTeleOp.MILLIS_PER_NANO;
                         Util.setAllPowers(0);
-
-                        PIDon = true;
                         firstTime = false;
                     }
                     if ((currentTime - start) > 500) {
@@ -209,7 +209,13 @@ public class AutoLoopTest {
                 Util.shooter2.setPower(shooter2Power); // + 0.005);
             }
 
-            Thread.sleep(10);
+            Thread.sleep(5);
+
+            // oversample
+            Util.shooter1.getCurrentPosition();
+            Util.shooter2.getCurrentPosition();
+
+            Thread.sleep(5);
         }
 
         Util.setDriveModeBrake();

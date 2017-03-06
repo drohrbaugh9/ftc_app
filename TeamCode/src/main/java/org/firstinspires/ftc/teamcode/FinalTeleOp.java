@@ -20,7 +20,7 @@ public class FinalTeleOp extends LinearOpMode {
 
     //final String NORMAL = "normal", STRAIGHT = "straight";
     private final double POWER_FACTOR = 1, POSITIVE_STEP = 0.2, NEGATIVE_STEP = 0.5;
-    protected static final double SHOOTER2_OFFSET = 0.07;
+    protected static final double SHOOTER2_OFFSET = 0.02; // 0.07
     private final double INTAKE_POWER = 0.9;
     private final double SHOOT = Util.SHOOT, LOAD = Util.LOAD;
     protected static final long MILLIS_PER_NANO = 1000000;
@@ -270,7 +270,7 @@ public class FinalTeleOp extends LinearOpMode {
              * if the intake is outtaking, turn it off
              */
             switch (intakeStatus) {
-                case INTAKE_OFF: outtake();
+                case INTAKE_OFF: outtake(); break;
                 case INTAKE:
                 case OUTTAKE: intakeOff(); break;
             }
@@ -315,7 +315,7 @@ public class FinalTeleOp extends LinearOpMode {
     }
 
     private boolean SHOOTER_ON = true, SHOOTER_OFF = false;
-    private int shooterPID = 1500, shooterSpinUp = 2000, shooterLoad = 2000, shooterFire = 400;
+    private int shooterPID = 1200, shooterSpinUp = 1500, shooterLoad = 2000, shooterFire = 400;
     private double shooter1Power = 0, shooter2Power = 0;
 
     private void handleShooter() throws InterruptedException {
@@ -368,7 +368,7 @@ public class FinalTeleOp extends LinearOpMode {
 
     protected static double calculateShooterPower() {
         double voltage = Util.getBatteryVoltage();
-        if (voltage >= 13.6) return -0.033*voltage + 0.69; //0.696
-        else return -0.04*Util.getBatteryVoltage() + 0.784; //0.784
+        if (voltage >= 13.6) return -0.033*voltage + 0.72; //0.696
+        else return -0.04*Util.getBatteryVoltage() + 0.81; //0.784
     }
 }

@@ -11,7 +11,7 @@ public final class ShooterPID {
     private static final float shooterKi = 0.0f;
 
     static final double MOVING_AVERAGE_LENGTH = 50, MEASURING_INTERVAL = 10;
-    static final double RPM_TARGET = 1150.0; // 1175.0
+    static final double RPM_TARGET = 1075.0; // 1050.0
     static final double TICS_PER_ROTATION = Util.NEVEREST_37_TICS_PER_ROTATION;
     static final double TICS_TARGET = TICS_PER_ROTATION * (RPM_TARGET / 60.0) * (MEASURING_INTERVAL / 1000.0); // tics per MEASURING_INTERVAL, is 46.25 if target is 1250
 
@@ -73,6 +73,9 @@ public final class ShooterPID {
 
         shooter1Diff = (MEASURING_INTERVAL / elapsedTime) * shooter1Diff;
         shooter2Diff = (MEASURING_INTERVAL / elapsedTime) * shooter2Diff;
+
+        if (shooter1Diff > (TICS_TARGET * 2)) shooter1Diff = TICS_TARGET * 2;
+        if (shooter2Diff > (TICS_TARGET * 2)) shooter2Diff = TICS_TARGET * 2;
 
         shooter1Sum = shooter1Sum + shooter1Diff - shooter1Queue.poll();
         shooter1Queue.add(shooter1Diff);
