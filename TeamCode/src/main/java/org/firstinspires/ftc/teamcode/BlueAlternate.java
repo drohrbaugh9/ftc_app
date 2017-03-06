@@ -1,6 +1,7 @@
 package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DeviceInterfaceModule;
@@ -8,8 +9,8 @@ import com.qualcomm.robotcore.hardware.GyroSensor;
 import com.qualcomm.robotcore.hardware.OpticalDistanceSensor;
 import com.qualcomm.robotcore.hardware.Servo;
 
-@Autonomous(name="BluteAlternate", group = "Competition")
-//@Disabled
+@Autonomous(name="BlueAlternate", group = "Competition")
+@Disabled
 public class BlueAlternate extends LinearOpMode {
     // motors
     DcMotor rightBack, leftBack, rightFront, leftFront;
