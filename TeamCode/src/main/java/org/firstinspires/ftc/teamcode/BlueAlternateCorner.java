@@ -1,7 +1,6 @@
 package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
-import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DeviceInterfaceModule;
@@ -9,9 +8,9 @@ import com.qualcomm.robotcore.hardware.GyroSensor;
 import com.qualcomm.robotcore.hardware.OpticalDistanceSensor;
 import com.qualcomm.robotcore.hardware.Servo;
 
-@Autonomous(name="RedAlternateCenter", group = "Competition")
+@Autonomous(name="BlueAlternateCorner", group = "Competition")
 //@Disabled
-public class RedAlternateCenter extends LinearOpMode {
+public class BlueAlternateCorner extends LinearOpMode {
     // motors
     DcMotor rightBack, leftBack, rightFront, leftFront;
     DcMotor shooter1, shooter2;
@@ -71,31 +70,18 @@ public class RedAlternateCenter extends LinearOpMode {
 
         Thread.sleep(15 * 1000); // 12*/
 
-        AutoLoopTest.driveAndShoot(3200, 2); Thread.sleep(100);
+        AutoLoopTest.driveAndShoot(3200, 2);
 
-        //AutoUtil.encoderTurnRight(30, 0.25); Thread.sleep(100);
+        AutoUtil.encoderTurnRight(60, 0.2);
 
-        AutoUtil.PID_Forward(2200, 0.3, true, gyro);
+        Thread.sleep(200);
+
+        AutoUtil.PID_Forward(5500, 0.3, true, gyro);
 
         Thread.sleep(500);
 
         Util.setAllPowers(0);
 
-        while (opModeIsActive()) {
-            Thread.sleep(10);
-        }
-    }
-
-    private void shoot() throws InterruptedException {
-        ballFeeder.setPosition(Util.SHOOT);
-
-        Thread.sleep(400);
-
-        ballFeeder.setPosition(Util.LOAD);
-
-        Thread.sleep(1000);
-
-        shooter1.setPower(0);
-        shooter2.setPower(0);
+        while (opModeIsActive()) Thread.sleep(10);
     }
 }

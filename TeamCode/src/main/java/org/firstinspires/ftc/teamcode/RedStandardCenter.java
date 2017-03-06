@@ -184,7 +184,7 @@ public class RedStandardCenter extends LinearOpMode {
         Util.setRightPowers(0.1);
         Util.setLeftPowers(0.7);
 
-        Thread.sleep(1200);
+        Thread.sleep(1100);
 
         //Util.setDriveModeFloat();
 
@@ -195,7 +195,7 @@ public class RedStandardCenter extends LinearOpMode {
 
         //Util.setDriveModeBrake();
 
-        AutoUtil.encoderTurnRight(85, 0.25);
+        AutoUtil.encoderTurnRight(95, 0.25);
 
         Thread.sleep(100);
 

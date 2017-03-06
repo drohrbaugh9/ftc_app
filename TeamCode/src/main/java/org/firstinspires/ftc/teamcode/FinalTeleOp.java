@@ -60,6 +60,8 @@ public class FinalTeleOp extends LinearOpMode {
 
         this.ods = Util.ods;
 
+        Util.upDown.setPosition(Util.BEACON_DOWN);
+
         waitForStart();
 
         //long start = System.nanoTime();
@@ -269,7 +271,7 @@ public class FinalTeleOp extends LinearOpMode {
              */
             switch (intakeStatus) {
                 case INTAKE_OFF: outtake();
-                case INTAKE: break;
+                case INTAKE:
                 case OUTTAKE: intakeOff(); break;
             }
             intakeChanged = true;
@@ -281,7 +283,8 @@ public class FinalTeleOp extends LinearOpMode {
              */
             switch (intakeStatus) {
                 case INTAKE_OFF: intake(); break;
-                case INTAKE: intakeOff(); break;
+                case INTAKE:
+                case OUTTAKE: intakeOff(); break;
                 //case OUTTAKE: break;
             }
             intakeChanged = true;

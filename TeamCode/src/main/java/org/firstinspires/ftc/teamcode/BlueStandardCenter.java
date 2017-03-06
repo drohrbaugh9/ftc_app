@@ -186,7 +186,7 @@ public class BlueStandardCenter extends LinearOpMode {
         Util.setRightPowers(-0.1);
         Util.setLeftPowers(-0.7);
 
-        Thread.sleep(1200);
+        Thread.sleep(1100);
 
         //Util.setDriveModeFloat();
 
@@ -195,7 +195,7 @@ public class BlueStandardCenter extends LinearOpMode {
         //Thread.sleep(500);
         Thread.sleep(100);
 
-        AutoUtil.encoderTurnLeft(85, 0.25);
+        AutoUtil.encoderTurnLeft(95, 0.25);
 
         Thread.sleep(100);
 

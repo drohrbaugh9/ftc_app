@@ -1,7 +1,6 @@
 package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
-import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DeviceInterfaceModule;
@@ -9,9 +8,9 @@ import com.qualcomm.robotcore.hardware.GyroSensor;
 import com.qualcomm.robotcore.hardware.OpticalDistanceSensor;
 import com.qualcomm.robotcore.hardware.Servo;
 
-@Autonomous(name="RedAlternateCenter", group = "Competition")
+@Autonomous(name="BlueAlternateCenter", group = "Competition")
 //@Disabled
-public class RedAlternateCenter extends LinearOpMode {
+public class BlueAlternateCenter extends LinearOpMode {
     // motors
     DcMotor rightBack, leftBack, rightFront, leftFront;
     DcMotor shooter1, shooter2;
@@ -71,9 +70,11 @@ public class RedAlternateCenter extends LinearOpMode {
 
         Thread.sleep(15 * 1000); // 12*/
 
-        AutoLoopTest.driveAndShoot(3200, 2); Thread.sleep(100);
+        AutoLoopTest.driveAndShoot(3200, 2);
 
-        //AutoUtil.encoderTurnRight(30, 0.25); Thread.sleep(100);
+        Thread.sleep(100);
+
+        //AutoUtil.encoderTurnLeft(30, 0.25); Thread.sleep(100);
 
         AutoUtil.PID_Forward(2200, 0.3, true, gyro);
 
