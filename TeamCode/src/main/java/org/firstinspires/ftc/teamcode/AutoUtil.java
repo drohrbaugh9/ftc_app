@@ -14,6 +14,7 @@ public final class AutoUtil {
     protected static DcMotor r, l;
     private static final double MOTOR_POWER_THRESHOLD = 0.8 * Util.POWER_LIMIT, TIME_THRESHOLD = 0.3 * Util.SEC_TO_NSEC;
     private static final double MIN_POWER = 0.2;
+    public static double offBeaconPower = 0.15, onBeaconPower = 0.11;
 
     private AutoUtil() throws Exception {
         throw new Exception();

@@ -1,8 +1,6 @@
 package org.firstinspires.ftc.teamcode;
 
-import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
-
-@Autonomous(name = "AutoLoopTest", group ="Test")
+//@Autonomous(name = "AutoLoopTest", group ="Test")
 //@Disabled
 
 //public class AutoLoopTest extends LinearOpMode {
@@ -47,7 +45,8 @@ public class AutoLoopTest {
 
         ShooterPID.init();
 
-        waitForStart();*/
+        waitForStart();
+    }*/
 
     public static void driveAndShoot(int driveDistance, int shotNumber) throws InterruptedException {
 
@@ -56,6 +55,8 @@ public class AutoLoopTest {
         shooter1Power = 0; shooter2Power = 0;
 
         firstTime = true; PIDon = false;
+
+        AutoUtil.onBeaconPower *= (13.6 / Util.getBatteryVoltage());
 
         long start = System.nanoTime() / FinalTeleOp.MILLIS_PER_NANO, currentTime, oldTime = start - 10;
 
