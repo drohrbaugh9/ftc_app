@@ -11,7 +11,7 @@ public final class ShooterPID {
     private static final float shooterKi = 0.0f;
 
     static final double MOVING_AVERAGE_LENGTH = 50, MEASURING_INTERVAL = 10;
-    static final double RPM_TARGET = 1175.0; // 1150.0
+    static final double RPM_TARGET = 1075.0; // 1050.0
     static final double TICS_PER_ROTATION = Util.NEVEREST_37_TICS_PER_ROTATION;
     static final double TICS_TARGET = TICS_PER_ROTATION * (RPM_TARGET / 60.0) * (MEASURING_INTERVAL / 1000.0); // tics per MEASURING_INTERVAL, is 46.25 if target is 1250
 
@@ -20,11 +20,14 @@ public final class ShooterPID {
     private static Queue<Double> shooter1Queue, shooter2Queue;
     private static Queue<Long> elapsedTimeQueue;
 
-    private static boolean queueClear;
+    private static boolean queueClear, ledOn = false;
 
     private ShooterPID() throws Exception { throw new Exception(); }
 
-    public static void init() { clearQueue(); }
+    public static void init() {
+        clearQueue();
+        ledOn = false;
+    }
 
     public static double[] PID_calculateShooterPower(double power1, double power2) {
         double delta1 = shooter1Sum / MOVING_AVERAGE_LENGTH;
@@ -71,6 +74,9 @@ public final class ShooterPID {
         shooter1Diff = (MEASURING_INTERVAL / elapsedTime) * shooter1Diff;
         shooter2Diff = (MEASURING_INTERVAL / elapsedTime) * shooter2Diff;
 
+        if (shooter1Diff > (TICS_TARGET * 2)) shooter1Diff = TICS_TARGET * 2;
+        if (shooter2Diff > (TICS_TARGET * 2)) shooter2Diff = TICS_TARGET * 2;
+
         shooter1Sum = shooter1Sum + shooter1Diff - shooter1Queue.poll();
         shooter1Queue.add(shooter1Diff);
         shooter2Sum = shooter2Sum + shooter2Diff - shooter2Queue.poll();
@@ -81,6 +87,19 @@ public final class ShooterPID {
         lastShooter1Pos = shooter1Pos;
         lastShooter2Pos = shooter2Pos;
 
+
+        if (!ledOn && (shooter1Sum / MOVING_AVERAGE_LENGTH) > (TICS_TARGET)) {
+            Util.led.setPower(1);
+            ledOn = true;
+        }
+        else if (ledOn && (shooter1Sum / MOVING_AVERAGE_LENGTH ) < (TICS_TARGET * 0.9)) {
+            Util.led.setPower(0);
+            ledOn = false;
+        }
+        /*else {
+            Util.led.setPower(0);
+            ledOn = false;
+        }*/
 
         queueClear = false;
     }
@@ -101,6 +120,9 @@ public final class ShooterPID {
             shooter2Queue.add(0.0);
             //elapsedTimeQueue.add((long)0);
         }
+
+        Util.led.setPower(0);
+        ledOn = false;
 
         queueClear = true;
     }

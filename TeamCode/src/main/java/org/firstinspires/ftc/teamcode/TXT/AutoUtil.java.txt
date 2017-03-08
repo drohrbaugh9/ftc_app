@@ -14,6 +14,7 @@ public final class AutoUtil {
     protected static DcMotor r, l;
     private static final double MOTOR_POWER_THRESHOLD = 0.8 * Util.POWER_LIMIT, TIME_THRESHOLD = 0.3 * Util.SEC_TO_NSEC;
     private static final double MIN_POWER = 0.2;
+    public static double offBeaconPower = 0.15, onBeaconPower = 0.11;
 
     private AutoUtil() throws Exception {
         throw new Exception();
@@ -48,15 +49,38 @@ public final class AutoUtil {
         if (stop) Util.setAllPowers(0);
     }
 
-    private static double FORWARD_STEER = 1.08, BACKWARD_STEER = 1.15;
+    private static double FORWARD_STEER = 1.15, BACKWARD_STEER = 1.12;
+
+    public static void encoderSteerForward(int dist, double powerR, double powerL, boolean stop) throws InterruptedException {
+        int pos = (r.getCurrentPosition() + l.getCurrentPosition()) / 2;
+
+        Util.setRightPowers(powerR);
+        Util.setLeftPowers(powerL);
+
+        while (((r.getCurrentPosition() + l.getCurrentPosition()) / 2) < (pos + dist)) Thread.sleep(20);
+
+        if (stop) Util.setAllPowers(0);
+    }
 
     public static void encoderSteerForward(int dist, double power, boolean stop) throws InterruptedException {
+
         int pos = (r.getCurrentPosition() + l.getCurrentPosition()) / 2;
 
         Util.setRightPowers(power * FORWARD_STEER);
         Util.setLeftPowers(power / FORWARD_STEER);
 
         while (((r.getCurrentPosition() + l.getCurrentPosition()) / 2) < (pos + dist)) Thread.sleep(20);
+
+        if (stop) Util.setAllPowers(0);
+    }
+
+    public static void encoderSteerBackward(int dist, double powerR, double powerL, boolean stop) throws InterruptedException {
+        int pos = (r.getCurrentPosition() + l.getCurrentPosition()) / 2;
+
+        Util.setRightPowers(-powerR);
+        Util.setLeftPowers(-powerL);
+
+        while (((r.getCurrentPosition() + l.getCurrentPosition()) / 2) > (pos - dist)) Thread.sleep(20);
 
         if (stop) Util.setAllPowers(0);
     }
