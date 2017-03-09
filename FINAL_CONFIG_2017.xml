@@ -23,7 +23,7 @@
         <Motor name="shooter2" port="2" />
     </MotorController>
     <MotorController name="Intake" serialNumber="AL00VBIF">
-	<Motor name="intake" port="1" />
-	<Motor name="led" port="2" />
+        <Motor name="intake" port="1" />
+        <Motor name="led" port="2" />
     </MotorController>
 </Robot>
