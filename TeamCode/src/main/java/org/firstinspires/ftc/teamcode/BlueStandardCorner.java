@@ -72,7 +72,7 @@ public class BlueStandardCorner extends LinearOpMode {
 
         waitForStart();
 
-        AutoLoopTest.driveAndShoot(1700, 2);
+        AutoLoopTest.driveAndShoot(1600, 2);
 
         offBeaconPower = AutoUtil.offBeaconPower; onBeaconPower = AutoUtil.onBeaconPower;
 
@@ -84,7 +84,7 @@ public class BlueStandardCorner extends LinearOpMode {
         Thread.sleep(100);
 
         // drive near to the closer beacon
-        AutoUtil.PID_Backward(3300, 0.3, false, gyro);
+        AutoUtil.PID_Backward(3200, 0.3, false, gyro);
         AutoUtil.PID_Backward(1000, 0.2, true, gyro);
 
         Thread.sleep(100);
@@ -101,7 +101,7 @@ public class BlueStandardCorner extends LinearOpMode {
         I2C_ColorSensor.enable();
 
         // follow the wall...
-        AutoUtil.encoderSteerBackward(750, 0.3, false);
+        AutoUtil.encoderSteerBackward(850, 0.3, false);
 
         // ...find the white line...
         if (AutoUtil.encoderSteerBackwardLineSafe(0.5, 0.1, 3650, false) == -1) { // TODO: adjust maxDist value
