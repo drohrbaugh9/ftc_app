@@ -1,0 +1,27 @@
+#!/bin/sh
+
+# Process all non-wall log files
+for i in arm45_power70.logcat arm45_power50.logcat wall_arm45_power70.logcat wall_arm45_power50.logcat
+do
+  OUTNAME=`echo $i | sed 's/.logcat//'`
+
+  # Process each motor
+  for j in left_front right_front left_back right_back
+  do
+    # Process each trial within log file
+    for k in 1 2 3
+    do
+      echo "DATA_SET_NAME ${OUTNAME}_${j}_${k}" > datasets/${OUTNAME}_${j}_${k}.txt
+      cat $i | ./extract_dataset -n $k | ./process_stall_data | grep $j | cut -d' ' -f2 >> datasets/${OUTNAME}_${j}_${k}.txt
+      ./moving_average -w10 datasets/${OUTNAME}_${j}_${k}.txt > datasets/${OUTNAME}_${j}_${k}_mva10.txt
+    done
+  done
+  ./column_ave -h ${OUTNAME}_front -l 100 datasets/${OUTNAME}_*front*_[1-5]_mva10.txt > datasets/${OUTNAME}_front_ave_all.txt
+  ./column_ave -h ${OUTNAME}_back -l 100 datasets/${OUTNAME}_*back*_[1-5]_mva10.txt > datasets/${OUTNAME}_back_ave_all.txt
+  ./column_min -h ${OUTNAME}_front_min -l 100 datasets/${OUTNAME}_*front*_[1-5]_mva10.txt > datasets/${OUTNAME}_front_min_all.txt
+  ./column_max -h ${OUTNAME}_front_max -l 100 datasets/${OUTNAME}_*front*_[1-5]_mva10.txt > datasets/${OUTNAME}_front_max_all.txt
+  ./column_min -h ${OUTNAME}_back_min -l 100 datasets/${OUTNAME}_*back*_[1-5]_mva10.txt > datasets/${OUTNAME}_back_min_all.txt
+  ./column_max -h ${OUTNAME}_back_max -l 100 datasets/${OUTNAME}_*back*_[1-5]_mva10.txt > datasets/${OUTNAME}_back_max_all.txt
+  #./moving_average -w10 datasets/${OUTNAME}_front_ave.txt > datasets/${OUTNAME}_front_mva10.txt
+done
+

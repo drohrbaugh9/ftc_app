@@ -1,0 +1,55 @@
+#!/usr/bin/perl
+
+use Getopt::Std;
+ 
+# declare the perl command line flags/options we want to allow
+my %options=();
+getopts("w:", \%options);
+ 
+$window = 5;
+$window = $options{w} if defined $options{w};
+
+$count = 0;
+$sum = 0;
+
+while (<>)
+{
+  @fields = split;
+  if ($fields[0] eq "DATA_SET_NAME")
+  {
+    s/arm/a/;
+    s/backwards/bkwd/;
+    s/freeSpinning/fs/;
+    s/intoMountain/im/;
+    s/intoWall/iw/;
+    s/leftTurn/lt/;
+    s/rightTurn/rt/;
+    s/overBlock/ob/;
+    s/wall_/w_/;
+    s/_power/_p/;
+    s/right_front/rf/;
+    s/left_front/lf/;
+    s/right_back/rb/;
+    s/left_back/lb/;
+    s/_ave/_mva$window/;
+    print $_;
+  }
+  else
+  {
+    $data[$count] = $fields[0];
+    $sum = $sum + $fields[0];
+
+    if ($count >= $window)
+    {
+      $sum = $sum - $data[$count - $window];
+      $ave = $sum / $window;
+    }
+    else
+    {
+      $ave = $sum / ($count + 1);
+    }
+    $count++;
+    printf("%6.2f\n",$ave);
+  }
+}
+

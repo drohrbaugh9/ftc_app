@@ -1,0 +1,38 @@
+#!/bin/sh
+
+#./data2csv -l 100 datasets/arm90*_ave.txt > csv/arm90.csv
+#./data2csv -l 100 datasets/arm135*_ave.txt > csv/arm135_ave.csv
+#./data2csv -l 100 datasets/arm180*_ave.txt > csv/arm180_ave.csv
+
+#./data2csv -l 100 datasets/free*_ave.txt > csv/free_ave.csv
+
+#./data2csv -l 100 datasets/*leftTurn*_ave.txt > csv/left_turn_ave.csv
+#./data2csv -l 100 datasets/*rightTurn*_ave.txt > csv/right_turn_ave.csv
+
+#./data2csv -l 100 datasets/wall_arm90*_ave.txt > csv/wall90_ave.csv
+#./data2csv -l 100 datasets/wall_arm180*_ave.txt > csv/wall180_ave.csv
+#./data2csv -l 100 datasets/intoM*ave.txt > csv/intom_ave.csv
+#./data2csv -l 100 datasets/intoW*ave.txt > csv/intow_ave.csv
+
+#./data2csv -l 100 datasets/*left_front_mva5.txt > csv/lf_mva5.csv
+#./data2csv -l 100 datasets/*right_front_mva5.txt > csv/rf_mva5.csv
+#./data2csv -l 100 datasets/*left_back_mva5.txt > csv/lb_mva5.csv
+#./data2csv -l 100 datasets/*right_back_mva5.txt > csv/rb_mva5.csv
+
+#./data2csv -l 100 datasets/*left_front_mva10.txt > csv/lf_mva10.csv
+#./data2csv -l 100 datasets/*right_front_mva10.txt > csv/rf_mva10.csv
+#./data2csv -l 100 datasets/*left_back_mva10.txt > csv/lb_mva10.csv
+#./data2csv -l 100 datasets/*right_back_mva10.txt > csv/rb_mva10.csv
+
+./data2csv -l 100 datasets/arm45*ave_all.txt datasets/wall*ave_all.txt > csv/arm45_vs_wall.csv
+./data2csv -l 100 datasets/arm45*ave_all.txt > csv/arm45_ave.csv
+./data2csv -l 100 datasets/arm45*min_all.txt > csv/arm45_min.csv
+./data2csv -l 100 datasets/arm45*max_all.txt > csv/arm45_max.csv
+./data2csv -l 100 datasets/wall*ave_all.txt > csv/wall45_ave.csv
+./data2csv -l 100 datasets/wall*min_all.txt > csv/wall45_min.csv
+./data2csv -l 100 datasets/wall*max_all.txt > csv/wall45_max.csv
+#./data2csv -l 100 datasets/intoMountain_arm135*all.txt datasets/wall_arm90*all.txt > csv/im_vs_wall.csv
+#./data2csv -l 100 datasets/arm135*all.txt datasets/intoMountain_arm135*all.txt datasets/wall_arm90*all.txt > csv/arm135_vs_im_vs_wall.csv
+
+./data2csv -l 100 datasets/wall_arm45_power70_front_min_all.txt datasets/wall_arm45_power70_back_max_all.txt datasets/arm45_power70_front_max_all.txt datasets/arm45_power70_back_min_all.txt > csv/arm45_vs_wall_worst.csv
+

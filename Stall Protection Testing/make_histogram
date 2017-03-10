@@ -1,0 +1,25 @@
+#!/usr/bin/perl
+
+$total_count = 0;
+while (<>)
+{
+  next if /^\n/o;
+  chop;
+  if (defined($count{$_}))
+  {
+    $count{$_}++;
+  }
+  else
+  {
+    $count{$_} = 1;
+  }
+  $total_count++;
+}
+
+foreach $item (sort(keys(%count)))
+{
+  print "$count{$item}      $item\n";
+}
+
+print "Total      $total_count\n";
+

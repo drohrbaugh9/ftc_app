@@ -1,0 +1,40 @@
+\documentclass{standalone}
+
+\usepackage{pgfplots}
+
+\begin{document}
+  \begin{tikzpicture}
+    \begin{axis}[
+      axis lines = middle,
+      xmin=-1, xmax=1,
+      ymin=-1, ymax=1,
+      xlabel = $x$,
+      ylabel={$y$}
+    ]
+    \addplot [
+      domain=0.2:1,
+      samples=100,
+      color=blue,
+    ]
+    {x^1.4};
+    \addplot [
+      domain=-1:-0.2,
+      samples=100,
+      color=blue,
+    ]
+    {-((-x)^1.4)};
+    \addplot [
+      domain=-0.2:0.2,
+      samples=10,
+      color=black,
+    ]
+    {0};
+    \addplot [
+      domain=-1:1,
+      samples=100,
+      color=red,
+    ]
+    {x};
+    \end{axis}
+  \end{tikzpicture}
+\end{document}

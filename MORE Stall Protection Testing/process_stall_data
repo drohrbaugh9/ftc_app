@@ -1,0 +1,10 @@
+#!/usr/bin/perl
+
+while (<>) {
+  if (m/my_debug/) {
+    s/.*my_debug //;
+    @fields = split;
+    print $_;
+  }
+}
+

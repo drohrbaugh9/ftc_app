@@ -1,0 +1,1730 @@
+--------- beginning of /dev/log/main
+01-23 21:01:48.513 D/dalvikvm(24911): Late-enabling CheckJNI
+01-23 21:01:48.533 I/jdwp    (24911): Ignoring second debugger -- accepting and dropping
+01-23 21:01:48.573 D/ActivityThread(24911): handleBindApplication:com.qualcomm.ftcrobotcontroller
+01-23 21:01:48.573 D/ActivityThread(24911): setTargetHeapUtilization:0.75
+01-23 21:01:48.573 D/ActivityThread(24911): setTargetHeapMinFree:2097152
+01-23 21:01:48.643 V/RobotCore(24911): saving logcat to /storage/emulated/0/com.qualcomm.ftcrobotcontroller.logcat
+01-23 21:01:48.683 I/FIRST   (24911): Wifi Direct - disconnected
+01-23 21:01:48.713 I/FIRST   (24911): Starting FTC Controller Service
+01-23 21:01:48.713 I/FIRST   (24911): Android device is zte, N9130
+01-23 21:01:48.723 V/RobotCore(24911): There are 1 Wifi Direct Assistant Clients (+)
+01-23 21:01:48.723 V/RobotCore(24911): Enabling Wifi Direct Assistant
+01-23 21:01:48.813 I/Adreno-EGL(24911): <qeglDrvAPI_eglInitialize:410>: EGL 1.4 QUALCOMM build:  ()
+01-23 21:01:48.813 I/Adreno-EGL(24911): OpenGL ES Shader Compiler Version: E031.24.02.07
+01-23 21:01:48.813 I/Adreno-EGL(24911): Build Date: 10/29/14 Wed
+01-23 21:01:48.813 I/Adreno-EGL(24911): Local Branch: 
+01-23 21:01:48.813 I/Adreno-EGL(24911): Remote Branch: 
+01-23 21:01:48.813 I/Adreno-EGL(24911): Local Patches: 
+01-23 21:01:48.813 I/Adreno-EGL(24911): Reconstruct Branch: 
+01-23 21:01:48.883 D/OpenGLRenderer(24911): Enabling debug mode 0
+01-23 21:01:48.893 D/RobotCore(24911): Wifi Direct state - enabled: true
+01-23 21:01:48.893 D/RobotCore(24911): Wifi Direct connection changed - connected: true
+01-23 21:01:48.903 D/RobotCore(24911): Wifi Direct this device changed
+01-23 21:01:48.903 V/RobotCore(24911): Wifi Direct device information: 9899-RC 36:de:34:7a:83:ee
+01-23 21:01:48.903 D/RobotCore(24911): Wifi Direct cannot create group, does group already exist?
+01-23 21:01:48.903 I/FIRST   (24911): Bound to Ftc Controller Service
+01-23 21:01:48.903 I/FIRST   (24911): Wifi Direct - disconnected
+01-23 21:01:48.903 I/FIRST   (24911): Robot Status: null
+01-23 21:01:48.923 I/FIRST   (24911): Processing robot setup
+01-23 21:01:48.933 I/FIRST   (24911): Robot Status: scanning for USB devices
+01-23 21:01:49.063 D/RobotCore(24911): Group owners address: /192.168.49.1
+01-23 21:01:49.063 D/RobotCore(24911): Wifi Direct group formed, this device is the group owner (GO)
+01-23 21:01:49.063 I/FIRST   (24911): Wifi Direct - Group Owner
+01-23 21:01:49.063 D/RobotCore(24911): Wifi Direct stop discovering peers
+01-23 21:01:49.063 I/FIRST   (24911): Wifi Direct - enabled
+01-23 21:01:49.073 V/RobotCore(24911): Wifi Direct connection information available
+01-23 21:01:49.073 I/FIRST   (24911): Wifi Direct Passphrase: KI5p71d7
+01-23 21:01:49.093 I/Timeline(24911): Timeline: Activity_idle id: android.os.BinderProxy@41956ce0 time:81768978
+01-23 21:01:51.993 I/FIRST   (24911): Stopping FTC Controller Service
+01-23 21:01:51.993 V/RobotCore(24911): There are 0 Wifi Direct Assistant Clients (-)
+01-23 21:01:51.993 V/RobotCore(24911): Disabling Wifi Direct Assistant
+01-23 21:01:52.003 I/FIRST   (24911): Robot Status: null
+01-23 21:01:52.003 I/FIRST   (24911): Robot Status: abort due to interrupt
+01-23 21:01:52.983 V/RobotCore(24911): closing logcat file /storage/emulated/0/com.qualcomm.ftcrobotcontroller
+01-23 21:01:53.243 V/RobotCore(24911): Killing PID 24945
+01-23 21:01:53.933 I/RobotCore(24911): Battery Checker, Level Remaining: 93.0
+01-23 21:02:29.293 D/dalvikvm(25099): Late-enabling CheckJNI
+01-23 21:02:29.353 D/ActivityThread(25099): handleBindApplication:com.qualcomm.ftcrobotcontroller
+01-23 21:02:29.353 D/ActivityThread(25099): setTargetHeapUtilization:0.75
+01-23 21:02:29.353 D/ActivityThread(25099): setTargetHeapMinFree:2097152
+01-23 21:02:29.423 V/RobotCore(25099): saving logcat to /storage/emulated/0/com.qualcomm.ftcrobotcontroller.logcat
+01-23 21:02:29.463 I/FIRST   (25099): Wifi Direct - disconnected
+01-23 21:02:29.493 I/FIRST   (25099): Starting FTC Controller Service
+01-23 21:02:29.493 I/FIRST   (25099): Android device is zte, N9130
+01-23 21:02:29.493 V/RobotCore(25099): There are 1 Wifi Direct Assistant Clients (+)
+01-23 21:02:29.493 V/RobotCore(25099): Enabling Wifi Direct Assistant
+01-23 21:02:29.543 I/Adreno-EGL(25099): <qeglDrvAPI_eglInitialize:410>: EGL 1.4 QUALCOMM build:  ()
+01-23 21:02:29.543 I/Adreno-EGL(25099): OpenGL ES Shader Compiler Version: E031.24.02.07
+01-23 21:02:29.543 I/Adreno-EGL(25099): Build Date: 10/29/14 Wed
+01-23 21:02:29.543 I/Adreno-EGL(25099): Local Branch: 
+01-23 21:02:29.543 I/Adreno-EGL(25099): Remote Branch: 
+01-23 21:02:29.543 I/Adreno-EGL(25099): Local Patches: 
+01-23 21:02:29.543 I/Adreno-EGL(25099): Reconstruct Branch: 
+01-23 21:02:29.593 D/OpenGLRenderer(25099): Enabling debug mode 0
+01-23 21:02:29.593 D/RobotCore(25099): Wifi Direct state - enabled: true
+01-23 21:02:29.603 D/RobotCore(25099): Wifi Direct connection changed - connected: true
+01-23 21:02:29.603 D/RobotCore(25099): Wifi Direct this device changed
+01-23 21:02:29.603 V/RobotCore(25099): Wifi Direct device information: 9899-RC 36:de:34:7a:83:ee
+01-23 21:02:29.603 I/FIRST   (25099): Bound to Ftc Controller Service
+01-23 21:02:29.603 I/FIRST   (25099): Wifi Direct - disconnected
+01-23 21:02:29.603 I/FIRST   (25099): Robot Status: null
+01-23 21:02:29.613 I/FIRST   (25099): Processing robot setup
+01-23 21:02:29.613 D/RobotCore(25099): Wifi Direct cannot create group, does group already exist?
+01-23 21:02:29.613 I/FIRST   (25099): Robot Status: scanning for USB devices
+01-23 21:02:29.753 D/RobotCore(25099): Group owners address: /192.168.49.1
+01-23 21:02:29.753 D/RobotCore(25099): Wifi Direct group formed, this device is the group owner (GO)
+01-23 21:02:29.753 I/FIRST   (25099): Wifi Direct - Group Owner
+01-23 21:02:29.753 D/RobotCore(25099): Wifi Direct stop discovering peers
+01-23 21:02:29.753 I/FIRST   (25099): Wifi Direct - enabled
+01-23 21:02:29.763 V/RobotCore(25099): Wifi Direct connection information available
+01-23 21:02:29.763 I/FIRST   (25099): Wifi Direct Passphrase: KI5p71d7
+01-23 21:02:29.783 I/Timeline(25099): Timeline: Activity_idle id: android.os.BinderProxy@4195c650 time:81809666
+01-23 21:02:34.623 V/RobotCore(25099): EventLoopManager state is NOT_STARTED
+01-23 21:02:34.623 I/RobotCore(25099): Battery Checker, Level Remaining: 93.0
+01-23 21:02:34.623 I/FIRST   (25099): Robot Status: waiting on network
+01-23 21:02:34.623 I/FIRST   (25099): Robot Status: starting robot
+01-23 21:02:34.773 D/RobotCore(25099): RobocolDatagramSocket binding to /192.168.49.1:20884
+01-23 21:02:34.983 V/RobotCore(25099): EventLoopManager state is STOPPED
+01-23 21:02:34.983 I/FIRST   (25099): Robot Status: stopped
+01-23 21:02:34.983 V/RobotCore(25099): EventLoopManager state is INIT
+01-23 21:02:34.983 I/FIRST   (25099): Robot Status: init
+01-23 21:02:34.983 I/FIRST   (25099): ======= INIT START =======
+01-23 21:02:34.983 V/RobotCore(25099): Starting Modern Robotics device manager
+01-23 21:02:34.983 V/D2xx::  (25099): Start constructor
+01-23 21:02:34.993 V/D2xx::  (25099): End constructor
+01-23 21:02:35.023 V/RobotCore(25099): Creating Modern Robotics USB DC Motor Controller - AL00UW4Z
+01-23 21:02:35.023 V/D2xx::  (25099): Vendor: 0403, Product: 6001
+01-23 21:02:35.043 D/UsbDeviceConnectionJNI(25099): close
+01-23 21:02:35.043 V/D2xx::  (25099): Vendor: 0403, Product: 6001
+01-23 21:02:35.053 D/UsbDeviceConnectionJNI(25099): close
+01-23 21:02:35.053 V/D2xx::  (25099): Vendor: 0403, Product: 6001
+01-23 21:02:35.063 D/UsbDeviceConnectionJNI(25099): close
+01-23 21:02:35.063 V/D2xx::  (25099): Vendor: 0403, Product: 6001
+01-23 21:02:35.073 D/UsbDeviceConnectionJNI(25099): close
+01-23 21:02:35.073 V/D2xx::  (25099): Vendor: 0403, Product: 6001
+01-23 21:02:35.083 D/UsbDeviceConnectionJNI(25099): close
+01-23 21:02:35.083 V/D2xx::  (25099): Vendor: 0403, Product: 6001
+01-23 21:02:35.103 D/UsbDeviceConnectionJNI(25099): close
+01-23 21:02:35.103 D/FTDI_Device::(25099): open SUCCESS
+01-23 21:02:35.103 I/FTDI_Device::(25099): EP: 0x81
+01-23 21:02:35.103 I/FTDI_Device::(25099): EP: 0x02
+01-23 21:02:35.103 D/D2XX::  (25099): **********************Device Opened**********************
+01-23 21:02:35.103 I/dalvikvm(25099): Could not find method android.support.v4.content.LocalBroadcastManager.getInstance, referenced from method com.ftdi.j2xx.o.a
+01-23 21:02:35.103 W/dalvikvm(25099): VFY: unable to resolve static method 183: Landroid/support/v4/content/LocalBroadcastManager;.getInstance (Landroid/content/Context;)Landroid/support/v4/content/LocalBroadcastManager;
+01-23 21:02:35.103 D/dalvikvm(25099): VFY: replacing opcode 0x71 at 0x0040
+01-23 21:02:35.103 I/dalvikvm(25099): Could not find method android.support.v4.content.LocalBroadcastManager.getInstance, referenced from method com.ftdi.j2xx.o.a
+01-23 21:02:35.103 W/dalvikvm(25099): VFY: unable to resolve static method 183: Landroid/support/v4/content/LocalBroadcastManager;.getInstance (Landroid/content/Context;)Landroid/support/v4/content/LocalBroadcastManager;
+01-23 21:02:35.103 D/dalvikvm(25099): VFY: replacing opcode 0x71 at 0x0072
+01-23 21:02:35.103 I/dalvikvm(25099): Could not find method android.support.v4.content.LocalBroadcastManager.getInstance, referenced from method com.ftdi.j2xx.o.a
+01-23 21:02:35.103 W/dalvikvm(25099): VFY: unable to resolve static method 183: Landroid/support/v4/content/LocalBroadcastManager;.getInstance (Landroid/content/Context;)Landroid/support/v4/content/LocalBroadcastManager;
+01-23 21:02:35.103 D/dalvikvm(25099): VFY: replacing opcode 0x71 at 0x00a4
+01-23 21:02:35.543 V/RobotCore(25099): Starting up device AL00UW4Z
+01-23 21:02:35.553 V/RobotCore(25099): starting read/write loop for device AL00UW4Z
+01-23 21:02:35.573 V/RobotCore(25099): Creating Modern Robotics USB DC Motor Controller - AL00VUTY
+01-23 21:02:35.583 V/D2xx::  (25099): Vendor: 0403, Product: 6001
+01-23 21:02:35.583 V/D2xx::  (25099): Vendor: 0403, Product: 6001
+01-23 21:02:35.583 V/D2xx::  (25099): Vendor: 0403, Product: 6001
+01-23 21:02:35.593 V/D2xx::  (25099): Vendor: 0403, Product: 6001
+01-23 21:02:35.593 V/D2xx::  (25099): Vendor: 0403, Product: 6001
+01-23 21:02:35.603 V/D2xx::  (25099): Vendor: 0403, Product: 6001
+01-23 21:02:35.603 D/FTDI_Device::(25099): open SUCCESS
+01-23 21:02:35.603 I/FTDI_Device::(25099): EP: 0x81
+01-23 21:02:35.603 I/FTDI_Device::(25099): EP: 0x02
+01-23 21:02:35.603 D/D2XX::  (25099): **********************Device Opened**********************
+01-23 21:02:36.033 V/RobotCore(25099): Starting up device AL00VUTY
+01-23 21:02:36.043 V/RobotCore(25099): starting read/write loop for device AL00VUTY
+01-23 21:02:36.053 V/RobotCore(25099): Creating Modern Robotics USB DC Motor Controller - AL00VLUU
+01-23 21:02:36.063 V/D2xx::  (25099): Vendor: 0403, Product: 6001
+01-23 21:02:36.063 V/D2xx::  (25099): Vendor: 0403, Product: 6001
+01-23 21:02:36.063 V/D2xx::  (25099): Vendor: 0403, Product: 6001
+01-23 21:02:36.073 V/D2xx::  (25099): Vendor: 0403, Product: 6001
+01-23 21:02:36.073 V/D2xx::  (25099): Vendor: 0403, Product: 6001
+01-23 21:02:36.073 V/D2xx::  (25099): Vendor: 0403, Product: 6001
+01-23 21:02:36.083 D/FTDI_Device::(25099): open SUCCESS
+01-23 21:02:36.083 I/FTDI_Device::(25099): EP: 0x81
+01-23 21:02:36.083 I/FTDI_Device::(25099): EP: 0x02
+01-23 21:02:36.083 D/D2XX::  (25099): **********************Device Opened**********************
+01-23 21:02:36.503 V/RobotCore(25099): Starting up device AL00VLUU
+01-23 21:02:36.503 V/RobotCore(25099): starting read/write loop for device AL00VLUU
+01-23 21:02:36.523 V/RobotCore(25099): Creating Modern Robotics USB DC Motor Controller - AL00VG65
+01-23 21:02:36.533 V/D2xx::  (25099): Vendor: 0403, Product: 6001
+01-23 21:02:36.533 V/D2xx::  (25099): Vendor: 0403, Product: 6001
+01-23 21:02:36.543 V/D2xx::  (25099): Vendor: 0403, Product: 6001
+01-23 21:02:36.543 V/D2xx::  (25099): Vendor: 0403, Product: 6001
+01-23 21:02:36.553 V/D2xx::  (25099): Vendor: 0403, Product: 6001
+01-23 21:02:36.563 V/D2xx::  (25099): Vendor: 0403, Product: 6001
+01-23 21:02:36.563 D/FTDI_Device::(25099): open SUCCESS
+01-23 21:02:36.563 I/FTDI_Device::(25099): EP: 0x81
+01-23 21:02:36.563 I/FTDI_Device::(25099): EP: 0x02
+01-23 21:02:36.563 D/D2XX::  (25099): **********************Device Opened**********************
+01-23 21:02:36.993 V/RobotCore(25099): Starting up device AL00VG65
+01-23 21:02:36.993 V/RobotCore(25099): starting read/write loop for device AL00VG65
+01-23 21:02:37.023 V/RobotCore(25099): Creating Modern Robotics USB Servo Controller - AL00VSDY
+01-23 21:02:37.023 V/D2xx::  (25099): Vendor: 0403, Product: 6001
+01-23 21:02:37.023 V/D2xx::  (25099): Vendor: 0403, Product: 6001
+01-23 21:02:37.033 V/D2xx::  (25099): Vendor: 0403, Product: 6001
+01-23 21:02:37.033 V/D2xx::  (25099): Vendor: 0403, Product: 6001
+01-23 21:02:37.043 V/D2xx::  (25099): Vendor: 0403, Product: 6001
+01-23 21:02:37.043 V/D2xx::  (25099): Vendor: 0403, Product: 6001
+01-23 21:02:37.053 D/FTDI_Device::(25099): open SUCCESS
+01-23 21:02:37.053 I/FTDI_Device::(25099): EP: 0x81
+01-23 21:02:37.053 I/FTDI_Device::(25099): EP: 0x02
+01-23 21:02:37.053 D/D2XX::  (25099): **********************Device Opened**********************
+01-23 21:02:37.473 V/RobotCore(25099): Starting up device AL00VSDY
+01-23 21:02:37.483 V/RobotCore(25099): starting read/write loop for device AL00VSDY
+01-23 21:02:37.493 V/RobotCore(25099): Creating Modern Robotics USB Core Device Interface Module - AL00VFK6
+01-23 21:02:37.503 V/D2xx::  (25099): Vendor: 0403, Product: 6001
+01-23 21:02:37.503 V/D2xx::  (25099): Vendor: 0403, Product: 6001
+01-23 21:02:37.503 V/D2xx::  (25099): Vendor: 0403, Product: 6001
+01-23 21:02:37.513 V/D2xx::  (25099): Vendor: 0403, Product: 6001
+01-23 21:02:37.513 V/D2xx::  (25099): Vendor: 0403, Product: 6001
+01-23 21:02:37.523 V/D2xx::  (25099): Vendor: 0403, Product: 6001
+01-23 21:02:37.533 D/FTDI_Device::(25099): open SUCCESS
+01-23 21:02:37.533 I/FTDI_Device::(25099): EP: 0x81
+01-23 21:02:37.533 I/FTDI_Device::(25099): EP: 0x02
+01-23 21:02:37.533 D/D2XX::  (25099): **********************Device Opened**********************
+01-23 21:02:37.963 V/RobotCore(25099): Starting up device AL00VFK6
+01-23 21:02:37.973 V/RobotCore(25099): starting read/write loop for device AL00VFK6
+01-23 21:02:37.973 V/RobotCore(25099): Creating Modern Robotics I2C Gyro Sensor - Port: 0
+01-23 21:02:38.163 I/RobotCore(25099): Analytics has completed initialization.
+01-23 21:02:38.163 I/RobotCore(25099): ========= Device Information ===================================================
+01-23 21:02:38.163 I/RobotCore(25099): Type                                          Name                           Connection
+01-23 21:02:38.163 I/RobotCore(25099): Modern Robotics USB DC Motor Controller       Actuators2                     USB AL00VG65
+01-23 21:02:38.173 I/RobotCore(25099): Analytics detected NetworkInfo.State.CONNECTED
+01-23 21:02:38.173 I/RobotCore(25099): Modern Robotics USB DC Motor Controller       BackMotors                     USB AL00VUTY
+01-23 21:02:38.173 I/RobotCore(25099): Modern Robotics USB DC Motor Controller       Actuators1                     USB AL00VLUU
+01-23 21:02:38.173 I/RobotCore(25099): Modern Robotics USB DC Motor Controller       FrontMotors                    USB AL00UW4Z
+01-23 21:02:38.173 I/RobotCore(25099): DC Motor                                      left                           USB AL00VUTY; port 1
+01-23 21:02:38.173 I/RobotCore(25099): DC Motor                                      leftFront                      USB AL00UW4Z; port 1
+01-23 21:02:38.173 I/RobotCore(25099): DC Motor                                      intake                         USB AL00VG65; port 1
+01-23 21:02:38.173 I/RobotCore(25099): DC Motor                                      updown                         USB AL00VLUU; port 1
+01-23 21:02:38.183 I/RobotCore(25099): DC Motor                                      rightFront                     USB AL00UW4Z; port 2
+01-23 21:02:38.183 I/RobotCore(25099): DC Motor                                      right                          USB AL00VUTY; port 2
+01-23 21:02:38.183 I/RobotCore(25099): Modern Robotics USB Servo Controller          Servos                         USB AL00VSDY
+01-23 21:02:38.183 I/RobotCore(25099): Servo                                         leftDoor                       USB AL00VSDY; port 1
+01-23 21:02:38.183 I/RobotCore(25099): Servo                                         bumper                         USB AL00VSDY; port 3
+01-23 21:02:38.183 I/RobotCore(25099): Servo                                         rightDoor                      USB AL00VSDY; port 2
+01-23 21:02:38.183 I/RobotCore(25099): Modern Robotics USB Device Interface Module   Sensors                        USB AL00VFK6
+01-23 21:02:38.183 I/RobotCore(25099): Modern Robotics Gyro                          gyro                           USB AL00VFK6; I2C port: 0
+01-23 21:02:38.183 I/RobotCore(25099): Modern Robotics USB DC Motor Controller       Actuators2                     USB AL00VG65
+01-23 21:02:38.183 I/RobotCore(25099): Modern Robotics USB DC Motor Controller       BackMotors                     USB AL00VUTY
+01-23 21:02:38.183 I/RobotCore(25099): Modern Robotics USB DC Motor Controller       Actuators1                     USB AL00VLUU
+01-23 21:02:38.183 I/RobotCore(25099): Modern Robotics USB DC Motor Controller       FrontMotors                    USB AL00UW4Z
+01-23 21:02:38.183 I/FIRST   (25099): ======= INIT FINISH =======
+01-23 21:02:38.193 V/RobotCore(25099): EventLoopManager state is RUNNING
+01-23 21:02:38.193 I/FIRST   (25099): Robot Status: running
+01-23 21:02:38.203 V/RobotCore(25099): EventLoopRunnable has started
+01-23 21:02:38.203 I/RobotCore(25099): new remote peer discovered: 192.168.49.66
+01-23 21:02:38.203 D/RobotCore(25099): RobocolDatagramSocket connected to /192.168.49.66:20884
+01-23 21:02:38.213 V/RobotCore(25099): Sending peer discovery packet
+01-23 21:02:38.223 I/FIRST   (25099): Processing Command: CMD_REQUEST_OP_MODE_LIST 
+01-23 21:02:38.303 V/RobotCore(25099): Sending command: CMD_REQUEST_OP_MODE_LIST_RESP, attempt 0
+01-23 21:02:38.333 I/FIRST   (25099): Processing Command: CMD_INIT_OP_MODE Stop Robot
+01-23 21:02:38.403 V/RobotCore(25099): Sending command: CMD_INIT_OP_MODE_RESP, attempt 0
+01-23 21:02:38.703 I/RobotCore(25099): Attempting to switch to op mode Stop Robot
+01-23 21:02:39.953 D/dalvikvm(25099): GC_FOR_ALLOC freed 5502K, 51% free 5522K/11140K, paused 22ms, total 24ms
+01-23 21:02:40.793 D/dalvikvm(25099): GC_FOR_ALLOC freed 2094K, 51% free 5476K/11140K, paused 17ms, total 17ms
+01-23 21:02:41.653 D/dalvikvm(25099): GC_FOR_ALLOC freed 2047K, 51% free 5476K/11140K, paused 16ms, total 16ms
+01-23 21:02:42.453 D/dalvikvm(25099): GC_FOR_ALLOC freed 2047K, 51% free 5476K/11140K, paused 16ms, total 16ms
+01-23 21:02:43.233 D/dalvikvm(25099): GC_FOR_ALLOC freed 2048K, 51% free 5476K/11140K, paused 16ms, total 16ms
+01-23 21:02:44.033 D/dalvikvm(25099): GC_FOR_ALLOC freed 2047K, 51% free 5476K/11140K, paused 20ms, total 20ms
+01-23 21:02:44.613 I/FIRST   (25099): Processing Command: CMD_INIT_OP_MODE Stop Robot
+01-23 21:02:44.633 I/RobotCore(25099): Attempting to switch to op mode Stop Robot
+01-23 21:02:44.633 V/RobotCore(25099): Sending command: CMD_INIT_OP_MODE_RESP, attempt 0
+01-23 21:02:44.833 D/dalvikvm(25099): GC_FOR_ALLOC freed 2046K, 51% free 5477K/11140K, paused 16ms, total 17ms
+01-23 21:02:45.633 D/dalvikvm(25099): GC_FOR_ALLOC freed 2048K, 51% free 5476K/11140K, paused 18ms, total 18ms
+01-23 21:02:46.423 D/dalvikvm(25099): GC_FOR_ALLOC freed 2048K, 51% free 5476K/11140K, paused 16ms, total 16ms
+01-23 21:02:47.253 D/dalvikvm(25099): GC_FOR_ALLOC freed 2048K, 51% free 5476K/11140K, paused 19ms, total 19ms
+01-23 21:02:48.083 D/dalvikvm(25099): GC_FOR_ALLOC freed 2047K, 51% free 5476K/11140K, paused 17ms, total 17ms
+01-23 21:02:48.883 D/dalvikvm(25099): GC_FOR_ALLOC freed 2048K, 51% free 5476K/11140K, paused 15ms, total 15ms
+01-23 21:02:49.703 D/dalvikvm(25099): GC_FOR_ALLOC freed 2047K, 51% free 5476K/11140K, paused 18ms, total 18ms
+01-23 21:02:50.533 D/dalvikvm(25099): GC_FOR_ALLOC freed 2048K, 51% free 5476K/11140K, paused 16ms, total 16ms
+01-23 21:02:51.373 D/dalvikvm(25099): GC_FOR_ALLOC freed 2047K, 51% free 5476K/11140K, paused 16ms, total 16ms
+01-23 21:02:52.203 D/dalvikvm(25099): GC_FOR_ALLOC freed 2048K, 51% free 5476K/11140K, paused 17ms, total 17ms
+01-23 21:02:52.993 D/dalvikvm(25099): GC_FOR_ALLOC freed 2047K, 51% free 5476K/11140K, paused 17ms, total 17ms
+01-23 21:02:53.793 D/dalvikvm(25099): GC_FOR_ALLOC freed 2047K, 51% free 5476K/11140K, paused 19ms, total 19ms
+01-23 21:02:54.593 D/dalvikvm(25099): GC_FOR_ALLOC freed 2048K, 51% free 5476K/11140K, paused 17ms, total 17ms
+01-23 21:02:55.373 D/dalvikvm(25099): GC_FOR_ALLOC freed 2047K, 51% free 5476K/11140K, paused 17ms, total 17ms
+01-23 21:02:56.163 D/dalvikvm(25099): GC_FOR_ALLOC freed 2047K, 51% free 5476K/11140K, paused 17ms, total 17ms
+01-23 21:02:56.993 D/dalvikvm(25099): GC_FOR_ALLOC freed 2048K, 51% free 5476K/11140K, paused 17ms, total 17ms
+01-23 21:02:57.843 D/dalvikvm(25099): GC_FOR_ALLOC freed 2047K, 51% free 5476K/11140K, paused 20ms, total 20ms
+01-23 21:02:58.653 D/dalvikvm(25099): GC_FOR_ALLOC freed 2047K, 51% free 5476K/11140K, paused 15ms, total 15ms
+01-23 21:02:59.473 D/dalvikvm(25099): GC_FOR_ALLOC freed 2048K, 51% free 5476K/11140K, paused 17ms, total 17ms
+01-23 21:03:00.283 D/dalvikvm(25099): GC_FOR_ALLOC freed 2047K, 51% free 5476K/11140K, paused 16ms, total 16ms
+01-23 21:03:01.123 D/dalvikvm(25099): GC_FOR_ALLOC freed 2048K, 51% free 5476K/11140K, paused 16ms, total 16ms
+01-23 21:03:01.933 D/dalvikvm(25099): GC_FOR_ALLOC freed 2047K, 51% free 5476K/11140K, paused 17ms, total 17ms
+01-23 21:03:02.803 D/dalvikvm(25099): GC_FOR_ALLOC freed 2048K, 51% free 5476K/11140K, paused 18ms, total 18ms
+01-23 21:03:03.673 D/dalvikvm(25099): GC_FOR_ALLOC freed 2047K, 51% free 5477K/11140K, paused 17ms, total 17ms
+01-23 21:03:04.493 D/dalvikvm(25099): GC_FOR_ALLOC freed 2048K, 51% free 5476K/11140K, paused 16ms, total 16ms
+01-23 21:03:05.253 D/dalvikvm(25099): GC_FOR_ALLOC freed 2047K, 51% free 5476K/11140K, paused 16ms, total 16ms
+01-23 21:03:05.333 I/FIRST   (25099): Processing Command: CMD_INIT_OP_MODE ____TestingAuto
+01-23 21:03:05.353 I/RobotCore(25099): Attempting to switch to op mode ____TestingAuto
+01-23 21:03:05.433 V/RobotCore(25099): Sending command: CMD_INIT_OP_MODE_RESP, attempt 0
+01-23 21:03:05.483 D/dalvikvm(25099): GC_FOR_ALLOC freed 481K, 37% free 7043K/11140K, paused 14ms, total 14ms
+01-23 21:03:06.233 D/dalvikvm(25099): GC_FOR_ALLOC freed 2049K, 37% free 7042K/11140K, paused 15ms, total 15ms
+01-23 21:03:06.993 D/dalvikvm(25099): GC_FOR_ALLOC freed 2047K, 37% free 7042K/11140K, paused 16ms, total 16ms
+01-23 21:03:07.713 D/dalvikvm(25099): GC_FOR_ALLOC freed 2047K, 37% free 7042K/11140K, paused 18ms, total 18ms
+01-23 21:03:08.413 D/dalvikvm(25099): GC_FOR_ALLOC freed 2048K, 37% free 7041K/11140K, paused 17ms, total 17ms
+01-23 21:03:08.983 I/FIRST   (25099): Processing Command: CMD_RUN_OP_MODE ____TestingAuto
+01-23 21:03:09.043 V/RobotCore(25099): Sending command: CMD_RUN_OP_MODE_RESP, attempt 0
+01-23 21:03:09.183 D/dalvikvm(25099): GC_FOR_ALLOC freed 2045K, 37% free 7044K/11140K, paused 18ms, total 18ms
+01-23 21:03:09.863 D/dalvikvm(25099): GC_FOR_ALLOC freed 2049K, 37% free 7042K/11140K, paused 16ms, total 16ms
+01-23 21:03:10.583 D/dalvikvm(25099): GC_FOR_ALLOC freed 2047K, 37% free 7043K/11140K, paused 16ms, total 16ms
+01-23 21:03:10.833 W/RobotCore(25099): my_debug BEGIN FULL_POWER_WALL
+01-23 21:03:10.833 I/RobotCore(25099): my_debug right_back_encoder 0.0
+01-23 21:03:10.833 I/RobotCore(25099): my_debug left_back_encoder 0.0
+01-23 21:03:10.833 I/RobotCore(25099): my_debug right_front_encoder 0.0
+01-23 21:03:10.833 I/RobotCore(25099): my_debug left_front_encoder 0.0
+01-23 21:03:10.833 I/RobotCore(25099): my_debug right_back_encoder 0.0
+01-23 21:03:10.833 I/RobotCore(25099): my_debug left_back_encoder 0.0
+01-23 21:03:10.833 I/RobotCore(25099): my_debug right_front_encoder 0.0
+01-23 21:03:10.833 I/RobotCore(25099): my_debug left_front_encoder 0.0
+01-23 21:03:10.833 I/RobotCore(25099): my_debug right_back_encoder 9.0
+01-23 21:03:10.833 I/RobotCore(25099): my_debug left_back_encoder 8.0
+01-23 21:03:10.833 I/RobotCore(25099): my_debug right_front_encoder 0.0
+01-23 21:03:10.833 I/RobotCore(25099): my_debug left_front_encoder 0.0
+01-23 21:03:10.843 I/RobotCore(25099): my_debug right_back_encoder 20.0
+01-23 21:03:10.843 I/RobotCore(25099): my_debug left_back_encoder 18.0
+01-23 21:03:10.843 I/RobotCore(25099): my_debug right_front_encoder 10.0
+01-23 21:03:10.843 I/RobotCore(25099): my_debug left_front_encoder 8.0
+01-23 21:03:10.843 I/RobotCore(25099): my_debug right_back_encoder 15.0
+01-23 21:03:10.843 I/RobotCore(25099): my_debug left_back_encoder 13.0
+01-23 21:03:10.843 I/RobotCore(25099): my_debug right_front_encoder 13.0
+01-23 21:03:10.843 I/RobotCore(25099): my_debug left_front_encoder 9.0
+01-23 21:03:10.843 I/RobotCore(25099): my_debug right_back_encoder 34.0
+01-23 21:03:10.843 I/RobotCore(25099): my_debug left_back_encoder 32.0
+01-23 21:03:10.843 I/RobotCore(25099): my_debug right_front_encoder 16.0
+01-23 21:03:10.843 I/RobotCore(25099): my_debug left_front_encoder 10.0
+01-23 21:03:10.843 I/RobotCore(25099): my_debug right_back_encoder 47.0
+01-23 21:03:10.843 I/RobotCore(25099): my_debug left_back_encoder 44.0
+01-23 21:03:10.843 I/RobotCore(25099): my_debug right_front_encoder 33.0
+01-23 21:03:10.843 I/RobotCore(25099): my_debug left_front_encoder 23.0
+01-23 21:03:10.843 I/RobotCore(25099): my_debug right_back_encoder 44.0
+01-23 21:03:10.843 I/RobotCore(25099): my_debug left_back_encoder 44.0
+01-23 21:03:10.843 I/RobotCore(25099): my_debug right_front_encoder 33.0
+01-23 21:03:10.843 I/RobotCore(25099): my_debug left_front_encoder 27.0
+01-23 21:03:10.843 I/RobotCore(25099): my_debug right_back_encoder 0.0
+01-23 21:03:10.843 I/RobotCore(25099): my_debug left_back_encoder 0.0
+01-23 21:03:10.843 I/RobotCore(25099): my_debug right_front_encoder 0.0
+01-23 21:03:10.843 I/RobotCore(25099): my_debug left_front_encoder 0.0
+01-23 21:03:10.843 I/RobotCore(25099): my_debug right_back_encoder 84.0
+01-23 21:03:10.843 I/RobotCore(25099): my_debug left_back_encoder 87.0
+01-23 21:03:10.843 I/RobotCore(25099): my_debug right_front_encoder 75.0
+01-23 21:03:10.843 I/RobotCore(25099): my_debug left_front_encoder 77.0
+01-23 21:03:10.843 I/RobotCore(25099): my_debug right_back_encoder 33.0
+01-23 21:03:10.843 I/RobotCore(25099): my_debug left_back_encoder 37.0
+01-23 21:03:10.843 I/RobotCore(25099): my_debug right_front_encoder 35.0
+01-23 21:03:10.843 I/RobotCore(25099): my_debug left_front_encoder 40.0
+01-23 21:03:10.843 I/RobotCore(25099): my_debug right_back_encoder 24.0
+01-23 21:03:10.843 I/RobotCore(25099): my_debug left_back_encoder 26.0
+01-23 21:03:10.843 I/RobotCore(25099): my_debug right_front_encoder 29.0
+01-23 21:03:10.843 I/RobotCore(25099): my_debug left_front_encoder 34.0
+01-23 21:03:10.843 I/RobotCore(25099): my_debug right_back_encoder 21.0
+01-23 21:03:10.843 I/RobotCore(25099): my_debug left_back_encoder 24.0
+01-23 21:03:10.843 I/RobotCore(25099): my_debug right_front_encoder 38.0
+01-23 21:03:10.843 I/RobotCore(25099): my_debug left_front_encoder 45.0
+01-23 21:03:10.843 I/RobotCore(25099): my_debug right_back_encoder 23.0
+01-23 21:03:10.853 I/RobotCore(25099): my_debug left_back_encoder 27.0
+01-23 21:03:10.853 I/RobotCore(25099): my_debug right_front_encoder 24.0
+01-23 21:03:10.853 I/RobotCore(25099): my_debug left_front_encoder 31.0
+01-23 21:03:10.853 I/RobotCore(25099): my_debug right_back_encoder 17.0
+01-23 21:03:10.853 I/RobotCore(25099): my_debug left_back_encoder 19.0
+01-23 21:03:10.853 I/RobotCore(25099): my_debug right_front_encoder 28.0
+01-23 21:03:10.853 I/RobotCore(25099): my_debug left_front_encoder 32.0
+01-23 21:03:10.853 I/RobotCore(25099): my_debug right_back_encoder 16.0
+01-23 21:03:10.853 I/RobotCore(25099): my_debug left_back_encoder 19.0
+01-23 21:03:10.853 I/RobotCore(25099): my_debug right_front_encoder 26.0
+01-23 21:03:10.853 I/RobotCore(25099): my_debug left_front_encoder 32.0
+01-23 21:03:10.853 I/RobotCore(25099): my_debug right_back_encoder 12.0
+01-23 21:03:10.853 I/RobotCore(25099): my_debug left_back_encoder 14.0
+01-23 21:03:10.853 I/RobotCore(25099): my_debug right_front_encoder 22.0
+01-23 21:03:10.853 I/RobotCore(25099): my_debug left_front_encoder 25.0
+01-23 21:03:10.853 I/RobotCore(25099): my_debug right_back_encoder 11.0
+01-23 21:03:10.853 I/RobotCore(25099): my_debug left_back_encoder 15.0
+01-23 21:03:10.853 I/RobotCore(25099): my_debug right_front_encoder 30.0
+01-23 21:03:10.853 I/RobotCore(25099): my_debug left_front_encoder 33.0
+01-23 21:03:10.853 I/RobotCore(25099): my_debug right_back_encoder 10.0
+01-23 21:03:10.853 I/RobotCore(25099): my_debug left_back_encoder 11.0
+01-23 21:03:10.853 I/RobotCore(25099): my_debug right_front_encoder 26.0
+01-23 21:03:10.853 I/RobotCore(25099): my_debug left_front_encoder 27.0
+01-23 21:03:10.853 I/RobotCore(25099): my_debug right_back_encoder 13.0
+01-23 21:03:10.853 I/RobotCore(25099): my_debug left_back_encoder 13.0
+01-23 21:03:10.863 I/RobotCore(25099): my_debug right_front_encoder 25.0
+01-23 21:03:10.863 I/RobotCore(25099): my_debug left_front_encoder 27.0
+01-23 21:03:10.863 I/RobotCore(25099): my_debug right_back_encoder 14.0
+01-23 21:03:10.863 I/RobotCore(25099): my_debug left_back_encoder 14.0
+01-23 21:03:10.863 I/RobotCore(25099): my_debug right_front_encoder 28.0
+01-23 21:03:10.863 I/RobotCore(25099): my_debug left_front_encoder 27.0
+01-23 21:03:10.863 I/RobotCore(25099): my_debug right_back_encoder 17.0
+01-23 21:03:10.863 I/RobotCore(25099): my_debug left_back_encoder 19.0
+01-23 21:03:10.863 I/RobotCore(25099): my_debug right_front_encoder 31.0
+01-23 21:03:10.863 I/RobotCore(25099): my_debug left_front_encoder 29.0
+01-23 21:03:10.863 I/RobotCore(25099): my_debug right_back_encoder 17.0
+01-23 21:03:10.863 I/RobotCore(25099): my_debug left_back_encoder 18.0
+01-23 21:03:10.863 I/RobotCore(25099): my_debug right_front_encoder 30.0
+01-23 21:03:10.863 I/RobotCore(25099): my_debug left_front_encoder 29.0
+01-23 21:03:10.863 I/RobotCore(25099): my_debug right_back_encoder 17.0
+01-23 21:03:10.863 I/RobotCore(25099): my_debug left_back_encoder 17.0
+01-23 21:03:10.863 I/RobotCore(25099): my_debug right_front_encoder 29.0
+01-23 21:03:10.863 I/RobotCore(25099): my_debug left_front_encoder 28.0
+01-23 21:03:10.863 I/RobotCore(25099): my_debug right_back_encoder 16.0
+01-23 21:03:10.863 I/RobotCore(25099): my_debug left_back_encoder 15.0
+01-23 21:03:10.863 I/RobotCore(25099): my_debug right_front_encoder 27.0
+01-23 21:03:10.863 I/RobotCore(25099): my_debug left_front_encoder 26.0
+01-23 21:03:10.863 I/RobotCore(25099): my_debug right_back_encoder 16.0
+01-23 21:03:10.863 I/RobotCore(25099): my_debug left_back_encoder 15.0
+01-23 21:03:10.863 I/RobotCore(25099): my_debug right_front_encoder 28.0
+01-23 21:03:10.863 I/RobotCore(25099): my_debug left_front_encoder 28.0
+01-23 21:03:10.863 I/RobotCore(25099): my_debug right_back_encoder 9.0
+01-23 21:03:10.863 I/RobotCore(25099): my_debug left_back_encoder 11.0
+01-23 21:03:10.863 I/RobotCore(25099): my_debug right_front_encoder 19.0
+01-23 21:03:10.863 I/RobotCore(25099): my_debug left_front_encoder 19.0
+01-23 21:03:10.863 I/RobotCore(25099): my_debug right_back_encoder 15.0
+01-23 21:03:10.863 I/RobotCore(25099): my_debug left_back_encoder 16.0
+01-23 21:03:10.863 I/RobotCore(25099): my_debug right_front_encoder 39.0
+01-23 21:03:10.873 I/RobotCore(25099): my_debug left_front_encoder 40.0
+01-23 21:03:10.873 I/RobotCore(25099): my_debug right_back_encoder 17.0
+01-23 21:03:10.873 I/RobotCore(25099): my_debug left_back_encoder 17.0
+01-23 21:03:10.873 I/RobotCore(25099): my_debug right_front_encoder 20.0
+01-23 21:03:10.873 I/RobotCore(25099): my_debug left_front_encoder 22.0
+01-23 21:03:10.873 I/RobotCore(25099): my_debug right_back_encoder 16.0
+01-23 21:03:10.873 I/RobotCore(25099): my_debug left_back_encoder 16.0
+01-23 21:03:10.873 I/RobotCore(25099): my_debug right_front_encoder 27.0
+01-23 21:03:10.873 I/RobotCore(25099): my_debug left_front_encoder 29.0
+01-23 21:03:10.873 I/RobotCore(25099): my_debug right_back_encoder 17.0
+01-23 21:03:10.873 I/RobotCore(25099): my_debug left_back_encoder 14.0
+01-23 21:03:10.873 I/RobotCore(25099): my_debug right_front_encoder 29.0
+01-23 21:03:10.873 I/RobotCore(25099): my_debug left_front_encoder 32.0
+01-23 21:03:10.873 I/RobotCore(25099): my_debug right_back_encoder 10.0
+01-23 21:03:10.873 I/RobotCore(25099): my_debug left_back_encoder 9.0
+01-23 21:03:10.873 I/RobotCore(25099): my_debug right_front_encoder 27.0
+01-23 21:03:10.873 I/RobotCore(25099): my_debug left_front_encoder 30.0
+01-23 21:03:10.873 I/RobotCore(25099): my_debug right_back_encoder 18.0
+01-23 21:03:10.873 I/RobotCore(25099): my_debug left_back_encoder 17.0
+01-23 21:03:10.873 I/RobotCore(25099): my_debug right_front_encoder 25.0
+01-23 21:03:10.873 I/RobotCore(25099): my_debug left_front_encoder 26.0
+01-23 21:03:10.873 I/RobotCore(25099): my_debug right_back_encoder 10.0
+01-23 21:03:10.873 I/RobotCore(25099): my_debug left_back_encoder 8.0
+01-23 21:03:10.873 I/RobotCore(25099): my_debug right_front_encoder 25.0
+01-23 21:03:10.873 I/RobotCore(25099): my_debug left_front_encoder 28.0
+01-23 21:03:10.873 I/RobotCore(25099): my_debug right_back_encoder 20.0
+01-23 21:03:10.873 I/RobotCore(25099): my_debug left_back_encoder 17.0
+01-23 21:03:10.873 I/RobotCore(25099): my_debug right_front_encoder 24.0
+01-23 21:03:10.873 I/RobotCore(25099): my_debug left_front_encoder 26.0
+01-23 21:03:10.873 I/RobotCore(25099): my_debug right_back_encoder 10.0
+01-23 21:03:10.873 I/RobotCore(25099): my_debug left_back_encoder 10.0
+01-23 21:03:10.873 I/RobotCore(25099): my_debug right_front_encoder 20.0
+01-23 21:03:10.873 I/RobotCore(25099): my_debug left_front_encoder 21.0
+01-23 21:03:10.873 I/RobotCore(25099): my_debug right_back_encoder 17.0
+01-23 21:03:10.873 I/RobotCore(25099): my_debug left_back_encoder 19.0
+01-23 21:03:10.873 I/RobotCore(25099): my_debug right_front_encoder 32.0
+01-23 21:03:10.873 I/RobotCore(25099): my_debug left_front_encoder 32.0
+01-23 21:03:10.873 I/RobotCore(25099): my_debug right_back_encoder 21.0
+01-23 21:03:10.873 I/RobotCore(25099): my_debug left_back_encoder 19.0
+01-23 21:03:10.873 I/RobotCore(25099): my_debug right_front_encoder 31.0
+01-23 21:03:10.883 I/RobotCore(25099): my_debug left_front_encoder 34.0
+01-23 21:03:10.883 I/RobotCore(25099): my_debug right_back_encoder 16.0
+01-23 21:03:10.883 I/RobotCore(25099): my_debug left_back_encoder 15.0
+01-23 21:03:10.883 I/RobotCore(25099): my_debug right_front_encoder 28.0
+01-23 21:03:10.883 I/RobotCore(25099): my_debug left_front_encoder 28.0
+01-23 21:03:10.883 I/RobotCore(25099): my_debug right_back_encoder 16.0
+01-23 21:03:10.883 I/RobotCore(25099): my_debug left_back_encoder 15.0
+01-23 21:03:10.883 I/RobotCore(25099): my_debug right_front_encoder 30.0
+01-23 21:03:10.883 I/RobotCore(25099): my_debug left_front_encoder 29.0
+01-23 21:03:10.883 I/RobotCore(25099): my_debug right_back_encoder 9.0
+01-23 21:03:10.883 I/RobotCore(25099): my_debug left_back_encoder 10.0
+01-23 21:03:10.883 I/RobotCore(25099): my_debug right_front_encoder 20.0
+01-23 21:03:10.883 I/RobotCore(25099): my_debug left_front_encoder 20.0
+01-23 21:03:10.883 I/RobotCore(25099): my_debug right_back_encoder 13.0
+01-23 21:03:10.883 I/RobotCore(25099): my_debug left_back_encoder 14.0
+01-23 21:03:10.883 I/RobotCore(25099): my_debug right_front_encoder 25.0
+01-23 21:03:10.883 I/RobotCore(25099): my_debug left_front_encoder 27.0
+01-23 21:03:10.883 I/RobotCore(25099): my_debug right_back_encoder 16.0
+01-23 21:03:10.883 I/RobotCore(25099): my_debug left_back_encoder 18.0
+01-23 21:03:10.883 I/RobotCore(25099): my_debug right_front_encoder 35.0
+01-23 21:03:10.883 I/RobotCore(25099): my_debug left_front_encoder 35.0
+01-23 21:03:10.883 I/RobotCore(25099): my_debug right_back_encoder 8.0
+01-23 21:03:10.893 I/RobotCore(25099): my_debug left_back_encoder 9.0
+01-23 21:03:10.893 I/RobotCore(25099): my_debug right_front_encoder 26.0
+01-23 21:03:10.893 I/RobotCore(25099): my_debug left_front_encoder 26.0
+01-23 21:03:10.893 I/RobotCore(25099): my_debug right_back_encoder 14.0
+01-23 21:03:10.893 I/RobotCore(25099): my_debug left_back_encoder 15.0
+01-23 21:03:10.893 I/RobotCore(25099): my_debug right_front_encoder 18.0
+01-23 21:03:10.893 I/RobotCore(25099): my_debug left_front_encoder 19.0
+01-23 21:03:10.893 I/RobotCore(25099): my_debug right_back_encoder 16.0
+01-23 21:03:10.893 I/RobotCore(25099): my_debug left_back_encoder 16.0
+01-23 21:03:10.893 I/RobotCore(25099): my_debug right_front_encoder 34.0
+01-23 21:03:10.893 I/RobotCore(25099): my_debug left_front_encoder 31.0
+01-23 21:03:10.893 I/RobotCore(25099): my_debug right_back_encoder 10.0
+01-23 21:03:10.893 I/RobotCore(25099): my_debug left_back_encoder 10.0
+01-23 21:03:10.893 I/RobotCore(25099): my_debug right_front_encoder 30.0
+01-23 21:03:10.903 I/RobotCore(25099): my_debug left_front_encoder 29.0
+01-23 21:03:10.903 I/RobotCore(25099): my_debug right_back_encoder 15.0
+01-23 21:03:10.903 I/RobotCore(25099): my_debug left_back_encoder 17.0
+01-23 21:03:10.903 I/RobotCore(25099): my_debug right_front_encoder 22.0
+01-23 21:03:10.903 I/RobotCore(25099): my_debug left_front_encoder 22.0
+01-23 21:03:10.903 I/RobotCore(25099): my_debug right_back_encoder 10.0
+01-23 21:03:10.903 I/RobotCore(25099): my_debug left_back_encoder 9.0
+01-23 21:03:10.903 I/RobotCore(25099): my_debug right_front_encoder 28.0
+01-23 21:03:10.903 I/RobotCore(25099): my_debug left_front_encoder 29.0
+01-23 21:03:10.903 I/RobotCore(25099): my_debug right_back_encoder 27.0
+01-23 21:03:10.903 I/RobotCore(25099): my_debug left_back_encoder 30.0
+01-23 21:03:10.903 I/RobotCore(25099): my_debug right_front_encoder 46.0
+01-23 21:03:10.903 I/RobotCore(25099): my_debug left_front_encoder 46.0
+01-23 21:03:10.903 I/RobotCore(25099): my_debug right_back_encoder 13.0
+01-23 21:03:10.903 I/RobotCore(25099): my_debug left_back_encoder 15.0
+01-23 21:03:10.903 I/RobotCore(25099): my_debug right_front_encoder 26.0
+01-23 21:03:10.903 I/RobotCore(25099): my_debug left_front_encoder 27.0
+01-23 21:03:10.903 I/RobotCore(25099): my_debug right_back_encoder 15.0
+01-23 21:03:10.903 I/RobotCore(25099): my_debug left_back_encoder 15.0
+01-23 21:03:10.903 I/RobotCore(25099): my_debug right_front_encoder 26.0
+01-23 21:03:10.903 I/RobotCore(25099): my_debug left_front_encoder 27.0
+01-23 21:03:10.903 I/RobotCore(25099): my_debug right_back_encoder 14.0
+01-23 21:03:10.903 I/RobotCore(25099): my_debug left_back_encoder 15.0
+01-23 21:03:10.903 I/RobotCore(25099): my_debug right_front_encoder 28.0
+01-23 21:03:10.903 I/RobotCore(25099): my_debug left_front_encoder 28.0
+01-23 21:03:10.903 I/RobotCore(25099): my_debug right_back_encoder 16.0
+01-23 21:03:10.903 I/RobotCore(25099): my_debug left_back_encoder 15.0
+01-23 21:03:10.903 I/RobotCore(25099): my_debug right_front_encoder 29.0
+01-23 21:03:10.903 I/RobotCore(25099): my_debug left_front_encoder 30.0
+01-23 21:03:10.903 I/RobotCore(25099): my_debug right_back_encoder 13.0
+01-23 21:03:10.903 I/RobotCore(25099): my_debug left_back_encoder 14.0
+01-23 21:03:10.903 I/RobotCore(25099): my_debug right_front_encoder 16.0
+01-23 21:03:10.903 I/RobotCore(25099): my_debug left_front_encoder 16.0
+01-23 21:03:10.913 I/RobotCore(25099): my_debug right_back_encoder 9.0
+01-23 21:03:10.913 I/RobotCore(25099): my_debug left_back_encoder 12.0
+01-23 21:03:10.913 I/RobotCore(25099): my_debug right_front_encoder 37.0
+01-23 21:03:10.913 I/RobotCore(25099): my_debug left_front_encoder 37.0
+01-23 21:03:10.913 I/RobotCore(25099): my_debug right_back_encoder 13.0
+01-23 21:03:10.913 I/RobotCore(25099): my_debug left_back_encoder 14.0
+01-23 21:03:10.913 I/RobotCore(25099): my_debug right_front_encoder 27.0
+01-23 21:03:10.913 I/RobotCore(25099): my_debug left_front_encoder 26.0
+01-23 21:03:10.913 I/RobotCore(25099): my_debug right_back_encoder 15.0
+01-23 21:03:10.913 I/RobotCore(25099): my_debug left_back_encoder 17.0
+01-23 21:03:10.913 I/RobotCore(25099): my_debug right_front_encoder 27.0
+01-23 21:03:10.913 I/RobotCore(25099): my_debug left_front_encoder 30.0
+01-23 21:03:10.913 I/RobotCore(25099): my_debug right_back_encoder 13.0
+01-23 21:03:10.913 I/RobotCore(25099): my_debug left_back_encoder 13.0
+01-23 21:03:10.913 I/RobotCore(25099): my_debug right_front_encoder 26.0
+01-23 21:03:10.913 I/RobotCore(25099): my_debug left_front_encoder 25.0
+01-23 21:03:10.913 I/RobotCore(25099): my_debug right_back_encoder 15.0
+01-23 21:03:10.913 I/RobotCore(25099): my_debug left_back_encoder 14.0
+01-23 21:03:10.913 I/RobotCore(25099): my_debug right_front_encoder 27.0
+01-23 21:03:10.913 I/RobotCore(25099): my_debug left_front_encoder 27.0
+01-23 21:03:10.913 I/RobotCore(25099): my_debug right_back_encoder 16.0
+01-23 21:03:10.913 I/RobotCore(25099): my_debug left_back_encoder 14.0
+01-23 21:03:10.913 I/RobotCore(25099): my_debug right_front_encoder 35.0
+01-23 21:03:10.913 I/RobotCore(25099): my_debug left_front_encoder 36.0
+01-23 21:03:10.913 I/RobotCore(25099): my_debug right_back_encoder 17.0
+01-23 21:03:10.913 I/RobotCore(25099): my_debug left_back_encoder 16.0
+01-23 21:03:10.913 I/RobotCore(25099): my_debug right_front_encoder 20.0
+01-23 21:03:10.913 I/RobotCore(25099): my_debug left_front_encoder 20.0
+01-23 21:03:10.913 I/RobotCore(25099): my_debug right_back_encoder 9.0
+01-23 21:03:10.913 I/RobotCore(25099): my_debug left_back_encoder 8.0
+01-23 21:03:10.913 I/RobotCore(25099): my_debug right_front_encoder 31.0
+01-23 21:03:10.913 I/RobotCore(25099): my_debug left_front_encoder 29.0
+01-23 21:03:10.913 I/RobotCore(25099): my_debug right_back_encoder 14.0
+01-23 21:03:10.913 I/RobotCore(25099): my_debug left_back_encoder 12.0
+01-23 21:03:10.913 I/RobotCore(25099): my_debug right_front_encoder 28.0
+01-23 21:03:10.913 I/RobotCore(25099): my_debug left_front_encoder 26.0
+01-23 21:03:10.913 I/RobotCore(25099): my_debug right_back_encoder 13.0
+01-23 21:03:10.913 I/RobotCore(25099): my_debug left_back_encoder 15.0
+01-23 21:03:10.913 I/RobotCore(25099): my_debug right_front_encoder 29.0
+01-23 21:03:10.913 I/RobotCore(25099): my_debug left_front_encoder 27.0
+01-23 21:03:10.913 I/RobotCore(25099): my_debug right_back_encoder 13.0
+01-23 21:03:10.913 I/RobotCore(25099): my_debug left_back_encoder 14.0
+01-23 21:03:10.913 I/RobotCore(25099): my_debug right_front_encoder 26.0
+01-23 21:03:10.913 I/RobotCore(25099): my_debug left_front_encoder 26.0
+01-23 21:03:10.913 I/RobotCore(25099): my_debug right_back_encoder 16.0
+01-23 21:03:10.913 I/RobotCore(25099): my_debug left_back_encoder 17.0
+01-23 21:03:10.923 I/RobotCore(25099): my_debug right_front_encoder 30.0
+01-23 21:03:10.923 I/RobotCore(25099): my_debug left_front_encoder 30.0
+01-23 21:03:10.923 I/RobotCore(25099): my_debug right_back_encoder 10.0
+01-23 21:03:10.923 I/RobotCore(25099): my_debug left_back_encoder 12.0
+01-23 21:03:10.923 I/RobotCore(25099): my_debug right_front_encoder 20.0
+01-23 21:03:10.923 I/RobotCore(25099): my_debug left_front_encoder 20.0
+01-23 21:03:10.923 I/RobotCore(25099): my_debug right_back_encoder 14.0
+01-23 21:03:10.923 I/RobotCore(25099): my_debug left_back_encoder 14.0
+01-23 21:03:10.923 I/RobotCore(25099): my_debug right_front_encoder 27.0
+01-23 21:03:10.923 I/RobotCore(25099): my_debug left_front_encoder 29.0
+01-23 21:03:10.923 I/RobotCore(25099): my_debug right_back_encoder 12.0
+01-23 21:03:10.923 I/RobotCore(25099): my_debug left_back_encoder 13.0
+01-23 21:03:10.923 I/RobotCore(25099): my_debug right_front_encoder 27.0
+01-23 21:03:10.923 I/RobotCore(25099): my_debug left_front_encoder 27.0
+01-23 21:03:10.923 I/RobotCore(25099): my_debug right_back_encoder 14.0
+01-23 21:03:10.923 I/RobotCore(25099): my_debug left_back_encoder 16.0
+01-23 21:03:10.923 I/RobotCore(25099): my_debug right_front_encoder 28.0
+01-23 21:03:10.923 I/RobotCore(25099): my_debug left_front_encoder 32.0
+01-23 21:03:10.923 I/RobotCore(25099): my_debug right_back_encoder 11.0
+01-23 21:03:10.923 I/RobotCore(25099): my_debug left_back_encoder 13.0
+01-23 21:03:10.923 I/RobotCore(25099): my_debug right_front_encoder 26.0
+01-23 21:03:10.923 I/RobotCore(25099): my_debug left_front_encoder 29.0
+01-23 21:03:10.923 I/RobotCore(25099): my_debug right_back_encoder 12.0
+01-23 21:03:10.923 I/RobotCore(25099): my_debug left_back_encoder 15.0
+01-23 21:03:10.923 I/RobotCore(25099): my_debug right_front_encoder 19.0
+01-23 21:03:10.923 I/RobotCore(25099): my_debug left_front_encoder 20.0
+01-23 21:03:10.923 I/RobotCore(25099): my_debug right_back_encoder 9.0
+01-23 21:03:10.923 I/RobotCore(25099): my_debug left_back_encoder 11.0
+01-23 21:03:10.923 I/RobotCore(25099): my_debug right_front_encoder 32.0
+01-23 21:03:10.923 I/RobotCore(25099): my_debug left_front_encoder 33.0
+01-23 21:03:10.923 I/RobotCore(25099): my_debug right_back_encoder 15.0
+01-23 21:03:10.923 I/RobotCore(25099): my_debug left_back_encoder 15.0
+01-23 21:03:10.923 I/RobotCore(25099): my_debug right_front_encoder 27.0
+01-23 21:03:10.923 I/RobotCore(25099): my_debug left_front_encoder 31.0
+01-23 21:03:10.933 I/RobotCore(25099): my_debug right_back_encoder 10.0
+01-23 21:03:10.933 I/RobotCore(25099): my_debug left_back_encoder 11.0
+01-23 21:03:10.933 I/RobotCore(25099): my_debug right_front_encoder 21.0
+01-23 21:03:10.933 I/RobotCore(25099): my_debug left_front_encoder 22.0
+01-23 21:03:10.933 I/RobotCore(25099): my_debug right_back_encoder 14.0
+01-23 21:03:10.933 I/RobotCore(25099): my_debug left_back_encoder 15.0
+01-23 21:03:10.943 I/RobotCore(25099): my_debug right_front_encoder 32.0
+01-23 21:03:10.943 I/RobotCore(25099): my_debug left_front_encoder 32.0
+01-23 21:03:10.943 I/RobotCore(25099): my_debug right_back_encoder 11.0
+01-23 21:03:10.943 I/RobotCore(25099): my_debug left_back_encoder 11.0
+01-23 21:03:10.943 I/RobotCore(25099): my_debug right_front_encoder 23.0
+01-23 21:03:10.943 I/RobotCore(25099): my_debug left_front_encoder 25.0
+01-23 21:03:10.943 I/RobotCore(25099): my_debug right_back_encoder 13.0
+01-23 21:03:10.943 I/RobotCore(25099): my_debug left_back_encoder 13.0
+01-23 21:03:10.943 I/RobotCore(25099): my_debug right_front_encoder 27.0
+01-23 21:03:10.943 I/RobotCore(25099): my_debug left_front_encoder 30.0
+01-23 21:03:10.943 I/RobotCore(25099): my_debug right_back_encoder 13.0
+01-23 21:03:10.943 I/RobotCore(25099): my_debug left_back_encoder 14.0
+01-23 21:03:10.943 I/RobotCore(25099): my_debug right_front_encoder 18.0
+01-23 21:03:10.943 I/RobotCore(25099): my_debug left_front_encoder 18.0
+01-23 21:03:10.943 I/RobotCore(25099): my_debug right_back_encoder 11.0
+01-23 21:03:10.943 I/RobotCore(25099): my_debug left_back_encoder 13.0
+01-23 21:03:10.943 I/RobotCore(25099): my_debug right_front_encoder 36.0
+01-23 21:03:10.943 I/RobotCore(25099): my_debug left_front_encoder 36.0
+01-23 21:03:10.943 I/RobotCore(25099): my_debug right_back_encoder 10.0
+01-23 21:03:10.943 I/RobotCore(25099): my_debug left_back_encoder 13.0
+01-23 21:03:10.943 I/RobotCore(25099): my_debug right_front_encoder 25.0
+01-23 21:03:10.943 I/RobotCore(25099): my_debug left_front_encoder 26.0
+01-23 21:03:10.943 I/RobotCore(25099): my_debug right_back_encoder 14.0
+01-23 21:03:10.943 I/RobotCore(25099): my_debug left_back_encoder 19.0
+01-23 21:03:10.943 I/RobotCore(25099): my_debug right_front_encoder 34.0
+01-23 21:03:10.943 I/RobotCore(25099): my_debug left_front_encoder 34.0
+01-23 21:03:10.943 I/RobotCore(25099): my_debug right_back_encoder 13.0
+01-23 21:03:10.943 I/RobotCore(25099): my_debug left_back_encoder 14.0
+01-23 21:03:10.943 I/RobotCore(25099): my_debug right_front_encoder 27.0
+01-23 21:03:10.943 I/RobotCore(25099): my_debug left_front_encoder 26.0
+01-23 21:03:10.943 I/RobotCore(25099): my_debug right_back_encoder 13.0
+01-23 21:03:10.943 I/RobotCore(25099): my_debug left_back_encoder 13.0
+01-23 21:03:10.943 I/RobotCore(25099): my_debug right_front_encoder 25.0
+01-23 21:03:10.943 I/RobotCore(25099): my_debug left_front_encoder 26.0
+01-23 21:03:10.943 I/RobotCore(25099): my_debug right_back_encoder 12.0
+01-23 21:03:10.943 I/RobotCore(25099): my_debug left_back_encoder 14.0
+01-23 21:03:10.943 I/RobotCore(25099): my_debug right_front_encoder 26.0
+01-23 21:03:10.943 I/RobotCore(25099): my_debug left_front_encoder 26.0
+01-23 21:03:10.943 I/RobotCore(25099): my_debug right_back_encoder 15.0
+01-23 21:03:10.953 I/RobotCore(25099): my_debug left_back_encoder 16.0
+01-23 21:03:10.953 I/RobotCore(25099): my_debug right_front_encoder 30.0
+01-23 21:03:10.953 I/RobotCore(25099): my_debug left_front_encoder 28.0
+01-23 21:03:10.953 I/RobotCore(25099): my_debug right_back_encoder 14.0
+01-23 21:03:10.953 I/RobotCore(25099): my_debug left_back_encoder 15.0
+01-23 21:03:10.953 I/RobotCore(25099): my_debug right_front_encoder 29.0
+01-23 21:03:10.953 I/RobotCore(25099): my_debug left_front_encoder 28.0
+01-23 21:03:10.953 I/RobotCore(25099): my_debug right_back_encoder 14.0
+01-23 21:03:10.953 I/RobotCore(25099): my_debug left_back_encoder 15.0
+01-23 21:03:10.953 I/RobotCore(25099): my_debug right_front_encoder 26.0
+01-23 21:03:10.953 I/RobotCore(25099): my_debug left_front_encoder 26.0
+01-23 21:03:10.953 I/RobotCore(25099): my_debug right_back_encoder 14.0
+01-23 21:03:10.953 I/RobotCore(25099): my_debug left_back_encoder 16.0
+01-23 21:03:10.953 I/RobotCore(25099): my_debug right_front_encoder 30.0
+01-23 21:03:10.953 I/RobotCore(25099): my_debug left_front_encoder 30.0
+01-23 21:03:10.953 I/RobotCore(25099): my_debug right_back_encoder 14.0
+01-23 21:03:10.953 I/RobotCore(25099): my_debug left_back_encoder 14.0
+01-23 21:03:10.953 I/RobotCore(25099): my_debug right_front_encoder 5.0
+01-23 21:03:10.953 I/RobotCore(25099): my_debug left_front_encoder 6.0
+01-23 21:03:10.953 I/RobotCore(25099): my_debug right_back_encoder 5.0
+01-23 21:03:10.953 I/RobotCore(25099): my_debug left_back_encoder 4.0
+01-23 21:03:10.953 I/RobotCore(25099): my_debug right_front_encoder 26.0
+01-23 21:03:10.953 I/RobotCore(25099): my_debug left_front_encoder 26.0
+01-23 21:03:10.953 I/RobotCore(25099): my_debug right_back_encoder 26.0
+01-23 21:03:10.953 I/RobotCore(25099): my_debug left_back_encoder 25.0
+01-23 21:03:10.953 I/RobotCore(25099): my_debug right_front_encoder 47.0
+01-23 21:03:10.953 I/RobotCore(25099): my_debug left_front_encoder 50.0
+01-23 21:03:10.953 I/RobotCore(25099): my_debug right_back_encoder 14.0
+01-23 21:03:10.953 I/RobotCore(25099): my_debug left_back_encoder 15.0
+01-23 21:03:10.953 I/RobotCore(25099): my_debug right_front_encoder 29.0
+01-23 21:03:10.953 I/RobotCore(25099): my_debug left_front_encoder 29.0
+01-23 21:03:10.953 I/RobotCore(25099): my_debug right_back_encoder 14.0
+01-23 21:03:10.953 I/RobotCore(25099): my_debug left_back_encoder 15.0
+01-23 21:03:10.953 I/RobotCore(25099): my_debug right_front_encoder 26.0
+01-23 21:03:10.953 I/RobotCore(25099): my_debug left_front_encoder 27.0
+01-23 21:03:10.953 I/RobotCore(25099): my_debug right_back_encoder 12.0
+01-23 21:03:10.953 I/RobotCore(25099): my_debug left_back_encoder 13.0
+01-23 21:03:10.953 I/RobotCore(25099): my_debug right_front_encoder 25.0
+01-23 21:03:10.953 I/RobotCore(25099): my_debug left_front_encoder 26.0
+01-23 21:03:10.953 I/RobotCore(25099): my_debug right_back_encoder 15.0
+01-23 21:03:10.953 I/RobotCore(25099): my_debug left_back_encoder 17.0
+01-23 21:03:10.953 I/RobotCore(25099): my_debug right_front_encoder 29.0
+01-23 21:03:10.953 I/RobotCore(25099): my_debug left_front_encoder 28.0
+01-23 21:03:10.953 I/RobotCore(25099): my_debug right_back_encoder 15.0
+01-23 21:03:10.953 I/RobotCore(25099): my_debug left_back_encoder 16.0
+01-23 21:03:10.963 I/RobotCore(25099): my_debug right_front_encoder 24.0
+01-23 21:03:10.963 I/RobotCore(25099): my_debug left_front_encoder 24.0
+01-23 21:03:10.963 I/RobotCore(25099): my_debug right_back_encoder 10.0
+01-23 21:03:10.963 I/RobotCore(25099): my_debug left_back_encoder 11.0
+01-23 21:03:10.963 I/RobotCore(25099): my_debug right_front_encoder 32.0
+01-23 21:03:10.963 I/RobotCore(25099): my_debug left_front_encoder 35.0
+01-23 21:03:10.963 I/RobotCore(25099): my_debug right_back_encoder 14.0
+01-23 21:03:10.963 I/RobotCore(25099): my_debug left_back_encoder 20.0
+01-23 21:03:10.963 I/RobotCore(25099): my_debug right_front_encoder 17.0
+01-23 21:03:10.963 I/RobotCore(25099): my_debug left_front_encoder 18.0
+01-23 21:03:10.963 W/RobotCore(25099): my_debug avgDiff 21.4375
+01-23 21:03:10.963 W/RobotCore(25099): my_debug batteryVoltage 13.879178885630497
+01-23 21:03:11.333 D/dalvikvm(25099): GC_FOR_ALLOC freed 2047K, 37% free 7043K/11140K, paused 19ms, total 19ms
+01-23 21:03:12.123 D/dalvikvm(25099): GC_FOR_ALLOC freed 2047K, 37% free 7043K/11140K, paused 19ms, total 19ms
+01-23 21:03:12.883 D/dalvikvm(25099): GC_FOR_ALLOC freed 2048K, 37% free 7043K/11140K, paused 16ms, total 16ms
+01-23 21:03:13.653 I/FIRST   (25099): Processing Command: CMD_INIT_OP_MODE Stop Robot
+01-23 21:03:13.663 I/RobotCore(25099): Attempting to switch to op mode Stop Robot
+01-23 21:03:13.683 D/dalvikvm(25099): GC_FOR_ALLOC freed 2045K, 37% free 7045K/11140K, paused 19ms, total 19ms
+01-23 21:03:13.753 V/RobotCore(25099): Sending command: CMD_INIT_OP_MODE_RESP, attempt 0
+01-23 21:03:13.783 I/FIRST   (25099): Processing Command: CMD_RUN_OP_MODE Stop Robot
+01-23 21:03:13.853 V/RobotCore(25099): Sending command: CMD_RUN_OP_MODE_RESP, attempt 0
+01-23 21:03:14.493 D/dalvikvm(25099): GC_FOR_ALLOC freed 2048K, 37% free 7045K/11140K, paused 20ms, total 20ms
+01-23 21:03:15.303 D/dalvikvm(25099): GC_FOR_ALLOC freed 2049K, 37% free 7044K/11140K, paused 15ms, total 15ms
+01-23 21:03:16.153 D/dalvikvm(25099): GC_FOR_ALLOC freed 2048K, 37% free 7044K/11140K, paused 16ms, total 16ms
+01-23 21:03:16.993 D/dalvikvm(25099): GC_FOR_ALLOC freed 2047K, 37% free 7044K/11140K, paused 16ms, total 16ms
+01-23 21:03:17.813 D/dalvikvm(25099): GC_FOR_ALLOC freed 2048K, 37% free 7044K/11140K, paused 18ms, total 18ms
+01-23 21:03:18.173 I/FIRST   (25099): Processing Command: CMD_INIT_OP_MODE ____TestingAuto
+01-23 21:03:18.183 I/RobotCore(25099): Attempting to switch to op mode ____TestingAuto
+01-23 21:03:18.203 D/dalvikvm(25099): GC_FOR_ALLOC freed 1006K, 30% free 7829K/11140K, paused 14ms, total 15ms
+01-23 21:03:18.263 V/RobotCore(25099): Sending command: CMD_INIT_OP_MODE_RESP, attempt 0
+01-23 21:03:18.683 D/dalvikvm(25099): GC_FOR_ALLOC freed 2833K, 37% free 7044K/11140K, paused 15ms, total 16ms
+01-23 21:03:19.443 D/dalvikvm(25099): GC_FOR_ALLOC freed 2048K, 37% free 7044K/11140K, paused 17ms, total 17ms
+01-23 21:03:20.183 D/dalvikvm(25099): GC_FOR_ALLOC freed 2048K, 37% free 7044K/11140K, paused 15ms, total 15ms
+01-23 21:03:20.613 I/FIRST   (25099): Processing Command: CMD_RUN_OP_MODE ____TestingAuto
+01-23 21:03:20.683 V/RobotCore(25099): Sending command: CMD_RUN_OP_MODE_RESP, attempt 0
+01-23 21:03:20.863 D/dalvikvm(25099): GC_FOR_ALLOC freed 2046K, 37% free 7045K/11140K, paused 16ms, total 17ms
+01-23 21:03:21.563 D/dalvikvm(25099): GC_FOR_ALLOC freed 2049K, 37% free 7044K/11140K, paused 19ms, total 19ms
+01-23 21:03:22.243 D/dalvikvm(25099): GC_FOR_ALLOC freed 2048K, 37% free 7044K/11140K, paused 16ms, total 16ms
+01-23 21:03:22.463 W/RobotCore(25099): my_debug BEGIN FULL_POWER_WALL
+01-23 21:03:22.463 I/RobotCore(25099): my_debug right_back_encoder 0.0
+01-23 21:03:22.463 I/RobotCore(25099): my_debug left_back_encoder 0.0
+01-23 21:03:22.463 I/RobotCore(25099): my_debug right_front_encoder 0.0
+01-23 21:03:22.463 I/RobotCore(25099): my_debug left_front_encoder 0.0
+01-23 21:03:22.463 I/RobotCore(25099): my_debug right_back_encoder 0.0
+01-23 21:03:22.463 I/RobotCore(25099): my_debug left_back_encoder 0.0
+01-23 21:03:22.463 I/RobotCore(25099): my_debug right_front_encoder 0.0
+01-23 21:03:22.463 I/RobotCore(25099): my_debug left_front_encoder 0.0
+01-23 21:03:22.463 I/RobotCore(25099): my_debug right_back_encoder 0.0
+01-23 21:03:22.463 I/RobotCore(25099): my_debug left_back_encoder 0.0
+01-23 21:03:22.463 I/RobotCore(25099): my_debug right_front_encoder 0.0
+01-23 21:03:22.463 I/RobotCore(25099): my_debug left_front_encoder 0.0
+01-23 21:03:22.463 I/RobotCore(25099): my_debug right_back_encoder 10.0
+01-23 21:03:22.463 I/RobotCore(25099): my_debug left_back_encoder 8.0
+01-23 21:03:22.463 I/RobotCore(25099): my_debug right_front_encoder 7.0
+01-23 21:03:22.463 I/RobotCore(25099): my_debug left_front_encoder 6.0
+01-23 21:03:22.463 I/RobotCore(25099): my_debug right_back_encoder 12.0
+01-23 21:03:22.463 I/RobotCore(25099): my_debug left_back_encoder 13.0
+01-23 21:03:22.463 I/RobotCore(25099): my_debug right_front_encoder 12.0
+01-23 21:03:22.463 I/RobotCore(25099): my_debug left_front_encoder 16.0
+01-23 21:03:22.463 I/RobotCore(25099): my_debug right_back_encoder 27.0
+01-23 21:03:22.463 I/RobotCore(25099): my_debug left_back_encoder 29.0
+01-23 21:03:22.463 I/RobotCore(25099): my_debug right_front_encoder 16.0
+01-23 21:03:22.463 I/RobotCore(25099): my_debug left_front_encoder 18.0
+01-23 21:03:22.463 I/RobotCore(25099): my_debug right_back_encoder 30.0
+01-23 21:03:22.463 I/RobotCore(25099): my_debug left_back_encoder 34.0
+01-23 21:03:22.463 I/RobotCore(25099): my_debug right_front_encoder 26.0
+01-23 21:03:22.463 I/RobotCore(25099): my_debug left_front_encoder 26.0
+01-23 21:03:22.463 I/RobotCore(25099): my_debug right_back_encoder 26.0
+01-23 21:03:22.463 I/RobotCore(25099): my_debug left_back_encoder 26.0
+01-23 21:03:22.463 I/RobotCore(25099): my_debug right_front_encoder 21.0
+01-23 21:03:22.463 I/RobotCore(25099): my_debug left_front_encoder 20.0
+01-23 21:03:22.463 I/RobotCore(25099): my_debug right_back_encoder 31.0
+01-23 21:03:22.463 I/RobotCore(25099): my_debug left_back_encoder 34.0
+01-23 21:03:22.463 I/RobotCore(25099): my_debug right_front_encoder 28.0
+01-23 21:03:22.463 I/RobotCore(25099): my_debug left_front_encoder 31.0
+01-23 21:03:22.463 I/RobotCore(25099): my_debug right_back_encoder 33.0
+01-23 21:03:22.473 I/RobotCore(25099): my_debug left_back_encoder 35.0
+01-23 21:03:22.473 I/RobotCore(25099): my_debug right_front_encoder 31.0
+01-23 21:03:22.473 I/RobotCore(25099): my_debug left_front_encoder 34.0
+01-23 21:03:22.473 I/RobotCore(25099): my_debug right_back_encoder 20.0
+01-23 21:03:22.473 I/RobotCore(25099): my_debug left_back_encoder 19.0
+01-23 21:03:22.473 I/RobotCore(25099): my_debug right_front_encoder 32.0
+01-23 21:03:22.473 I/RobotCore(25099): my_debug left_front_encoder 31.0
+01-23 21:03:22.473 I/RobotCore(25099): my_debug right_back_encoder 18.0
+01-23 21:03:22.473 I/RobotCore(25099): my_debug left_back_encoder 18.0
+01-23 21:03:22.473 I/RobotCore(25099): my_debug right_front_encoder 10.0
+01-23 21:03:22.473 I/RobotCore(25099): my_debug left_front_encoder 9.0
+01-23 21:03:22.473 I/RobotCore(25099): my_debug right_back_encoder 47.0
+01-23 21:03:22.473 I/RobotCore(25099): my_debug left_back_encoder 42.0
+01-23 21:03:22.473 I/RobotCore(25099): my_debug right_front_encoder 58.0
+01-23 21:03:22.473 I/RobotCore(25099): my_debug left_front_encoder 56.0
+01-23 21:03:22.473 I/RobotCore(25099): my_debug right_back_encoder 15.0
+01-23 21:03:22.473 I/RobotCore(25099): my_debug left_back_encoder 13.0
+01-23 21:03:22.473 I/RobotCore(25099): my_debug right_front_encoder 19.0
+01-23 21:03:22.473 I/RobotCore(25099): my_debug left_front_encoder 12.0
+01-23 21:03:22.473 I/RobotCore(25099): my_debug right_back_encoder 19.0
+01-23 21:03:22.473 I/RobotCore(25099): my_debug left_back_encoder 18.0
+01-23 21:03:22.473 I/RobotCore(25099): my_debug right_front_encoder 27.0
+01-23 21:03:22.473 I/RobotCore(25099): my_debug left_front_encoder 17.0
+01-23 21:03:22.473 I/RobotCore(25099): my_debug right_back_encoder 14.0
+01-23 21:03:22.473 I/RobotCore(25099): my_debug left_back_encoder 12.0
+01-23 21:03:22.473 I/RobotCore(25099): my_debug right_front_encoder 34.0
+01-23 21:03:22.473 I/RobotCore(25099): my_debug left_front_encoder 29.0
+01-23 21:03:22.473 I/RobotCore(25099): my_debug right_back_encoder 24.0
+01-23 21:03:22.473 I/RobotCore(25099): my_debug left_back_encoder 19.0
+01-23 21:03:22.473 I/RobotCore(25099): my_debug right_front_encoder 26.0
+01-23 21:03:22.473 I/RobotCore(25099): my_debug left_front_encoder 22.0
+01-23 21:03:22.473 I/RobotCore(25099): my_debug right_back_encoder 16.0
+01-23 21:03:22.473 I/RobotCore(25099): my_debug left_back_encoder 12.0
+01-23 21:03:22.473 I/RobotCore(25099): my_debug right_front_encoder 28.0
+01-23 21:03:22.473 I/RobotCore(25099): my_debug left_front_encoder 22.0
+01-23 21:03:22.473 I/RobotCore(25099): my_debug right_back_encoder 13.0
+01-23 21:03:22.473 I/RobotCore(25099): my_debug left_back_encoder 8.0
+01-23 21:03:22.473 I/RobotCore(25099): my_debug right_front_encoder 19.0
+01-23 21:03:22.473 I/RobotCore(25099): my_debug left_front_encoder 11.0
+01-23 21:03:22.473 I/RobotCore(25099): my_debug right_back_encoder 21.0
+01-23 21:03:22.473 I/RobotCore(25099): my_debug left_back_encoder 14.0
+01-23 21:03:22.473 I/RobotCore(25099): my_debug right_front_encoder 31.0
+01-23 21:03:22.473 I/RobotCore(25099): my_debug left_front_encoder 21.0
+01-23 21:03:22.473 I/RobotCore(25099): my_debug right_back_encoder 20.0
+01-23 21:03:22.473 I/RobotCore(25099): my_debug left_back_encoder 12.0
+01-23 21:03:22.473 I/RobotCore(25099): my_debug right_front_encoder 28.0
+01-23 21:03:22.473 I/RobotCore(25099): my_debug left_front_encoder 24.0
+01-23 21:03:22.473 I/RobotCore(25099): my_debug right_back_encoder 12.0
+01-23 21:03:22.473 I/RobotCore(25099): my_debug left_back_encoder 8.0
+01-23 21:03:22.473 I/RobotCore(25099): my_debug right_front_encoder 20.0
+01-23 21:03:22.473 I/RobotCore(25099): my_debug left_front_encoder 17.0
+01-23 21:03:22.483 I/RobotCore(25099): my_debug right_back_encoder 21.0
+01-23 21:03:22.483 I/RobotCore(25099): my_debug left_back_encoder 16.0
+01-23 21:03:22.483 I/RobotCore(25099): my_debug right_front_encoder 32.0
+01-23 21:03:22.483 I/RobotCore(25099): my_debug left_front_encoder 28.0
+01-23 21:03:22.483 I/RobotCore(25099): my_debug right_back_encoder 16.0
+01-23 21:03:22.483 I/RobotCore(25099): my_debug left_back_encoder 12.0
+01-23 21:03:22.483 I/RobotCore(25099): my_debug right_front_encoder 27.0
+01-23 21:03:22.483 I/RobotCore(25099): my_debug left_front_encoder 17.0
+01-23 21:03:22.483 I/RobotCore(25099): my_debug right_back_encoder 11.0
+01-23 21:03:22.483 I/RobotCore(25099): my_debug left_back_encoder 7.0
+01-23 21:03:22.483 I/RobotCore(25099): my_debug right_front_encoder 19.0
+01-23 21:03:22.483 I/RobotCore(25099): my_debug left_front_encoder 15.0
+01-23 21:03:22.483 I/RobotCore(25099): my_debug right_back_encoder 22.0
+01-23 21:03:22.483 I/RobotCore(25099): my_debug left_back_encoder 15.0
+01-23 21:03:22.483 I/RobotCore(25099): my_debug right_front_encoder 38.0
+01-23 21:03:22.483 I/RobotCore(25099): my_debug left_front_encoder 29.0
+01-23 21:03:22.483 I/RobotCore(25099): my_debug right_back_encoder 11.0
+01-23 21:03:22.483 I/RobotCore(25099): my_debug left_back_encoder 6.0
+01-23 21:03:22.483 I/RobotCore(25099): my_debug right_front_encoder 16.0
+01-23 21:03:22.483 I/RobotCore(25099): my_debug left_front_encoder 13.0
+01-23 21:03:22.483 I/RobotCore(25099): my_debug right_back_encoder 16.0
+01-23 21:03:22.483 I/RobotCore(25099): my_debug left_back_encoder 10.0
+01-23 21:03:22.483 I/RobotCore(25099): my_debug right_front_encoder 19.0
+01-23 21:03:22.483 I/RobotCore(25099): my_debug left_front_encoder 13.0
+01-23 21:03:22.483 I/RobotCore(25099): my_debug right_back_encoder 15.0
+01-23 21:03:22.483 I/RobotCore(25099): my_debug left_back_encoder 8.0
+01-23 21:03:22.483 I/RobotCore(25099): my_debug right_front_encoder 26.0
+01-23 21:03:22.483 I/RobotCore(25099): my_debug left_front_encoder 22.0
+01-23 21:03:22.483 I/RobotCore(25099): my_debug right_back_encoder 11.0
+01-23 21:03:22.483 I/RobotCore(25099): my_debug left_back_encoder 8.0
+01-23 21:03:22.483 I/RobotCore(25099): my_debug right_front_encoder 26.0
+01-23 21:03:22.483 I/RobotCore(25099): my_debug left_front_encoder 24.0
+01-23 21:03:22.483 I/RobotCore(25099): my_debug right_back_encoder 16.0
+01-23 21:03:22.483 I/RobotCore(25099): my_debug left_back_encoder 12.0
+01-23 21:03:22.483 I/RobotCore(25099): my_debug right_front_encoder 25.0
+01-23 21:03:22.483 I/RobotCore(25099): my_debug left_front_encoder 20.0
+01-23 21:03:22.483 I/RobotCore(25099): my_debug right_back_encoder 16.0
+01-23 21:03:22.483 I/RobotCore(25099): my_debug left_back_encoder 12.0
+01-23 21:03:22.483 I/RobotCore(25099): my_debug right_front_encoder 25.0
+01-23 21:03:22.483 I/RobotCore(25099): my_debug left_front_encoder 18.0
+01-23 21:03:22.483 I/RobotCore(25099): my_debug right_back_encoder 18.0
+01-23 21:03:22.483 I/RobotCore(25099): my_debug left_back_encoder 13.0
+01-23 21:03:22.483 I/RobotCore(25099): my_debug right_front_encoder 27.0
+01-23 21:03:22.483 I/RobotCore(25099): my_debug left_front_encoder 20.0
+01-23 21:03:22.483 I/RobotCore(25099): my_debug right_back_encoder 20.0
+01-23 21:03:22.483 I/RobotCore(25099): my_debug left_back_encoder 15.0
+01-23 21:03:22.483 I/RobotCore(25099): my_debug right_front_encoder 32.0
+01-23 21:03:22.483 I/RobotCore(25099): my_debug left_front_encoder 31.0
+01-23 21:03:22.483 I/RobotCore(25099): my_debug right_back_encoder 17.0
+01-23 21:03:22.483 I/RobotCore(25099): my_debug left_back_encoder 14.0
+01-23 21:03:22.483 I/RobotCore(25099): my_debug right_front_encoder 27.0
+01-23 21:03:22.483 I/RobotCore(25099): my_debug left_front_encoder 22.0
+01-23 21:03:22.483 I/RobotCore(25099): my_debug right_back_encoder 10.0
+01-23 21:03:22.483 I/RobotCore(25099): my_debug left_back_encoder 7.0
+01-23 21:03:22.493 I/RobotCore(25099): my_debug right_front_encoder 16.0
+01-23 21:03:22.493 I/RobotCore(25099): my_debug left_front_encoder 13.0
+01-23 21:03:22.493 I/RobotCore(25099): my_debug right_back_encoder 16.0
+01-23 21:03:22.493 I/RobotCore(25099): my_debug left_back_encoder 12.0
+01-23 21:03:22.493 I/RobotCore(25099): my_debug right_front_encoder 34.0
+01-23 21:03:22.493 I/RobotCore(25099): my_debug left_front_encoder 26.0
+01-23 21:03:22.493 I/RobotCore(25099): my_debug right_back_encoder 25.0
+01-23 21:03:22.493 I/RobotCore(25099): my_debug left_back_encoder 17.0
+01-23 21:03:22.493 I/RobotCore(25099): my_debug right_front_encoder 26.0
+01-23 21:03:22.493 I/RobotCore(25099): my_debug left_front_encoder 25.0
+01-23 21:03:22.493 I/RobotCore(25099): my_debug right_back_encoder 11.0
+01-23 21:03:22.493 I/RobotCore(25099): my_debug left_back_encoder 7.0
+01-23 21:03:22.493 I/RobotCore(25099): my_debug right_front_encoder 15.0
+01-23 21:03:22.493 I/RobotCore(25099): my_debug left_front_encoder 14.0
+01-23 21:03:22.493 I/RobotCore(25099): my_debug right_back_encoder 21.0
+01-23 21:03:22.493 I/RobotCore(25099): my_debug left_back_encoder 12.0
+01-23 21:03:22.493 I/RobotCore(25099): my_debug right_front_encoder 31.0
+01-23 21:03:22.493 I/RobotCore(25099): my_debug left_front_encoder 21.0
+01-23 21:03:22.493 I/RobotCore(25099): my_debug right_back_encoder 17.0
+01-23 21:03:22.493 I/RobotCore(25099): my_debug left_back_encoder 8.0
+01-23 21:03:22.493 I/RobotCore(25099): my_debug right_front_encoder 25.0
+01-23 21:03:22.493 I/RobotCore(25099): my_debug left_front_encoder 22.0
+01-23 21:03:22.493 I/RobotCore(25099): my_debug right_back_encoder 10.0
+01-23 21:03:22.493 I/RobotCore(25099): my_debug left_back_encoder 5.0
+01-23 21:03:22.493 I/RobotCore(25099): my_debug right_front_encoder 17.0
+01-23 21:03:22.493 I/RobotCore(25099): my_debug left_front_encoder 16.0
+01-23 21:03:22.493 I/RobotCore(25099): my_debug right_back_encoder 14.0
+01-23 21:03:22.493 I/RobotCore(25099): my_debug left_back_encoder 6.0
+01-23 21:03:22.493 I/RobotCore(25099): my_debug right_front_encoder 34.0
+01-23 21:03:22.493 I/RobotCore(25099): my_debug left_front_encoder 29.0
+01-23 21:03:22.493 I/RobotCore(25099): my_debug right_back_encoder 18.0
+01-23 21:03:22.493 I/RobotCore(25099): my_debug left_back_encoder 10.0
+01-23 21:03:22.493 I/RobotCore(25099): my_debug right_front_encoder 24.0
+01-23 21:03:22.493 I/RobotCore(25099): my_debug left_front_encoder 16.0
+01-23 21:03:22.493 I/RobotCore(25099): my_debug right_back_encoder 13.0
+01-23 21:03:22.493 I/RobotCore(25099): my_debug left_back_encoder 8.0
+01-23 21:03:22.493 I/RobotCore(25099): my_debug right_front_encoder 21.0
+01-23 21:03:22.493 I/RobotCore(25099): my_debug left_front_encoder 18.0
+01-23 21:03:22.493 I/RobotCore(25099): my_debug right_back_encoder 17.0
+01-23 21:03:22.493 I/RobotCore(25099): my_debug left_back_encoder 10.0
+01-23 21:03:22.493 I/RobotCore(25099): my_debug right_front_encoder 28.0
+01-23 21:03:22.503 I/RobotCore(25099): my_debug left_front_encoder 23.0
+01-23 21:03:22.503 I/RobotCore(25099): my_debug right_back_encoder 16.0
+01-23 21:03:22.503 I/RobotCore(25099): my_debug left_back_encoder 10.0
+01-23 21:03:22.503 I/RobotCore(25099): my_debug right_front_encoder 24.0
+01-23 21:03:22.503 I/RobotCore(25099): my_debug left_front_encoder 22.0
+01-23 21:03:22.503 I/RobotCore(25099): my_debug right_back_encoder 15.0
+01-23 21:03:22.503 I/RobotCore(25099): my_debug left_back_encoder 10.0
+01-23 21:03:22.503 I/RobotCore(25099): my_debug right_front_encoder 24.0
+01-23 21:03:22.503 I/RobotCore(25099): my_debug left_front_encoder 16.0
+01-23 21:03:22.503 I/RobotCore(25099): my_debug right_back_encoder 21.0
+01-23 21:03:22.503 I/RobotCore(25099): my_debug left_back_encoder 12.0
+01-23 21:03:22.503 I/RobotCore(25099): my_debug right_front_encoder 32.0
+01-23 21:03:22.503 I/RobotCore(25099): my_debug left_front_encoder 24.0
+01-23 21:03:22.503 I/RobotCore(25099): my_debug right_back_encoder 9.0
+01-23 21:03:22.503 I/RobotCore(25099): my_debug left_back_encoder 6.0
+01-23 21:03:22.503 I/RobotCore(25099): my_debug right_front_encoder 16.0
+01-23 21:03:22.503 I/RobotCore(25099): my_debug left_front_encoder 13.0
+01-23 21:03:22.503 I/RobotCore(25099): my_debug right_back_encoder 16.0
+01-23 21:03:22.503 I/RobotCore(25099): my_debug left_back_encoder 9.0
+01-23 21:03:22.503 I/RobotCore(25099): my_debug right_front_encoder 28.0
+01-23 21:03:22.503 I/RobotCore(25099): my_debug left_front_encoder 24.0
+01-23 21:03:22.503 I/RobotCore(25099): my_debug right_back_encoder 12.0
+01-23 21:03:22.503 I/RobotCore(25099): my_debug left_back_encoder 8.0
+01-23 21:03:22.503 I/RobotCore(25099): my_debug right_front_encoder 19.0
+01-23 21:03:22.503 I/RobotCore(25099): my_debug left_front_encoder 14.0
+01-23 21:03:22.503 I/RobotCore(25099): my_debug right_back_encoder 12.0
+01-23 21:03:22.503 I/RobotCore(25099): my_debug left_back_encoder 8.0
+01-23 21:03:22.503 I/RobotCore(25099): my_debug right_front_encoder 18.0
+01-23 21:03:22.503 I/RobotCore(25099): my_debug left_front_encoder 15.0
+01-23 21:03:22.503 I/RobotCore(25099): my_debug right_back_encoder 6.0
+01-23 21:03:22.503 I/RobotCore(25099): my_debug left_back_encoder 4.0
+01-23 21:03:22.503 I/RobotCore(25099): my_debug right_front_encoder 0.0
+01-23 21:03:22.503 I/RobotCore(25099): my_debug left_front_encoder 0.0
+01-23 21:03:22.503 I/RobotCore(25099): my_debug right_back_encoder 36.0
+01-23 21:03:22.503 I/RobotCore(25099): my_debug left_back_encoder 23.0
+01-23 21:03:22.503 I/RobotCore(25099): my_debug right_front_encoder 74.0
+01-23 21:03:22.503 I/RobotCore(25099): my_debug left_front_encoder 64.0
+01-23 21:03:22.503 I/RobotCore(25099): my_debug right_back_encoder 10.0
+01-23 21:03:22.503 I/RobotCore(25099): my_debug left_back_encoder 8.0
+01-23 21:03:22.503 I/RobotCore(25099): my_debug right_front_encoder 25.0
+01-23 21:03:22.503 I/RobotCore(25099): my_debug left_front_encoder 25.0
+01-23 21:03:22.503 I/RobotCore(25099): my_debug right_back_encoder 10.0
+01-23 21:03:22.503 I/RobotCore(25099): my_debug left_back_encoder 8.0
+01-23 21:03:22.503 I/RobotCore(25099): my_debug right_front_encoder 22.0
+01-23 21:03:22.503 I/RobotCore(25099): my_debug left_front_encoder 21.0
+01-23 21:03:22.503 I/RobotCore(25099): my_debug right_back_encoder 14.0
+01-23 21:03:22.503 I/RobotCore(25099): my_debug left_back_encoder 11.0
+01-23 21:03:22.503 I/RobotCore(25099): my_debug right_front_encoder 23.0
+01-23 21:03:22.503 I/RobotCore(25099): my_debug left_front_encoder 18.0
+01-23 21:03:22.503 I/RobotCore(25099): my_debug right_back_encoder 9.0
+01-23 21:03:22.503 I/RobotCore(25099): my_debug left_back_encoder 6.0
+01-23 21:03:22.503 I/RobotCore(25099): my_debug right_front_encoder 18.0
+01-23 21:03:22.503 I/RobotCore(25099): my_debug left_front_encoder 17.0
+01-23 21:03:22.503 I/RobotCore(25099): my_debug right_back_encoder 19.0
+01-23 21:03:22.503 I/RobotCore(25099): my_debug left_back_encoder 12.0
+01-23 21:03:22.503 I/RobotCore(25099): my_debug right_front_encoder 32.0
+01-23 21:03:22.513 I/RobotCore(25099): my_debug left_front_encoder 32.0
+01-23 21:03:22.513 I/RobotCore(25099): my_debug right_back_encoder 17.0
+01-23 21:03:22.513 I/RobotCore(25099): my_debug left_back_encoder 13.0
+01-23 21:03:22.513 I/RobotCore(25099): my_debug right_front_encoder 26.0
+01-23 21:03:22.513 I/RobotCore(25099): my_debug left_front_encoder 21.0
+01-23 21:03:22.513 I/RobotCore(25099): my_debug right_back_encoder 16.0
+01-23 21:03:22.513 I/RobotCore(25099): my_debug left_back_encoder 11.0
+01-23 21:03:22.513 I/RobotCore(25099): my_debug right_front_encoder 20.0
+01-23 21:03:22.513 I/RobotCore(25099): my_debug left_front_encoder 18.0
+01-23 21:03:22.513 I/RobotCore(25099): my_debug right_back_encoder 11.0
+01-23 21:03:22.513 I/RobotCore(25099): my_debug left_back_encoder 8.0
+01-23 21:03:22.513 I/RobotCore(25099): my_debug right_front_encoder 27.0
+01-23 21:03:22.513 I/RobotCore(25099): my_debug left_front_encoder 24.0
+01-23 21:03:22.513 I/RobotCore(25099): my_debug right_back_encoder 14.0
+01-23 21:03:22.513 I/RobotCore(25099): my_debug left_back_encoder 10.0
+01-23 21:03:22.513 I/RobotCore(25099): my_debug right_front_encoder 26.0
+01-23 21:03:22.513 I/RobotCore(25099): my_debug left_front_encoder 24.0
+01-23 21:03:22.513 I/RobotCore(25099): my_debug right_back_encoder 16.0
+01-23 21:03:22.513 I/RobotCore(25099): my_debug left_back_encoder 14.0
+01-23 21:03:22.513 I/RobotCore(25099): my_debug right_front_encoder 29.0
+01-23 21:03:22.513 I/RobotCore(25099): my_debug left_front_encoder 21.0
+01-23 21:03:22.513 I/RobotCore(25099): my_debug right_back_encoder 14.0
+01-23 21:03:22.513 I/RobotCore(25099): my_debug left_back_encoder 11.0
+01-23 21:03:22.513 I/RobotCore(25099): my_debug right_front_encoder 28.0
+01-23 21:03:22.513 I/RobotCore(25099): my_debug left_front_encoder 26.0
+01-23 21:03:22.513 I/RobotCore(25099): my_debug right_back_encoder 14.0
+01-23 21:03:22.513 I/RobotCore(25099): my_debug left_back_encoder 10.0
+01-23 21:03:22.513 I/RobotCore(25099): my_debug right_front_encoder 22.0
+01-23 21:03:22.513 I/RobotCore(25099): my_debug left_front_encoder 20.0
+01-23 21:03:22.513 I/RobotCore(25099): my_debug right_back_encoder 17.0
+01-23 21:03:22.513 I/RobotCore(25099): my_debug left_back_encoder 11.0
+01-23 21:03:22.513 I/RobotCore(25099): my_debug right_front_encoder 28.0
+01-23 21:03:22.513 I/RobotCore(25099): my_debug left_front_encoder 22.0
+01-23 21:03:22.513 I/RobotCore(25099): my_debug right_back_encoder 14.0
+01-23 21:03:22.513 I/RobotCore(25099): my_debug left_back_encoder 9.0
+01-23 21:03:22.513 I/RobotCore(25099): my_debug right_front_encoder 27.0
+01-23 21:03:22.513 I/RobotCore(25099): my_debug left_front_encoder 22.0
+01-23 21:03:22.513 I/RobotCore(25099): my_debug right_back_encoder 11.0
+01-23 21:03:22.523 I/RobotCore(25099): my_debug left_back_encoder 7.0
+01-23 21:03:22.523 I/RobotCore(25099): my_debug right_front_encoder 24.0
+01-23 21:03:22.523 I/RobotCore(25099): my_debug left_front_encoder 17.0
+01-23 21:03:22.523 I/RobotCore(25099): my_debug right_back_encoder 16.0
+01-23 21:03:22.523 I/RobotCore(25099): my_debug left_back_encoder 7.0
+01-23 21:03:22.523 I/RobotCore(25099): my_debug right_front_encoder 30.0
+01-23 21:03:22.523 I/RobotCore(25099): my_debug left_front_encoder 28.0
+01-23 21:03:22.523 I/RobotCore(25099): my_debug right_back_encoder 10.0
+01-23 21:03:22.523 I/RobotCore(25099): my_debug left_back_encoder 5.0
+01-23 21:03:22.523 I/RobotCore(25099): my_debug right_front_encoder 21.0
+01-23 21:03:22.523 I/RobotCore(25099): my_debug left_front_encoder 19.0
+01-23 21:03:22.523 I/RobotCore(25099): my_debug right_back_encoder 10.0
+01-23 21:03:22.523 I/RobotCore(25099): my_debug left_back_encoder 6.0
+01-23 21:03:22.523 I/RobotCore(25099): my_debug right_front_encoder 23.0
+01-23 21:03:22.523 I/RobotCore(25099): my_debug left_front_encoder 19.0
+01-23 21:03:22.523 I/RobotCore(25099): my_debug right_back_encoder 8.0
+01-23 21:03:22.523 I/RobotCore(25099): my_debug left_back_encoder 6.0
+01-23 21:03:22.523 I/RobotCore(25099): my_debug right_front_encoder 21.0
+01-23 21:03:22.523 I/RobotCore(25099): my_debug left_front_encoder 15.0
+01-23 21:03:22.523 I/RobotCore(25099): my_debug right_back_encoder 19.0
+01-23 21:03:22.523 I/RobotCore(25099): my_debug left_back_encoder 14.0
+01-23 21:03:22.523 I/RobotCore(25099): my_debug right_front_encoder 30.0
+01-23 21:03:22.523 I/RobotCore(25099): my_debug left_front_encoder 27.0
+01-23 21:03:22.523 I/RobotCore(25099): my_debug right_back_encoder 12.0
+01-23 21:03:22.533 I/RobotCore(25099): my_debug left_back_encoder 11.0
+01-23 21:03:22.533 I/RobotCore(25099): my_debug right_front_encoder 23.0
+01-23 21:03:22.533 I/RobotCore(25099): my_debug left_front_encoder 20.0
+01-23 21:03:22.533 I/RobotCore(25099): my_debug right_back_encoder 15.0
+01-23 21:03:22.533 I/RobotCore(25099): my_debug left_back_encoder 14.0
+01-23 21:03:22.533 I/RobotCore(25099): my_debug right_front_encoder 28.0
+01-23 21:03:22.533 I/RobotCore(25099): my_debug left_front_encoder 24.0
+01-23 21:03:22.533 I/RobotCore(25099): my_debug right_back_encoder 13.0
+01-23 21:03:22.533 I/RobotCore(25099): my_debug left_back_encoder 13.0
+01-23 21:03:22.533 I/RobotCore(25099): my_debug right_front_encoder 25.0
+01-23 21:03:22.533 I/RobotCore(25099): my_debug left_front_encoder 20.0
+01-23 21:03:22.533 I/RobotCore(25099): my_debug right_back_encoder 16.0
+01-23 21:03:22.533 I/RobotCore(25099): my_debug left_back_encoder 14.0
+01-23 21:03:22.533 I/RobotCore(25099): my_debug right_front_encoder 30.0
+01-23 21:03:22.533 I/RobotCore(25099): my_debug left_front_encoder 24.0
+01-23 21:03:22.533 I/RobotCore(25099): my_debug right_back_encoder 10.0
+01-23 21:03:22.533 I/RobotCore(25099): my_debug left_back_encoder 9.0
+01-23 21:03:22.533 I/RobotCore(25099): my_debug right_front_encoder 22.0
+01-23 21:03:22.533 I/RobotCore(25099): my_debug left_front_encoder 20.0
+01-23 21:03:22.533 I/RobotCore(25099): my_debug right_back_encoder 11.0
+01-23 21:03:22.533 I/RobotCore(25099): my_debug left_back_encoder 11.0
+01-23 21:03:22.533 I/RobotCore(25099): my_debug right_front_encoder 25.0
+01-23 21:03:22.533 I/RobotCore(25099): my_debug left_front_encoder 22.0
+01-23 21:03:22.543 I/RobotCore(25099): my_debug right_back_encoder 11.0
+01-23 21:03:22.543 I/RobotCore(25099): my_debug left_back_encoder 11.0
+01-23 21:03:22.543 I/RobotCore(25099): my_debug right_front_encoder 23.0
+01-23 21:03:22.543 I/RobotCore(25099): my_debug left_front_encoder 17.0
+01-23 21:03:22.543 I/RobotCore(25099): my_debug right_back_encoder 12.0
+01-23 21:03:22.543 I/RobotCore(25099): my_debug left_back_encoder 9.0
+01-23 21:03:22.543 I/RobotCore(25099): my_debug right_front_encoder 26.0
+01-23 21:03:22.543 I/RobotCore(25099): my_debug left_front_encoder 25.0
+01-23 21:03:22.543 I/RobotCore(25099): my_debug right_back_encoder 10.0
+01-23 21:03:22.543 I/RobotCore(25099): my_debug left_back_encoder 6.0
+01-23 21:03:22.543 I/RobotCore(25099): my_debug right_front_encoder 23.0
+01-23 21:03:22.543 I/RobotCore(25099): my_debug left_front_encoder 22.0
+01-23 21:03:22.543 I/RobotCore(25099): my_debug right_back_encoder 9.0
+01-23 21:03:22.543 I/RobotCore(25099): my_debug left_back_encoder 5.0
+01-23 21:03:22.543 I/RobotCore(25099): my_debug right_front_encoder 24.0
+01-23 21:03:22.543 I/RobotCore(25099): my_debug left_front_encoder 22.0
+01-23 21:03:22.543 I/RobotCore(25099): my_debug right_back_encoder 12.0
+01-23 21:03:22.543 I/RobotCore(25099): my_debug left_back_encoder 7.0
+01-23 21:03:22.543 I/RobotCore(25099): my_debug right_front_encoder 26.0
+01-23 21:03:22.543 I/RobotCore(25099): my_debug left_front_encoder 23.0
+01-23 21:03:22.543 I/RobotCore(25099): my_debug right_back_encoder 9.0
+01-23 21:03:22.543 I/RobotCore(25099): my_debug left_back_encoder 8.0
+01-23 21:03:22.543 I/RobotCore(25099): my_debug right_front_encoder 32.0
+01-23 21:03:22.543 I/RobotCore(25099): my_debug left_front_encoder 22.0
+01-23 21:03:22.543 I/RobotCore(25099): my_debug right_back_encoder 9.0
+01-23 21:03:22.543 I/RobotCore(25099): my_debug left_back_encoder 9.0
+01-23 21:03:22.543 I/RobotCore(25099): my_debug right_front_encoder 28.0
+01-23 21:03:22.543 I/RobotCore(25099): my_debug left_front_encoder 20.0
+01-23 21:03:22.543 I/RobotCore(25099): my_debug right_back_encoder 16.0
+01-23 21:03:22.543 I/RobotCore(25099): my_debug left_back_encoder 14.0
+01-23 21:03:22.543 I/RobotCore(25099): my_debug right_front_encoder 23.0
+01-23 21:03:22.543 I/RobotCore(25099): my_debug left_front_encoder 19.0
+01-23 21:03:22.543 I/RobotCore(25099): my_debug right_back_encoder 12.0
+01-23 21:03:22.543 I/RobotCore(25099): my_debug left_back_encoder 9.0
+01-23 21:03:22.553 I/RobotCore(25099): my_debug right_front_encoder 25.0
+01-23 21:03:22.553 I/RobotCore(25099): my_debug left_front_encoder 21.0
+01-23 21:03:22.553 I/RobotCore(25099): my_debug right_back_encoder 9.0
+01-23 21:03:22.553 I/RobotCore(25099): my_debug left_back_encoder 8.0
+01-23 21:03:22.553 I/RobotCore(25099): my_debug right_front_encoder 21.0
+01-23 21:03:22.553 I/RobotCore(25099): my_debug left_front_encoder 18.0
+01-23 21:03:22.553 I/RobotCore(25099): my_debug right_back_encoder 12.0
+01-23 21:03:22.553 I/RobotCore(25099): my_debug left_back_encoder 9.0
+01-23 21:03:22.553 I/RobotCore(25099): my_debug right_front_encoder 26.0
+01-23 21:03:22.553 I/RobotCore(25099): my_debug left_front_encoder 24.0
+01-23 21:03:22.553 I/RobotCore(25099): my_debug right_back_encoder 16.0
+01-23 21:03:22.553 I/RobotCore(25099): my_debug left_back_encoder 8.0
+01-23 21:03:22.553 I/RobotCore(25099): my_debug right_front_encoder 29.0
+01-23 21:03:22.553 I/RobotCore(25099): my_debug left_front_encoder 26.0
+01-23 21:03:22.553 I/RobotCore(25099): my_debug right_back_encoder 4.0
+01-23 21:03:22.553 I/RobotCore(25099): my_debug left_back_encoder 2.0
+01-23 21:03:22.553 I/RobotCore(25099): my_debug right_front_encoder 8.0
+01-23 21:03:22.553 I/RobotCore(25099): my_debug left_front_encoder 7.0
+01-23 21:03:22.553 I/RobotCore(25099): my_debug right_back_encoder 22.0
+01-23 21:03:22.553 I/RobotCore(25099): my_debug left_back_encoder 10.0
+01-23 21:03:22.553 I/RobotCore(25099): my_debug right_front_encoder 41.0
+01-23 21:03:22.553 I/RobotCore(25099): my_debug left_front_encoder 32.0
+01-23 21:03:22.553 I/RobotCore(25099): my_debug right_back_encoder 13.0
+01-23 21:03:22.553 I/RobotCore(25099): my_debug left_back_encoder 7.0
+01-23 21:03:22.553 I/RobotCore(25099): my_debug right_front_encoder 23.0
+01-23 21:03:22.553 I/RobotCore(25099): my_debug left_front_encoder 21.0
+01-23 21:03:22.553 I/RobotCore(25099): my_debug right_back_encoder 12.0
+01-23 21:03:22.553 I/RobotCore(25099): my_debug left_back_encoder 8.0
+01-23 21:03:22.553 I/RobotCore(25099): my_debug right_front_encoder 23.0
+01-23 21:03:22.553 I/RobotCore(25099): my_debug left_front_encoder 21.0
+01-23 21:03:22.553 I/RobotCore(25099): my_debug right_back_encoder 15.0
+01-23 21:03:22.553 I/RobotCore(25099): my_debug left_back_encoder 10.0
+01-23 21:03:22.553 I/RobotCore(25099): my_debug right_front_encoder 24.0
+01-23 21:03:22.553 I/RobotCore(25099): my_debug left_front_encoder 21.0
+01-23 21:03:22.553 I/RobotCore(25099): my_debug right_back_encoder 9.0
+01-23 21:03:22.553 I/RobotCore(25099): my_debug left_back_encoder 4.0
+01-23 21:03:22.553 I/RobotCore(25099): my_debug right_front_encoder 24.0
+01-23 21:03:22.553 I/RobotCore(25099): my_debug left_front_encoder 17.0
+01-23 21:03:22.553 I/RobotCore(25099): my_debug right_back_encoder 13.0
+01-23 21:03:22.553 I/RobotCore(25099): my_debug left_back_encoder 5.0
+01-23 21:03:22.553 I/RobotCore(25099): my_debug right_front_encoder 32.0
+01-23 21:03:22.553 I/RobotCore(25099): my_debug left_front_encoder 28.0
+01-23 21:03:22.553 W/RobotCore(25099): my_debug avgDiff 18.0275
+01-23 21:03:22.553 W/RobotCore(25099): my_debug batteryVoltage 13.799413489736068
+01-23 21:03:22.973 D/dalvikvm(25099): GC_FOR_ALLOC freed 2047K, 37% free 7044K/11140K, paused 17ms, total 17ms
+01-23 21:03:23.763 D/dalvikvm(25099): GC_FOR_ALLOC freed 2047K, 37% free 7044K/11140K, paused 17ms, total 17ms
+01-23 21:03:24.093 I/FIRST   (25099): Processing Command: CMD_INIT_OP_MODE Stop Robot
+01-23 21:03:24.113 I/RobotCore(25099): Attempting to switch to op mode Stop Robot
+01-23 21:03:24.193 V/RobotCore(25099): Sending command: CMD_INIT_OP_MODE_RESP, attempt 0
+01-23 21:03:24.213 I/FIRST   (25099): Processing Command: CMD_RUN_OP_MODE Stop Robot
+01-23 21:03:24.293 V/RobotCore(25099): Sending command: CMD_RUN_OP_MODE_RESP, attempt 0
+01-23 21:03:24.623 D/dalvikvm(25099): GC_FOR_ALLOC freed 2045K, 37% free 7047K/11140K, paused 17ms, total 17ms
+01-23 21:03:25.473 D/dalvikvm(25099): GC_FOR_ALLOC freed 2049K, 37% free 7045K/11140K, paused 19ms, total 19ms
+01-23 21:03:26.313 D/dalvikvm(25099): GC_FOR_ALLOC freed 2048K, 37% free 7045K/11140K, paused 17ms, total 17ms
+01-23 21:03:27.143 D/dalvikvm(25099): GC_FOR_ALLOC freed 2047K, 37% free 7045K/11140K, paused 16ms, total 16ms
+01-23 21:03:27.963 D/dalvikvm(25099): GC_FOR_ALLOC freed 2047K, 37% free 7045K/11140K, paused 15ms, total 15ms
+01-23 21:03:28.753 D/dalvikvm(25099): GC_FOR_ALLOC freed 2047K, 37% free 7045K/11140K, paused 22ms, total 22ms
+01-23 21:03:29.553 D/dalvikvm(25099): GC_FOR_ALLOC freed 2048K, 37% free 7044K/11140K, paused 18ms, total 18ms
+01-23 21:03:30.393 D/dalvikvm(25099): GC_FOR_ALLOC freed 2047K, 37% free 7045K/11140K, paused 18ms, total 18ms
+01-23 21:03:31.203 D/dalvikvm(25099): GC_FOR_ALLOC freed 2047K, 37% free 7045K/11140K, paused 17ms, total 17ms
+01-23 21:03:32.033 D/dalvikvm(25099): GC_FOR_ALLOC freed 2048K, 37% free 7044K/11140K, paused 16ms, total 16ms
+01-23 21:03:32.733 I/FIRST   (25099): Processing Command: CMD_INIT_OP_MODE ____TestingAuto
+01-23 21:03:32.743 I/RobotCore(25099): Attempting to switch to op mode ____TestingAuto
+01-23 21:03:32.753 D/dalvikvm(25099): GC_FOR_ALLOC freed 1877K, 37% free 7048K/11140K, paused 17ms, total 17ms
+01-23 21:03:32.803 V/RobotCore(25099): Sending command: CMD_INIT_OP_MODE_RESP, attempt 0
+01-23 21:03:32.973 D/dalvikvm(25099): GC_FOR_ALLOC freed 2052K, 37% free 7044K/11140K, paused 16ms, total 16ms
+01-23 21:03:33.763 D/dalvikvm(25099): GC_FOR_ALLOC freed 2048K, 37% free 7044K/11140K, paused 16ms, total 16ms
+01-23 21:03:34.593 D/dalvikvm(25099): GC_FOR_ALLOC freed 2048K, 37% free 7043K/11140K, paused 20ms, total 20ms
+01-23 21:03:35.313 D/dalvikvm(25099): GC_FOR_ALLOC freed 2047K, 37% free 7044K/11140K, paused 16ms, total 16ms
+01-23 21:03:35.613 I/FIRST   (25099): Processing Command: CMD_RUN_OP_MODE ____TestingAuto
+01-23 21:03:35.713 V/RobotCore(25099): Sending command: CMD_RUN_OP_MODE_RESP, attempt 0
+01-23 21:03:36.003 D/dalvikvm(25099): GC_FOR_ALLOC freed 2046K, 37% free 7045K/11140K, paused 17ms, total 17ms
+01-23 21:03:36.693 D/dalvikvm(25099): GC_FOR_ALLOC freed 2049K, 37% free 7044K/11140K, paused 16ms, total 17ms
+01-23 21:03:37.423 D/dalvikvm(25099): GC_FOR_ALLOC freed 2048K, 37% free 7044K/11140K, paused 16ms, total 16ms
+01-23 21:03:37.453 W/RobotCore(25099): my_debug BEGIN FULL_POWER_WALL
+01-23 21:03:37.453 I/RobotCore(25099): my_debug right_back_encoder 0.0
+01-23 21:03:37.453 I/RobotCore(25099): my_debug left_back_encoder 0.0
+01-23 21:03:37.453 I/RobotCore(25099): my_debug right_front_encoder 0.0
+01-23 21:03:37.453 I/RobotCore(25099): my_debug left_front_encoder 0.0
+01-23 21:03:37.453 I/RobotCore(25099): my_debug right_back_encoder 0.0
+01-23 21:03:37.453 I/RobotCore(25099): my_debug left_back_encoder 0.0
+01-23 21:03:37.453 I/RobotCore(25099): my_debug right_front_encoder 0.0
+01-23 21:03:37.453 I/RobotCore(25099): my_debug left_front_encoder 0.0
+01-23 21:03:37.453 I/RobotCore(25099): my_debug right_back_encoder 0.0
+01-23 21:03:37.453 I/RobotCore(25099): my_debug left_back_encoder 0.0
+01-23 21:03:37.453 I/RobotCore(25099): my_debug right_front_encoder 0.0
+01-23 21:03:37.453 I/RobotCore(25099): my_debug left_front_encoder 0.0
+01-23 21:03:37.453 I/RobotCore(25099): my_debug right_back_encoder 6.0
+01-23 21:03:37.453 I/RobotCore(25099): my_debug left_back_encoder 6.0
+01-23 21:03:37.453 I/RobotCore(25099): my_debug right_front_encoder 2.0
+01-23 21:03:37.453 I/RobotCore(25099): my_debug left_front_encoder 3.0
+01-23 21:03:37.453 I/RobotCore(25099): my_debug right_back_encoder 14.0
+01-23 21:03:37.453 I/RobotCore(25099): my_debug left_back_encoder 14.0
+01-23 21:03:37.453 I/RobotCore(25099): my_debug right_front_encoder 11.0
+01-23 21:03:37.453 I/RobotCore(25099): my_debug left_front_encoder 10.0
+01-23 21:03:37.463 I/RobotCore(25099): my_debug right_back_encoder 23.0
+01-23 21:03:37.463 I/RobotCore(25099): my_debug left_back_encoder 24.0
+01-23 21:03:37.463 I/RobotCore(25099): my_debug right_front_encoder 16.0
+01-23 21:03:37.463 I/RobotCore(25099): my_debug left_front_encoder 17.0
+01-23 21:03:37.463 I/RobotCore(25099): my_debug right_back_encoder 26.0
+01-23 21:03:37.463 I/RobotCore(25099): my_debug left_back_encoder 27.0
+01-23 21:03:37.463 I/RobotCore(25099): my_debug right_front_encoder 23.0
+01-23 21:03:37.463 I/RobotCore(25099): my_debug left_front_encoder 22.0
+01-23 21:03:37.463 I/RobotCore(25099): my_debug right_back_encoder 35.0
+01-23 21:03:37.463 I/RobotCore(25099): my_debug left_back_encoder 37.0
+01-23 21:03:37.463 I/RobotCore(25099): my_debug right_front_encoder 29.0
+01-23 21:03:37.463 I/RobotCore(25099): my_debug left_front_encoder 30.0
+01-23 21:03:37.463 I/RobotCore(25099): my_debug right_back_encoder 28.0
+01-23 21:03:37.463 I/RobotCore(25099): my_debug left_back_encoder 27.0
+01-23 21:03:37.463 I/RobotCore(25099): my_debug right_front_encoder 24.0
+01-23 21:03:37.463 I/RobotCore(25099): my_debug left_front_encoder 25.0
+01-23 21:03:37.463 I/RobotCore(25099): my_debug right_back_encoder 31.0
+01-23 21:03:37.463 I/RobotCore(25099): my_debug left_back_encoder 33.0
+01-23 21:03:37.463 I/RobotCore(25099): my_debug right_front_encoder 28.0
+01-23 21:03:37.463 I/RobotCore(25099): my_debug left_front_encoder 30.0
+01-23 21:03:37.463 I/RobotCore(25099): my_debug right_back_encoder 15.0
+01-23 21:03:37.463 I/RobotCore(25099): my_debug left_back_encoder 18.0
+01-23 21:03:37.463 I/RobotCore(25099): my_debug right_front_encoder 16.0
+01-23 21:03:37.463 I/RobotCore(25099): my_debug left_front_encoder 16.0
+01-23 21:03:37.463 I/RobotCore(25099): my_debug right_back_encoder 28.0
+01-23 21:03:37.463 I/RobotCore(25099): my_debug left_back_encoder 30.0
+01-23 21:03:37.463 I/RobotCore(25099): my_debug right_front_encoder 30.0
+01-23 21:03:37.463 I/RobotCore(25099): my_debug left_front_encoder 26.0
+01-23 21:03:37.463 I/RobotCore(25099): my_debug right_back_encoder 21.0
+01-23 21:03:37.473 I/RobotCore(25099): my_debug left_back_encoder 23.0
+01-23 21:03:37.473 I/RobotCore(25099): my_debug right_front_encoder 36.0
+01-23 21:03:37.473 I/RobotCore(25099): my_debug left_front_encoder 36.0
+01-23 21:03:37.473 I/RobotCore(25099): my_debug right_back_encoder 25.0
+01-23 21:03:37.473 I/RobotCore(25099): my_debug left_back_encoder 27.0
+01-23 21:03:37.473 I/RobotCore(25099): my_debug right_front_encoder 8.0
+01-23 21:03:37.473 I/RobotCore(25099): my_debug left_front_encoder 9.0
+01-23 21:03:37.473 I/RobotCore(25099): my_debug right_back_encoder 18.0
+01-23 21:03:37.473 I/RobotCore(25099): my_debug left_back_encoder 17.0
+01-23 21:03:37.473 I/RobotCore(25099): my_debug right_front_encoder 29.0
+01-23 21:03:37.473 I/RobotCore(25099): my_debug left_front_encoder 30.0
+01-23 21:03:37.473 I/RobotCore(25099): my_debug right_back_encoder 11.0
+01-23 21:03:37.473 I/RobotCore(25099): my_debug left_back_encoder 11.0
+01-23 21:03:37.473 I/RobotCore(25099): my_debug right_front_encoder 25.0
+01-23 21:03:37.473 I/RobotCore(25099): my_debug left_front_encoder 21.0
+01-23 21:03:37.473 I/RobotCore(25099): my_debug right_back_encoder 15.0
+01-23 21:03:37.473 I/RobotCore(25099): my_debug left_back_encoder 16.0
+01-23 21:03:37.473 I/RobotCore(25099): my_debug right_front_encoder 23.0
+01-23 21:03:37.473 I/RobotCore(25099): my_debug left_front_encoder 24.0
+01-23 21:03:37.473 I/RobotCore(25099): my_debug right_back_encoder 16.0
+01-23 21:03:37.473 I/RobotCore(25099): my_debug left_back_encoder 18.0
+01-23 21:03:37.473 I/RobotCore(25099): my_debug right_front_encoder 26.0
+01-23 21:03:37.473 I/RobotCore(25099): my_debug left_front_encoder 27.0
+01-23 21:03:37.473 I/RobotCore(25099): my_debug right_back_encoder 11.0
+01-23 21:03:37.473 I/RobotCore(25099): my_debug left_back_encoder 12.0
+01-23 21:03:37.473 I/RobotCore(25099): my_debug right_front_encoder 21.0
+01-23 21:03:37.473 I/RobotCore(25099): my_debug left_front_encoder 20.0
+01-23 21:03:37.473 I/RobotCore(25099): my_debug right_back_encoder 9.0
+01-23 21:03:37.473 I/RobotCore(25099): my_debug left_back_encoder 10.0
+01-23 21:03:37.473 I/RobotCore(25099): my_debug right_front_encoder 22.0
+01-23 21:03:37.473 I/RobotCore(25099): my_debug left_front_encoder 16.0
+01-23 21:03:37.473 I/RobotCore(25099): my_debug right_back_encoder 7.0
+01-23 21:03:37.473 I/RobotCore(25099): my_debug left_back_encoder 7.0
+01-23 21:03:37.473 I/RobotCore(25099): my_debug right_front_encoder 14.0
+01-23 21:03:37.473 I/RobotCore(25099): my_debug left_front_encoder 14.0
+01-23 21:03:37.473 I/RobotCore(25099): my_debug right_back_encoder 24.0
+01-23 21:03:37.473 I/RobotCore(25099): my_debug left_back_encoder 21.0
+01-23 21:03:37.473 I/RobotCore(25099): my_debug right_front_encoder 34.0
+01-23 21:03:37.473 I/RobotCore(25099): my_debug left_front_encoder 34.0
+01-23 21:03:37.473 I/RobotCore(25099): my_debug right_back_encoder 11.0
+01-23 21:03:37.473 I/RobotCore(25099): my_debug left_back_encoder 9.0
+01-23 21:03:37.483 I/RobotCore(25099): my_debug right_front_encoder 15.0
+01-23 21:03:37.483 I/RobotCore(25099): my_debug left_front_encoder 11.0
+01-23 21:03:37.483 I/RobotCore(25099): my_debug right_back_encoder 20.0
+01-23 21:03:37.483 I/RobotCore(25099): my_debug left_back_encoder 18.0
+01-23 21:03:37.483 I/RobotCore(25099): my_debug right_front_encoder 29.0
+01-23 21:03:37.483 I/RobotCore(25099): my_debug left_front_encoder 27.0
+01-23 21:03:37.483 I/RobotCore(25099): my_debug right_back_encoder 14.0
+01-23 21:03:37.483 I/RobotCore(25099): my_debug left_back_encoder 13.0
+01-23 21:03:37.483 I/RobotCore(25099): my_debug right_front_encoder 15.0
+01-23 21:03:37.483 I/RobotCore(25099): my_debug left_front_encoder 14.0
+01-23 21:03:37.483 I/RobotCore(25099): my_debug right_back_encoder 14.0
+01-23 21:03:37.483 I/RobotCore(25099): my_debug left_back_encoder 9.0
+01-23 21:03:37.483 I/RobotCore(25099): my_debug right_front_encoder 19.0
+01-23 21:03:37.483 I/RobotCore(25099): my_debug left_front_encoder 18.0
+01-23 21:03:37.483 I/RobotCore(25099): my_debug right_back_encoder 12.0
+01-23 21:03:37.483 I/RobotCore(25099): my_debug left_back_encoder 9.0
+01-23 21:03:37.483 I/RobotCore(25099): my_debug right_front_encoder 23.0
+01-23 21:03:37.483 I/RobotCore(25099): my_debug left_front_encoder 19.0
+01-23 21:03:37.483 I/RobotCore(25099): my_debug right_back_encoder 19.0
+01-23 21:03:37.483 I/RobotCore(25099): my_debug left_back_encoder 11.0
+01-23 21:03:37.483 I/RobotCore(25099): my_debug right_front_encoder 23.0
+01-23 21:03:37.483 I/RobotCore(25099): my_debug left_front_encoder 19.0
+01-23 21:03:37.483 I/RobotCore(25099): my_debug right_back_encoder 11.0
+01-23 21:03:37.483 I/RobotCore(25099): my_debug left_back_encoder 7.0
+01-23 21:03:37.493 I/RobotCore(25099): my_debug right_front_encoder 26.0
+01-23 21:03:37.493 I/RobotCore(25099): my_debug left_front_encoder 16.0
+01-23 21:03:37.493 I/RobotCore(25099): my_debug right_back_encoder 17.0
+01-23 21:03:37.493 I/RobotCore(25099): my_debug left_back_encoder 8.0
+01-23 21:03:37.493 I/RobotCore(25099): my_debug right_front_encoder 26.0
+01-23 21:03:37.493 I/RobotCore(25099): my_debug left_front_encoder 15.0
+01-23 21:03:37.493 I/RobotCore(25099): my_debug right_back_encoder 20.0
+01-23 21:03:37.493 I/RobotCore(25099): my_debug left_back_encoder 12.0
+01-23 21:03:37.493 I/RobotCore(25099): my_debug right_front_encoder 32.0
+01-23 21:03:37.493 I/RobotCore(25099): my_debug left_front_encoder 24.0
+01-23 21:03:37.493 I/RobotCore(25099): my_debug right_back_encoder 18.0
+01-23 21:03:37.493 I/RobotCore(25099): my_debug left_back_encoder 14.0
+01-23 21:03:37.493 I/RobotCore(25099): my_debug right_front_encoder 18.0
+01-23 21:03:37.493 I/RobotCore(25099): my_debug left_front_encoder 14.0
+01-23 21:03:37.493 I/RobotCore(25099): my_debug right_back_encoder 19.0
+01-23 21:03:37.493 I/RobotCore(25099): my_debug left_back_encoder 15.0
+01-23 21:03:37.493 I/RobotCore(25099): my_debug right_front_encoder 31.0
+01-23 21:03:37.503 I/RobotCore(25099): my_debug left_front_encoder 20.0
+01-23 21:03:37.503 I/RobotCore(25099): my_debug right_back_encoder 16.0
+01-23 21:03:37.503 I/RobotCore(25099): my_debug left_back_encoder 12.0
+01-23 21:03:37.503 I/RobotCore(25099): my_debug right_front_encoder 35.0
+01-23 21:03:37.503 I/RobotCore(25099): my_debug left_front_encoder 25.0
+01-23 21:03:37.503 I/RobotCore(25099): my_debug right_back_encoder 14.0
+01-23 21:03:37.503 I/RobotCore(25099): my_debug left_back_encoder 11.0
+01-23 21:03:37.503 I/RobotCore(25099): my_debug right_front_encoder 24.0
+01-23 21:03:37.503 I/RobotCore(25099): my_debug left_front_encoder 14.0
+01-23 21:03:37.503 I/RobotCore(25099): my_debug right_back_encoder 19.0
+01-23 21:03:37.503 I/RobotCore(25099): my_debug left_back_encoder 15.0
+01-23 21:03:37.503 I/RobotCore(25099): my_debug right_front_encoder 31.0
+01-23 21:03:37.503 I/RobotCore(25099): my_debug left_front_encoder 25.0
+01-23 21:03:37.503 I/RobotCore(25099): my_debug right_back_encoder 13.0
+01-23 21:03:37.503 I/RobotCore(25099): my_debug left_back_encoder 11.0
+01-23 21:03:37.503 I/RobotCore(25099): my_debug right_front_encoder 22.0
+01-23 21:03:37.503 I/RobotCore(25099): my_debug left_front_encoder 17.0
+01-23 21:03:37.503 I/RobotCore(25099): my_debug right_back_encoder 16.0
+01-23 21:03:37.503 I/RobotCore(25099): my_debug left_back_encoder 11.0
+01-23 21:03:37.503 I/RobotCore(25099): my_debug right_front_encoder 33.0
+01-23 21:03:37.503 I/RobotCore(25099): my_debug left_front_encoder 24.0
+01-23 21:03:37.503 I/RobotCore(25099): my_debug right_back_encoder 18.0
+01-23 21:03:37.503 I/RobotCore(25099): my_debug left_back_encoder 13.0
+01-23 21:03:37.503 I/RobotCore(25099): my_debug right_front_encoder 16.0
+01-23 21:03:37.503 I/RobotCore(25099): my_debug left_front_encoder 12.0
+01-23 21:03:37.503 I/RobotCore(25099): my_debug right_back_encoder 12.0
+01-23 21:03:37.503 I/RobotCore(25099): my_debug left_back_encoder 8.0
+01-23 21:03:37.513 I/RobotCore(25099): my_debug right_front_encoder 29.0
+01-23 21:03:37.513 I/RobotCore(25099): my_debug left_front_encoder 20.0
+01-23 21:03:37.513 I/RobotCore(25099): my_debug right_back_encoder 16.0
+01-23 21:03:37.513 I/RobotCore(25099): my_debug left_back_encoder 10.0
+01-23 21:03:37.513 I/RobotCore(25099): my_debug right_front_encoder 25.0
+01-23 21:03:37.513 I/RobotCore(25099): my_debug left_front_encoder 21.0
+01-23 21:03:37.513 I/RobotCore(25099): my_debug right_back_encoder 15.0
+01-23 21:03:37.513 I/RobotCore(25099): my_debug left_back_encoder 9.0
+01-23 21:03:37.513 I/RobotCore(25099): my_debug right_front_encoder 27.0
+01-23 21:03:37.513 I/RobotCore(25099): my_debug left_front_encoder 16.0
+01-23 21:03:37.513 I/RobotCore(25099): my_debug right_back_encoder 12.0
+01-23 21:03:37.513 I/RobotCore(25099): my_debug left_back_encoder 7.0
+01-23 21:03:37.513 I/RobotCore(25099): my_debug right_front_encoder 28.0
+01-23 21:03:37.513 I/RobotCore(25099): my_debug left_front_encoder 20.0
+01-23 21:03:37.513 I/RobotCore(25099): my_debug right_back_encoder 22.0
+01-23 21:03:37.513 I/RobotCore(25099): my_debug left_back_encoder 11.0
+01-23 21:03:37.513 I/RobotCore(25099): my_debug right_front_encoder 25.0
+01-23 21:03:37.513 I/RobotCore(25099): my_debug left_front_encoder 15.0
+01-23 21:03:37.513 I/RobotCore(25099): my_debug right_back_encoder 9.0
+01-23 21:03:37.513 I/RobotCore(25099): my_debug left_back_encoder 5.0
+01-23 21:03:37.513 I/RobotCore(25099): my_debug right_front_encoder 16.0
+01-23 21:03:37.513 I/RobotCore(25099): my_debug left_front_encoder 12.0
+01-23 21:03:37.513 I/RobotCore(25099): my_debug right_back_encoder 17.0
+01-23 21:03:37.513 I/RobotCore(25099): my_debug left_back_encoder 6.0
+01-23 21:03:37.513 I/RobotCore(25099): my_debug right_front_encoder 32.0
+01-23 21:03:37.513 I/RobotCore(25099): my_debug left_front_encoder 23.0
+01-23 21:03:37.513 I/RobotCore(25099): my_debug right_back_encoder 13.0
+01-23 21:03:37.513 I/RobotCore(25099): my_debug left_back_encoder 6.0
+01-23 21:03:37.513 I/RobotCore(25099): my_debug right_front_encoder 26.0
+01-23 21:03:37.513 I/RobotCore(25099): my_debug left_front_encoder 18.0
+01-23 21:03:37.513 I/RobotCore(25099): my_debug right_back_encoder 9.0
+01-23 21:03:37.513 I/RobotCore(25099): my_debug left_back_encoder 6.0
+01-23 21:03:37.513 I/RobotCore(25099): my_debug right_front_encoder 18.0
+01-23 21:03:37.513 I/RobotCore(25099): my_debug left_front_encoder 12.0
+01-23 21:03:37.513 I/RobotCore(25099): my_debug right_back_encoder 20.0
+01-23 21:03:37.513 I/RobotCore(25099): my_debug left_back_encoder 12.0
+01-23 21:03:37.513 I/RobotCore(25099): my_debug right_front_encoder 28.0
+01-23 21:03:37.513 I/RobotCore(25099): my_debug left_front_encoder 13.0
+01-23 21:03:37.513 I/RobotCore(25099): my_debug right_back_encoder 12.0
+01-23 21:03:37.513 I/RobotCore(25099): my_debug left_back_encoder 6.0
+01-23 21:03:37.513 I/RobotCore(25099): my_debug right_front_encoder 28.0
+01-23 21:03:37.513 I/RobotCore(25099): my_debug left_front_encoder 14.0
+01-23 21:03:37.513 I/RobotCore(25099): my_debug right_back_encoder 22.0
+01-23 21:03:37.513 I/RobotCore(25099): my_debug left_back_encoder 12.0
+01-23 21:03:37.513 I/RobotCore(25099): my_debug right_front_encoder 36.0
+01-23 21:03:37.513 I/RobotCore(25099): my_debug left_front_encoder 21.0
+01-23 21:03:37.513 I/RobotCore(25099): my_debug right_back_encoder 13.0
+01-23 21:03:37.513 I/RobotCore(25099): my_debug left_back_encoder 7.0
+01-23 21:03:37.513 I/RobotCore(25099): my_debug right_front_encoder 23.0
+01-23 21:03:37.513 I/RobotCore(25099): my_debug left_front_encoder 15.0
+01-23 21:03:37.513 I/RobotCore(25099): my_debug right_back_encoder 19.0
+01-23 21:03:37.513 I/RobotCore(25099): my_debug left_back_encoder 10.0
+01-23 21:03:37.513 I/RobotCore(25099): my_debug right_front_encoder 34.0
+01-23 21:03:37.513 I/RobotCore(25099): my_debug left_front_encoder 22.0
+01-23 21:03:37.513 I/RobotCore(25099): my_debug right_back_encoder 17.0
+01-23 21:03:37.513 I/RobotCore(25099): my_debug left_back_encoder 9.0
+01-23 21:03:37.513 I/RobotCore(25099): my_debug right_front_encoder 28.0
+01-23 21:03:37.523 I/RobotCore(25099): my_debug left_front_encoder 19.0
+01-23 21:03:37.523 I/RobotCore(25099): my_debug right_back_encoder 17.0
+01-23 21:03:37.523 I/RobotCore(25099): my_debug left_back_encoder 10.0
+01-23 21:03:37.523 I/RobotCore(25099): my_debug right_front_encoder 31.0
+01-23 21:03:37.523 I/RobotCore(25099): my_debug left_front_encoder 23.0
+01-23 21:03:37.523 I/RobotCore(25099): my_debug right_back_encoder 15.0
+01-23 21:03:37.523 I/RobotCore(25099): my_debug left_back_encoder 9.0
+01-23 21:03:37.523 I/RobotCore(25099): my_debug right_front_encoder 27.0
+01-23 21:03:37.523 I/RobotCore(25099): my_debug left_front_encoder 20.0
+01-23 21:03:37.523 I/RobotCore(25099): my_debug right_back_encoder 17.0
+01-23 21:03:37.523 I/RobotCore(25099): my_debug left_back_encoder 10.0
+01-23 21:03:37.523 I/RobotCore(25099): my_debug right_front_encoder 26.0
+01-23 21:03:37.523 I/RobotCore(25099): my_debug left_front_encoder 16.0
+01-23 21:03:37.523 I/RobotCore(25099): my_debug right_back_encoder 16.0
+01-23 21:03:37.523 I/RobotCore(25099): my_debug left_back_encoder 9.0
+01-23 21:03:37.523 I/RobotCore(25099): my_debug right_front_encoder 25.0
+01-23 21:03:37.523 I/RobotCore(25099): my_debug left_front_encoder 19.0
+01-23 21:03:37.523 I/RobotCore(25099): my_debug right_back_encoder 22.0
+01-23 21:03:37.523 I/RobotCore(25099): my_debug left_back_encoder 11.0
+01-23 21:03:37.523 I/RobotCore(25099): my_debug right_front_encoder 36.0
+01-23 21:03:37.523 I/RobotCore(25099): my_debug left_front_encoder 27.0
+01-23 21:03:37.523 I/RobotCore(25099): my_debug right_back_encoder 11.0
+01-23 21:03:37.523 I/RobotCore(25099): my_debug left_back_encoder 5.0
+01-23 21:03:37.523 I/RobotCore(25099): my_debug right_front_encoder 19.0
+01-23 21:03:37.523 I/RobotCore(25099): my_debug left_front_encoder 12.0
+01-23 21:03:37.523 I/RobotCore(25099): my_debug right_back_encoder 17.0
+01-23 21:03:37.523 I/RobotCore(25099): my_debug left_back_encoder 7.0
+01-23 21:03:37.523 I/RobotCore(25099): my_debug right_front_encoder 32.0
+01-23 21:03:37.523 I/RobotCore(25099): my_debug left_front_encoder 20.0
+01-23 21:03:37.523 I/RobotCore(25099): my_debug right_back_encoder 5.0
+01-23 21:03:37.523 I/RobotCore(25099): my_debug left_back_encoder 1.0
+01-23 21:03:37.523 I/RobotCore(25099): my_debug right_front_encoder 10.0
+01-23 21:03:37.523 I/RobotCore(25099): my_debug left_front_encoder 7.0
+01-23 21:03:37.523 I/RobotCore(25099): my_debug right_back_encoder 29.0
+01-23 21:03:37.523 I/RobotCore(25099): my_debug left_back_encoder 13.0
+01-23 21:03:37.523 I/RobotCore(25099): my_debug right_front_encoder 57.0
+01-23 21:03:37.523 I/RobotCore(25099): my_debug left_front_encoder 37.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug right_back_encoder 15.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug left_back_encoder 8.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug right_front_encoder 30.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug left_front_encoder 23.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug right_back_encoder 18.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug left_back_encoder 8.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug right_front_encoder 31.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug left_front_encoder 18.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug right_back_encoder 12.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug left_back_encoder 5.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug right_front_encoder 22.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug left_front_encoder 15.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug right_back_encoder 20.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug left_back_encoder 9.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug right_front_encoder 33.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug left_front_encoder 25.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug right_back_encoder 14.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug left_back_encoder 7.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug right_front_encoder 28.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug left_front_encoder 22.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug right_back_encoder 11.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug left_back_encoder 6.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug right_front_encoder 19.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug left_front_encoder 14.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug right_back_encoder 22.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug left_back_encoder 12.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug right_front_encoder 39.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug left_front_encoder 25.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug right_back_encoder 12.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug left_back_encoder 6.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug right_front_encoder 21.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug left_front_encoder 14.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug right_back_encoder 20.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug left_back_encoder 9.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug right_front_encoder 36.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug left_front_encoder 22.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug right_back_encoder 13.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug left_back_encoder 5.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug right_front_encoder 25.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug left_front_encoder 19.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug right_back_encoder 16.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug left_back_encoder 9.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug right_front_encoder 33.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug left_front_encoder 18.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug right_back_encoder 14.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug left_back_encoder 6.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug right_front_encoder 27.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug left_front_encoder 17.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug right_back_encoder 13.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug left_back_encoder 5.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug right_front_encoder 26.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug left_front_encoder 15.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug right_back_encoder 13.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug left_back_encoder 2.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug right_front_encoder 17.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug left_front_encoder 12.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug right_back_encoder 12.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug left_back_encoder 2.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug right_front_encoder 29.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug left_front_encoder 21.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug right_back_encoder 12.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug left_back_encoder 3.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug right_front_encoder 30.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug left_front_encoder 17.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug right_back_encoder 17.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug left_back_encoder 4.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug right_front_encoder 26.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug left_front_encoder 15.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug right_back_encoder 18.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug left_back_encoder 5.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug right_front_encoder 31.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug left_front_encoder 19.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug right_back_encoder 14.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug left_back_encoder 4.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug right_front_encoder 27.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug left_front_encoder 17.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug right_back_encoder 11.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug left_back_encoder 6.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug right_front_encoder 22.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug left_front_encoder 14.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug right_back_encoder 16.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug left_back_encoder 6.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug right_front_encoder 28.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug left_front_encoder 22.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug right_back_encoder 14.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug left_back_encoder 6.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug right_front_encoder 26.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug left_front_encoder 19.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug right_back_encoder 14.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug left_back_encoder 5.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug right_front_encoder 27.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug left_front_encoder 16.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug right_back_encoder 16.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug left_back_encoder 5.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug right_front_encoder 28.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug left_front_encoder 17.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug right_back_encoder 14.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug left_back_encoder 4.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug right_front_encoder 27.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug left_front_encoder 21.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug right_back_encoder 13.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug left_back_encoder 2.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug right_front_encoder 30.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug left_front_encoder 21.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug right_back_encoder 13.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug left_back_encoder 2.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug right_front_encoder 27.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug left_front_encoder 13.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug right_back_encoder 12.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug left_back_encoder 1.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug right_front_encoder 26.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug left_front_encoder 17.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug right_back_encoder 14.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug left_back_encoder 1.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug right_front_encoder 32.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug left_front_encoder 22.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug right_back_encoder 12.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug left_back_encoder 1.0
+01-23 21:03:37.533 I/RobotCore(25099): my_debug right_front_encoder 25.0
+01-23 21:03:37.543 I/RobotCore(25099): my_debug left_front_encoder 13.0
+01-23 21:03:37.543 I/RobotCore(25099): my_debug right_back_encoder 13.0
+01-23 21:03:37.543 I/RobotCore(25099): my_debug left_back_encoder 1.0
+01-23 21:03:37.543 I/RobotCore(25099): my_debug right_front_encoder 31.0
+01-23 21:03:37.543 I/RobotCore(25099): my_debug left_front_encoder 16.0
+01-23 21:03:37.543 I/RobotCore(25099): my_debug right_back_encoder 13.0
+01-23 21:03:37.543 I/RobotCore(25099): my_debug left_back_encoder 0.0
+01-23 21:03:37.543 I/RobotCore(25099): my_debug right_front_encoder 27.0
+01-23 21:03:37.543 I/RobotCore(25099): my_debug left_front_encoder 17.0
+01-23 21:03:37.543 I/RobotCore(25099): my_debug right_back_encoder 13.0
+01-23 21:03:37.543 I/RobotCore(25099): my_debug left_back_encoder 0.0
+01-23 21:03:37.543 I/RobotCore(25099): my_debug right_front_encoder 29.0
+01-23 21:03:37.543 I/RobotCore(25099): my_debug left_front_encoder 19.0
+01-23 21:03:37.543 I/RobotCore(25099): my_debug right_back_encoder 15.0
+01-23 21:03:37.543 I/RobotCore(25099): my_debug left_back_encoder 2.0
+01-23 21:03:37.543 I/RobotCore(25099): my_debug right_front_encoder 29.0
+01-23 21:03:37.543 I/RobotCore(25099): my_debug left_front_encoder 18.0
+01-23 21:03:37.543 I/RobotCore(25099): my_debug right_back_encoder 11.0
+01-23 21:03:37.543 I/RobotCore(25099): my_debug left_back_encoder 3.0
+01-23 21:03:37.543 I/RobotCore(25099): my_debug right_front_encoder 26.0
+01-23 21:03:37.543 I/RobotCore(25099): my_debug left_front_encoder 19.0
+01-23 21:03:37.543 I/RobotCore(25099): my_debug right_back_encoder 11.0
+01-23 21:03:37.543 I/RobotCore(25099): my_debug left_back_encoder 5.0
+01-23 21:03:37.543 I/RobotCore(25099): my_debug right_front_encoder 25.0
+01-23 21:03:37.543 I/RobotCore(25099): my_debug left_front_encoder 13.0
+01-23 21:03:37.543 I/RobotCore(25099): my_debug right_back_encoder 18.0
+01-23 21:03:37.543 I/RobotCore(25099): my_debug left_back_encoder 8.0
+01-23 21:03:37.543 I/RobotCore(25099): my_debug right_front_encoder 25.0
+01-23 21:03:37.543 I/RobotCore(25099): my_debug left_front_encoder 14.0
+01-23 21:03:37.543 W/RobotCore(25099): my_debug avgDiff 17.2575
+01-23 21:03:37.543 W/RobotCore(25099): my_debug batteryVoltage 13.639882697947213
+01-23 21:03:38.153 D/dalvikvm(25099): GC_FOR_ALLOC freed 2047K, 37% free 7044K/11140K, paused 16ms, total 16ms
+01-23 21:03:38.893 D/dalvikvm(25099): GC_FOR_ALLOC freed 2048K, 37% free 7044K/11140K, paused 17ms, total 17ms
+01-23 21:03:39.663 D/dalvikvm(25099): GC_FOR_ALLOC freed 2047K, 37% free 7044K/11140K, paused 17ms, total 17ms
+01-23 21:03:40.483 D/dalvikvm(25099): GC_FOR_ALLOC freed 2048K, 37% free 7044K/11140K, paused 18ms, total 18ms
+01-23 21:03:41.253 I/FIRST   (25099): Processing Command: CMD_INIT_OP_MODE Stop Robot
+01-23 21:03:41.273 D/dalvikvm(25099): GC_FOR_ALLOC freed 2047K, 37% free 7044K/11140K, paused 17ms, total 17ms
+01-23 21:03:41.283 I/RobotCore(25099): Attempting to switch to op mode Stop Robot
+01-23 21:03:41.333 V/RobotCore(25099): Sending command: CMD_INIT_OP_MODE_RESP, attempt 0
+01-23 21:03:41.333 I/FIRST   (25099): Processing Command: CMD_RUN_OP_MODE Stop Robot
+01-23 21:03:41.433 V/RobotCore(25099): Sending command: CMD_RUN_OP_MODE_RESP, attempt 0
+01-23 21:03:42.083 D/dalvikvm(25099): GC_FOR_ALLOC freed 2045K, 37% free 7047K/11140K, paused 15ms, total 16ms
+01-23 21:03:42.913 D/dalvikvm(25099): GC_FOR_ALLOC freed 2049K, 37% free 7045K/11140K, paused 18ms, total 18ms
+01-23 21:03:43.363 D/ProcessRequestThread::(25099): Device has been closed.
+01-23 21:03:43.363 W/System.err(25099): java.lang.InterruptedException
+01-23 21:03:43.363 W/System.err(25099): 	at java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireSharedInterruptibly(AbstractQueuedSynchronizer.java:975)
+01-23 21:03:43.363 D/UsbDeviceConnectionJNI(25099): close
+01-23 21:03:43.363 D/BulkIn::(25099): Stop BulkIn thread
+01-23 21:03:43.363 W/System.err(25099): 	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireSharedInterruptibly(AbstractQueuedSynchronizer.java:1281)
+01-23 21:03:43.363 W/System.err(25099): 	at java.util.concurrent.Semaphore.acquire(Semaphore.java:283)
+01-23 21:03:43.373 W/System.err(25099): 	at com.ftdi.j2xx.o.c(SourceFile:2294)
+01-23 21:03:43.373 W/System.err(25099): 	at com.ftdi.j2xx.p.run(SourceFile:2764)
+01-23 21:03:43.373 D/ProcessRequestThread::(25099): Device has been closed.
+01-23 21:03:43.373 W/System.err(25099): 	at java.lang.Thread.run(Thread.java:841)
+01-23 21:03:43.373 W/RobotCore(25099): could not write to device AL00VUTY: FTDI Null Pointer Exception
+01-23 21:03:43.373 E/RobotCore(25099): java.lang.NullPointerException
+01-23 21:03:43.373 W/System.err(25099): java.lang.NullPointerException
+01-23 21:03:43.373 E/RobotCore(25099): com.ftdi.j2xx.o.a(SourceFile:2520)
+01-23 21:03:43.373 D/UsbDeviceConnectionJNI(25099): close
+01-23 21:03:43.373 W/System.err(25099): java.lang.InterruptedException
+01-23 21:03:43.373 W/System.err(25099): 	at java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireSharedInterruptibly(AbstractQueuedSynchronizer.java:975)
+01-23 21:03:43.373 W/System.err(25099): 	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireSharedInterruptibly(AbstractQueuedSynchronizer.java:1281)
+01-23 21:03:43.373 W/System.err(25099): 	at java.util.concurrent.Semaphore.acquire(Semaphore.java:283)
+01-23 21:03:43.373 W/System.err(25099): 	at com.ftdi.j2xx.o.c(SourceFile:2294)
+01-23 21:03:43.373 W/System.err(25099): 	at com.ftdi.j2xx.p.run(SourceFile:2764)
+01-23 21:03:43.373 W/System.err(25099): 	at java.lang.Thread.run(Thread.java:841)
+01-23 21:03:43.373 W/System.err(25099): 	at com.ftdi.j2xx.o.f(SourceFile:2675)
+01-23 21:03:43.373 W/System.err(25099): 	at com.ftdi.j2xx.a.run(SourceFile:2879)
+01-23 21:03:43.373 W/System.err(25099): 	at java.lang.Thread.run(Thread.java:841)
+01-23 21:03:43.373 E/RobotCore(25099): com.ftdi.j2xx.FT_Device.read(SourceFile:666)
+01-23 21:03:43.373 E/RobotCore(25099): com.qualcomm.robotcore.hardware.usb.ftdi.RobotUsbDeviceFtdi.read(SourceFile:94)
+01-23 21:03:43.373 E/RobotCore(25099): com.qualcomm.modernrobotics.ReadWriteRunnableUsbHandler.a(SourceFile:89)
+01-23 21:03:43.373 E/RobotCore(25099): com.qualcomm.modernrobotics.ReadWriteRunnableUsbHandler.read(SourceFile:66)
+01-23 21:03:43.373 E/RobotCore(25099): com.qualcomm.hardware.ReadWriteRunnableStandard.run(SourceFile:242)
+01-23 21:03:43.373 E/RobotCore(25099): java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1112)
+01-23 21:03:43.373 E/RobotCore(25099): java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:587)
+01-23 21:03:43.373 E/RobotCore(25099): java.lang.Thread.run(Thread.java:841)
+01-23 21:03:43.373 V/RobotCore(25099): stopped read/write loop for device AL00VUTY
+01-23 21:03:43.373 W/RobotCore(25099): Modern Robotics USB header sync bytes are incorrect
+01-23 21:03:43.373 D/ProcessRequestThread::(25099): Device has been closed.
+01-23 21:03:43.373 W/System.err(25099): java.lang.InterruptedException
+01-23 21:03:43.373 W/System.err(25099): 	at java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireSharedInterruptibly(AbstractQueuedSynchronizer.java:975)
+01-23 21:03:43.373 W/System.err(25099): 	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireSharedInterruptibly(AbstractQueuedSynchronizer.java:1281)
+01-23 21:03:43.373 W/System.err(25099): 	at java.util.concurrent.Semaphore.acquire(Semaphore.java:283)
+01-23 21:03:43.373 W/System.err(25099): 	at com.ftdi.j2xx.o.c(SourceFile:2294)
+01-23 21:03:43.373 W/System.err(25099): 	at com.ftdi.j2xx.p.run(SourceFile:2764)
+01-23 21:03:43.373 W/System.err(25099): 	at java.lang.Thread.run(Thread.java:841)
+01-23 21:03:43.383 D/UsbDeviceConnectionJNI(25099): close
+01-23 21:03:43.383 W/RobotCore(25099): could not write to device AL00VLUU: FTDI Null Pointer Exception
+01-23 21:03:43.383 E/RobotCore(25099): java.lang.NullPointerException
+01-23 21:03:43.383 E/RobotCore(25099): com.ftdi.j2xx.o.a(SourceFile:2520)
+01-23 21:03:43.383 E/RobotCore(25099): com.ftdi.j2xx.FT_Device.read(SourceFile:666)
+01-23 21:03:43.383 E/RobotCore(25099): com.qualcomm.robotcore.hardware.usb.ftdi.RobotUsbDeviceFtdi.read(SourceFile:94)
+01-23 21:03:43.383 E/RobotCore(25099): com.qualcomm.modernrobotics.ReadWriteRunnableUsbHandler.a(SourceFile:89)
+01-23 21:03:43.383 E/RobotCore(25099): com.qualcomm.modernrobotics.ReadWriteRunnableUsbHandler.read(SourceFile:66)
+01-23 21:03:43.383 E/RobotCore(25099): com.qualcomm.hardware.ReadWriteRunnableStandard.run(SourceFile:242)
+01-23 21:03:43.383 E/RobotCore(25099): java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1112)
+01-23 21:03:43.383 E/RobotCore(25099): java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:587)
+01-23 21:03:43.383 E/RobotCore(25099): java.lang.Thread.run(Thread.java:841)
+01-23 21:03:43.383 V/RobotCore(25099): stopped read/write loop for device AL00VLUU
+01-23 21:03:43.383 W/RobotCore(25099): [55 aa 80 40 1e] -> [00 00 00 00 00]
+01-23 21:03:43.383 W/RobotCore(25099): could not read from device AL00UW4Z: comm timeout
+01-23 21:03:43.393 D/ProcessRequestThread::(25099): Device has been closed.
+01-23 21:03:43.393 W/System.err(25099): java.lang.InterruptedException
+01-23 21:03:43.393 W/System.err(25099): 	at java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireSharedInterruptibly(AbstractQueuedSynchronizer.java:975)
+01-23 21:03:43.393 W/System.err(25099): 	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireSharedInterruptibly(AbstractQueuedSynchronizer.java:1281)
+01-23 21:03:43.393 W/System.err(25099): 	at java.util.concurrent.Semaphore.acquire(Semaphore.java:283)
+01-23 21:03:43.393 W/System.err(25099): 	at com.ftdi.j2xx.o.c(SourceFile:2294)
+01-23 21:03:43.393 D/UsbDeviceConnectionJNI(25099): close
+01-23 21:03:43.393 W/System.err(25099): 	at com.ftdi.j2xx.p.run(SourceFile:2764)
+01-23 21:03:43.393 W/System.err(25099): 	at java.lang.Thread.run(Thread.java:841)
+01-23 21:03:43.393 D/ProcessRequestThread::(25099): Device has been closed.
+01-23 21:03:43.393 W/System.err(25099): java.lang.InterruptedException
+01-23 21:03:43.393 W/System.err(25099): 	at java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireSharedInterruptibly(AbstractQueuedSynchronizer.java:975)
+01-23 21:03:43.393 W/System.err(25099): 	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireSharedInterruptibly(AbstractQueuedSynchronizer.java:1281)
+01-23 21:03:43.393 W/System.err(25099): 	at java.util.concurrent.Semaphore.acquire(Semaphore.java:283)
+01-23 21:03:43.393 W/System.err(25099): 	at com.ftdi.j2xx.o.c(SourceFile:2294)
+01-23 21:03:43.393 W/System.err(25099): 	at com.ftdi.j2xx.p.run(SourceFile:2764)
+01-23 21:03:43.393 W/System.err(25099): 	at java.lang.Thread.run(Thread.java:841)
+01-23 21:03:43.393 D/UsbDeviceConnectionJNI(25099): close
+01-23 21:03:43.393 W/RobotCore(25099): could not write to device AL00VG65: FTDI Null Pointer Exception
+01-23 21:03:43.393 E/RobotCore(25099): java.lang.NullPointerException
+01-23 21:03:43.393 E/RobotCore(25099): com.ftdi.j2xx.o.a(SourceFile:2520)
+01-23 21:03:43.403 E/RobotCore(25099): com.ftdi.j2xx.FT_Device.read(SourceFile:666)
+01-23 21:03:43.403 D/ProcessRequestThread::(25099): Device has been closed.
+01-23 21:03:43.403 W/System.err(25099): java.lang.InterruptedException
+01-23 21:03:43.403 E/RobotCore(25099): com.qualcomm.robotcore.hardware.usb.ftdi.RobotUsbDeviceFtdi.read(SourceFile:94)
+01-23 21:03:43.403 W/System.err(25099): 	at java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireSharedInterruptibly(AbstractQueuedSynchronizer.java:975)
+01-23 21:03:43.403 W/System.err(25099): 	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireSharedInterruptibly(AbstractQueuedSynchronizer.java:1281)
+01-23 21:03:43.403 W/System.err(25099): 	at java.util.concurrent.Semaphore.acquire(Semaphore.java:283)
+01-23 21:03:43.403 W/System.err(25099): 	at com.ftdi.j2xx.o.c(SourceFile:2294)
+01-23 21:03:43.403 W/System.err(25099): 	at com.ftdi.j2xx.p.run(SourceFile:2764)
+01-23 21:03:43.403 W/System.err(25099): 	at java.lang.Thread.run(Thread.java:841)
+01-23 21:03:43.403 E/RobotCore(25099): com.qualcomm.modernrobotics.ReadWriteRunnableUsbHandler.a(SourceFile:77)
+01-23 21:03:43.403 D/UsbDeviceConnectionJNI(25099): close
+01-23 21:03:43.403 E/RobotCore(25099): com.qualcomm.modernrobotics.ReadWriteRunnableUsbHandler.read(SourceFile:66)
+01-23 21:03:43.403 E/RobotCore(25099): com.qualcomm.hardware.ReadWriteRunnableStandard.run(SourceFile:242)
+01-23 21:03:43.403 E/RobotCore(25099): java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1112)
+01-23 21:03:43.403 E/RobotCore(25099): java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:587)
+01-23 21:03:43.403 E/RobotCore(25099): java.lang.Thread.run(Thread.java:841)
+01-23 21:03:43.403 V/RobotCore(25099): stopped read/write loop for device AL00VG65
+01-23 21:03:43.403 W/RobotCore(25099): [55 aa 80 03 15] -> [33 cc 80 03 15]
+01-23 21:03:43.403 W/RobotCore(25099): could not read from device AL00VFK6: comm timeout on payload
+01-23 21:03:43.403 W/RobotCore(25099): Modern Robotics USB header sync bytes are incorrect
+01-23 21:03:43.403 W/RobotCore(25099): [55 aa 00 30 20] -> [00 00 00 00 00]
+01-23 21:03:43.403 W/RobotCore(25099): could not write to device AL00VFK6: comm timeout
+01-23 21:03:43.403 W/RobotCore(25099): Modern Robotics USB header sync bytes are incorrect
+01-23 21:03:43.403 W/RobotCore(25099): [55 aa 80 03 15] -> [00 00 00 00 00]
+01-23 21:03:43.403 W/RobotCore(25099): could not read from device AL00VFK6: comm timeout
+01-23 21:03:43.403 W/RobotCore(25099): Modern Robotics USB header sync bytes are incorrect
+01-23 21:03:43.403 W/RobotCore(25099): [55 aa 80 03 15] -> [00 00 00 00 00]
+01-23 21:03:43.403 W/RobotCore(25099): could not read from device AL00VFK6: comm timeout
+01-23 21:03:43.403 W/RobotCore(25099): Modern Robotics USB header sync bytes are incorrect
+01-23 21:03:43.403 W/RobotCore(25099): [55 aa 80 03 15] -> [00 00 00 00 00]
+01-23 21:03:43.413 W/RobotCore(25099): could not read from device AL00VFK6: comm timeout
+01-23 21:03:43.413 W/RobotCore(25099): Modern Robotics USB header sync bytes are incorrect
+01-23 21:03:43.413 W/RobotCore(25099): [55 aa 80 03 15] -> [00 00 00 00 00]
+01-23 21:03:43.413 W/RobotCore(25099): could not read from device AL00VFK6: comm timeout
+01-23 21:03:43.413 W/RobotCore(25099): Modern Robotics USB header sync bytes are incorrect
+01-23 21:03:43.413 W/RobotCore(25099): [55 aa 00 30 20] -> [00 00 00 00 00]
+01-23 21:03:43.413 W/RobotCore(25099): could not write to device AL00VFK6: comm timeout
+01-23 21:03:43.413 W/RobotCore(25099): Modern Robotics USB header sync bytes are incorrect
+01-23 21:03:43.413 W/RobotCore(25099): [55 aa 80 03 15] -> [00 00 00 00 00]
+01-23 21:03:43.413 W/RobotCore(25099): could not read from device AL00VFK6: comm timeout
+01-23 21:03:43.413 W/RobotCore(25099): Modern Robotics USB header sync bytes are incorrect
+01-23 21:03:43.413 W/RobotCore(25099): [55 aa 80 03 15] -> [00 00 00 00 00]
+01-23 21:03:43.413 W/RobotCore(25099): could not read from device AL00VFK6: comm timeout
+01-23 21:03:43.413 W/RobotCore(25099): Modern Robotics USB header sync bytes are incorrect
+01-23 21:03:43.413 W/RobotCore(25099): [55 aa 80 03 15] -> [00 00 00 00 00]
+01-23 21:03:43.413 W/RobotCore(25099): could not read from device AL00VFK6: comm timeout
+01-23 21:03:43.413 W/RobotCore(25099): Modern Robotics USB header sync bytes are incorrect
+01-23 21:03:43.413 W/RobotCore(25099): [55 aa 80 03 15] -> [00 00 00 00 00]
+01-23 21:03:43.413 W/RobotCore(25099): could not read from device AL00VFK6: comm timeout
+01-23 21:03:43.413 W/RobotCore(25099): Modern Robotics USB header sync bytes are incorrect
+01-23 21:03:43.413 W/RobotCore(25099): [55 aa 00 30 20] -> [00 00 00 00 00]
+01-23 21:03:43.413 W/RobotCore(25099): could not write to device AL00VFK6: comm timeout
+01-23 21:03:43.413 W/RobotCore(25099): Modern Robotics USB header sync bytes are incorrect
+01-23 21:03:43.423 W/RobotCore(25099): [55 aa 80 03 15] -> [00 00 00 00 00]
+01-23 21:03:43.423 W/RobotCore(25099): could not read from device AL00VFK6: comm timeout
+01-23 21:03:43.423 W/RobotCore(25099): Modern Robotics USB header sync bytes are incorrect
+01-23 21:03:43.423 W/RobotCore(25099): [55 aa 80 03 15] -> [00 00 00 00 00]
+01-23 21:03:43.423 W/RobotCore(25099): could not read from device AL00VFK6: comm timeout
+01-23 21:03:43.423 W/RobotCore(25099): Modern Robotics USB header sync bytes are incorrect
+01-23 21:03:43.423 W/RobotCore(25099): [55 aa 80 03 15] -> [00 00 00 00 00]
+01-23 21:03:43.423 W/RobotCore(25099): could not read from device AL00VFK6: comm timeout
+01-23 21:03:43.423 W/RobotCore(25099): Too many sequential USB errors on device
+01-23 21:03:43.423 V/RobotCore(25099): stopped read/write loop for device AL00VFK6
+01-23 21:03:43.483 W/RobotCore(25099): sync device block requested, but device is shut down - AL00VUTY
+01-23 21:03:43.483 V/RobotCore(25099): RobotCoreException in EventLoopManager: cannot block, device is shut down
+01-23 21:03:43.483 V/RobotCore(25099): EventLoopManager state is EMERGENCY_STOP
+01-23 21:03:43.483 I/FIRST   (25099): Robot Status: EMERGENCY STOP
+01-23 21:03:43.483 I/FIRST   (25099): ======= TEARDOWN =======
+01-23 21:03:43.483 I/FIRST   (25099): Stopping DC Motor Controller Actuators2
+01-23 21:03:43.483 V/RobotCore(25099): Shutting down device AL00VG65
+01-23 21:03:43.593 W/RobotCore(25099): sync device block requested, but device is shut down - AL00VG65
+01-23 21:03:43.593 W/RobotCore(25099): Exception while closing USB device: cannot block, device is shut down
+01-23 21:03:43.593 I/FIRST   (25099): Stopping DC Motor Controller BackMotors
+01-23 21:03:43.593 V/RobotCore(25099): Shutting down device AL00VUTY
+01-23 21:03:43.683 W/RobotCore(25099): sync device block requested, but device is shut down - AL00VUTY
+01-23 21:03:43.683 W/RobotCore(25099): Exception while closing USB device: cannot block, device is shut down
+01-23 21:03:43.683 I/FIRST   (25099): Stopping DC Motor Controller Actuators1
+01-23 21:03:43.683 V/RobotCore(25099): Shutting down device AL00VLUU
+01-23 21:03:43.793 W/RobotCore(25099): sync device block requested, but device is shut down - AL00VLUU
+01-23 21:03:43.793 W/RobotCore(25099): Exception while closing USB device: cannot block, device is shut down
+01-23 21:03:43.793 I/FIRST   (25099): Stopping DC Motor Controller FrontMotors
+01-23 21:03:43.793 V/RobotCore(25099): Shutting down device AL00UW4Z
+01-23 21:03:43.793 W/RobotCore(25099): Modern Robotics USB header sync bytes are incorrect
+01-23 21:03:43.793 W/RobotCore(25099): [55 aa 00 40 1e] -> [00 00 00 00 00]
+01-23 21:03:43.793 W/RobotCore(25099): could not write to device AL00UW4Z: comm timeout
+01-23 21:03:43.793 V/RobotCore(25099): stopped read/write loop for device AL00UW4Z
+01-23 21:03:43.793 I/FIRST   (25099): Stopping Servo Controller Servos
+01-23 21:03:43.793 V/RobotCore(25099): Shutting down device AL00VSDY
+01-23 21:03:43.793 W/RobotCore(25099): Modern Robotics USB header sync bytes are incorrect
+01-23 21:03:43.793 W/RobotCore(25099): [55 aa 00 40 09] -> [00 00 00 00 00]
+01-23 21:03:43.793 W/RobotCore(25099): could not write to device AL00VSDY: comm timeout
+01-23 21:03:43.793 V/RobotCore(25099): stopped read/write loop for device AL00VSDY
+01-23 21:03:43.803 I/FIRST   (25099): Stopping Core Interface Device Module Sensors
+01-23 21:03:43.803 V/RobotCore(25099): Shutting down device AL00VFK6
+01-23 21:03:43.803 W/RobotCore(25099): sync device block requested, but device is shut down - AL00VFK6
+01-23 21:03:43.803 W/RobotCore(25099): Exception while closing USB device: cannot block, device is shut down
+01-23 21:03:43.803 I/FIRST   (25099): ======= TEARDOWN COMPLETE =======
+01-23 21:03:43.803 V/RobotCore(25099): EventLoopRunnable has exited
+01-23 21:03:58.593 I/jdwp    (25099): Ignoring second debugger -- accepting and dropping

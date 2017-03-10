@@ -1,0 +1,17 @@
+loop
+| every 0.01 s
+| | if (!off)
+| | | enqueue encoder data
+| | | if (time > 0.3s)
+| | | | check stall status
+| | | | if (stalled)
+| | | | | decrease power factor (no lower than limit)
+| | | | | if (has been stalling for too long)
+| | | | | | power factor = 0
+| | | | else
+| | | | | increase power factor (no higher than limit)
+| | | | | deal with continuous stall time
+| | else
+| | | reset
+| | | if (requested power > THRESHOLD)
+| | | | increase power factor

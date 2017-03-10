@@ -1,0 +1,89 @@
+\documentclass[letterpaper,10pt]{article}
+
+\usepackage{color}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage[scaled=0.9]{sourcecodepro}
+\usepackage[letterpaper, margin=0.75in]{geometry}
+\usepackage{graphicx}
+
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+
+\definecolor{commentGrey}{rgb}{0.3, 0.3, 0.3}
+\definecolor{keywordBlue}{rgb}{0, 0, 0.5}
+
+\newcommand{\latex}{\LaTeX}
+
+\lstset{
+    %frame=single,
+    breaklines=true,
+    postbreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\color{keywordBlue}\hookrightarrow\space}}
+}
+
+\lstdefinestyle{FTCjava}{tabsize=2, language = java, basicstyle=\ttfamily, keywordstyle=\color{keywordBlue}, commentstyle=\color{commentGrey} }
+
+\lstdefinestyle{FTCxml}{tabsize=2, language = XML, basicstyle=\ttfamily, keywordstyle=\color{keywordBlue}, commentstyle=\color{commentGrey}, morekeywords={Robot, MotorController, Motor, ServoController, Servo, DeviceInterfaceModule, Gyro, ColorSensor} }
+
+\begin{document}
+
+\begin{flushleft}
+
+\includegraphics[scale=0.25]{./CodeListingCorsiva.png}
+
+\medskip
+
+Typeset using \latex.
+
+\medskip
+
+Teleop:
+
+\lstinputlisting[style=FTCjava]{./FtcRobotController/src/main/java/com/qualcomm/ftcrobotcontroller/TXT/TeleOpLinear.java.txt}
+
+\pagebreak
+
+Autonomous:
+
+\lstinputlisting[style=FTCjava]{./FtcRobotController/src/main/java/com/qualcomm/ftcrobotcontroller/TXT/Auto_RachelTurn.java.txt}
+
+\pagebreak
+
+ArmToUp class:
+
+\lstinputlisting[style=FTCjava]{./FtcRobotController/src/main/java/com/qualcomm/ftcrobotcontroller/TXT/ArmToUp.java.txt}
+
+\pagebreak
+
+Util class:
+
+\lstinputlisting[style=FTCjava]{./FtcRobotController/src/main/java/com/qualcomm/ftcrobotcontroller/TXT/Util.java.txt}
+
+\pagebreak
+
+AutoUtil class:
+
+\lstinputlisting[style=FTCjava]{./FtcRobotController/src/main/java/com/qualcomm/ftcrobotcontroller/TXT/AutoUtil.java.txt}
+
+\pagebreak
+
+StallProtection class:
+
+\lstinputlisting[style=FTCjava]{./FtcRobotController/src/main/java/com/qualcomm/ftcrobotcontroller/TXT/StallProtection.java.txt}
+
+\pagebreak
+
+PID class:
+
+\lstinputlisting[style=FTCjava]{./FtcRobotController/src/main/java/com/qualcomm/ftcrobotcontroller/TXT/PID.java.txt}
+
+\pagebreak
+
+configuration file:
+
+\lstinputlisting[style=FTCxml]{./FINAL_CONFIGCopy.txt}
+
+\end{flushleft}
+
+\end{document}

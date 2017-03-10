@@ -1,0 +1,45 @@
+#!/usr/bin/perl
+
+use Getopt::Std;
+ 
+# declare the perl command line flags/options we want to allow
+my %options=();
+getopts("l:", \%options);
+ 
+$length = $options{l} if defined $options{l};
+$sets = 0;
+while (<>)
+{
+  @fields = split;
+  if ($fields[0] eq "DATA_SET_NAME")
+  {
+    $header[$sets] = $fields[1];
+    $count = 0;
+  }
+  else
+  {
+    $data[$sets][$count++] = $fields[0];
+    if ($count == $length)
+    {
+      $sets++;
+    }
+  }
+}
+
+for ($j=0;$j<$sets;$j++)
+{
+  print "$header[$j]";
+  print "," if ($j < ($sets - 1));
+}
+print "\n";
+
+for ($i=0;$i<$length;$i++)
+{
+  for ($j=0;$j<$sets;$j++)
+  {
+    print "$data[$j][$i]";
+    print "," if ($j < ($sets - 1));
+  }
+  print "\n";
+}
+

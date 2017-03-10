@@ -1,0 +1,2299 @@
+01-09 11:22:31.829 D/dalvikvm(17240): Late-enabling CheckJNI
+01-09 11:22:31.909 D/ActivityThread(17240): handleBindApplication:com.qualcomm.ftcrobotcontroller
+01-09 11:22:31.909 D/ActivityThread(17240): setTargetHeapUtilization:0.75
+01-09 11:22:31.909 D/ActivityThread(17240): setTargetHeapMinFree:2097152
+01-09 11:22:31.999 V/RobotCore(17240): saving logcat to /storage/emulated/0/com.qualcomm.ftcrobotcontroller.logcat
+01-09 11:22:32.029 I/FIRST   (17240): Wifi Direct - disconnected
+01-09 11:22:32.059 I/FIRST   (17240): Starting FTC Controller Service
+01-09 11:22:32.059 I/FIRST   (17240): Android device is zte, N9130
+01-09 11:22:32.069 V/RobotCore(17240): There are 1 Wifi Direct Assistant Clients (+)
+01-09 11:22:32.069 V/RobotCore(17240): Enabling Wifi Direct Assistant
+01-09 11:22:32.119 I/Adreno-EGL(17240): <qeglDrvAPI_eglInitialize:410>: EGL 1.4 QUALCOMM build:  ()
+01-09 11:22:32.119 I/Adreno-EGL(17240): OpenGL ES Shader Compiler Version: E031.24.02.07
+01-09 11:22:32.119 I/Adreno-EGL(17240): Build Date: 10/29/14 Wed
+01-09 11:22:32.119 I/Adreno-EGL(17240): Local Branch: 
+01-09 11:22:32.119 I/Adreno-EGL(17240): Remote Branch: 
+01-09 11:22:32.119 I/Adreno-EGL(17240): Local Patches: 
+01-09 11:22:32.119 I/Adreno-EGL(17240): Reconstruct Branch: 
+01-09 11:22:32.159 D/OpenGLRenderer(17240): Enabling debug mode 0
+01-09 11:22:32.169 D/RobotCore(17240): Wifi Direct cannot create group, does group already exist?
+01-09 11:22:32.169 D/RobotCore(17240): Wifi Direct state - enabled: true
+01-09 11:22:32.169 I/FIRST   (17240): Bound to Ftc Controller Service
+01-09 11:22:32.169 I/FIRST   (17240): Wifi Direct - disconnected
+01-09 11:22:32.169 I/FIRST   (17240): Robot Status: null
+01-09 11:22:32.179 I/FIRST   (17240): Processing robot setup
+01-09 11:22:32.179 I/FIRST   (17240): Robot Status: scanning for USB devices
+01-09 11:22:32.189 D/RobotCore(17240): Wifi Direct connection changed - connected: true
+01-09 11:22:32.189 D/RobotCore(17240): Wifi Direct this device changed
+01-09 11:22:32.189 V/RobotCore(17240): Wifi Direct device information: 9899-RC 36:de:34:7a:83:ee
+01-09 11:22:32.279 D/RobotCore(17240): Group owners address: /192.168.49.1
+01-09 11:22:32.279 D/RobotCore(17240): Wifi Direct group formed, this device is the group owner (GO)
+01-09 11:22:32.279 I/FIRST   (17240): Wifi Direct - Group Owner
+01-09 11:22:32.279 D/RobotCore(17240): Wifi Direct stop discovering peers
+01-09 11:22:32.289 I/FIRST   (17240): Wifi Direct - enabled
+01-09 11:22:32.289 V/RobotCore(17240): Wifi Direct connection information available
+01-09 11:22:32.289 I/FIRST   (17240): Wifi Direct Passphrase: KI5p71d7
+01-09 11:22:32.299 V/RobotCore(17240): Killing PID 17178
+01-09 11:22:32.349 I/Timeline(17240): Timeline: Activity_idle id: android.os.BinderProxy@418c44b8 time:38887858
+--------- beginning of /dev/log/main
+01-09 11:18:23.639 I/jdwp    (13167): Ignoring second debugger -- accepting and dropping
+01-09 11:19:06.289 I/RobotCore(13167): Battery Checker, Level Remaining: 95.0
+01-09 11:19:06.409 D/RobotCore(13167): RobocolDatagramSocket receive error: remote port unreachable
+01-09 11:20:59.949 I/jdwp    (13167): Ignoring second debugger -- accepting and dropping
+01-09 11:21:04.039 D/dalvikvm(16970): Late-enabling CheckJNI
+01-09 11:21:04.109 D/ActivityThread(16970): handleBindApplication:com.qualcomm.ftcrobotcontroller
+01-09 11:21:04.109 D/ActivityThread(16970): setTargetHeapUtilization:0.75
+01-09 11:21:04.109 D/ActivityThread(16970): setTargetHeapMinFree:2097152
+01-09 11:21:04.179 I/jdwp    (16970): Ignoring second debugger -- accepting and dropping
+01-09 11:21:04.219 V/RobotCore(16970): saving logcat to /storage/emulated/0/com.qualcomm.ftcrobotcontroller.logcat
+01-09 11:21:04.259 I/FIRST   (16970): Wifi Direct - disconnected
+01-09 11:21:04.309 I/FIRST   (16970): Starting FTC Controller Service
+01-09 11:21:04.309 I/FIRST   (16970): Android device is zte, N9130
+01-09 11:21:04.319 V/RobotCore(16970): There are 1 Wifi Direct Assistant Clients (+)
+01-09 11:21:04.319 V/RobotCore(16970): Enabling Wifi Direct Assistant
+01-09 11:21:04.389 I/Adreno-EGL(16970): <qeglDrvAPI_eglInitialize:410>: EGL 1.4 QUALCOMM build:  ()
+01-09 11:21:04.389 I/Adreno-EGL(16970): OpenGL ES Shader Compiler Version: E031.24.02.07
+01-09 11:21:04.389 I/Adreno-EGL(16970): Build Date: 10/29/14 Wed
+01-09 11:21:04.389 I/Adreno-EGL(16970): Local Branch: 
+01-09 11:21:04.389 I/Adreno-EGL(16970): Remote Branch: 
+01-09 11:21:04.389 I/Adreno-EGL(16970): Local Patches: 
+01-09 11:21:04.389 I/Adreno-EGL(16970): Reconstruct Branch: 
+01-09 11:21:04.459 D/OpenGLRenderer(16970): Enabling debug mode 0
+01-09 11:21:04.469 D/RobotCore(16970): Wifi Direct state - enabled: true
+01-09 11:21:04.479 D/RobotCore(16970): Wifi Direct connection changed - connected: true
+01-09 11:21:04.479 D/RobotCore(16970): Wifi Direct this device changed
+01-09 11:21:04.479 V/RobotCore(16970): Wifi Direct device information: 9899-RC 36:de:34:7a:83:ee
+01-09 11:21:04.479 I/FIRST   (16970): Bound to Ftc Controller Service
+01-09 11:21:04.479 I/FIRST   (16970): Wifi Direct - disconnected
+01-09 11:21:04.479 I/FIRST   (16970): Robot Status: null
+01-09 11:21:04.489 I/FIRST   (16970): Processing robot setup
+01-09 11:21:04.489 I/FIRST   (16970): Robot Status: scanning for USB devices
+01-09 11:21:04.489 D/RobotCore(16970): Wifi Direct cannot create group, does group already exist?
+01-09 11:21:04.549 V/RobotCore(16970): Killing PID 13207
+01-09 11:21:04.629 D/RobotCore(16970): Group owners address: /192.168.49.1
+01-09 11:21:04.629 D/RobotCore(16970): Wifi Direct group formed, this device is the group owner (GO)
+01-09 11:21:04.629 I/FIRST   (16970): Wifi Direct - Group Owner
+01-09 11:21:04.629 D/RobotCore(16970): Wifi Direct stop discovering peers
+01-09 11:21:04.629 I/FIRST   (16970): Wifi Direct - enabled
+01-09 11:21:04.639 V/RobotCore(16970): Wifi Direct connection information available
+01-09 11:21:04.639 I/FIRST   (16970): Wifi Direct Passphrase: KI5p71d7
+01-09 11:21:04.659 F/libc    (13205): Fatal signal 13 (SIGPIPE) at 0x00003395 (code=0), thread 13205 (sh)
+01-09 11:21:04.699 I/Timeline(16970): Timeline: Activity_idle id: android.os.BinderProxy@418bb098 time:38800207
+01-09 11:21:09.489 I/RobotCore(16970): Battery Checker, Level Remaining: 96.0
+01-09 11:21:09.499 V/RobotCore(16970): EventLoopManager state is NOT_STARTED
+01-09 11:21:09.499 I/FIRST   (16970): Robot Status: waiting on network
+01-09 11:21:09.499 I/FIRST   (16970): Robot Status: starting robot
+01-09 11:21:09.629 D/RobotCore(16970): RobocolDatagramSocket binding to /192.168.49.1:20884
+01-09 11:21:09.829 V/RobotCore(16970): EventLoopManager state is STOPPED
+01-09 11:21:09.829 I/FIRST   (16970): Robot Status: stopped
+01-09 11:21:09.829 V/RobotCore(16970): EventLoopManager state is INIT
+01-09 11:21:09.829 I/FIRST   (16970): Robot Status: init
+01-09 11:21:09.829 I/FIRST   (16970): ======= INIT START =======
+01-09 11:21:09.839 V/RobotCore(16970): Starting Modern Robotics device manager
+01-09 11:21:09.839 V/D2xx::  (16970): Start constructor
+01-09 11:21:09.859 V/D2xx::  (16970): End constructor
+01-09 11:21:09.889 V/RobotCore(16970): Creating Modern Robotics USB DC Motor Controller - AL00UW4Z
+01-09 11:21:09.899 W/System.err(16970): unable to find USB device with serial number AL00UW4Z
+01-09 11:21:09.899 W/RobotCore(16970): Caught exception during looper init: com.qualcomm.robotcore.exception.RobotCoreException: unable to find USB device with serial number AL00UW4Z
+01-09 11:21:09.899 E/RobotCore(16970): com.qualcomm.robotcore.exception.RobotCoreException: unable to find USB device with serial number AL00UW4Z
+01-09 11:21:09.899 E/RobotCore(16970): com.qualcomm.modernrobotics.ModernRoboticsUsbUtil.a(SourceFile:203)
+01-09 11:21:09.899 E/RobotCore(16970): com.qualcomm.modernrobotics.ModernRoboticsUsbUtil.a(SourceFile:112)
+01-09 11:21:09.899 E/RobotCore(16970): com.qualcomm.modernrobotics.ModernRoboticsUsbUtil.openUsbDevice(SourceFile:90)
+01-09 11:21:09.899 E/RobotCore(16970): com.qualcomm.hardware.HardwareDeviceManager.createUsbDcMotorController(SourceFile:139)
+01-09 11:21:09.899 E/RobotCore(16970): com.qualcomm.hardware.HardwareFactory.a(SourceFile:161)
+01-09 11:21:09.899 E/RobotCore(16970): com.qualcomm.hardware.HardwareFactory.createHardwareMap(SourceFile:115)
+01-09 11:21:09.899 E/RobotCore(16970): com.qualcomm.ftccommon.FtcEventLoopHandler.getHardwareMap(SourceFile:93)
+01-09 11:21:09.899 E/RobotCore(16970): com.qualcomm.ftccommon.FtcEventLoop.init(SourceFile:87)
+01-09 11:21:09.899 E/RobotCore(16970): com.qualcomm.robotcore.eventloop.EventLoopManager.a(SourceFile:504)
+01-09 11:21:09.899 E/RobotCore(16970): com.qualcomm.robotcore.eventloop.EventLoopManager.setEventLoop(SourceFile:419)
+01-09 11:21:09.899 E/RobotCore(16970): com.qualcomm.robotcore.eventloop.EventLoopManager.start(SourceFile:366)
+01-09 11:21:09.899 E/RobotCore(16970): com.qualcomm.robotcore.robot.Robot.start(SourceFile:58)
+01-09 11:21:09.909 E/RobotCore(16970): com.qualcomm.ftccommon.FtcRobotControllerService$b.run(SourceFile:163)
+01-09 11:21:09.909 E/RobotCore(16970): java.lang.Thread.run(Thread.java:841)
+01-09 11:21:09.909 V/RobotCore(16970): EventLoopManager state is EMERGENCY_STOP
+01-09 11:21:09.909 I/FIRST   (16970): Robot Status: EMERGENCY STOP
+01-09 11:21:09.919 W/RobotCore(16970): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:21:09.919 W/RobotCore(16970):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:21:09.919 I/FIRST   (16970): Robot Status: failed to start robot
+--------- beginning of /dev/log/system
+01-09 11:22:03.849 W/ViewRootImpl(16970): Dropping event due to no window focus: KeyEvent { action=ACTION_DOWN, keyCode=KEYCODE_MENU, scanCode=139, metaState=0, flags=0x48, repeatCount=3, eventTime=38859339, downTime=38858716, deviceId=0, source=0x101 }
+01-09 11:22:04.299 I/FIRST   (16970): Stopping FTC Controller Service
+01-09 11:22:04.299 V/RobotCore(16970): There are 0 Wifi Direct Assistant Clients (-)
+01-09 11:22:04.299 V/RobotCore(16970): Disabling Wifi Direct Assistant
+01-09 11:22:04.309 D/RobotCore(16970): RobocolDatagramSocket is closed
+01-09 11:22:04.509 V/RobotCore(16970): EventLoopManager state is STOPPED
+01-09 11:22:04.509 I/FIRST   (16970): Robot Status: stopped
+01-09 11:22:04.509 D/RobotCore(16970): RobocolDatagramSocket is closed
+01-09 11:22:04.509 I/FIRST   (16970): Robot Status: null
+01-09 11:22:04.929 V/RobotCore(16970): saving logcat to /storage/emulated/0/com.qualcomm.ftcrobotcontroller.logcat
+01-09 11:22:04.969 I/FIRST   (16970): Wifi Direct - disconnected
+01-09 11:22:04.989 I/FIRST   (16970): Starting FTC Controller Service
+01-09 11:22:04.989 I/FIRST   (16970): Android device is zte, N9130
+01-09 11:22:04.989 V/RobotCore(16970): There are 1 Wifi Direct Assistant Clients (+)
+01-09 11:22:04.999 V/RobotCore(16970): Enabling Wifi Direct Assistant
+01-09 11:22:05.059 D/RobotCore(16970): Wifi Direct cannot create group, does group already exist?
+01-09 11:22:05.059 I/FIRST   (16970): Bound to Ftc Controller Service
+01-09 11:22:05.059 I/FIRST   (16970): Wifi Direct - disconnected
+01-09 11:22:05.059 I/FIRST   (16970): Robot Status: null
+01-09 11:22:05.089 I/FIRST   (16970): Processing robot setup
+01-09 11:22:05.089 I/FIRST   (16970): Robot Status: scanning for USB devices
+01-09 11:22:05.119 I/Timeline(16970): Timeline: Activity_idle id: android.os.BinderProxy@418bb098 time:38860629
+01-09 11:22:05.159 D/RobotCore(16970): Wifi Direct state - enabled: true
+01-09 11:22:05.159 D/RobotCore(16970): Wifi Direct connection changed - connected: true
+01-09 11:22:05.159 D/RobotCore(16970): Wifi Direct this device changed
+01-09 11:22:05.159 V/RobotCore(16970): Wifi Direct device information: 9899-RC 36:de:34:7a:83:ee
+01-09 11:22:05.159 D/RobotCore(16970): Group owners address: /192.168.49.1
+01-09 11:22:05.159 D/RobotCore(16970): Wifi Direct group formed, this device is the group owner (GO)
+01-09 11:22:05.159 I/FIRST   (16970): Wifi Direct - Group Owner
+01-09 11:22:05.159 D/RobotCore(16970): Wifi Direct stop discovering peers
+01-09 11:22:05.159 I/FIRST   (16970): Wifi Direct - enabled
+01-09 11:22:05.169 V/RobotCore(16970): Wifi Direct connection information available
+01-09 11:22:05.169 I/FIRST   (16970): Wifi Direct Passphrase: KI5p71d7
+01-09 11:22:05.229 V/RobotCore(16970): Killing PID 17046
+01-09 11:22:05.289 V/RobotCore(16970): closing logcat file /storage/emulated/0/com.qualcomm.ftcrobotcontroller
+01-09 11:22:06.929 I/FIRST   (16970): Stopping FTC Controller Service
+01-09 11:22:06.929 V/RobotCore(16970): There are 0 Wifi Direct Assistant Clients (-)
+01-09 11:22:06.929 V/RobotCore(16970): Disabling Wifi Direct Assistant
+01-09 11:22:06.949 I/FIRST   (16970): Robot Status: abort due to interrupt
+01-09 11:22:06.949 I/FIRST   (16970): Robot Status: null
+01-09 11:22:31.829 D/dalvikvm(17240): Late-enabling CheckJNI
+01-09 11:22:31.909 D/ActivityThread(17240): handleBindApplication:com.qualcomm.ftcrobotcontroller
+01-09 11:22:31.909 D/ActivityThread(17240): setTargetHeapUtilization:0.75
+01-09 11:22:31.909 D/ActivityThread(17240): setTargetHeapMinFree:2097152
+01-09 11:22:31.999 V/RobotCore(17240): saving logcat to /storage/emulated/0/com.qualcomm.ftcrobotcontroller.logcat
+01-09 11:22:32.029 I/FIRST   (17240): Wifi Direct - disconnected
+01-09 11:22:32.059 I/FIRST   (17240): Starting FTC Controller Service
+01-09 11:22:32.059 I/FIRST   (17240): Android device is zte, N9130
+01-09 11:22:32.069 V/RobotCore(17240): There are 1 Wifi Direct Assistant Clients (+)
+01-09 11:22:32.069 V/RobotCore(17240): Enabling Wifi Direct Assistant
+01-09 11:22:32.119 I/Adreno-EGL(17240): <qeglDrvAPI_eglInitialize:410>: EGL 1.4 QUALCOMM build:  ()
+01-09 11:22:32.119 I/Adreno-EGL(17240): OpenGL ES Shader Compiler Version: E031.24.02.07
+01-09 11:22:32.119 I/Adreno-EGL(17240): Build Date: 10/29/14 Wed
+01-09 11:22:32.119 I/Adreno-EGL(17240): Local Branch: 
+01-09 11:22:32.119 I/Adreno-EGL(17240): Remote Branch: 
+01-09 11:22:32.119 I/Adreno-EGL(17240): Local Patches: 
+01-09 11:22:32.119 I/Adreno-EGL(17240): Reconstruct Branch: 
+01-09 11:22:32.159 D/OpenGLRenderer(17240): Enabling debug mode 0
+01-09 11:22:32.169 D/RobotCore(17240): Wifi Direct cannot create group, does group already exist?
+01-09 11:22:32.169 D/RobotCore(17240): Wifi Direct state - enabled: true
+01-09 11:22:32.169 I/FIRST   (17240): Bound to Ftc Controller Service
+01-09 11:22:32.169 I/FIRST   (17240): Wifi Direct - disconnected
+01-09 11:22:32.169 I/FIRST   (17240): Robot Status: null
+01-09 11:22:32.179 I/FIRST   (17240): Processing robot setup
+01-09 11:22:32.179 I/FIRST   (17240): Robot Status: scanning for USB devices
+01-09 11:22:32.189 D/RobotCore(17240): Wifi Direct connection changed - connected: true
+01-09 11:22:32.189 D/RobotCore(17240): Wifi Direct this device changed
+01-09 11:22:32.189 V/RobotCore(17240): Wifi Direct device information: 9899-RC 36:de:34:7a:83:ee
+01-09 11:22:32.279 D/RobotCore(17240): Group owners address: /192.168.49.1
+01-09 11:22:32.279 D/RobotCore(17240): Wifi Direct group formed, this device is the group owner (GO)
+01-09 11:22:32.279 I/FIRST   (17240): Wifi Direct - Group Owner
+01-09 11:22:32.279 D/RobotCore(17240): Wifi Direct stop discovering peers
+01-09 11:22:32.289 I/FIRST   (17240): Wifi Direct - enabled
+01-09 11:22:32.289 V/RobotCore(17240): Wifi Direct connection information available
+01-09 11:22:32.289 I/FIRST   (17240): Wifi Direct Passphrase: KI5p71d7
+01-09 11:22:32.299 V/RobotCore(17240): Killing PID 17178
+01-09 11:22:32.349 I/Timeline(17240): Timeline: Activity_idle id: android.os.BinderProxy@418c44b8 time:38887858
+01-09 11:22:32.389 F/libc    (17177): Fatal signal 13 (SIGPIPE) at 0x00004319 (code=0), thread 17177 (sh)
+01-09 11:22:37.189 V/RobotCore(17240): EventLoopManager state is NOT_STARTED
+01-09 11:22:37.189 I/RobotCore(17240): Battery Checker, Level Remaining: 96.0
+01-09 11:22:37.189 I/FIRST   (17240): Robot Status: waiting on network
+01-09 11:22:37.189 I/FIRST   (17240): Robot Status: starting robot
+01-09 11:22:37.359 D/RobotCore(17240): RobocolDatagramSocket binding to /192.168.49.1:20884
+01-09 11:22:37.559 V/RobotCore(17240): EventLoopManager state is STOPPED
+01-09 11:22:37.559 I/FIRST   (17240): Robot Status: stopped
+01-09 11:22:37.559 V/RobotCore(17240): EventLoopManager state is INIT
+01-09 11:22:37.559 I/FIRST   (17240): Robot Status: init
+01-09 11:22:37.569 I/FIRST   (17240): ======= INIT START =======
+01-09 11:22:37.569 V/RobotCore(17240): Starting Modern Robotics device manager
+01-09 11:22:37.569 V/D2xx::  (17240): Start constructor
+01-09 11:22:37.579 V/D2xx::  (17240): End constructor
+01-09 11:22:37.599 V/RobotCore(17240): Creating Modern Robotics USB DC Motor Controller - AL00UW4Z
+01-09 11:22:37.609 V/D2xx::  (17240): Vendor: 0403, Product: 6001
+01-09 11:22:37.629 D/UsbDeviceConnectionJNI(17240): close
+01-09 11:22:37.629 V/D2xx::  (17240): Vendor: 0403, Product: 6001
+01-09 11:22:37.639 D/UsbDeviceConnectionJNI(17240): close
+01-09 11:22:37.639 V/D2xx::  (17240): Vendor: 0403, Product: 6001
+01-09 11:22:37.649 D/UsbDeviceConnectionJNI(17240): close
+01-09 11:22:37.649 V/D2xx::  (17240): Vendor: 0403, Product: 6001
+01-09 11:22:37.659 D/UsbDeviceConnectionJNI(17240): close
+01-09 11:22:37.659 V/D2xx::  (17240): Vendor: 0403, Product: 6001
+01-09 11:22:37.669 D/UsbDeviceConnectionJNI(17240): close
+01-09 11:22:37.679 V/D2xx::  (17240): Vendor: 0403, Product: 6001
+01-09 11:22:37.689 D/UsbDeviceConnectionJNI(17240): close
+01-09 11:22:37.689 D/FTDI_Device::(17240): open SUCCESS
+01-09 11:22:37.689 I/FTDI_Device::(17240): EP: 0x81
+01-09 11:22:37.689 I/FTDI_Device::(17240): EP: 0x02
+01-09 11:22:37.689 D/D2XX::  (17240): **********************Device Opened**********************
+01-09 11:22:37.699 I/dalvikvm(17240): Could not find method android.support.v4.content.LocalBroadcastManager.getInstance, referenced from method com.ftdi.j2xx.o.a
+01-09 11:22:37.699 W/dalvikvm(17240): VFY: unable to resolve static method 183: Landroid/support/v4/content/LocalBroadcastManager;.getInstance (Landroid/content/Context;)Landroid/support/v4/content/LocalBroadcastManager;
+01-09 11:22:37.699 D/dalvikvm(17240): VFY: replacing opcode 0x71 at 0x0040
+01-09 11:22:37.699 I/dalvikvm(17240): Could not find method android.support.v4.content.LocalBroadcastManager.getInstance, referenced from method com.ftdi.j2xx.o.a
+01-09 11:22:37.699 W/dalvikvm(17240): VFY: unable to resolve static method 183: Landroid/support/v4/content/LocalBroadcastManager;.getInstance (Landroid/content/Context;)Landroid/support/v4/content/LocalBroadcastManager;
+01-09 11:22:37.699 D/dalvikvm(17240): VFY: replacing opcode 0x71 at 0x0072
+01-09 11:22:37.699 I/dalvikvm(17240): Could not find method android.support.v4.content.LocalBroadcastManager.getInstance, referenced from method com.ftdi.j2xx.o.a
+01-09 11:22:37.699 W/dalvikvm(17240): VFY: unable to resolve static method 183: Landroid/support/v4/content/LocalBroadcastManager;.getInstance (Landroid/content/Context;)Landroid/support/v4/content/LocalBroadcastManager;
+01-09 11:22:37.699 D/dalvikvm(17240): VFY: replacing opcode 0x71 at 0x00a4
+01-09 11:22:38.139 V/RobotCore(17240): Starting up device AL00UW4Z
+01-09 11:22:38.139 V/RobotCore(17240): starting read/write loop for device AL00UW4Z
+01-09 11:22:38.169 V/RobotCore(17240): Creating Modern Robotics USB DC Motor Controller - AL00VLUU
+01-09 11:22:38.169 V/D2xx::  (17240): Vendor: 0403, Product: 6001
+01-09 11:22:38.179 V/D2xx::  (17240): Vendor: 0403, Product: 6001
+01-09 11:22:38.179 V/D2xx::  (17240): Vendor: 0403, Product: 6001
+01-09 11:22:38.189 V/D2xx::  (17240): Vendor: 0403, Product: 6001
+01-09 11:22:38.189 V/D2xx::  (17240): Vendor: 0403, Product: 6001
+01-09 11:22:38.199 V/D2xx::  (17240): Vendor: 0403, Product: 6001
+01-09 11:22:38.199 D/FTDI_Device::(17240): open SUCCESS
+01-09 11:22:38.199 I/FTDI_Device::(17240): EP: 0x81
+01-09 11:22:38.199 I/FTDI_Device::(17240): EP: 0x02
+01-09 11:22:38.199 D/D2XX::  (17240): **********************Device Opened**********************
+01-09 11:22:38.629 V/RobotCore(17240): Starting up device AL00VLUU
+01-09 11:22:38.629 V/RobotCore(17240): starting read/write loop for device AL00VLUU
+01-09 11:22:38.649 V/RobotCore(17240): Creating Modern Robotics USB Core Device Interface Module - AL00VFK6
+01-09 11:22:38.649 V/D2xx::  (17240): Vendor: 0403, Product: 6001
+01-09 11:22:38.659 V/D2xx::  (17240): Vendor: 0403, Product: 6001
+01-09 11:22:38.659 V/D2xx::  (17240): Vendor: 0403, Product: 6001
+01-09 11:22:38.669 V/D2xx::  (17240): Vendor: 0403, Product: 6001
+01-09 11:22:38.669 V/D2xx::  (17240): Vendor: 0403, Product: 6001
+01-09 11:22:38.669 V/D2xx::  (17240): Vendor: 0403, Product: 6001
+01-09 11:22:38.679 D/FTDI_Device::(17240): open SUCCESS
+01-09 11:22:38.679 I/FTDI_Device::(17240): EP: 0x81
+01-09 11:22:38.679 I/FTDI_Device::(17240): EP: 0x02
+01-09 11:22:38.689 D/D2XX::  (17240): **********************Device Opened**********************
+01-09 11:22:39.109 V/RobotCore(17240): Starting up device AL00VFK6
+01-09 11:22:39.119 V/RobotCore(17240): starting read/write loop for device AL00VFK6
+01-09 11:22:39.119 V/RobotCore(17240): Creating Modern Robotics I2C Color Sensor - Port: 0
+01-09 11:22:39.119 V/RobotCore(17240): Creating Modern Robotics USB DC Motor Controller - AL00VG65
+01-09 11:22:39.119 V/D2xx::  (17240): Vendor: 0403, Product: 6001
+01-09 11:22:39.129 V/D2xx::  (17240): Vendor: 0403, Product: 6001
+01-09 11:22:39.129 V/D2xx::  (17240): Vendor: 0403, Product: 6001
+01-09 11:22:39.139 V/D2xx::  (17240): Vendor: 0403, Product: 6001
+01-09 11:22:39.139 V/D2xx::  (17240): Vendor: 0403, Product: 6001
+01-09 11:22:39.139 V/D2xx::  (17240): Vendor: 0403, Product: 6001
+01-09 11:22:39.149 D/FTDI_Device::(17240): open SUCCESS
+01-09 11:22:39.149 I/FTDI_Device::(17240): EP: 0x81
+01-09 11:22:39.149 I/FTDI_Device::(17240): EP: 0x02
+01-09 11:22:39.149 D/D2XX::  (17240): **********************Device Opened**********************
+01-09 11:22:39.569 V/RobotCore(17240): Starting up device AL00VG65
+01-09 11:22:39.569 V/RobotCore(17240): starting read/write loop for device AL00VG65
+01-09 11:22:39.589 V/RobotCore(17240): Creating Modern Robotics USB DC Motor Controller - AL00XQN7
+01-09 11:22:39.599 V/D2xx::  (17240): Vendor: 0403, Product: 6001
+01-09 11:22:39.599 V/D2xx::  (17240): Vendor: 0403, Product: 6001
+01-09 11:22:39.609 V/D2xx::  (17240): Vendor: 0403, Product: 6001
+01-09 11:22:39.619 V/D2xx::  (17240): Vendor: 0403, Product: 6001
+01-09 11:22:39.619 V/D2xx::  (17240): Vendor: 0403, Product: 6001
+01-09 11:22:39.629 V/D2xx::  (17240): Vendor: 0403, Product: 6001
+01-09 11:22:39.629 D/FTDI_Device::(17240): open SUCCESS
+01-09 11:22:39.629 I/FTDI_Device::(17240): EP: 0x81
+01-09 11:22:39.629 I/FTDI_Device::(17240): EP: 0x02
+01-09 11:22:39.629 D/D2XX::  (17240): **********************Device Opened**********************
+01-09 11:22:40.059 V/RobotCore(17240): Starting up device AL00XQN7
+01-09 11:22:40.059 V/RobotCore(17240): starting read/write loop for device AL00XQN7
+01-09 11:22:40.079 V/RobotCore(17240): Creating Modern Robotics USB Servo Controller - AL00VSDY
+01-09 11:22:40.079 V/D2xx::  (17240): Vendor: 0403, Product: 6001
+01-09 11:22:40.089 V/D2xx::  (17240): Vendor: 0403, Product: 6001
+01-09 11:22:40.089 V/D2xx::  (17240): Vendor: 0403, Product: 6001
+01-09 11:22:40.099 V/D2xx::  (17240): Vendor: 0403, Product: 6001
+01-09 11:22:40.099 V/D2xx::  (17240): Vendor: 0403, Product: 6001
+01-09 11:22:40.109 V/D2xx::  (17240): Vendor: 0403, Product: 6001
+01-09 11:22:40.109 D/FTDI_Device::(17240): open SUCCESS
+01-09 11:22:40.119 I/FTDI_Device::(17240): EP: 0x81
+01-09 11:22:40.119 I/FTDI_Device::(17240): EP: 0x02
+01-09 11:22:40.119 D/D2XX::  (17240): **********************Device Opened**********************
+01-09 11:22:40.539 V/RobotCore(17240): Starting up device AL00VSDY
+01-09 11:22:40.539 V/RobotCore(17240): starting read/write loop for device AL00VSDY
+01-09 11:22:40.669 I/RobotCore(17240): Analytics has completed initialization.
+01-09 11:22:40.669 I/RobotCore(17240): ========= Device Information ===================================================
+01-09 11:22:40.669 I/RobotCore(17240): Type                                          Name                           Connection
+01-09 11:22:40.669 I/RobotCore(17240): Modern Robotics USB DC Motor Controller       Actuators2                     USB AL00VG65
+01-09 11:22:40.669 I/RobotCore(17240): Analytics detected NetworkInfo.State.CONNECTED
+01-09 11:22:40.679 I/RobotCore(17240): Modern Robotics USB DC Motor Controller       Back Motors                    USB AL00XQN7
+01-09 11:22:40.679 I/RobotCore(17240): Modern Robotics USB DC Motor Controller       Actuators1                     USB AL00VLUU
+01-09 11:22:40.679 I/RobotCore(17240): Modern Robotics USB DC Motor Controller       Front Motors                   USB AL00UW4Z
+01-09 11:22:40.679 I/RobotCore(17240): DC Motor                                      left                           USB AL00XQN7; port 1
+01-09 11:22:40.679 I/RobotCore(17240): DC Motor                                      leftFront                      USB AL00UW4Z; port 1
+01-09 11:22:40.679 I/RobotCore(17240): DC Motor                                      intake                         USB AL00VG65; port 1
+01-09 11:22:40.679 I/RobotCore(17240): DC Motor                                      updown                         USB AL00VLUU; port 1
+01-09 11:22:40.679 I/RobotCore(17240): DC Motor                                      rightFront                     USB AL00UW4Z; port 2
+01-09 11:22:40.679 I/RobotCore(17240): DC Motor                                      right                          USB AL00XQN7; port 2
+01-09 11:22:40.679 I/RobotCore(17240): Modern Robotics USB Servo Controller          Doors                          USB AL00VSDY
+01-09 11:22:40.679 I/RobotCore(17240): Servo                                         leftDoor                       USB AL00VSDY; port 1
+01-09 11:22:40.679 I/RobotCore(17240): Servo                                         bumper                         USB AL00VSDY; port 3
+01-09 11:22:40.689 I/RobotCore(17240): Servo                                         rightDoor                      USB AL00VSDY; port 2
+01-09 11:22:40.689 I/RobotCore(17240): Modern Robotics USB Device Interface Module   Device Interface Module 3      USB AL00VFK6
+01-09 11:22:40.689 I/RobotCore(17240): Modern Robotics I2C Color Sensor              mr                             USB AL00VFK6; I2C port: 0
+01-09 11:22:40.689 I/RobotCore(17240): Modern Robotics USB DC Motor Controller       Actuators2                     USB AL00VG65
+01-09 11:22:40.689 I/RobotCore(17240): Modern Robotics USB DC Motor Controller       Back Motors                    USB AL00XQN7
+01-09 11:22:40.689 I/RobotCore(17240): Modern Robotics USB DC Motor Controller       Actuators1                     USB AL00VLUU
+01-09 11:22:40.689 I/RobotCore(17240): Modern Robotics USB DC Motor Controller       Front Motors                   USB AL00UW4Z
+01-09 11:22:40.689 I/FIRST   (17240): ======= INIT FINISH =======
+01-09 11:22:40.689 V/RobotCore(17240): EventLoopManager state is RUNNING
+01-09 11:22:40.689 I/FIRST   (17240): Robot Status: running
+01-09 11:22:40.699 V/RobotCore(17240): EventLoopRunnable has started
+01-09 11:22:41.209 I/RobotCore(17240): Attempting to switch to op mode Stop Robot
+01-09 11:22:41.209 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:22:41.209 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:22:41.709 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:22:41.719 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:22:42.219 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:22:42.219 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:22:42.669 D/dalvikvm(17240): GC_FOR_ALLOC freed 5420K, 50% free 5604K/11144K, paused 23ms, total 23ms
+01-09 11:22:42.719 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:22:42.719 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:22:43.219 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:22:43.219 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:22:43.719 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:22:43.719 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:22:44.229 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:22:44.229 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:22:44.729 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:22:44.729 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:22:45.229 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:22:45.229 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:22:45.489 D/dalvikvm(17240): GC_FOR_ALLOC freed 2181K, 51% free 5470K/11144K, paused 25ms, total 27ms
+01-09 11:22:45.739 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:22:45.739 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:22:46.239 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:22:46.239 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:22:46.749 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:22:46.749 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:22:47.249 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:22:47.249 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:22:47.759 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:22:47.759 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:22:48.269 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:22:48.269 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:22:48.309 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 51% free 5471K/11144K, paused 27ms, total 27ms
+01-09 11:22:48.779 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:22:48.779 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:22:49.279 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:22:49.279 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:22:49.789 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:22:49.789 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:22:50.289 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:22:50.289 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:22:50.799 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:22:50.799 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:22:51.209 D/dalvikvm(17240): GC_FOR_ALLOC freed 2048K, 51% free 5470K/11144K, paused 24ms, total 24ms
+01-09 11:22:51.309 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:22:51.309 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:22:51.809 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:22:51.809 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:22:52.309 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:22:52.309 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:22:52.819 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:22:52.819 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:22:53.319 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:22:53.319 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:22:53.819 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:22:53.819 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:22:53.969 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 51% free 5470K/11144K, paused 26ms, total 26ms
+01-09 11:22:54.329 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:22:54.329 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:22:54.839 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:22:54.839 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:22:55.349 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:22:55.349 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:22:55.849 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:22:55.849 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:22:56.359 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:22:56.359 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:22:56.819 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 51% free 5470K/11144K, paused 25ms, total 25ms
+01-09 11:22:56.859 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:22:56.859 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:22:57.359 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:22:57.369 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:22:57.869 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:22:57.869 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:22:58.369 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:22:58.369 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:22:58.869 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:22:58.869 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:22:59.379 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:22:59.379 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:22:59.609 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 51% free 5470K/11144K, paused 26ms, total 26ms
+01-09 11:22:59.879 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:22:59.879 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:00.389 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:00.389 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:00.889 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:00.889 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:01.389 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:01.389 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:01.899 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:01.899 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:02.379 D/dalvikvm(17240): GC_FOR_ALLOC freed 2048K, 51% free 5470K/11144K, paused 27ms, total 27ms
+01-09 11:23:02.399 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:02.399 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:02.899 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:02.899 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:03.399 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:03.399 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:03.909 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:03.909 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:04.409 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:04.409 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:04.909 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:04.909 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:05.239 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 51% free 5470K/11144K, paused 25ms, total 25ms
+01-09 11:23:05.409 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:05.409 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:05.919 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:05.919 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:06.419 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:06.419 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:06.919 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:06.919 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:07.429 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:07.429 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:07.929 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:07.929 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:08.199 D/dalvikvm(17240): GC_FOR_ALLOC freed 2048K, 51% free 5470K/11144K, paused 26ms, total 26ms
+01-09 11:23:08.439 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:08.439 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:08.939 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:08.939 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:09.449 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:09.449 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:09.949 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:09.949 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:10.459 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:10.459 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:10.959 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:10.959 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:11.059 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 51% free 5470K/11144K, paused 20ms, total 20ms
+01-09 11:23:11.469 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:11.469 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:11.969 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:11.969 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:12.479 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:12.479 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:12.979 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:12.979 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:13.489 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:13.499 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:13.859 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 51% free 5470K/11144K, paused 24ms, total 24ms
+01-09 11:23:13.999 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:13.999 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:14.509 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:14.509 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:15.009 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:15.009 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:15.509 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:15.509 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:16.019 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:16.019 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:16.519 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:16.519 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:16.699 D/dalvikvm(17240): GC_FOR_ALLOC freed 2048K, 51% free 5470K/11144K, paused 23ms, total 23ms
+01-09 11:23:17.029 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:17.029 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:17.529 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:17.529 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:18.029 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:18.029 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:18.529 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:18.539 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:19.039 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:19.039 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:19.539 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:19.539 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:19.569 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 51% free 5471K/11144K, paused 19ms, total 19ms
+01-09 11:23:20.049 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:20.049 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:20.559 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:20.559 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:21.059 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:21.059 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:21.559 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:21.559 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:22.059 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:22.059 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:22.489 D/dalvikvm(17240): GC_FOR_ALLOC freed 2048K, 51% free 5470K/11144K, paused 19ms, total 19ms
+01-09 11:23:22.569 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:22.569 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:23.069 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:23.069 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:23.569 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:23.569 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:24.069 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:24.069 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:24.579 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:24.579 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:25.079 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:25.079 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:25.269 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 51% free 5470K/11144K, paused 23ms, total 23ms
+01-09 11:23:25.579 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:25.579 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:26.079 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:26.079 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:26.589 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:26.589 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:27.089 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:27.089 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:27.589 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:27.589 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:28.029 D/dalvikvm(17240): GC_FOR_ALLOC freed 2048K, 51% free 5470K/11144K, paused 19ms, total 19ms
+01-09 11:23:28.089 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:28.089 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:28.599 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:28.599 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:29.099 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:29.099 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:29.599 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:29.599 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:30.099 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:30.099 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:30.609 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:30.609 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:30.779 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 51% free 5470K/11144K, paused 24ms, total 24ms
+01-09 11:23:31.119 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:31.119 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:31.619 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:31.619 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:32.119 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:32.119 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:32.619 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:32.629 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:33.129 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:33.129 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:33.639 D/dalvikvm(17240): GC_FOR_ALLOC freed 2048K, 51% free 5470K/11144K, paused 25ms, total 25ms
+01-09 11:23:33.639 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:33.639 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:34.139 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:34.139 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:34.649 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:34.649 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:35.149 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:35.149 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:35.649 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:35.649 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:36.159 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:36.159 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:36.489 D/dalvikvm(17240): GC_FOR_ALLOC freed 2048K, 51% free 5470K/11144K, paused 26ms, total 26ms
+01-09 11:23:36.659 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:36.659 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:37.159 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:37.159 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:37.669 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:37.669 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:38.169 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:38.169 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:38.669 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:38.669 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:39.169 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:39.169 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:39.369 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 51% free 5470K/11144K, paused 24ms, total 24ms
+01-09 11:23:39.679 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:39.679 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:40.179 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:40.179 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:40.679 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:40.679 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:41.189 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:41.189 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:41.699 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:41.699 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:42.159 D/dalvikvm(17240): GC_FOR_ALLOC freed 2048K, 51% free 5470K/11144K, paused 26ms, total 26ms
+01-09 11:23:42.199 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:42.199 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:42.709 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:42.709 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:43.209 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:43.209 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:43.709 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:43.709 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:44.219 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:44.219 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:44.719 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:44.719 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:44.959 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 51% free 5470K/11144K, paused 26ms, total 26ms
+01-09 11:23:45.229 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:45.229 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:45.729 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:45.729 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:46.239 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:46.239 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:46.739 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:46.739 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:47.239 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:47.239 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:47.749 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:47.749 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:47.779 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 51% free 5471K/11144K, paused 20ms, total 20ms
+01-09 11:23:48.279 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:48.279 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:48.779 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:48.779 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:49.279 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:49.279 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:49.789 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:49.789 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:50.289 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:50.289 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:50.709 D/dalvikvm(17240): GC_FOR_ALLOC freed 2048K, 51% free 5470K/11144K, paused 28ms, total 28ms
+01-09 11:23:50.789 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:50.789 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:51.299 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:51.299 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:51.799 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:51.809 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:52.309 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:52.309 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:52.809 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:52.809 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:53.319 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:53.319 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:53.649 D/dalvikvm(17240): GC_FOR_ALLOC freed 2048K, 51% free 5470K/11144K, paused 26ms, total 26ms
+01-09 11:23:53.819 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:53.819 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:54.319 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:54.319 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:54.829 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:54.829 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:55.329 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:55.329 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:55.829 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:55.829 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:56.339 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:56.339 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:56.659 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 51% free 5470K/11144K, paused 26ms, total 26ms
+01-09 11:23:56.839 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:56.839 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:57.339 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:57.339 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:57.839 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:57.839 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:58.339 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:58.339 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:58.849 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:58.849 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:59.349 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:59.349 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:23:59.599 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 51% free 5470K/11144K, paused 27ms, total 27ms
+01-09 11:23:59.849 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:23:59.859 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:24:00.369 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:24:00.369 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:24:00.869 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:24:00.869 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:24:01.369 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:24:01.369 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:24:01.879 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:24:01.879 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:24:02.379 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:24:02.379 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:24:02.489 D/dalvikvm(17240): GC_FOR_ALLOC freed 2048K, 51% free 5470K/11144K, paused 18ms, total 18ms
+01-09 11:24:02.879 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:24:02.879 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:24:03.389 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:24:03.389 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:24:03.889 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:24:03.889 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:24:04.389 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:24:04.389 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:24:04.899 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:24:04.899 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:24:05.399 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:24:05.399 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:24:05.429 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 51% free 5470K/11144K, paused 24ms, total 24ms
+01-09 11:24:05.899 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:24:05.899 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:24:06.399 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:24:06.399 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:24:06.909 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:24:06.909 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:24:07.409 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:24:07.409 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:24:07.909 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:24:07.909 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:24:08.429 D/dalvikvm(17240): GC_FOR_ALLOC freed 2048K, 51% free 5470K/11144K, paused 25ms, total 25ms
+01-09 11:24:08.429 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:24:08.429 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:24:08.929 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:24:08.929 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:24:09.429 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:24:09.429 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:24:09.929 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:24:09.929 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:24:10.439 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:24:10.439 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:24:10.939 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:24:10.939 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:24:11.149 D/dalvikvm(17240): GC_FOR_ALLOC freed 2048K, 51% free 5470K/11144K, paused 23ms, total 23ms
+01-09 11:24:11.439 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:24:11.449 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:24:11.949 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:24:11.949 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:24:12.449 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:24:12.449 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:24:12.949 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:24:12.949 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:24:13.459 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:24:13.459 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:24:13.969 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 51% free 5470K/11144K, paused 19ms, total 19ms
+01-09 11:24:13.969 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:24:13.969 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:24:14.479 W/RobotCore(17240): Unable to send RobocolDatagram: java.lang.NullPointerException: Destination address is null
+01-09 11:24:14.479 W/RobotCore(17240):                RobocolDatagram - type:NONE, addr:null, size:0
+01-09 11:24:14.769 I/RobotCore(17240): new remote peer discovered: 192.168.49.66
+01-09 11:24:14.769 D/RobotCore(17240): RobocolDatagramSocket connected to /192.168.49.66:20884
+01-09 11:24:14.769 V/RobotCore(17240): Sending peer discovery packet
+01-09 11:24:14.779 I/FIRST   (17240): Processing Command: CMD_REQUEST_OP_MODE_LIST 
+01-09 11:24:14.879 V/RobotCore(17240): Sending command: CMD_REQUEST_OP_MODE_LIST_RESP, attempt 0
+01-09 11:24:14.909 I/FIRST   (17240): Processing Command: CMD_INIT_OP_MODE Stop Robot
+01-09 11:24:14.979 I/RobotCore(17240): Attempting to switch to op mode Stop Robot
+01-09 11:24:14.979 V/RobotCore(17240): Sending command: CMD_INIT_OP_MODE_RESP, attempt 0
+01-09 11:24:15.469 D/dalvikvm(17240): GC_FOR_ALLOC freed 2042K, 51% free 5476K/11144K, paused 18ms, total 19ms
+01-09 11:24:16.279 D/dalvikvm(17240): GC_FOR_ALLOC freed 2049K, 51% free 5475K/11144K, paused 17ms, total 17ms
+01-09 11:24:17.059 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 51% free 5475K/11144K, paused 19ms, total 19ms
+01-09 11:24:17.459 I/FIRST   (17240): Processing Command: CMD_INIT_OP_MODE Stop Robot
+01-09 11:24:17.459 I/RobotCore(17240): Attempting to switch to op mode Stop Robot
+01-09 11:24:17.479 V/RobotCore(17240): Sending command: CMD_INIT_OP_MODE_RESP, attempt 0
+01-09 11:24:17.779 D/dalvikvm(17240): GC_FOR_ALLOC freed 2046K, 51% free 5476K/11144K, paused 20ms, total 20ms
+01-09 11:24:18.549 D/dalvikvm(17240): GC_FOR_ALLOC freed 2048K, 51% free 5475K/11144K, paused 19ms, total 19ms
+01-09 11:24:19.279 D/dalvikvm(17240): GC_FOR_ALLOC freed 2048K, 51% free 5475K/11144K, paused 17ms, total 17ms
+01-09 11:24:19.989 D/dalvikvm(17240): GC_FOR_ALLOC freed 2048K, 51% free 5475K/11144K, paused 17ms, total 17ms
+01-09 11:24:20.699 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 51% free 5475K/11144K, paused 16ms, total 16ms
+01-09 11:24:21.489 D/dalvikvm(17240): GC_FOR_ALLOC freed 2048K, 51% free 5475K/11144K, paused 17ms, total 17ms
+01-09 11:24:22.249 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 51% free 5475K/11144K, paused 21ms, total 21ms
+01-09 11:24:23.009 D/dalvikvm(17240): GC_FOR_ALLOC freed 2048K, 51% free 5475K/11144K, paused 17ms, total 17ms
+01-09 11:24:23.499 I/FIRST   (17240): Processing Command: CMD_INIT_OP_MODE ____TestingAuto
+01-09 11:24:23.509 V/RobotCore(17240): Sending command: CMD_INIT_OP_MODE_RESP, attempt 0
+01-09 11:24:23.509 I/RobotCore(17240): Attempting to switch to op mode ____TestingAuto
+01-09 11:24:23.529 D/dalvikvm(17240): GC_FOR_ALLOC freed 1546K, 48% free 5869K/11144K, paused 16ms, total 17ms
+01-09 11:24:24.079 D/dalvikvm(17240): GC_FOR_ALLOC freed 1658K, 44% free 6259K/11144K, paused 16ms, total 16ms
+01-09 11:24:24.749 D/dalvikvm(17240): GC_FOR_ALLOC freed 2048K, 44% free 6259K/11144K, paused 15ms, total 15ms
+01-09 11:24:25.449 D/dalvikvm(17240): GC_FOR_ALLOC freed 2048K, 44% free 6258K/11144K, paused 17ms, total 17ms
+01-09 11:24:26.149 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 44% free 6259K/11144K, paused 20ms, total 20ms
+01-09 11:24:26.869 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 44% free 6259K/11144K, paused 18ms, total 18ms
+01-09 11:24:27.599 D/dalvikvm(17240): GC_FOR_ALLOC freed 2048K, 44% free 6259K/11144K, paused 15ms, total 15ms
+01-09 11:24:28.319 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 44% free 6259K/11144K, paused 16ms, total 16ms
+01-09 11:24:29.049 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 44% free 6259K/11144K, paused 17ms, total 17ms
+01-09 11:24:29.419 I/FIRST   (17240): Processing Command: CMD_RUN_OP_MODE ____TestingAuto
+01-09 11:24:29.419 V/RobotCore(17240): Sending command: CMD_RUN_OP_MODE_RESP, attempt 0
+01-09 11:24:29.809 D/dalvikvm(17240): GC_FOR_ALLOC freed 2046K, 44% free 6260K/11144K, paused 17ms, total 17ms
+01-09 11:24:30.609 D/dalvikvm(17240): GC_FOR_ALLOC freed 2048K, 44% free 6259K/11144K, paused 18ms, total 18ms
+01-09 11:24:30.729 W/RobotCore(17240): my_debug BEGIN INTO_WALL
+01-09 11:24:30.729 I/RobotCore(17240): my_debug right_back_encoder 0
+01-09 11:24:30.729 I/RobotCore(17240): my_debug left_back_encoder 0
+01-09 11:24:30.729 I/RobotCore(17240): my_debug right_front_encoder 0
+01-09 11:24:30.729 I/RobotCore(17240): my_debug left_front_encoder 0
+01-09 11:24:30.739 I/RobotCore(17240): my_debug right_back_encoder 0
+01-09 11:24:30.739 I/RobotCore(17240): my_debug left_back_encoder 0
+01-09 11:24:30.739 I/RobotCore(17240): my_debug right_front_encoder 0
+01-09 11:24:30.739 I/RobotCore(17240): my_debug left_front_encoder 0
+01-09 11:24:30.739 I/RobotCore(17240): my_debug right_back_encoder 0
+01-09 11:24:30.739 I/RobotCore(17240): my_debug left_back_encoder 0
+01-09 11:24:30.739 I/RobotCore(17240): my_debug right_front_encoder 0
+01-09 11:24:30.739 I/RobotCore(17240): my_debug left_front_encoder 0
+01-09 11:24:30.739 I/RobotCore(17240): my_debug right_back_encoder 0
+01-09 11:24:30.739 I/RobotCore(17240): my_debug left_back_encoder 0
+01-09 11:24:30.739 I/RobotCore(17240): my_debug right_front_encoder 0
+01-09 11:24:30.739 I/RobotCore(17240): my_debug left_front_encoder 0
+01-09 11:24:30.739 I/RobotCore(17240): my_debug right_back_encoder 0
+01-09 11:24:30.739 I/RobotCore(17240): my_debug left_back_encoder 0
+01-09 11:24:30.739 I/RobotCore(17240): my_debug right_front_encoder 0
+01-09 11:24:30.739 I/RobotCore(17240): my_debug left_front_encoder 0
+01-09 11:24:30.739 I/RobotCore(17240): my_debug right_back_encoder 0
+01-09 11:24:30.739 I/RobotCore(17240): my_debug left_back_encoder 0
+01-09 11:24:30.739 I/RobotCore(17240): my_debug right_front_encoder 0
+01-09 11:24:30.739 I/RobotCore(17240): my_debug left_front_encoder 0
+01-09 11:24:30.739 I/RobotCore(17240): my_debug right_back_encoder 4
+01-09 11:24:30.739 I/RobotCore(17240): my_debug left_back_encoder 4
+01-09 11:24:30.739 I/RobotCore(17240): my_debug right_front_encoder 2
+01-09 11:24:30.739 I/RobotCore(17240): my_debug left_front_encoder 2
+01-09 11:24:30.739 I/RobotCore(17240): my_debug right_back_encoder 12
+01-09 11:24:30.739 I/RobotCore(17240): my_debug left_back_encoder 12
+01-09 11:24:30.739 I/RobotCore(17240): my_debug right_front_encoder 11
+01-09 11:24:30.739 I/RobotCore(17240): my_debug left_front_encoder 11
+01-09 11:24:30.739 I/RobotCore(17240): my_debug right_back_encoder 6
+01-09 11:24:30.739 I/RobotCore(17240): my_debug left_back_encoder 6
+01-09 11:24:30.739 I/RobotCore(17240): my_debug right_front_encoder 4
+01-09 11:24:30.739 I/RobotCore(17240): my_debug left_front_encoder 3
+01-09 11:24:30.739 I/RobotCore(17240): my_debug right_back_encoder 8
+01-09 11:24:30.739 I/RobotCore(17240): my_debug left_back_encoder 8
+01-09 11:24:30.739 I/RobotCore(17240): my_debug right_front_encoder 9
+01-09 11:24:30.739 I/RobotCore(17240): my_debug left_front_encoder 10
+01-09 11:24:30.739 I/RobotCore(17240): my_debug right_back_encoder 9
+01-09 11:24:30.739 I/RobotCore(17240): my_debug left_back_encoder 9
+01-09 11:24:30.739 I/RobotCore(17240): my_debug right_front_encoder 14
+01-09 11:24:30.739 I/RobotCore(17240): my_debug left_front_encoder 11
+01-09 11:24:30.739 I/RobotCore(17240): my_debug right_back_encoder 10
+01-09 11:24:30.739 I/RobotCore(17240): my_debug left_back_encoder 9
+01-09 11:24:30.739 I/RobotCore(17240): my_debug right_front_encoder 24
+01-09 11:24:30.739 I/RobotCore(17240): my_debug left_front_encoder 22
+01-09 11:24:30.739 I/RobotCore(17240): my_debug right_back_encoder 19
+01-09 11:24:30.739 I/RobotCore(17240): my_debug left_back_encoder 18
+01-09 11:24:30.739 I/RobotCore(17240): my_debug right_front_encoder 13
+01-09 11:24:30.739 I/RobotCore(17240): my_debug left_front_encoder 13
+01-09 11:24:30.739 I/RobotCore(17240): my_debug right_back_encoder 6
+01-09 11:24:30.739 I/RobotCore(17240): my_debug left_back_encoder 6
+01-09 11:24:30.749 I/RobotCore(17240): my_debug right_front_encoder 18
+01-09 11:24:30.749 I/RobotCore(17240): my_debug left_front_encoder 18
+01-09 11:24:30.749 I/RobotCore(17240): my_debug right_back_encoder 3
+01-09 11:24:30.749 I/RobotCore(17240): my_debug left_back_encoder 3
+01-09 11:24:30.749 I/RobotCore(17240): my_debug right_front_encoder 7
+01-09 11:24:30.749 I/RobotCore(17240): my_debug left_front_encoder 8
+01-09 11:24:30.749 I/RobotCore(17240): my_debug right_back_encoder 8
+01-09 11:24:30.749 I/RobotCore(17240): my_debug left_back_encoder 9
+01-09 11:24:30.749 I/RobotCore(17240): my_debug right_front_encoder 19
+01-09 11:24:30.749 I/RobotCore(17240): my_debug left_front_encoder 20
+01-09 11:24:30.749 I/RobotCore(17240): my_debug right_back_encoder 7
+01-09 11:24:30.749 I/RobotCore(17240): my_debug left_back_encoder 8
+01-09 11:24:30.749 I/RobotCore(17240): my_debug right_front_encoder 32
+01-09 11:24:30.749 I/RobotCore(17240): my_debug left_front_encoder 32
+01-09 11:24:30.749 I/RobotCore(17240): my_debug right_back_encoder 9
+01-09 11:24:30.749 I/RobotCore(17240): my_debug left_back_encoder 10
+01-09 11:24:30.749 I/RobotCore(17240): my_debug right_front_encoder 21
+01-09 11:24:30.749 I/RobotCore(17240): my_debug left_front_encoder 24
+01-09 11:24:30.749 I/RobotCore(17240): my_debug right_back_encoder 17
+01-09 11:24:30.749 I/RobotCore(17240): my_debug left_back_encoder 18
+01-09 11:24:30.749 I/RobotCore(17240): my_debug right_front_encoder 19
+01-09 11:24:30.749 I/RobotCore(17240): my_debug left_front_encoder 21
+01-09 11:24:30.749 I/RobotCore(17240): my_debug right_back_encoder 5
+01-09 11:24:30.749 I/RobotCore(17240): my_debug left_back_encoder 5
+01-09 11:24:30.749 I/RobotCore(17240): my_debug right_front_encoder 10
+01-09 11:24:30.749 I/RobotCore(17240): my_debug left_front_encoder 10
+01-09 11:24:30.749 I/RobotCore(17240): my_debug right_back_encoder 13
+01-09 11:24:30.749 I/RobotCore(17240): my_debug left_back_encoder 13
+01-09 11:24:30.749 I/RobotCore(17240): my_debug right_front_encoder 19
+01-09 11:24:30.749 I/RobotCore(17240): my_debug left_front_encoder 21
+01-09 11:24:30.749 I/RobotCore(17240): my_debug right_back_encoder 25
+01-09 11:24:30.749 I/RobotCore(17240): my_debug left_back_encoder 24
+01-09 11:24:30.749 I/RobotCore(17240): my_debug right_front_encoder 39
+01-09 11:24:30.749 I/RobotCore(17240): my_debug left_front_encoder 42
+01-09 11:24:30.749 I/RobotCore(17240): my_debug right_back_encoder 8
+01-09 11:24:30.749 I/RobotCore(17240): my_debug left_back_encoder 7
+01-09 11:24:30.749 I/RobotCore(17240): my_debug right_front_encoder 10
+01-09 11:24:30.749 I/RobotCore(17240): my_debug left_front_encoder 12
+01-09 11:24:30.749 I/RobotCore(17240): my_debug right_back_encoder 17
+01-09 11:24:30.749 I/RobotCore(17240): my_debug left_back_encoder 17
+01-09 11:24:30.749 I/RobotCore(17240): my_debug right_front_encoder 25
+01-09 11:24:30.749 I/RobotCore(17240): my_debug left_front_encoder 27
+01-09 11:24:30.749 I/RobotCore(17240): my_debug right_back_encoder 17
+01-09 11:24:30.749 I/RobotCore(17240): my_debug left_back_encoder 14
+01-09 11:24:30.749 I/RobotCore(17240): my_debug right_front_encoder 23
+01-09 11:24:30.749 I/RobotCore(17240): my_debug left_front_encoder 25
+01-09 11:24:30.749 I/RobotCore(17240): my_debug right_back_encoder 16
+01-09 11:24:30.749 I/RobotCore(17240): my_debug left_back_encoder 15
+01-09 11:24:30.749 I/RobotCore(17240): my_debug right_front_encoder 22
+01-09 11:24:30.749 I/RobotCore(17240): my_debug left_front_encoder 24
+01-09 11:24:30.749 I/RobotCore(17240): my_debug right_back_encoder 16
+01-09 11:24:30.749 I/RobotCore(17240): my_debug left_back_encoder 16
+01-09 11:24:30.749 I/RobotCore(17240): my_debug right_front_encoder 23
+01-09 11:24:30.759 I/RobotCore(17240): my_debug left_front_encoder 26
+01-09 11:24:30.759 I/RobotCore(17240): my_debug right_back_encoder 17
+01-09 11:24:30.759 I/RobotCore(17240): my_debug left_back_encoder 18
+01-09 11:24:30.759 I/RobotCore(17240): my_debug right_front_encoder 34
+01-09 11:24:30.759 I/RobotCore(17240): my_debug left_front_encoder 36
+01-09 11:24:30.759 I/RobotCore(17240): my_debug right_back_encoder 32
+01-09 11:24:30.759 I/RobotCore(17240): my_debug left_back_encoder 32
+01-09 11:24:30.759 I/RobotCore(17240): my_debug right_front_encoder 41
+01-09 11:24:30.759 I/RobotCore(17240): my_debug left_front_encoder 45
+01-09 11:24:30.759 I/RobotCore(17240): my_debug right_back_encoder 48
+01-09 11:24:30.759 I/RobotCore(17240): my_debug left_back_encoder 45
+01-09 11:24:30.759 I/RobotCore(17240): my_debug right_front_encoder 69
+01-09 11:24:30.759 I/RobotCore(17240): my_debug left_front_encoder 73
+01-09 11:24:30.759 I/RobotCore(17240): my_debug right_back_encoder 8
+01-09 11:24:30.759 I/RobotCore(17240): my_debug left_back_encoder 8
+01-09 11:24:30.759 I/RobotCore(17240): my_debug right_front_encoder 13
+01-09 11:24:30.759 I/RobotCore(17240): my_debug left_front_encoder 13
+01-09 11:24:30.759 I/RobotCore(17240): my_debug right_back_encoder 13
+01-09 11:24:30.759 I/RobotCore(17240): my_debug left_back_encoder 14
+01-09 11:24:30.759 I/RobotCore(17240): my_debug right_front_encoder 22
+01-09 11:24:30.759 I/RobotCore(17240): my_debug left_front_encoder 23
+01-09 11:24:30.759 I/RobotCore(17240): my_debug right_back_encoder 32
+01-09 11:24:30.759 I/RobotCore(17240): my_debug left_back_encoder 33
+01-09 11:24:30.759 I/RobotCore(17240): my_debug right_front_encoder 30
+01-09 11:24:30.759 I/RobotCore(17240): my_debug left_front_encoder 32
+01-09 11:24:30.759 I/RobotCore(17240): my_debug right_back_encoder 19
+01-09 11:24:30.759 I/RobotCore(17240): my_debug left_back_encoder 19
+01-09 11:24:30.759 I/RobotCore(17240): my_debug right_front_encoder 52
+01-09 11:24:30.759 I/RobotCore(17240): my_debug left_front_encoder 55
+01-09 11:24:30.759 I/RobotCore(17240): my_debug right_back_encoder 8
+01-09 11:24:30.759 I/RobotCore(17240): my_debug left_back_encoder 8
+01-09 11:24:30.759 I/RobotCore(17240): my_debug right_front_encoder 12
+01-09 11:24:30.759 I/RobotCore(17240): my_debug left_front_encoder 12
+01-09 11:24:30.759 I/RobotCore(17240): my_debug right_back_encoder 18
+01-09 11:24:30.759 I/RobotCore(17240): my_debug left_back_encoder 18
+01-09 11:24:30.759 I/RobotCore(17240): my_debug right_front_encoder 26
+01-09 11:24:30.759 I/RobotCore(17240): my_debug left_front_encoder 28
+01-09 11:24:30.759 I/RobotCore(17240): my_debug right_back_encoder 10
+01-09 11:24:30.759 I/RobotCore(17240): my_debug left_back_encoder 11
+01-09 11:24:30.759 I/RobotCore(17240): my_debug right_front_encoder 43
+01-09 11:24:30.759 I/RobotCore(17240): my_debug left_front_encoder 46
+01-09 11:24:30.759 I/RobotCore(17240): my_debug right_back_encoder 17
+01-09 11:24:30.759 I/RobotCore(17240): my_debug left_back_encoder 19
+01-09 11:24:30.759 I/RobotCore(17240): my_debug right_front_encoder 0
+01-09 11:24:30.759 I/RobotCore(17240): my_debug left_front_encoder 0
+01-09 11:24:30.759 I/RobotCore(17240): my_debug right_back_encoder 20
+01-09 11:24:30.759 I/RobotCore(17240): my_debug left_back_encoder 24
+01-09 11:24:30.759 I/RobotCore(17240): my_debug right_front_encoder 45
+01-09 11:24:30.759 I/RobotCore(17240): my_debug left_front_encoder 49
+01-09 11:24:30.759 I/RobotCore(17240): my_debug right_back_encoder 10
+01-09 11:24:30.759 I/RobotCore(17240): my_debug left_back_encoder 13
+01-09 11:24:30.759 I/RobotCore(17240): my_debug right_front_encoder 14
+01-09 11:24:30.759 I/RobotCore(17240): my_debug left_front_encoder 21
+01-09 11:24:30.759 I/RobotCore(17240): my_debug right_back_encoder 5
+01-09 11:24:30.759 I/RobotCore(17240): my_debug left_back_encoder 5
+01-09 11:24:30.759 I/RobotCore(17240): my_debug right_front_encoder 10
+01-09 11:24:30.759 I/RobotCore(17240): my_debug left_front_encoder 11
+01-09 11:24:30.759 I/RobotCore(17240): my_debug right_back_encoder 15
+01-09 11:24:30.759 I/RobotCore(17240): my_debug left_back_encoder 19
+01-09 11:24:30.769 I/RobotCore(17240): my_debug right_front_encoder 14
+01-09 11:24:30.769 I/RobotCore(17240): my_debug left_front_encoder 22
+01-09 11:24:30.769 I/RobotCore(17240): my_debug right_back_encoder 9
+01-09 11:24:30.769 I/RobotCore(17240): my_debug left_back_encoder 8
+01-09 11:24:30.769 I/RobotCore(17240): my_debug right_front_encoder 27
+01-09 11:24:30.769 I/RobotCore(17240): my_debug left_front_encoder 42
+01-09 11:24:30.769 I/RobotCore(17240): my_debug right_back_encoder 3
+01-09 11:24:30.769 I/RobotCore(17240): my_debug left_back_encoder 4
+01-09 11:24:30.769 I/RobotCore(17240): my_debug right_front_encoder 8
+01-09 11:24:30.769 I/RobotCore(17240): my_debug left_front_encoder 9
+01-09 11:24:30.769 I/RobotCore(17240): my_debug right_back_encoder 13
+01-09 11:24:30.769 I/RobotCore(17240): my_debug left_back_encoder 11
+01-09 11:24:30.769 I/RobotCore(17240): my_debug right_front_encoder 25
+01-09 11:24:30.769 I/RobotCore(17240): my_debug left_front_encoder 43
+01-09 11:24:30.769 I/RobotCore(17240): my_debug right_back_encoder 4
+01-09 11:24:30.769 I/RobotCore(17240): my_debug left_back_encoder 4
+01-09 11:24:30.769 I/RobotCore(17240): my_debug right_front_encoder 8
+01-09 11:24:30.769 I/RobotCore(17240): my_debug left_front_encoder 12
+01-09 11:24:30.769 I/RobotCore(17240): my_debug right_back_encoder 7
+01-09 11:24:30.769 I/RobotCore(17240): my_debug left_back_encoder 6
+01-09 11:24:30.769 I/RobotCore(17240): my_debug right_front_encoder 18
+01-09 11:24:30.769 I/RobotCore(17240): my_debug left_front_encoder 25
+01-09 11:24:30.769 I/RobotCore(17240): my_debug right_back_encoder 7
+01-09 11:24:30.769 I/RobotCore(17240): my_debug left_back_encoder 5
+01-09 11:24:30.769 I/RobotCore(17240): my_debug right_front_encoder 25
+01-09 11:24:30.769 I/RobotCore(17240): my_debug left_front_encoder 41
+01-09 11:24:30.769 I/RobotCore(17240): my_debug right_back_encoder 7
+01-09 11:24:30.769 I/RobotCore(17240): my_debug left_back_encoder 5
+01-09 11:24:30.769 I/RobotCore(17240): my_debug right_front_encoder 0
+01-09 11:24:30.769 I/RobotCore(17240): my_debug left_front_encoder 0
+01-09 11:24:30.769 I/RobotCore(17240): my_debug right_back_encoder 11
+01-09 11:24:30.769 I/RobotCore(17240): my_debug left_back_encoder 11
+01-09 11:24:30.769 I/RobotCore(17240): my_debug right_front_encoder 30
+01-09 11:24:30.769 I/RobotCore(17240): my_debug left_front_encoder 48
+01-09 11:24:30.769 I/RobotCore(17240): my_debug right_back_encoder 2
+01-09 11:24:30.769 I/RobotCore(17240): my_debug left_back_encoder 2
+01-09 11:24:30.769 I/RobotCore(17240): my_debug right_front_encoder 11
+01-09 11:24:30.769 I/RobotCore(17240): my_debug left_front_encoder 20
+01-09 11:24:30.769 I/RobotCore(17240): my_debug right_back_encoder 7
+01-09 11:24:30.769 I/RobotCore(17240): my_debug left_back_encoder 7
+01-09 11:24:30.769 I/RobotCore(17240): my_debug right_front_encoder 7
+01-09 11:24:30.769 I/RobotCore(17240): my_debug left_front_encoder 10
+01-09 11:24:30.769 I/RobotCore(17240): my_debug right_back_encoder 2
+01-09 11:24:30.769 I/RobotCore(17240): my_debug left_back_encoder 2
+01-09 11:24:30.769 I/RobotCore(17240): my_debug right_front_encoder 32
+01-09 11:24:30.769 I/RobotCore(17240): my_debug left_front_encoder 40
+01-09 11:24:30.769 I/RobotCore(17240): my_debug right_back_encoder 6
+01-09 11:24:30.769 I/RobotCore(17240): my_debug left_back_encoder 6
+01-09 11:24:30.769 I/RobotCore(17240): my_debug right_front_encoder 0
+01-09 11:24:30.769 I/RobotCore(17240): my_debug left_front_encoder 0
+01-09 11:24:30.769 I/RobotCore(17240): my_debug right_back_encoder 5
+01-09 11:24:30.769 I/RobotCore(17240): my_debug left_back_encoder 7
+01-09 11:24:30.769 I/RobotCore(17240): my_debug right_front_encoder 18
+01-09 11:24:30.769 I/RobotCore(17240): my_debug left_front_encoder 27
+01-09 11:24:30.769 I/RobotCore(17240): my_debug right_back_encoder 4
+01-09 11:24:30.769 I/RobotCore(17240): my_debug left_back_encoder 5
+01-09 11:24:30.769 I/RobotCore(17240): my_debug right_front_encoder 20
+01-09 11:24:30.769 I/RobotCore(17240): my_debug left_front_encoder 22
+01-09 11:24:30.769 I/RobotCore(17240): my_debug right_back_encoder 9
+01-09 11:24:30.769 I/RobotCore(17240): my_debug left_back_encoder 10
+01-09 11:24:30.769 I/RobotCore(17240): my_debug right_front_encoder 27
+01-09 11:24:30.769 I/RobotCore(17240): my_debug left_front_encoder 34
+01-09 11:24:30.769 I/RobotCore(17240): my_debug right_back_encoder 6
+01-09 11:24:30.769 I/RobotCore(17240): my_debug left_back_encoder 5
+01-09 11:24:30.769 I/RobotCore(17240): my_debug right_front_encoder 13
+01-09 11:24:30.769 I/RobotCore(17240): my_debug left_front_encoder 13
+01-09 11:24:30.769 I/RobotCore(17240): my_debug right_back_encoder 2
+01-09 11:24:30.779 I/RobotCore(17240): my_debug left_back_encoder 2
+01-09 11:24:30.779 I/RobotCore(17240): my_debug right_front_encoder 8
+01-09 11:24:30.779 I/RobotCore(17240): my_debug left_front_encoder 9
+01-09 11:24:30.779 I/RobotCore(17240): my_debug right_back_encoder 11
+01-09 11:24:30.779 I/RobotCore(17240): my_debug left_back_encoder 8
+01-09 11:24:30.779 I/RobotCore(17240): my_debug right_front_encoder 16
+01-09 11:24:30.779 I/RobotCore(17240): my_debug left_front_encoder 18
+01-09 11:24:30.779 I/RobotCore(17240): my_debug right_back_encoder 0
+01-09 11:24:30.779 I/RobotCore(17240): my_debug left_back_encoder 0
+01-09 11:24:30.779 I/RobotCore(17240): my_debug right_front_encoder 13
+01-09 11:24:30.779 I/RobotCore(17240): my_debug left_front_encoder 18
+01-09 11:24:30.779 I/RobotCore(17240): my_debug right_back_encoder 13
+01-09 11:24:30.779 I/RobotCore(17240): my_debug left_back_encoder 10
+01-09 11:24:30.779 I/RobotCore(17240): my_debug right_front_encoder 17
+01-09 11:24:30.779 I/RobotCore(17240): my_debug left_front_encoder 19
+01-09 11:24:30.779 I/RobotCore(17240): my_debug right_back_encoder 5
+01-09 11:24:30.779 I/RobotCore(17240): my_debug left_back_encoder 6
+01-09 11:24:30.779 I/RobotCore(17240): my_debug right_front_encoder 32
+01-09 11:24:30.779 I/RobotCore(17240): my_debug left_front_encoder 37
+01-09 11:24:30.779 I/RobotCore(17240): my_debug right_back_encoder 3
+01-09 11:24:30.779 I/RobotCore(17240): my_debug left_back_encoder 3
+01-09 11:24:30.779 I/RobotCore(17240): my_debug right_front_encoder 6
+01-09 11:24:30.779 I/RobotCore(17240): my_debug left_front_encoder 8
+01-09 11:24:30.779 I/RobotCore(17240): my_debug right_back_encoder 6
+01-09 11:24:30.779 I/RobotCore(17240): my_debug left_back_encoder 7
+01-09 11:24:30.779 I/RobotCore(17240): my_debug right_front_encoder 15
+01-09 11:24:30.779 I/RobotCore(17240): my_debug left_front_encoder 16
+01-09 11:24:30.779 I/RobotCore(17240): my_debug right_back_encoder 13
+01-09 11:24:30.779 I/RobotCore(17240): my_debug left_back_encoder 17
+01-09 11:24:30.779 I/RobotCore(17240): my_debug right_front_encoder 32
+01-09 11:24:30.779 I/RobotCore(17240): my_debug left_front_encoder 39
+01-09 11:24:30.779 I/RobotCore(17240): my_debug right_back_encoder 7
+01-09 11:24:30.779 I/RobotCore(17240): my_debug left_back_encoder 8
+01-09 11:24:30.779 I/RobotCore(17240): my_debug right_front_encoder 22
+01-09 11:24:30.779 I/RobotCore(17240): my_debug left_front_encoder 26
+01-09 11:24:30.779 I/RobotCore(17240): my_debug right_back_encoder 5
+01-09 11:24:30.779 I/RobotCore(17240): my_debug left_back_encoder 5
+01-09 11:24:30.779 I/RobotCore(17240): my_debug right_front_encoder 8
+01-09 11:24:30.779 I/RobotCore(17240): my_debug left_front_encoder 10
+01-09 11:24:30.779 I/RobotCore(17240): my_debug right_back_encoder 7
+01-09 11:24:30.779 I/RobotCore(17240): my_debug left_back_encoder 9
+01-09 11:24:30.779 I/RobotCore(17240): my_debug right_front_encoder 31
+01-09 11:24:30.779 I/RobotCore(17240): my_debug left_front_encoder 37
+01-09 11:24:30.779 I/RobotCore(17240): my_debug right_back_encoder 10
+01-09 11:24:30.779 I/RobotCore(17240): my_debug left_back_encoder 14
+01-09 11:24:30.779 I/RobotCore(17240): my_debug right_front_encoder 0
+01-09 11:24:30.779 I/RobotCore(17240): my_debug left_front_encoder 0
+01-09 11:24:30.779 I/RobotCore(17240): my_debug right_back_encoder 6
+01-09 11:24:30.779 I/RobotCore(17240): my_debug left_back_encoder 6
+01-09 11:24:30.779 I/RobotCore(17240): my_debug right_front_encoder 25
+01-09 11:24:30.779 I/RobotCore(17240): my_debug left_front_encoder 33
+01-09 11:24:30.779 I/RobotCore(17240): my_debug right_back_encoder 8
+01-09 11:24:30.779 I/RobotCore(17240): my_debug left_back_encoder 11
+01-09 11:24:30.779 I/RobotCore(17240): my_debug right_front_encoder 17
+01-09 11:24:30.779 I/RobotCore(17240): my_debug left_front_encoder 20
+01-09 11:24:30.779 I/RobotCore(17240): my_debug right_back_encoder 15
+01-09 11:24:30.779 I/RobotCore(17240): my_debug left_back_encoder 18
+01-09 11:24:30.779 I/RobotCore(17240): my_debug right_front_encoder 30
+01-09 11:24:30.779 I/RobotCore(17240): my_debug left_front_encoder 38
+01-09 11:24:30.779 I/RobotCore(17240): my_debug right_back_encoder 5
+01-09 11:24:30.779 I/RobotCore(17240): my_debug left_back_encoder 6
+01-09 11:24:30.779 I/RobotCore(17240): my_debug right_front_encoder 19
+01-09 11:24:30.779 I/RobotCore(17240): my_debug left_front_encoder 24
+01-09 11:24:30.779 I/RobotCore(17240): my_debug right_back_encoder 10
+01-09 11:24:30.779 I/RobotCore(17240): my_debug left_back_encoder 11
+01-09 11:24:30.779 I/RobotCore(17240): my_debug right_front_encoder 6
+01-09 11:24:30.779 I/RobotCore(17240): my_debug left_front_encoder 9
+01-09 11:24:30.779 I/RobotCore(17240): my_debug right_back_encoder 6
+01-09 11:24:30.779 I/RobotCore(17240): my_debug left_back_encoder 7
+01-09 11:24:30.779 I/RobotCore(17240): my_debug right_front_encoder 22
+01-09 11:24:30.779 I/RobotCore(17240): my_debug left_front_encoder 35
+01-09 11:24:30.779 I/RobotCore(17240): my_debug right_back_encoder 3
+01-09 11:24:30.779 I/RobotCore(17240): my_debug left_back_encoder 3
+01-09 11:24:30.779 I/RobotCore(17240): my_debug right_front_encoder 6
+01-09 11:24:30.779 I/RobotCore(17240): my_debug left_front_encoder 8
+01-09 11:24:30.779 I/RobotCore(17240): my_debug right_back_encoder 16
+01-09 11:24:30.779 I/RobotCore(17240): my_debug left_back_encoder 12
+01-09 11:24:30.779 I/RobotCore(17240): my_debug right_front_encoder 21
+01-09 11:24:30.779 I/RobotCore(17240): my_debug left_front_encoder 34
+01-09 11:24:30.779 I/RobotCore(17240): my_debug right_back_encoder 9
+01-09 11:24:30.779 I/RobotCore(17240): my_debug left_back_encoder 9
+01-09 11:24:30.779 I/RobotCore(17240): my_debug right_front_encoder 15
+01-09 11:24:30.779 I/RobotCore(17240): my_debug left_front_encoder 24
+01-09 11:24:30.779 I/RobotCore(17240): my_debug right_back_encoder 4
+01-09 11:24:30.779 I/RobotCore(17240): my_debug left_back_encoder 3
+01-09 11:24:30.779 I/RobotCore(17240): my_debug right_front_encoder 6
+01-09 11:24:30.779 I/RobotCore(17240): my_debug left_front_encoder 9
+01-09 11:24:30.779 I/RobotCore(17240): my_debug right_back_encoder 15
+01-09 11:24:30.779 I/RobotCore(17240): my_debug left_back_encoder 14
+01-09 11:24:30.779 I/RobotCore(17240): my_debug right_front_encoder 20
+01-09 11:24:30.779 I/RobotCore(17240): my_debug left_front_encoder 33
+01-09 11:24:30.779 I/RobotCore(17240): my_debug right_back_encoder 3
+01-09 11:24:30.779 I/RobotCore(17240): my_debug left_back_encoder 3
+01-09 11:24:30.779 I/RobotCore(17240): my_debug right_front_encoder 7
+01-09 11:24:30.779 I/RobotCore(17240): my_debug left_front_encoder 9
+01-09 11:24:30.779 I/RobotCore(17240): my_debug right_back_encoder 17
+01-09 11:24:30.779 I/RobotCore(17240): my_debug left_back_encoder 19
+01-09 11:24:30.779 I/RobotCore(17240): my_debug right_front_encoder 24
+01-09 11:24:30.779 I/RobotCore(17240): my_debug left_front_encoder 39
+01-09 11:24:30.779 I/RobotCore(17240): my_debug right_back_encoder 5
+01-09 11:24:30.779 I/RobotCore(17240): my_debug left_back_encoder 4
+01-09 11:24:30.779 I/RobotCore(17240): my_debug right_front_encoder 7
+01-09 11:24:30.779 I/RobotCore(17240): my_debug left_front_encoder 9
+01-09 11:24:30.779 I/RobotCore(17240): my_debug right_back_encoder 11
+01-09 11:24:30.779 I/RobotCore(17240): my_debug left_back_encoder 12
+01-09 11:24:30.779 I/RobotCore(17240): my_debug right_front_encoder 18
+01-09 11:24:30.779 I/RobotCore(17240): my_debug left_front_encoder 23
+01-09 11:24:30.779 I/RobotCore(17240): my_debug right_back_encoder 23
+01-09 11:24:30.779 I/RobotCore(17240): my_debug left_back_encoder 21
+01-09 11:24:30.779 I/RobotCore(17240): my_debug right_front_encoder 26
+01-09 11:24:30.779 I/RobotCore(17240): my_debug left_front_encoder 39
+01-09 11:24:30.779 I/RobotCore(17240): my_debug right_back_encoder 5
+01-09 11:24:30.779 I/RobotCore(17240): my_debug left_back_encoder 4
+01-09 11:24:30.779 I/RobotCore(17240): my_debug right_front_encoder 6
+01-09 11:24:30.779 I/RobotCore(17240): my_debug left_front_encoder 8
+01-09 11:24:30.779 I/RobotCore(17240): my_debug right_back_encoder 10
+01-09 11:24:30.779 I/RobotCore(17240): my_debug left_back_encoder 10
+01-09 11:24:30.779 I/RobotCore(17240): my_debug right_front_encoder 20
+01-09 11:24:30.779 I/RobotCore(17240): my_debug left_front_encoder 33
+01-09 11:24:30.779 I/RobotCore(17240): my_debug right_back_encoder 21
+01-09 11:24:30.779 I/RobotCore(17240): my_debug left_back_encoder 19
+01-09 11:24:30.779 I/RobotCore(17240): my_debug right_front_encoder 18
+01-09 11:24:30.779 I/RobotCore(17240): my_debug left_front_encoder 21
+01-09 11:24:30.779 I/RobotCore(17240): my_debug right_back_encoder 5
+01-09 11:24:30.779 I/RobotCore(17240): my_debug left_back_encoder 4
+01-09 11:24:30.779 I/RobotCore(17240): my_debug right_front_encoder 8
+01-09 11:24:30.779 I/RobotCore(17240): my_debug left_front_encoder 11
+01-09 11:24:30.779 I/RobotCore(17240): my_debug right_back_encoder 10
+01-09 11:24:30.779 I/RobotCore(17240): my_debug left_back_encoder 10
+01-09 11:24:30.779 I/RobotCore(17240): my_debug right_front_encoder 17
+01-09 11:24:30.779 I/RobotCore(17240): my_debug left_front_encoder 23
+01-09 11:24:30.779 I/RobotCore(17240): my_debug right_back_encoder 20
+01-09 11:24:30.779 I/RobotCore(17240): my_debug left_back_encoder 19
+01-09 11:24:30.779 I/RobotCore(17240): my_debug right_front_encoder 21
+01-09 11:24:30.779 I/RobotCore(17240): my_debug left_front_encoder 35
+01-09 11:24:30.779 I/RobotCore(17240): my_debug right_back_encoder 5
+01-09 11:24:30.779 I/RobotCore(17240): my_debug left_back_encoder 5
+01-09 11:24:30.779 I/RobotCore(17240): my_debug right_front_encoder 7
+01-09 11:24:30.779 I/RobotCore(17240): my_debug left_front_encoder 10
+01-09 11:24:30.779 I/RobotCore(17240): my_debug right_back_encoder 11
+01-09 11:24:30.779 I/RobotCore(17240): my_debug left_back_encoder 12
+01-09 11:24:30.779 I/RobotCore(17240): my_debug right_front_encoder 13
+01-09 11:24:30.779 I/RobotCore(17240): my_debug left_front_encoder 21
+01-09 11:24:30.779 I/RobotCore(17240): my_debug right_back_encoder 13
+01-09 11:24:30.779 I/RobotCore(17240): my_debug left_back_encoder 13
+01-09 11:24:30.779 I/RobotCore(17240): my_debug right_front_encoder 14
+01-09 11:24:30.779 I/RobotCore(17240): my_debug left_front_encoder 20
+01-09 11:24:30.779 I/RobotCore(17240): my_debug right_back_encoder 8
+01-09 11:24:30.779 I/RobotCore(17240): my_debug left_back_encoder 8
+01-09 11:24:30.779 I/RobotCore(17240): my_debug right_front_encoder 14
+01-09 11:24:30.779 I/RobotCore(17240): my_debug left_front_encoder 25
+01-09 11:24:30.779 I/RobotCore(17240): my_debug right_back_encoder 14
+01-09 11:24:30.779 I/RobotCore(17240): my_debug left_back_encoder 14
+01-09 11:24:30.779 I/RobotCore(17240): my_debug right_front_encoder 15
+01-09 11:24:30.779 I/RobotCore(17240): my_debug left_front_encoder 22
+01-09 11:24:30.779 I/RobotCore(17240): my_debug right_back_encoder 19
+01-09 11:24:30.779 I/RobotCore(17240): my_debug left_back_encoder 19
+01-09 11:24:30.779 I/RobotCore(17240): my_debug right_front_encoder 11
+01-09 11:24:30.779 I/RobotCore(17240): my_debug left_front_encoder 20
+01-09 11:24:30.779 I/RobotCore(17240): my_debug right_back_encoder 0
+01-09 11:24:30.779 I/RobotCore(17240): my_debug left_back_encoder 0
+01-09 11:24:30.779 I/RobotCore(17240): my_debug right_front_encoder 11
+01-09 11:24:30.779 I/RobotCore(17240): my_debug left_front_encoder 16
+01-09 11:24:30.779 I/RobotCore(17240): my_debug right_back_encoder 38
+01-09 11:24:30.779 I/RobotCore(17240): my_debug left_back_encoder 38
+01-09 11:24:30.779 I/RobotCore(17240): my_debug right_front_encoder 42
+01-09 11:24:30.779 I/RobotCore(17240): my_debug left_front_encoder 70
+01-09 11:24:30.779 W/RobotCore(17240): my_debug minDiff 0
+01-09 11:24:30.779 W/RobotCore(17240): my_debug avgDiff 14
+01-09 11:24:30.779 W/RobotCore(17240): my_debug batteryVoltage 11.406451612903224
+01-09 11:24:31.349 D/dalvikvm(17240): GC_FOR_ALLOC freed 2045K, 44% free 6262K/11144K, paused 18ms, total 18ms
+01-09 11:24:32.119 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 44% free 6262K/11144K, paused 17ms, total 17ms
+01-09 11:24:32.859 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 44% free 6262K/11144K, paused 15ms, total 15ms
+01-09 11:24:33.579 D/dalvikvm(17240): GC_FOR_ALLOC freed 2048K, 44% free 6262K/11144K, paused 19ms, total 19ms
+01-09 11:24:34.299 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 44% free 6262K/11144K, paused 19ms, total 19ms
+01-09 11:24:34.989 D/dalvikvm(17240): GC_FOR_ALLOC freed 2048K, 44% free 6262K/11144K, paused 18ms, total 18ms
+01-09 11:24:35.689 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 44% free 6263K/11144K, paused 16ms, total 16ms
+01-09 11:24:36.429 D/dalvikvm(17240): GC_FOR_ALLOC freed 2048K, 44% free 6262K/11144K, paused 16ms, total 16ms
+01-09 11:24:36.659 I/FIRST   (17240): Processing Command: CMD_INIT_OP_MODE Stop Robot
+01-09 11:24:36.669 I/RobotCore(17240): Attempting to switch to op mode Stop Robot
+01-09 11:24:36.739 V/RobotCore(17240): Sending command: CMD_INIT_OP_MODE_RESP, attempt 0
+01-09 11:24:36.779 I/FIRST   (17240): Processing Command: CMD_RUN_OP_MODE Stop Robot
+01-09 11:24:36.839 V/RobotCore(17240): Sending command: CMD_RUN_OP_MODE_RESP, attempt 0
+01-09 11:24:37.169 D/dalvikvm(17240): GC_FOR_ALLOC freed 2045K, 44% free 6265K/11144K, paused 18ms, total 19ms
+01-09 11:24:37.919 D/dalvikvm(17240): GC_FOR_ALLOC freed 2050K, 44% free 6263K/11144K, paused 16ms, total 16ms
+01-09 11:24:38.679 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 44% free 6263K/11144K, paused 17ms, total 17ms
+01-09 11:24:39.419 D/dalvikvm(17240): GC_FOR_ALLOC freed 2048K, 44% free 6263K/11144K, paused 17ms, total 17ms
+01-09 11:24:40.159 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 44% free 6263K/11144K, paused 16ms, total 16ms
+01-09 11:24:40.869 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 44% free 6263K/11144K, paused 17ms, total 17ms
+01-09 11:24:41.599 D/dalvikvm(17240): GC_FOR_ALLOC freed 2048K, 44% free 6263K/11144K, paused 16ms, total 16ms
+01-09 11:24:42.309 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 44% free 6263K/11144K, paused 16ms, total 16ms
+01-09 11:24:43.019 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 44% free 6263K/11144K, paused 17ms, total 17ms
+01-09 11:24:43.749 D/dalvikvm(17240): GC_FOR_ALLOC freed 2048K, 44% free 6263K/11144K, paused 18ms, total 18ms
+01-09 11:24:44.449 D/dalvikvm(17240): GC_FOR_ALLOC freed 2048K, 44% free 6263K/11144K, paused 17ms, total 17ms
+01-09 11:24:45.169 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 44% free 6263K/11144K, paused 15ms, total 15ms
+01-09 11:24:45.869 D/dalvikvm(17240): GC_FOR_ALLOC freed 2048K, 44% free 6263K/11144K, paused 18ms, total 18ms
+01-09 11:24:46.569 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 44% free 6263K/11144K, paused 16ms, total 16ms
+01-09 11:24:47.309 D/dalvikvm(17240): GC_FOR_ALLOC freed 2048K, 44% free 6263K/11144K, paused 20ms, total 20ms
+01-09 11:24:48.049 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 44% free 6263K/11144K, paused 17ms, total 17ms
+01-09 11:24:48.789 D/dalvikvm(17240): GC_FOR_ALLOC freed 2048K, 44% free 6263K/11144K, paused 17ms, total 17ms
+01-09 11:24:49.489 D/dalvikvm(17240): GC_FOR_ALLOC freed 2048K, 44% free 6263K/11144K, paused 19ms, total 19ms
+01-09 11:24:50.219 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 44% free 6263K/11144K, paused 17ms, total 17ms
+01-09 11:24:50.959 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 44% free 6263K/11144K, paused 16ms, total 16ms
+01-09 11:24:51.699 D/dalvikvm(17240): GC_FOR_ALLOC freed 2048K, 44% free 6263K/11144K, paused 20ms, total 20ms
+01-09 11:24:52.489 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 44% free 6263K/11144K, paused 17ms, total 17ms
+01-09 11:24:53.239 D/dalvikvm(17240): GC_FOR_ALLOC freed 2048K, 44% free 6263K/11144K, paused 16ms, total 16ms
+01-09 11:24:53.959 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 44% free 6263K/11144K, paused 16ms, total 16ms
+01-09 11:24:54.689 D/dalvikvm(17240): GC_FOR_ALLOC freed 2048K, 44% free 6263K/11144K, paused 16ms, total 16ms
+01-09 11:24:55.439 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 44% free 6263K/11144K, paused 17ms, total 17ms
+01-09 11:24:56.209 D/dalvikvm(17240): GC_FOR_ALLOC freed 2048K, 44% free 6263K/11144K, paused 17ms, total 17ms
+01-09 11:24:56.929 D/dalvikvm(17240): GC_FOR_ALLOC freed 2048K, 44% free 6263K/11144K, paused 16ms, total 16ms
+01-09 11:24:57.459 I/FIRST   (17240): Processing Command: CMD_INIT_OP_MODE ____TestingAuto
+01-09 11:24:57.469 I/RobotCore(17240): Attempting to switch to op mode ____TestingAuto
+01-09 11:24:57.489 D/dalvikvm(17240): GC_FOR_ALLOC freed 1622K, 41% free 6657K/11144K, paused 14ms, total 14ms
+01-09 11:24:57.519 V/RobotCore(17240): Sending command: CMD_INIT_OP_MODE_RESP, attempt 0
+01-09 11:24:58.079 D/dalvikvm(17240): GC_FOR_ALLOC freed 2442K, 44% free 6263K/11144K, paused 16ms, total 16ms
+01-09 11:24:58.789 D/dalvikvm(17240): GC_FOR_ALLOC freed 2048K, 44% free 6263K/11144K, paused 16ms, total 16ms
+01-09 11:24:59.509 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 44% free 6263K/11144K, paused 16ms, total 16ms
+01-09 11:25:00.199 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 44% free 6263K/11144K, paused 15ms, total 15ms
+01-09 11:25:00.219 I/FIRST   (17240): Processing Command: CMD_RUN_OP_MODE ____TestingAuto
+01-09 11:25:00.319 V/RobotCore(17240): Sending command: CMD_RUN_OP_MODE_RESP, attempt 0
+01-09 11:25:00.969 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 44% free 6263K/11144K, paused 20ms, total 20ms
+01-09 11:25:01.499 W/RobotCore(17240): my_debug BEGIN INTO_WALL
+01-09 11:25:01.499 I/RobotCore(17240): my_debug right_back_encoder 0
+01-09 11:25:01.499 I/RobotCore(17240): my_debug left_back_encoder 0
+01-09 11:25:01.499 I/RobotCore(17240): my_debug right_front_encoder 0
+01-09 11:25:01.499 I/RobotCore(17240): my_debug left_front_encoder 0
+01-09 11:25:01.499 I/RobotCore(17240): my_debug right_back_encoder 0
+01-09 11:25:01.499 I/RobotCore(17240): my_debug left_back_encoder 0
+01-09 11:25:01.499 I/RobotCore(17240): my_debug right_front_encoder 0
+01-09 11:25:01.499 I/RobotCore(17240): my_debug left_front_encoder 0
+01-09 11:25:01.499 I/RobotCore(17240): my_debug right_back_encoder 0
+01-09 11:25:01.499 I/RobotCore(17240): my_debug left_back_encoder 0
+01-09 11:25:01.499 I/RobotCore(17240): my_debug right_front_encoder 0
+01-09 11:25:01.499 I/RobotCore(17240): my_debug left_front_encoder 0
+01-09 11:25:01.499 I/RobotCore(17240): my_debug right_back_encoder 0
+01-09 11:25:01.499 I/RobotCore(17240): my_debug left_back_encoder 0
+01-09 11:25:01.499 I/RobotCore(17240): my_debug right_front_encoder 0
+01-09 11:25:01.499 I/RobotCore(17240): my_debug left_front_encoder 0
+01-09 11:25:01.499 I/RobotCore(17240): my_debug right_back_encoder 0
+01-09 11:25:01.499 I/RobotCore(17240): my_debug left_back_encoder 0
+01-09 11:25:01.499 I/RobotCore(17240): my_debug right_front_encoder 0
+01-09 11:25:01.499 I/RobotCore(17240): my_debug left_front_encoder 0
+01-09 11:25:01.499 I/RobotCore(17240): my_debug right_back_encoder 0
+01-09 11:25:01.499 I/RobotCore(17240): my_debug left_back_encoder 0
+01-09 11:25:01.499 I/RobotCore(17240): my_debug right_front_encoder 1
+01-09 11:25:01.499 I/RobotCore(17240): my_debug left_front_encoder 1
+01-09 11:25:01.499 I/RobotCore(17240): my_debug right_back_encoder 5
+01-09 11:25:01.509 I/RobotCore(17240): my_debug left_back_encoder 5
+01-09 11:25:01.509 I/RobotCore(17240): my_debug right_front_encoder 5
+01-09 11:25:01.509 I/RobotCore(17240): my_debug left_front_encoder 5
+01-09 11:25:01.509 I/RobotCore(17240): my_debug right_back_encoder 10
+01-09 11:25:01.509 I/RobotCore(17240): my_debug left_back_encoder 7
+01-09 11:25:01.509 I/RobotCore(17240): my_debug right_front_encoder 10
+01-09 11:25:01.509 I/RobotCore(17240): my_debug left_front_encoder 12
+01-09 11:25:01.509 I/RobotCore(17240): my_debug right_back_encoder 16
+01-09 11:25:01.509 I/RobotCore(17240): my_debug left_back_encoder 13
+01-09 11:25:01.509 I/RobotCore(17240): my_debug right_front_encoder 0
+01-09 11:25:01.509 I/RobotCore(17240): my_debug left_front_encoder 0
+01-09 11:25:01.509 I/RobotCore(17240): my_debug right_back_encoder 0
+01-09 11:25:01.509 I/RobotCore(17240): my_debug left_back_encoder 0
+01-09 11:25:01.509 I/RobotCore(17240): my_debug right_front_encoder 12
+01-09 11:25:01.509 I/RobotCore(17240): my_debug left_front_encoder 17
+01-09 11:25:01.509 I/RobotCore(17240): my_debug right_back_encoder 25
+01-09 11:25:01.509 I/RobotCore(17240): my_debug left_back_encoder 18
+01-09 11:25:01.509 I/RobotCore(17240): my_debug right_front_encoder 19
+01-09 11:25:01.509 I/RobotCore(17240): my_debug left_front_encoder 25
+01-09 11:25:01.509 I/RobotCore(17240): my_debug right_back_encoder 6
+01-09 11:25:01.509 I/RobotCore(17240): my_debug left_back_encoder 5
+01-09 11:25:01.509 I/RobotCore(17240): my_debug right_front_encoder 6
+01-09 11:25:01.509 I/RobotCore(17240): my_debug left_front_encoder 6
+01-09 11:25:01.509 I/RobotCore(17240): my_debug right_back_encoder 12
+01-09 11:25:01.509 I/RobotCore(17240): my_debug left_back_encoder 9
+01-09 11:25:01.509 I/RobotCore(17240): my_debug right_front_encoder 15
+01-09 11:25:01.509 I/RobotCore(17240): my_debug left_front_encoder 17
+01-09 11:25:01.509 I/RobotCore(17240): my_debug right_back_encoder 16
+01-09 11:25:01.509 I/RobotCore(17240): my_debug left_back_encoder 13
+01-09 11:25:01.509 I/RobotCore(17240): my_debug right_front_encoder 14
+01-09 11:25:01.509 I/RobotCore(17240): my_debug left_front_encoder 15
+01-09 11:25:01.509 I/RobotCore(17240): my_debug right_back_encoder 10
+01-09 11:25:01.509 I/RobotCore(17240): my_debug left_back_encoder 8
+01-09 11:25:01.509 I/RobotCore(17240): my_debug right_front_encoder 17
+01-09 11:25:01.509 I/RobotCore(17240): my_debug left_front_encoder 17
+01-09 11:25:01.509 I/RobotCore(17240): my_debug right_back_encoder 10
+01-09 11:25:01.509 I/RobotCore(17240): my_debug left_back_encoder 8
+01-09 11:25:01.509 I/RobotCore(17240): my_debug right_front_encoder 16
+01-09 11:25:01.509 I/RobotCore(17240): my_debug left_front_encoder 17
+01-09 11:25:01.509 I/RobotCore(17240): my_debug right_back_encoder 7
+01-09 11:25:01.509 I/RobotCore(17240): my_debug left_back_encoder 6
+01-09 11:25:01.509 I/RobotCore(17240): my_debug right_front_encoder 36
+01-09 11:25:01.509 I/RobotCore(17240): my_debug left_front_encoder 40
+01-09 11:25:01.509 I/RobotCore(17240): my_debug right_back_encoder 6
+01-09 11:25:01.509 I/RobotCore(17240): my_debug left_back_encoder 7
+01-09 11:25:01.509 I/RobotCore(17240): my_debug right_front_encoder 8
+01-09 11:25:01.509 I/RobotCore(17240): my_debug left_front_encoder 8
+01-09 11:25:01.509 I/RobotCore(17240): my_debug right_back_encoder 5
+01-09 11:25:01.509 I/RobotCore(17240): my_debug left_back_encoder 5
+01-09 11:25:01.509 I/RobotCore(17240): my_debug right_front_encoder 32
+01-09 11:25:01.509 I/RobotCore(17240): my_debug left_front_encoder 35
+01-09 11:25:01.509 I/RobotCore(17240): my_debug right_back_encoder 19
+01-09 11:25:01.509 I/RobotCore(17240): my_debug left_back_encoder 20
+01-09 11:25:01.509 I/RobotCore(17240): my_debug right_front_encoder 0
+01-09 11:25:01.509 I/RobotCore(17240): my_debug left_front_encoder 0
+01-09 11:25:01.509 I/RobotCore(17240): my_debug right_back_encoder 11
+01-09 11:25:01.509 I/RobotCore(17240): my_debug left_back_encoder 12
+01-09 11:25:01.509 I/RobotCore(17240): my_debug right_front_encoder 26
+01-09 11:25:01.509 I/RobotCore(17240): my_debug left_front_encoder 28
+01-09 11:25:01.509 I/RobotCore(17240): my_debug right_back_encoder 15
+01-09 11:25:01.509 I/RobotCore(17240): my_debug left_back_encoder 17
+01-09 11:25:01.509 I/RobotCore(17240): my_debug right_front_encoder 43
+01-09 11:25:01.519 I/RobotCore(17240): my_debug left_front_encoder 48
+01-09 11:25:01.519 I/RobotCore(17240): my_debug right_back_encoder 10
+01-09 11:25:01.519 I/RobotCore(17240): my_debug left_back_encoder 11
+01-09 11:25:01.519 I/RobotCore(17240): my_debug right_front_encoder 18
+01-09 11:25:01.519 I/RobotCore(17240): my_debug left_front_encoder 18
+01-09 11:25:01.519 I/RobotCore(17240): my_debug right_back_encoder 8
+01-09 11:25:01.519 I/RobotCore(17240): my_debug left_back_encoder 8
+01-09 11:25:01.519 I/RobotCore(17240): my_debug right_front_encoder 10
+01-09 11:25:01.519 I/RobotCore(17240): my_debug left_front_encoder 10
+01-09 11:25:01.519 I/RobotCore(17240): my_debug right_back_encoder 28
+01-09 11:25:01.519 I/RobotCore(17240): my_debug left_back_encoder 30
+01-09 11:25:01.519 I/RobotCore(17240): my_debug right_front_encoder 22
+01-09 11:25:01.519 I/RobotCore(17240): my_debug left_front_encoder 25
+01-09 11:25:01.519 I/RobotCore(17240): my_debug right_back_encoder 15
+01-09 11:25:01.519 I/RobotCore(17240): my_debug left_back_encoder 15
+01-09 11:25:01.519 I/RobotCore(17240): my_debug right_front_encoder 41
+01-09 11:25:01.519 I/RobotCore(17240): my_debug left_front_encoder 45
+01-09 11:25:01.519 I/RobotCore(17240): my_debug right_back_encoder 10
+01-09 11:25:01.519 I/RobotCore(17240): my_debug left_back_encoder 9
+01-09 11:25:01.519 I/RobotCore(17240): my_debug right_front_encoder 10
+01-09 11:25:01.519 I/RobotCore(17240): my_debug left_front_encoder 10
+01-09 11:25:01.519 I/RobotCore(17240): my_debug right_back_encoder 17
+01-09 11:25:01.519 I/RobotCore(17240): my_debug left_back_encoder 16
+01-09 11:25:01.519 I/RobotCore(17240): my_debug right_front_encoder 23
+01-09 11:25:01.519 I/RobotCore(17240): my_debug left_front_encoder 24
+01-09 11:25:01.519 I/RobotCore(17240): my_debug right_back_encoder 30
+01-09 11:25:01.519 I/RobotCore(17240): my_debug left_back_encoder 29
+01-09 11:25:01.519 I/RobotCore(17240): my_debug right_front_encoder 25
+01-09 11:25:01.519 I/RobotCore(17240): my_debug left_front_encoder 27
+01-09 11:25:01.519 I/RobotCore(17240): my_debug right_back_encoder 19
+01-09 11:25:01.519 I/RobotCore(17240): my_debug left_back_encoder 19
+01-09 11:25:01.519 I/RobotCore(17240): my_debug right_front_encoder 26
+01-09 11:25:01.519 I/RobotCore(17240): my_debug left_front_encoder 27
+01-09 11:25:01.519 I/RobotCore(17240): my_debug right_back_encoder 17
+01-09 11:25:01.519 I/RobotCore(17240): my_debug left_back_encoder 17
+01-09 11:25:01.519 I/RobotCore(17240): my_debug right_front_encoder 43
+01-09 11:25:01.519 I/RobotCore(17240): my_debug left_front_encoder 46
+01-09 11:25:01.519 I/RobotCore(17240): my_debug right_back_encoder 8
+01-09 11:25:01.519 I/RobotCore(17240): my_debug left_back_encoder 8
+01-09 11:25:01.519 I/RobotCore(17240): my_debug right_front_encoder 12
+01-09 11:25:01.519 I/RobotCore(17240): my_debug left_front_encoder 13
+01-09 11:25:01.519 I/RobotCore(17240): my_debug right_back_encoder 16
+01-09 11:25:01.519 I/RobotCore(17240): my_debug left_back_encoder 15
+01-09 11:25:01.519 I/RobotCore(17240): my_debug right_front_encoder 19
+01-09 11:25:01.519 I/RobotCore(17240): my_debug left_front_encoder 20
+01-09 11:25:01.519 I/RobotCore(17240): my_debug right_back_encoder 17
+01-09 11:25:01.519 I/RobotCore(17240): my_debug left_back_encoder 16
+01-09 11:25:01.519 I/RobotCore(17240): my_debug right_front_encoder 48
+01-09 11:25:01.519 I/RobotCore(17240): my_debug left_front_encoder 51
+01-09 11:25:01.519 I/RobotCore(17240): my_debug right_back_encoder 30
+01-09 11:25:01.519 I/RobotCore(17240): my_debug left_back_encoder 30
+01-09 11:25:01.519 I/RobotCore(17240): my_debug right_front_encoder 28
+01-09 11:25:01.519 I/RobotCore(17240): my_debug left_front_encoder 31
+01-09 11:25:01.519 I/RobotCore(17240): my_debug right_back_encoder 8
+01-09 11:25:01.519 I/RobotCore(17240): my_debug left_back_encoder 9
+01-09 11:25:01.519 I/RobotCore(17240): my_debug right_front_encoder 11
+01-09 11:25:01.519 I/RobotCore(17240): my_debug left_front_encoder 11
+01-09 11:25:01.519 I/RobotCore(17240): my_debug right_back_encoder 16
+01-09 11:25:01.519 I/RobotCore(17240): my_debug left_back_encoder 17
+01-09 11:25:01.519 I/RobotCore(17240): my_debug right_front_encoder 24
+01-09 11:25:01.519 I/RobotCore(17240): my_debug left_front_encoder 25
+01-09 11:25:01.519 I/RobotCore(17240): my_debug right_back_encoder 28
+01-09 11:25:01.519 I/RobotCore(17240): my_debug left_back_encoder 29
+01-09 11:25:01.519 I/RobotCore(17240): my_debug right_front_encoder 48
+01-09 11:25:01.519 I/RobotCore(17240): my_debug left_front_encoder 52
+01-09 11:25:01.519 I/RobotCore(17240): my_debug right_back_encoder 15
+01-09 11:25:01.519 I/RobotCore(17240): my_debug left_back_encoder 16
+01-09 11:25:01.519 I/RobotCore(17240): my_debug right_front_encoder 20
+01-09 11:25:01.519 I/RobotCore(17240): my_debug left_front_encoder 21
+01-09 11:25:01.519 I/RobotCore(17240): my_debug right_back_encoder 6
+01-09 11:25:01.519 I/RobotCore(17240): my_debug left_back_encoder 6
+01-09 11:25:01.529 I/RobotCore(17240): my_debug right_front_encoder 15
+01-09 11:25:01.529 I/RobotCore(17240): my_debug left_front_encoder 15
+01-09 11:25:01.529 I/RobotCore(17240): my_debug right_back_encoder 28
+01-09 11:25:01.529 I/RobotCore(17240): my_debug left_back_encoder 30
+01-09 11:25:01.529 I/RobotCore(17240): my_debug right_front_encoder 27
+01-09 11:25:01.529 I/RobotCore(17240): my_debug left_front_encoder 28
+01-09 11:25:01.529 I/RobotCore(17240): my_debug right_back_encoder 0
+01-09 11:25:01.529 I/RobotCore(17240): my_debug left_back_encoder 0
+01-09 11:25:01.529 I/RobotCore(17240): my_debug right_front_encoder 29
+01-09 11:25:01.529 I/RobotCore(17240): my_debug left_front_encoder 30
+01-09 11:25:01.529 I/RobotCore(17240): my_debug right_back_encoder 17
+01-09 11:25:01.529 I/RobotCore(17240): my_debug left_back_encoder 18
+01-09 11:25:01.529 I/RobotCore(17240): my_debug right_front_encoder 44
+01-09 11:25:01.529 I/RobotCore(17240): my_debug left_front_encoder 47
+01-09 11:25:01.529 I/RobotCore(17240): my_debug right_back_encoder 28
+01-09 11:25:01.529 I/RobotCore(17240): my_debug left_back_encoder 28
+01-09 11:25:01.529 I/RobotCore(17240): my_debug right_front_encoder 24
+01-09 11:25:01.529 I/RobotCore(17240): my_debug left_front_encoder 24
+01-09 11:25:01.529 I/RobotCore(17240): my_debug right_back_encoder 6
+01-09 11:25:01.529 I/RobotCore(17240): my_debug left_back_encoder 6
+01-09 11:25:01.529 I/RobotCore(17240): my_debug right_front_encoder 13
+01-09 11:25:01.529 I/RobotCore(17240): my_debug left_front_encoder 14
+01-09 11:25:01.529 I/RobotCore(17240): my_debug right_back_encoder 21
+01-09 11:25:01.529 I/RobotCore(17240): my_debug left_back_encoder 21
+01-09 11:25:01.529 I/RobotCore(17240): my_debug right_front_encoder 28
+01-09 11:25:01.529 I/RobotCore(17240): my_debug left_front_encoder 35
+01-09 11:25:01.529 I/RobotCore(17240): my_debug right_back_encoder 7
+01-09 11:25:01.529 I/RobotCore(17240): my_debug left_back_encoder 7
+01-09 11:25:01.529 I/RobotCore(17240): my_debug right_front_encoder 13
+01-09 11:25:01.529 I/RobotCore(17240): my_debug left_front_encoder 14
+01-09 11:25:01.529 I/RobotCore(17240): my_debug right_back_encoder 12
+01-09 11:25:01.529 I/RobotCore(17240): my_debug left_back_encoder 12
+01-09 11:25:01.529 I/RobotCore(17240): my_debug right_front_encoder 20
+01-09 11:25:01.529 I/RobotCore(17240): my_debug left_front_encoder 23
+01-09 11:25:01.529 I/RobotCore(17240): my_debug right_back_encoder 12
+01-09 11:25:01.529 I/RobotCore(17240): my_debug left_back_encoder 10
+01-09 11:25:01.529 I/RobotCore(17240): my_debug right_front_encoder 25
+01-09 11:25:01.529 I/RobotCore(17240): my_debug left_front_encoder 28
+01-09 11:25:01.529 I/RobotCore(17240): my_debug right_back_encoder 11
+01-09 11:25:01.529 I/RobotCore(17240): my_debug left_back_encoder 10
+01-09 11:25:01.529 I/RobotCore(17240): my_debug right_front_encoder 35
+01-09 11:25:01.529 I/RobotCore(17240): my_debug left_front_encoder 41
+01-09 11:25:01.529 I/RobotCore(17240): my_debug right_back_encoder 10
+01-09 11:25:01.529 I/RobotCore(17240): my_debug left_back_encoder 10
+01-09 11:25:01.529 I/RobotCore(17240): my_debug right_front_encoder 29
+01-09 11:25:01.529 I/RobotCore(17240): my_debug left_front_encoder 35
+01-09 11:25:01.529 I/RobotCore(17240): my_debug right_back_encoder 10
+01-09 11:25:01.529 I/RobotCore(17240): my_debug left_back_encoder 13
+01-09 11:25:01.529 I/RobotCore(17240): my_debug right_front_encoder 20
+01-09 11:25:01.529 I/RobotCore(17240): my_debug left_front_encoder 25
+01-09 11:25:01.529 I/RobotCore(17240): my_debug right_back_encoder 3
+01-09 11:25:01.529 I/RobotCore(17240): my_debug left_back_encoder 4
+01-09 11:25:01.529 I/RobotCore(17240): my_debug right_front_encoder 11
+01-09 11:25:01.529 I/RobotCore(17240): my_debug left_front_encoder 13
+01-09 11:25:01.529 I/RobotCore(17240): my_debug right_back_encoder 4
+01-09 11:25:01.529 I/RobotCore(17240): my_debug left_back_encoder 6
+01-09 11:25:01.529 I/RobotCore(17240): my_debug right_front_encoder 24
+01-09 11:25:01.529 I/RobotCore(17240): my_debug left_front_encoder 29
+01-09 11:25:01.529 I/RobotCore(17240): my_debug right_back_encoder 4
+01-09 11:25:01.529 I/RobotCore(17240): my_debug left_back_encoder 7
+01-09 11:25:01.529 I/RobotCore(17240): my_debug right_front_encoder 20
+01-09 11:25:01.529 I/RobotCore(17240): my_debug left_front_encoder 25
+01-09 11:25:01.529 I/RobotCore(17240): my_debug right_back_encoder 7
+01-09 11:25:01.529 I/RobotCore(17240): my_debug left_back_encoder 12
+01-09 11:25:01.529 I/RobotCore(17240): my_debug right_front_encoder 36
+01-09 11:25:01.529 I/RobotCore(17240): my_debug left_front_encoder 45
+01-09 11:25:01.529 I/RobotCore(17240): my_debug right_back_encoder 1
+01-09 11:25:01.529 I/RobotCore(17240): my_debug left_back_encoder 2
+01-09 11:25:01.529 I/RobotCore(17240): my_debug right_front_encoder 9
+01-09 11:25:01.529 I/RobotCore(17240): my_debug left_front_encoder 11
+01-09 11:25:01.529 I/RobotCore(17240): my_debug right_back_encoder 7
+01-09 11:25:01.529 I/RobotCore(17240): my_debug left_back_encoder 10
+01-09 11:25:01.529 I/RobotCore(17240): my_debug right_front_encoder 31
+01-09 11:25:01.529 I/RobotCore(17240): my_debug left_front_encoder 41
+01-09 11:25:01.529 I/RobotCore(17240): my_debug right_back_encoder 5
+01-09 11:25:01.529 I/RobotCore(17240): my_debug left_back_encoder 5
+01-09 11:25:01.529 I/RobotCore(17240): my_debug right_front_encoder 11
+01-09 11:25:01.529 I/RobotCore(17240): my_debug left_front_encoder 13
+01-09 11:25:01.529 I/RobotCore(17240): my_debug right_back_encoder 2
+01-09 11:25:01.529 I/RobotCore(17240): my_debug left_back_encoder 1
+01-09 11:25:01.529 I/RobotCore(17240): my_debug right_front_encoder 22
+01-09 11:25:01.529 I/RobotCore(17240): my_debug left_front_encoder 31
+01-09 11:25:01.529 I/RobotCore(17240): my_debug right_back_encoder 7
+01-09 11:25:01.529 I/RobotCore(17240): my_debug left_back_encoder 6
+01-09 11:25:01.529 I/RobotCore(17240): my_debug right_front_encoder 7
+01-09 11:25:01.529 I/RobotCore(17240): my_debug left_front_encoder 9
+01-09 11:25:01.529 I/RobotCore(17240): my_debug right_back_encoder 0
+01-09 11:25:01.529 I/RobotCore(17240): my_debug left_back_encoder 0
+01-09 11:25:01.529 I/RobotCore(17240): my_debug right_front_encoder 26
+01-09 11:25:01.539 I/RobotCore(17240): my_debug left_front_encoder 34
+01-09 11:25:01.539 I/RobotCore(17240): my_debug right_back_encoder 9
+01-09 11:25:01.539 I/RobotCore(17240): my_debug left_back_encoder 16
+01-09 11:25:01.539 I/RobotCore(17240): my_debug right_front_encoder 8
+01-09 11:25:01.539 I/RobotCore(17240): my_debug left_front_encoder 12
+01-09 11:25:01.539 I/RobotCore(17240): my_debug right_back_encoder 0
+01-09 11:25:01.539 I/RobotCore(17240): my_debug left_back_encoder 0
+01-09 11:25:01.539 I/RobotCore(17240): my_debug right_front_encoder 57
+01-09 11:25:01.539 I/RobotCore(17240): my_debug left_front_encoder 64
+01-09 11:25:01.539 I/RobotCore(17240): my_debug right_back_encoder 9
+01-09 11:25:01.539 I/RobotCore(17240): my_debug left_back_encoder 12
+01-09 11:25:01.539 I/RobotCore(17240): my_debug right_front_encoder 34
+01-09 11:25:01.539 I/RobotCore(17240): my_debug left_front_encoder 36
+01-09 11:25:01.539 I/RobotCore(17240): my_debug right_back_encoder 5
+01-09 11:25:01.539 I/RobotCore(17240): my_debug left_back_encoder 5
+01-09 11:25:01.539 I/RobotCore(17240): my_debug right_front_encoder 18
+01-09 11:25:01.539 I/RobotCore(17240): my_debug left_front_encoder 21
+01-09 11:25:01.539 I/RobotCore(17240): my_debug right_back_encoder 3
+01-09 11:25:01.539 I/RobotCore(17240): my_debug left_back_encoder 3
+01-09 11:25:01.539 I/RobotCore(17240): my_debug right_front_encoder 9
+01-09 11:25:01.539 I/RobotCore(17240): my_debug left_front_encoder 10
+01-09 11:25:01.539 I/RobotCore(17240): my_debug right_back_encoder 7
+01-09 11:25:01.539 I/RobotCore(17240): my_debug left_back_encoder 7
+01-09 11:25:01.539 I/RobotCore(17240): my_debug right_front_encoder 33
+01-09 11:25:01.539 I/RobotCore(17240): my_debug left_front_encoder 38
+01-09 11:25:01.539 I/RobotCore(17240): my_debug right_back_encoder 12
+01-09 11:25:01.539 I/RobotCore(17240): my_debug left_back_encoder 12
+01-09 11:25:01.539 I/RobotCore(17240): my_debug right_front_encoder 15
+01-09 11:25:01.539 I/RobotCore(17240): my_debug left_front_encoder 18
+01-09 11:25:01.539 I/RobotCore(17240): my_debug right_back_encoder 4
+01-09 11:25:01.539 I/RobotCore(17240): my_debug left_back_encoder 3
+01-09 11:25:01.539 I/RobotCore(17240): my_debug right_front_encoder 11
+01-09 11:25:01.539 I/RobotCore(17240): my_debug left_front_encoder 12
+01-09 11:25:01.539 I/RobotCore(17240): my_debug right_back_encoder 14
+01-09 11:25:01.539 I/RobotCore(17240): my_debug left_back_encoder 14
+01-09 11:25:01.539 I/RobotCore(17240): my_debug right_front_encoder 29
+01-09 11:25:01.539 I/RobotCore(17240): my_debug left_front_encoder 35
+01-09 11:25:01.539 I/RobotCore(17240): my_debug right_back_encoder 4
+01-09 11:25:01.539 I/RobotCore(17240): my_debug left_back_encoder 3
+01-09 11:25:01.539 I/RobotCore(17240): my_debug right_front_encoder 9
+01-09 11:25:01.539 I/RobotCore(17240): my_debug left_front_encoder 11
+01-09 11:25:01.539 I/RobotCore(17240): my_debug right_back_encoder 7
+01-09 11:25:01.539 I/RobotCore(17240): my_debug left_back_encoder 6
+01-09 11:25:01.539 I/RobotCore(17240): my_debug right_front_encoder 16
+01-09 11:25:01.539 I/RobotCore(17240): my_debug left_front_encoder 20
+01-09 11:25:01.539 I/RobotCore(17240): my_debug right_back_encoder 11
+01-09 11:25:01.539 I/RobotCore(17240): my_debug left_back_encoder 8
+01-09 11:25:01.539 I/RobotCore(17240): my_debug right_front_encoder 37
+01-09 11:25:01.539 I/RobotCore(17240): my_debug left_front_encoder 46
+01-09 11:25:01.539 I/RobotCore(17240): my_debug right_back_encoder 18
+01-09 11:25:01.539 I/RobotCore(17240): my_debug left_back_encoder 18
+01-09 11:25:01.539 I/RobotCore(17240): my_debug right_front_encoder 0
+01-09 11:25:01.539 I/RobotCore(17240): my_debug left_front_encoder 0
+01-09 11:25:01.539 I/RobotCore(17240): my_debug right_back_encoder 9
+01-09 11:25:01.539 I/RobotCore(17240): my_debug left_back_encoder 10
+01-09 11:25:01.539 I/RobotCore(17240): my_debug right_front_encoder 37
+01-09 11:25:01.539 I/RobotCore(17240): my_debug left_front_encoder 46
+01-09 11:25:01.539 I/RobotCore(17240): my_debug right_back_encoder 5
+01-09 11:25:01.539 I/RobotCore(17240): my_debug left_back_encoder 5
+01-09 11:25:01.539 I/RobotCore(17240): my_debug right_front_encoder 10
+01-09 11:25:01.539 I/RobotCore(17240): my_debug left_front_encoder 13
+01-09 11:25:01.539 I/RobotCore(17240): my_debug right_back_encoder 8
+01-09 11:25:01.539 I/RobotCore(17240): my_debug left_back_encoder 9
+01-09 11:25:01.539 I/RobotCore(17240): my_debug right_front_encoder 34
+01-09 11:25:01.539 I/RobotCore(17240): my_debug left_front_encoder 43
+01-09 11:25:01.539 I/RobotCore(17240): my_debug right_back_encoder 16
+01-09 11:25:01.539 I/RobotCore(17240): my_debug left_back_encoder 20
+01-09 11:25:01.539 I/RobotCore(17240): my_debug right_front_encoder 19
+01-09 11:25:01.539 I/RobotCore(17240): my_debug left_front_encoder 23
+01-09 11:25:01.539 I/RobotCore(17240): my_debug right_back_encoder 3
+01-09 11:25:01.539 I/RobotCore(17240): my_debug left_back_encoder 4
+01-09 11:25:01.549 I/RobotCore(17240): my_debug right_front_encoder 8
+01-09 11:25:01.549 I/RobotCore(17240): my_debug left_front_encoder 10
+01-09 11:25:01.549 I/RobotCore(17240): my_debug right_back_encoder 8
+01-09 11:25:01.549 I/RobotCore(17240): my_debug left_back_encoder 9
+01-09 11:25:01.549 I/RobotCore(17240): my_debug right_front_encoder 17
+01-09 11:25:01.549 I/RobotCore(17240): my_debug left_front_encoder 24
+01-09 11:25:01.549 I/RobotCore(17240): my_debug right_back_encoder 13
+01-09 11:25:01.549 I/RobotCore(17240): my_debug left_back_encoder 16
+01-09 11:25:01.549 I/RobotCore(17240): my_debug right_front_encoder 15
+01-09 11:25:01.549 I/RobotCore(17240): my_debug left_front_encoder 22
+01-09 11:25:01.549 I/RobotCore(17240): my_debug right_back_encoder 0
+01-09 11:25:01.549 I/RobotCore(17240): my_debug left_back_encoder 0
+01-09 11:25:01.549 I/RobotCore(17240): my_debug right_front_encoder 29
+01-09 11:25:01.549 I/RobotCore(17240): my_debug left_front_encoder 44
+01-09 11:25:01.549 I/RobotCore(17240): my_debug right_back_encoder 12
+01-09 11:25:01.549 I/RobotCore(17240): my_debug left_back_encoder 16
+01-09 11:25:01.549 I/RobotCore(17240): my_debug right_front_encoder 16
+01-09 11:25:01.549 I/RobotCore(17240): my_debug left_front_encoder 22
+01-09 11:25:01.549 I/RobotCore(17240): my_debug right_back_encoder 3
+01-09 11:25:01.549 I/RobotCore(17240): my_debug left_back_encoder 4
+01-09 11:25:01.549 I/RobotCore(17240): my_debug right_front_encoder 6
+01-09 11:25:01.549 I/RobotCore(17240): my_debug left_front_encoder 11
+01-09 11:25:01.549 I/RobotCore(17240): my_debug right_back_encoder 5
+01-09 11:25:01.549 I/RobotCore(17240): my_debug left_back_encoder 5
+01-09 11:25:01.549 I/RobotCore(17240): my_debug right_front_encoder 13
+01-09 11:25:01.549 I/RobotCore(17240): my_debug left_front_encoder 20
+01-09 11:25:01.549 I/RobotCore(17240): my_debug right_back_encoder 15
+01-09 11:25:01.549 I/RobotCore(17240): my_debug left_back_encoder 13
+01-09 11:25:01.549 I/RobotCore(17240): my_debug right_front_encoder 24
+01-09 11:25:01.549 I/RobotCore(17240): my_debug left_front_encoder 38
+01-09 11:25:01.549 I/RobotCore(17240): my_debug right_back_encoder 3
+01-09 11:25:01.549 I/RobotCore(17240): my_debug left_back_encoder 3
+01-09 11:25:01.549 I/RobotCore(17240): my_debug right_front_encoder 8
+01-09 11:25:01.549 I/RobotCore(17240): my_debug left_front_encoder 12
+01-09 11:25:01.549 I/RobotCore(17240): my_debug right_back_encoder 15
+01-09 11:25:01.549 I/RobotCore(17240): my_debug left_back_encoder 13
+01-09 11:25:01.549 I/RobotCore(17240): my_debug right_front_encoder 12
+01-09 11:25:01.549 I/RobotCore(17240): my_debug left_front_encoder 17
+01-09 11:25:01.549 I/RobotCore(17240): my_debug right_back_encoder 10
+01-09 11:25:01.549 I/RobotCore(17240): my_debug left_back_encoder 9
+01-09 11:25:01.549 I/RobotCore(17240): my_debug right_front_encoder 31
+01-09 11:25:01.549 I/RobotCore(17240): my_debug left_front_encoder 40
+01-09 11:25:01.549 I/RobotCore(17240): my_debug right_back_encoder 4
+01-09 11:25:01.549 I/RobotCore(17240): my_debug left_back_encoder 4
+01-09 11:25:01.549 I/RobotCore(17240): my_debug right_front_encoder 9
+01-09 11:25:01.549 I/RobotCore(17240): my_debug left_front_encoder 12
+01-09 11:25:01.549 I/RobotCore(17240): my_debug right_back_encoder 20
+01-09 11:25:01.549 I/RobotCore(17240): my_debug left_back_encoder 19
+01-09 11:25:01.549 I/RobotCore(17240): my_debug right_front_encoder 29
+01-09 11:25:01.549 I/RobotCore(17240): my_debug left_front_encoder 36
+01-09 11:25:01.549 I/RobotCore(17240): my_debug right_back_encoder 11
+01-09 11:25:01.549 I/RobotCore(17240): my_debug left_back_encoder 12
+01-09 11:25:01.549 I/RobotCore(17240): my_debug right_front_encoder 16
+01-09 11:25:01.549 I/RobotCore(17240): my_debug left_front_encoder 21
+01-09 11:25:01.549 I/RobotCore(17240): my_debug right_back_encoder 11
+01-09 11:25:01.549 I/RobotCore(17240): my_debug left_back_encoder 11
+01-09 11:25:01.549 I/RobotCore(17240): my_debug right_front_encoder 17
+01-09 11:25:01.549 I/RobotCore(17240): my_debug left_front_encoder 21
+01-09 11:25:01.549 I/RobotCore(17240): my_debug right_back_encoder 5
+01-09 11:25:01.549 I/RobotCore(17240): my_debug left_back_encoder 6
+01-09 11:25:01.549 I/RobotCore(17240): my_debug right_front_encoder 22
+01-09 11:25:01.549 I/RobotCore(17240): my_debug left_front_encoder 27
+01-09 11:25:01.549 I/RobotCore(17240): my_debug right_back_encoder 16
+01-09 11:25:01.549 I/RobotCore(17240): my_debug left_back_encoder 17
+01-09 11:25:01.549 I/RobotCore(17240): my_debug right_front_encoder 7
+01-09 11:25:01.549 I/RobotCore(17240): my_debug left_front_encoder 10
+01-09 11:25:01.549 I/RobotCore(17240): my_debug right_back_encoder 6
+01-09 11:25:01.549 I/RobotCore(17240): my_debug left_back_encoder 7
+01-09 11:25:01.549 I/RobotCore(17240): my_debug right_front_encoder 24
+01-09 11:25:01.559 I/RobotCore(17240): my_debug left_front_encoder 31
+01-09 11:25:01.559 I/RobotCore(17240): my_debug right_back_encoder 20
+01-09 11:25:01.559 I/RobotCore(17240): my_debug left_back_encoder 18
+01-09 11:25:01.559 I/RobotCore(17240): my_debug right_front_encoder 7
+01-09 11:25:01.559 I/RobotCore(17240): my_debug left_front_encoder 10
+01-09 11:25:01.559 I/RobotCore(17240): my_debug right_back_encoder 21
+01-09 11:25:01.559 I/RobotCore(17240): my_debug left_back_encoder 19
+01-09 11:25:01.559 I/RobotCore(17240): my_debug right_front_encoder 25
+01-09 11:25:01.559 I/RobotCore(17240): my_debug left_front_encoder 33
+01-09 11:25:01.559 I/RobotCore(17240): my_debug right_back_encoder 0
+01-09 11:25:01.559 I/RobotCore(17240): my_debug left_back_encoder 0
+01-09 11:25:01.559 I/RobotCore(17240): my_debug right_front_encoder 22
+01-09 11:25:01.559 I/RobotCore(17240): my_debug left_front_encoder 29
+01-09 11:25:01.559 W/RobotCore(17240): my_debug minDiff 0
+01-09 11:25:01.559 W/RobotCore(17240): my_debug avgDiff 15
+01-09 11:25:01.559 W/RobotCore(17240): my_debug batteryVoltage 12.124340175953078
+01-09 11:25:01.719 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 44% free 6264K/11144K, paused 17ms, total 17ms
+01-09 11:25:02.469 D/dalvikvm(17240): GC_FOR_ALLOC freed 2048K, 44% free 6264K/11144K, paused 18ms, total 18ms
+01-09 11:25:03.179 D/dalvikvm(17240): GC_FOR_ALLOC freed 2048K, 44% free 6263K/11144K, paused 15ms, total 15ms
+01-09 11:25:03.919 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 44% free 6264K/11144K, paused 16ms, total 16ms
+01-09 11:25:04.649 D/dalvikvm(17240): GC_FOR_ALLOC freed 2048K, 44% free 6263K/11144K, paused 16ms, total 16ms
+01-09 11:25:05.359 D/dalvikvm(17240): GC_FOR_ALLOC freed 2048K, 44% free 6263K/11144K, paused 15ms, total 15ms
+01-09 11:25:06.059 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 44% free 6264K/11144K, paused 17ms, total 17ms
+01-09 11:25:06.779 D/dalvikvm(17240): GC_FOR_ALLOC freed 2048K, 44% free 6263K/11144K, paused 17ms, total 17ms
+01-09 11:25:07.499 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 44% free 6264K/11144K, paused 19ms, total 19ms
+01-09 11:25:07.509 I/FIRST   (17240): Processing Command: CMD_INIT_OP_MODE Stop Robot
+01-09 11:25:07.519 I/RobotCore(17240): Attempting to switch to op mode Stop Robot
+01-09 11:25:07.579 V/RobotCore(17240): Sending command: CMD_INIT_OP_MODE_RESP, attempt 0
+01-09 11:25:07.619 I/FIRST   (17240): Processing Command: CMD_RUN_OP_MODE Stop Robot
+01-09 11:25:07.679 V/RobotCore(17240): Sending command: CMD_RUN_OP_MODE_RESP, attempt 0
+01-09 11:25:08.269 D/dalvikvm(17240): GC_FOR_ALLOC freed 2045K, 44% free 6266K/11144K, paused 16ms, total 16ms
+01-09 11:25:08.989 D/dalvikvm(17240): GC_FOR_ALLOC freed 2050K, 44% free 6264K/11144K, paused 16ms, total 16ms
+01-09 11:25:09.739 D/dalvikvm(17240): GC_FOR_ALLOC freed 2048K, 44% free 6264K/11144K, paused 17ms, total 17ms
+01-09 11:25:10.479 D/dalvikvm(17240): GC_FOR_ALLOC freed 2048K, 44% free 6263K/11144K, paused 15ms, total 15ms
+01-09 11:25:11.199 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 44% free 6264K/11144K, paused 17ms, total 17ms
+01-09 11:25:11.959 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 44% free 6264K/11144K, paused 20ms, total 20ms
+01-09 11:25:12.689 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 44% free 6264K/11144K, paused 24ms, total 24ms
+01-09 11:25:13.429 D/dalvikvm(17240): GC_FOR_ALLOC freed 2048K, 44% free 6264K/11144K, paused 17ms, total 17ms
+01-09 11:25:14.189 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 44% free 6264K/11144K, paused 17ms, total 17ms
+01-09 11:25:14.929 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 44% free 6264K/11144K, paused 17ms, total 17ms
+01-09 11:25:15.649 D/dalvikvm(17240): GC_FOR_ALLOC freed 2048K, 44% free 6264K/11144K, paused 17ms, total 17ms
+01-09 11:25:16.339 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 44% free 6264K/11144K, paused 15ms, total 15ms
+01-09 11:25:17.089 D/dalvikvm(17240): GC_FOR_ALLOC freed 2048K, 44% free 6264K/11144K, paused 21ms, total 21ms
+01-09 11:25:17.829 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 44% free 6264K/11144K, paused 18ms, total 18ms
+01-09 11:25:18.589 D/dalvikvm(17240): GC_FOR_ALLOC freed 2048K, 44% free 6264K/11144K, paused 19ms, total 19ms
+01-09 11:25:19.309 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 44% free 6264K/11144K, paused 19ms, total 19ms
+01-09 11:25:20.019 D/dalvikvm(17240): GC_FOR_ALLOC freed 2048K, 44% free 6264K/11144K, paused 16ms, total 16ms
+01-09 11:25:20.719 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 44% free 6264K/11144K, paused 17ms, total 17ms
+01-09 11:25:21.409 D/dalvikvm(17240): GC_FOR_ALLOC freed 2048K, 44% free 6264K/11144K, paused 17ms, total 17ms
+01-09 11:25:22.139 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 44% free 6264K/11144K, paused 15ms, total 15ms
+01-09 11:25:22.859 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 44% free 6264K/11144K, paused 19ms, total 19ms
+01-09 11:25:23.709 D/dalvikvm(17240): GC_FOR_ALLOC freed 2048K, 44% free 6264K/11144K, paused 17ms, total 17ms
+01-09 11:25:24.429 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 44% free 6264K/11144K, paused 16ms, total 16ms
+01-09 11:25:25.169 D/dalvikvm(17240): GC_FOR_ALLOC freed 2048K, 44% free 6264K/11144K, paused 17ms, total 17ms
+01-09 11:25:25.869 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 44% free 6264K/11144K, paused 16ms, total 16ms
+01-09 11:25:26.589 D/dalvikvm(17240): GC_FOR_ALLOC freed 2048K, 44% free 6264K/11144K, paused 17ms, total 17ms
+01-09 11:25:27.309 D/dalvikvm(17240): GC_FOR_ALLOC freed 2048K, 44% free 6264K/11144K, paused 16ms, total 16ms
+01-09 11:25:28.099 D/dalvikvm(17240): GC_FOR_ALLOC freed 2048K, 44% free 6264K/11144K, paused 19ms, total 19ms
+01-09 11:25:28.829 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 44% free 6264K/11144K, paused 17ms, total 17ms
+01-09 11:25:29.559 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 44% free 6264K/11144K, paused 16ms, total 16ms
+01-09 11:25:30.249 D/dalvikvm(17240): GC_FOR_ALLOC freed 2048K, 44% free 6264K/11144K, paused 16ms, total 16ms
+01-09 11:25:31.019 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 44% free 6264K/11144K, paused 19ms, total 19ms
+01-09 11:25:31.729 D/dalvikvm(17240): GC_FOR_ALLOC freed 2048K, 44% free 6264K/11144K, paused 16ms, total 16ms
+01-09 11:25:32.429 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 44% free 6264K/11144K, paused 17ms, total 17ms
+01-09 11:25:33.199 D/dalvikvm(17240): GC_FOR_ALLOC freed 2048K, 44% free 6264K/11144K, paused 18ms, total 18ms
+01-09 11:25:33.929 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 44% free 6264K/11144K, paused 16ms, total 16ms
+01-09 11:25:34.629 D/dalvikvm(17240): GC_FOR_ALLOC freed 2048K, 44% free 6264K/11144K, paused 16ms, total 16ms
+01-09 11:25:35.359 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 44% free 6264K/11144K, paused 17ms, total 17ms
+01-09 11:25:36.069 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 44% free 6264K/11144K, paused 17ms, total 17ms
+01-09 11:25:36.859 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 44% free 6264K/11144K, paused 17ms, total 17ms
+01-09 11:25:37.199 I/RobotCore(17240): Battery Checker, Level Remaining: 95.0
+01-09 11:25:37.639 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 44% free 6264K/11144K, paused 16ms, total 16ms
+01-09 11:25:38.339 D/dalvikvm(17240): GC_FOR_ALLOC freed 2048K, 44% free 6264K/11144K, paused 16ms, total 16ms
+01-09 11:25:39.069 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 44% free 6264K/11144K, paused 17ms, total 18ms
+01-09 11:25:39.179 I/FIRST   (17240): Processing Command: CMD_INIT_OP_MODE ____TestingAuto
+01-09 11:25:39.179 I/RobotCore(17240): Attempting to switch to op mode ____TestingAuto
+01-09 11:25:39.279 V/RobotCore(17240): Sending command: CMD_INIT_OP_MODE_RESP, attempt 0
+01-09 11:25:39.539 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 44% free 6264K/11144K, paused 18ms, total 18ms
+01-09 11:25:40.239 D/dalvikvm(17240): GC_FOR_ALLOC freed 2048K, 44% free 6263K/11144K, paused 15ms, total 16ms
+01-09 11:25:40.929 D/dalvikvm(17240): GC_FOR_ALLOC freed 2048K, 44% free 6263K/11144K, paused 16ms, total 16ms
+01-09 11:25:41.639 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 44% free 6263K/11144K, paused 17ms, total 17ms
+01-09 11:25:42.139 I/FIRST   (17240): Processing Command: CMD_RUN_OP_MODE ____TestingAuto
+01-09 11:25:42.189 V/RobotCore(17240): Sending command: CMD_RUN_OP_MODE_RESP, attempt 0
+01-09 11:25:42.399 D/dalvikvm(17240): GC_FOR_ALLOC freed 2046K, 44% free 6264K/11144K, paused 17ms, total 17ms
+01-09 11:25:43.219 D/dalvikvm(17240): GC_FOR_ALLOC freed 2049K, 44% free 6263K/11144K, paused 20ms, total 20ms
+01-09 11:25:43.419 W/RobotCore(17240): my_debug BEGIN INTO_WALL
+01-09 11:25:43.419 I/RobotCore(17240): my_debug right_back_encoder 0
+01-09 11:25:43.419 I/RobotCore(17240): my_debug left_back_encoder 0
+01-09 11:25:43.419 I/RobotCore(17240): my_debug right_front_encoder 0
+01-09 11:25:43.419 I/RobotCore(17240): my_debug left_front_encoder 0
+01-09 11:25:43.419 I/RobotCore(17240): my_debug right_back_encoder 0
+01-09 11:25:43.419 I/RobotCore(17240): my_debug left_back_encoder 0
+01-09 11:25:43.429 I/RobotCore(17240): my_debug right_front_encoder 0
+01-09 11:25:43.429 I/RobotCore(17240): my_debug left_front_encoder 0
+01-09 11:25:43.429 I/RobotCore(17240): my_debug right_back_encoder 0
+01-09 11:25:43.429 I/RobotCore(17240): my_debug left_back_encoder 0
+01-09 11:25:43.429 I/RobotCore(17240): my_debug right_front_encoder 0
+01-09 11:25:43.429 I/RobotCore(17240): my_debug left_front_encoder 0
+01-09 11:25:43.429 I/RobotCore(17240): my_debug right_back_encoder 0
+01-09 11:25:43.429 I/RobotCore(17240): my_debug left_back_encoder 0
+01-09 11:25:43.429 I/RobotCore(17240): my_debug right_front_encoder 0
+01-09 11:25:43.429 I/RobotCore(17240): my_debug left_front_encoder 0
+01-09 11:25:43.429 I/RobotCore(17240): my_debug right_back_encoder 0
+01-09 11:25:43.429 I/RobotCore(17240): my_debug left_back_encoder 0
+01-09 11:25:43.429 I/RobotCore(17240): my_debug right_front_encoder 0
+01-09 11:25:43.429 I/RobotCore(17240): my_debug left_front_encoder 0
+01-09 11:25:43.429 I/RobotCore(17240): my_debug right_back_encoder 0
+01-09 11:25:43.429 I/RobotCore(17240): my_debug left_back_encoder 0
+01-09 11:25:43.429 I/RobotCore(17240): my_debug right_front_encoder 1
+01-09 11:25:43.429 I/RobotCore(17240): my_debug left_front_encoder 2
+01-09 11:25:43.429 I/RobotCore(17240): my_debug right_back_encoder 0
+01-09 11:25:43.429 I/RobotCore(17240): my_debug left_back_encoder 1
+01-09 11:25:43.429 I/RobotCore(17240): my_debug right_front_encoder 5
+01-09 11:25:43.439 I/RobotCore(17240): my_debug left_front_encoder 6
+01-09 11:25:43.439 I/RobotCore(17240): my_debug right_back_encoder 4
+01-09 11:25:43.439 I/RobotCore(17240): my_debug left_back_encoder 4
+01-09 11:25:43.439 I/RobotCore(17240): my_debug right_front_encoder 3
+01-09 11:25:43.439 I/RobotCore(17240): my_debug left_front_encoder 6
+01-09 11:25:43.439 I/RobotCore(17240): my_debug right_back_encoder 18
+01-09 11:25:43.439 I/RobotCore(17240): my_debug left_back_encoder 20
+01-09 11:25:43.439 I/RobotCore(17240): my_debug right_front_encoder 5
+01-09 11:25:43.439 I/RobotCore(17240): my_debug left_front_encoder 7
+01-09 11:25:43.439 I/RobotCore(17240): my_debug right_back_encoder 0
+01-09 11:25:43.439 I/RobotCore(17240): my_debug left_back_encoder 0
+01-09 11:25:43.439 I/RobotCore(17240): my_debug right_front_encoder 6
+01-09 11:25:43.439 I/RobotCore(17240): my_debug left_front_encoder 11
+01-09 11:25:43.439 I/RobotCore(17240): my_debug right_back_encoder 24
+01-09 11:25:43.439 I/RobotCore(17240): my_debug left_back_encoder 24
+01-09 11:25:43.439 I/RobotCore(17240): my_debug right_front_encoder 6
+01-09 11:25:43.439 I/RobotCore(17240): my_debug left_front_encoder 8
+01-09 11:25:43.439 I/RobotCore(17240): my_debug right_back_encoder 0
+01-09 11:25:43.449 I/RobotCore(17240): my_debug left_back_encoder 0
+01-09 11:25:43.449 I/RobotCore(17240): my_debug right_front_encoder 6
+01-09 11:25:43.449 I/RobotCore(17240): my_debug left_front_encoder 8
+01-09 11:25:43.449 I/RobotCore(17240): my_debug right_back_encoder 24
+01-09 11:25:43.449 I/RobotCore(17240): my_debug left_back_encoder 21
+01-09 11:25:43.449 I/RobotCore(17240): my_debug right_front_encoder 17
+01-09 11:25:43.449 I/RobotCore(17240): my_debug left_front_encoder 19
+01-09 11:25:43.449 I/RobotCore(17240): my_debug right_back_encoder 8
+01-09 11:25:43.449 I/RobotCore(17240): my_debug left_back_encoder 6
+01-09 11:25:43.449 I/RobotCore(17240): my_debug right_front_encoder 6
+01-09 11:25:43.449 I/RobotCore(17240): my_debug left_front_encoder 6
+01-09 11:25:43.449 I/RobotCore(17240): my_debug right_back_encoder 11
+01-09 11:25:43.449 I/RobotCore(17240): my_debug left_back_encoder 10
+01-09 11:25:43.449 I/RobotCore(17240): my_debug right_front_encoder 19
+01-09 11:25:43.449 I/RobotCore(17240): my_debug left_front_encoder 25
+01-09 11:25:43.449 I/RobotCore(17240): my_debug right_back_encoder 19
+01-09 11:25:43.449 I/RobotCore(17240): my_debug left_back_encoder 18
+01-09 11:25:43.449 I/RobotCore(17240): my_debug right_front_encoder 0
+01-09 11:25:43.449 I/RobotCore(17240): my_debug left_front_encoder 0
+01-09 11:25:43.449 I/RobotCore(17240): my_debug right_back_encoder 0
+01-09 11:25:43.449 I/RobotCore(17240): my_debug left_back_encoder 0
+01-09 11:25:43.449 I/RobotCore(17240): my_debug right_front_encoder 18
+01-09 11:25:43.449 I/RobotCore(17240): my_debug left_front_encoder 22
+01-09 11:25:43.449 I/RobotCore(17240): my_debug right_back_encoder 24
+01-09 11:25:43.449 I/RobotCore(17240): my_debug left_back_encoder 22
+01-09 11:25:43.449 I/RobotCore(17240): my_debug right_front_encoder 35
+01-09 11:25:43.449 I/RobotCore(17240): my_debug left_front_encoder 36
+01-09 11:25:43.449 I/RobotCore(17240): my_debug right_back_encoder 0
+01-09 11:25:43.449 I/RobotCore(17240): my_debug left_back_encoder 0
+01-09 11:25:43.449 I/RobotCore(17240): my_debug right_front_encoder 0
+01-09 11:25:43.449 I/RobotCore(17240): my_debug left_front_encoder 0
+01-09 11:25:43.449 I/RobotCore(17240): my_debug right_back_encoder 4
+01-09 11:25:43.449 I/RobotCore(17240): my_debug left_back_encoder 5
+01-09 11:25:43.449 I/RobotCore(17240): my_debug right_front_encoder 10
+01-09 11:25:43.449 I/RobotCore(17240): my_debug left_front_encoder 11
+01-09 11:25:43.459 I/RobotCore(17240): my_debug right_back_encoder 0
+01-09 11:25:43.459 I/RobotCore(17240): my_debug left_back_encoder 0
+01-09 11:25:43.459 I/RobotCore(17240): my_debug right_front_encoder 0
+01-09 11:25:43.459 I/RobotCore(17240): my_debug left_front_encoder 0
+01-09 11:25:43.459 I/RobotCore(17240): my_debug right_back_encoder 51
+01-09 11:25:43.459 I/RobotCore(17240): my_debug left_back_encoder 50
+01-09 11:25:43.459 I/RobotCore(17240): my_debug right_front_encoder 93
+01-09 11:25:43.459 I/RobotCore(17240): my_debug left_front_encoder 97
+01-09 11:25:43.459 I/RobotCore(17240): my_debug right_back_encoder 16
+01-09 11:25:43.459 I/RobotCore(17240): my_debug left_back_encoder 16
+01-09 11:25:43.459 I/RobotCore(17240): my_debug right_front_encoder 30
+01-09 11:25:43.459 I/RobotCore(17240): my_debug left_front_encoder 32
+01-09 11:25:43.459 I/RobotCore(17240): my_debug right_back_encoder 6
+01-09 11:25:43.459 I/RobotCore(17240): my_debug left_back_encoder 7
+01-09 11:25:43.459 I/RobotCore(17240): my_debug right_front_encoder 22
+01-09 11:25:43.459 I/RobotCore(17240): my_debug left_front_encoder 24
+01-09 11:25:43.459 I/RobotCore(17240): my_debug right_back_encoder 18
+01-09 11:25:43.459 I/RobotCore(17240): my_debug left_back_encoder 20
+01-09 11:25:43.459 I/RobotCore(17240): my_debug right_front_encoder 11
+01-09 11:25:43.459 I/RobotCore(17240): my_debug left_front_encoder 12
+01-09 11:25:43.459 I/RobotCore(17240): my_debug right_back_encoder 8
+01-09 11:25:43.459 I/RobotCore(17240): my_debug left_back_encoder 9
+01-09 11:25:43.459 I/RobotCore(17240): my_debug right_front_encoder 34
+01-09 11:25:43.459 I/RobotCore(17240): my_debug left_front_encoder 35
+01-09 11:25:43.459 I/RobotCore(17240): my_debug right_back_encoder 22
+01-09 11:25:43.459 I/RobotCore(17240): my_debug left_back_encoder 24
+01-09 11:25:43.459 I/RobotCore(17240): my_debug right_front_encoder 9
+01-09 11:25:43.459 I/RobotCore(17240): my_debug left_front_encoder 10
+01-09 11:25:43.459 I/RobotCore(17240): my_debug right_back_encoder 20
+01-09 11:25:43.459 I/RobotCore(17240): my_debug left_back_encoder 20
+01-09 11:25:43.459 I/RobotCore(17240): my_debug right_front_encoder 50
+01-09 11:25:43.459 I/RobotCore(17240): my_debug left_front_encoder 52
+01-09 11:25:43.459 I/RobotCore(17240): my_debug right_back_encoder 15
+01-09 11:25:43.459 I/RobotCore(17240): my_debug left_back_encoder 15
+01-09 11:25:43.459 I/RobotCore(17240): my_debug right_front_encoder 17
+01-09 11:25:43.459 I/RobotCore(17240): my_debug left_front_encoder 18
+01-09 11:25:43.459 I/RobotCore(17240): my_debug right_back_encoder 8
+01-09 11:25:43.459 I/RobotCore(17240): my_debug left_back_encoder 7
+01-09 11:25:43.459 I/RobotCore(17240): my_debug right_front_encoder 17
+01-09 11:25:43.459 I/RobotCore(17240): my_debug left_front_encoder 17
+01-09 11:25:43.459 I/RobotCore(17240): my_debug right_back_encoder 13
+01-09 11:25:43.459 I/RobotCore(17240): my_debug left_back_encoder 12
+01-09 11:25:43.459 I/RobotCore(17240): my_debug right_front_encoder 25
+01-09 11:25:43.459 I/RobotCore(17240): my_debug left_front_encoder 26
+01-09 11:25:43.459 I/RobotCore(17240): my_debug right_back_encoder 19
+01-09 11:25:43.459 I/RobotCore(17240): my_debug left_back_encoder 19
+01-09 11:25:43.459 I/RobotCore(17240): my_debug right_front_encoder 23
+01-09 11:25:43.459 I/RobotCore(17240): my_debug left_front_encoder 25
+01-09 11:25:43.459 I/RobotCore(17240): my_debug right_back_encoder 15
+01-09 11:25:43.459 I/RobotCore(17240): my_debug left_back_encoder 14
+01-09 11:25:43.459 I/RobotCore(17240): my_debug right_front_encoder 24
+01-09 11:25:43.459 I/RobotCore(17240): my_debug left_front_encoder 24
+01-09 11:25:43.459 I/RobotCore(17240): my_debug right_back_encoder 12
+01-09 11:25:43.459 I/RobotCore(17240): my_debug left_back_encoder 11
+01-09 11:25:43.459 I/RobotCore(17240): my_debug right_front_encoder 22
+01-09 11:25:43.459 I/RobotCore(17240): my_debug left_front_encoder 23
+01-09 11:25:43.459 I/RobotCore(17240): my_debug right_back_encoder 31
+01-09 11:25:43.459 I/RobotCore(17240): my_debug left_back_encoder 29
+01-09 11:25:43.459 I/RobotCore(17240): my_debug right_front_encoder 47
+01-09 11:25:43.459 I/RobotCore(17240): my_debug left_front_encoder 49
+01-09 11:25:43.459 I/RobotCore(17240): my_debug right_back_encoder 9
+01-09 11:25:43.459 I/RobotCore(17240): my_debug left_back_encoder 9
+01-09 11:25:43.459 I/RobotCore(17240): my_debug right_front_encoder 11
+01-09 11:25:43.459 I/RobotCore(17240): my_debug left_front_encoder 11
+01-09 11:25:43.459 I/RobotCore(17240): my_debug right_back_encoder 28
+01-09 11:25:43.459 I/RobotCore(17240): my_debug left_back_encoder 26
+01-09 11:25:43.459 I/RobotCore(17240): my_debug right_front_encoder 22
+01-09 11:25:43.459 I/RobotCore(17240): my_debug left_front_encoder 22
+01-09 11:25:43.459 I/RobotCore(17240): my_debug right_back_encoder 16
+01-09 11:25:43.469 I/RobotCore(17240): my_debug left_back_encoder 15
+01-09 11:25:43.469 I/RobotCore(17240): my_debug right_front_encoder 43
+01-09 11:25:43.469 I/RobotCore(17240): my_debug left_front_encoder 45
+01-09 11:25:43.469 I/RobotCore(17240): my_debug right_back_encoder 0
+01-09 11:25:43.469 I/RobotCore(17240): my_debug left_back_encoder 0
+01-09 11:25:43.469 I/RobotCore(17240): my_debug right_front_encoder 27
+01-09 11:25:43.469 I/RobotCore(17240): my_debug left_front_encoder 30
+01-09 11:25:43.469 I/RobotCore(17240): my_debug right_back_encoder 33
+01-09 11:25:43.469 I/RobotCore(17240): my_debug left_back_encoder 32
+01-09 11:25:43.469 I/RobotCore(17240): my_debug right_front_encoder 28
+01-09 11:25:43.469 I/RobotCore(17240): my_debug left_front_encoder 29
+01-09 11:25:43.469 I/RobotCore(17240): my_debug right_back_encoder 6
+01-09 11:25:43.469 I/RobotCore(17240): my_debug left_back_encoder 5
+01-09 11:25:43.469 I/RobotCore(17240): my_debug right_front_encoder 10
+01-09 11:25:43.469 I/RobotCore(17240): my_debug left_front_encoder 11
+01-09 11:25:43.469 I/RobotCore(17240): my_debug right_back_encoder 17
+01-09 11:25:43.469 I/RobotCore(17240): my_debug left_back_encoder 17
+01-09 11:25:43.469 I/RobotCore(17240): my_debug right_front_encoder 26
+01-09 11:25:43.469 I/RobotCore(17240): my_debug left_front_encoder 28
+01-09 11:25:43.469 I/RobotCore(17240): my_debug right_back_encoder 13
+01-09 11:25:43.469 I/RobotCore(17240): my_debug left_back_encoder 13
+01-09 11:25:43.469 I/RobotCore(17240): my_debug right_front_encoder 52
+01-09 11:25:43.469 I/RobotCore(17240): my_debug left_front_encoder 54
+01-09 11:25:43.469 I/RobotCore(17240): my_debug right_back_encoder 19
+01-09 11:25:43.469 I/RobotCore(17240): my_debug left_back_encoder 18
+01-09 11:25:43.469 I/RobotCore(17240): my_debug right_front_encoder 27
+01-09 11:25:43.469 I/RobotCore(17240): my_debug left_front_encoder 28
+01-09 11:25:43.469 I/RobotCore(17240): my_debug right_back_encoder 23
+01-09 11:25:43.469 I/RobotCore(17240): my_debug left_back_encoder 24
+01-09 11:25:43.469 I/RobotCore(17240): my_debug right_front_encoder 18
+01-09 11:25:43.469 I/RobotCore(17240): my_debug left_front_encoder 18
+01-09 11:25:43.469 I/RobotCore(17240): my_debug right_back_encoder 6
+01-09 11:25:43.469 I/RobotCore(17240): my_debug left_back_encoder 6
+01-09 11:25:43.469 I/RobotCore(17240): my_debug right_front_encoder 11
+01-09 11:25:43.469 I/RobotCore(17240): my_debug left_front_encoder 12
+01-09 11:25:43.469 I/RobotCore(17240): my_debug right_back_encoder 24
+01-09 11:25:43.469 I/RobotCore(17240): my_debug left_back_encoder 25
+01-09 11:25:43.469 I/RobotCore(17240): my_debug right_front_encoder 40
+01-09 11:25:43.469 I/RobotCore(17240): my_debug left_front_encoder 44
+01-09 11:25:43.469 I/RobotCore(17240): my_debug right_back_encoder 10
+01-09 11:25:43.469 I/RobotCore(17240): my_debug left_back_encoder 11
+01-09 11:25:43.469 I/RobotCore(17240): my_debug right_front_encoder 21
+01-09 11:25:43.469 I/RobotCore(17240): my_debug left_front_encoder 24
+01-09 11:25:43.469 I/RobotCore(17240): my_debug right_back_encoder 6
+01-09 11:25:43.469 I/RobotCore(17240): my_debug left_back_encoder 6
+01-09 11:25:43.469 I/RobotCore(17240): my_debug right_front_encoder 9
+01-09 11:25:43.469 I/RobotCore(17240): my_debug left_front_encoder 9
+01-09 11:25:43.469 I/RobotCore(17240): my_debug right_back_encoder 12
+01-09 11:25:43.469 I/RobotCore(17240): my_debug left_back_encoder 11
+01-09 11:25:43.469 I/RobotCore(17240): my_debug right_front_encoder 22
+01-09 11:25:43.469 I/RobotCore(17240): my_debug left_front_encoder 28
+01-09 11:25:43.469 I/RobotCore(17240): my_debug right_back_encoder 8
+01-09 11:25:43.469 I/RobotCore(17240): my_debug left_back_encoder 9
+01-09 11:25:43.469 I/RobotCore(17240): my_debug right_front_encoder 21
+01-09 11:25:43.469 I/RobotCore(17240): my_debug left_front_encoder 26
+01-09 11:25:43.469 I/RobotCore(17240): my_debug right_back_encoder 11
+01-09 11:25:43.469 I/RobotCore(17240): my_debug left_back_encoder 12
+01-09 11:25:43.469 I/RobotCore(17240): my_debug right_front_encoder 21
+01-09 11:25:43.469 I/RobotCore(17240): my_debug left_front_encoder 26
+01-09 11:25:43.469 I/RobotCore(17240): my_debug right_back_encoder 6
+01-09 11:25:43.469 I/RobotCore(17240): my_debug left_back_encoder 7
+01-09 11:25:43.469 I/RobotCore(17240): my_debug right_front_encoder 33
+01-09 11:25:43.469 I/RobotCore(17240): my_debug left_front_encoder 40
+01-09 11:25:43.469 I/RobotCore(17240): my_debug right_back_encoder 5
+01-09 11:25:43.469 I/RobotCore(17240): my_debug left_back_encoder 8
+01-09 11:25:43.469 I/RobotCore(17240): my_debug right_front_encoder 0
+01-09 11:25:43.469 I/RobotCore(17240): my_debug left_front_encoder 0
+01-09 11:25:43.469 I/RobotCore(17240): my_debug right_back_encoder 8
+01-09 11:25:43.469 I/RobotCore(17240): my_debug left_back_encoder 9
+01-09 11:25:43.469 I/RobotCore(17240): my_debug right_front_encoder 39
+01-09 11:25:43.469 I/RobotCore(17240): my_debug left_front_encoder 48
+01-09 11:25:43.469 I/RobotCore(17240): my_debug right_back_encoder 1
+01-09 11:25:43.469 I/RobotCore(17240): my_debug left_back_encoder 2
+01-09 11:25:43.469 I/RobotCore(17240): my_debug right_front_encoder 9
+01-09 11:25:43.469 I/RobotCore(17240): my_debug left_front_encoder 10
+01-09 11:25:43.469 I/RobotCore(17240): my_debug right_back_encoder 5
+01-09 11:25:43.469 I/RobotCore(17240): my_debug left_back_encoder 6
+01-09 11:25:43.469 I/RobotCore(17240): my_debug right_front_encoder 27
+01-09 11:25:43.469 I/RobotCore(17240): my_debug left_front_encoder 29
+01-09 11:25:43.479 I/RobotCore(17240): my_debug right_back_encoder 5
+01-09 11:25:43.479 I/RobotCore(17240): my_debug left_back_encoder 8
+01-09 11:25:43.479 I/RobotCore(17240): my_debug right_front_encoder 11
+01-09 11:25:43.479 I/RobotCore(17240): my_debug left_front_encoder 13
+01-09 11:25:43.479 I/RobotCore(17240): my_debug right_back_encoder 0
+01-09 11:25:43.479 I/RobotCore(17240): my_debug left_back_encoder 0
+01-09 11:25:43.479 I/RobotCore(17240): my_debug right_front_encoder 26
+01-09 11:25:43.479 I/RobotCore(17240): my_debug left_front_encoder 28
+01-09 11:25:43.479 I/RobotCore(17240): my_debug right_back_encoder 4
+01-09 11:25:43.479 I/RobotCore(17240): my_debug left_back_encoder 6
+01-09 11:25:43.479 I/RobotCore(17240): my_debug right_front_encoder 18
+01-09 11:25:43.479 I/RobotCore(17240): my_debug left_front_encoder 21
+01-09 11:25:43.479 I/RobotCore(17240): my_debug right_back_encoder 4
+01-09 11:25:43.479 I/RobotCore(17240): my_debug left_back_encoder 6
+01-09 11:25:43.479 I/RobotCore(17240): my_debug right_front_encoder 19
+01-09 11:25:43.479 I/RobotCore(17240): my_debug left_front_encoder 21
+01-09 11:25:43.479 I/RobotCore(17240): my_debug right_back_encoder 8
+01-09 11:25:43.479 I/RobotCore(17240): my_debug left_back_encoder 10
+01-09 11:25:43.479 I/RobotCore(17240): my_debug right_front_encoder 27
+01-09 11:25:43.479 I/RobotCore(17240): my_debug left_front_encoder 30
+01-09 11:25:43.479 I/RobotCore(17240): my_debug right_back_encoder 4
+01-09 11:25:43.479 I/RobotCore(17240): my_debug left_back_encoder 3
+01-09 11:25:43.479 I/RobotCore(17240): my_debug right_front_encoder 16
+01-09 11:25:43.479 I/RobotCore(17240): my_debug left_front_encoder 18
+01-09 11:25:43.479 I/RobotCore(17240): my_debug right_back_encoder 3
+01-09 11:25:43.479 I/RobotCore(17240): my_debug left_back_encoder 3
+01-09 11:25:43.479 I/RobotCore(17240): my_debug right_front_encoder 6
+01-09 11:25:43.479 I/RobotCore(17240): my_debug left_front_encoder 9
+01-09 11:25:43.479 I/RobotCore(17240): my_debug right_back_encoder 6
+01-09 11:25:43.479 I/RobotCore(17240): my_debug left_back_encoder 4
+01-09 11:25:43.479 I/RobotCore(17240): my_debug right_front_encoder 21
+01-09 11:25:43.479 I/RobotCore(17240): my_debug left_front_encoder 29
+01-09 11:25:43.479 I/RobotCore(17240): my_debug right_back_encoder 9
+01-09 11:25:43.479 I/RobotCore(17240): my_debug left_back_encoder 6
+01-09 11:25:43.479 I/RobotCore(17240): my_debug right_front_encoder 14
+01-09 11:25:43.479 I/RobotCore(17240): my_debug left_front_encoder 20
+01-09 11:25:43.479 I/RobotCore(17240): my_debug right_back_encoder 2
+01-09 11:25:43.479 I/RobotCore(17240): my_debug left_back_encoder 2
+01-09 11:25:43.479 I/RobotCore(17240): my_debug right_front_encoder 7
+01-09 11:25:43.479 I/RobotCore(17240): my_debug left_front_encoder 7
+01-09 11:25:43.479 I/RobotCore(17240): my_debug right_back_encoder 10
+01-09 11:25:43.479 I/RobotCore(17240): my_debug left_back_encoder 10
+01-09 11:25:43.479 I/RobotCore(17240): my_debug right_front_encoder 17
+01-09 11:25:43.479 I/RobotCore(17240): my_debug left_front_encoder 20
+01-09 11:25:43.479 I/RobotCore(17240): my_debug right_back_encoder 0
+01-09 11:25:43.479 I/RobotCore(17240): my_debug left_back_encoder 0
+01-09 11:25:43.479 I/RobotCore(17240): my_debug right_front_encoder 16
+01-09 11:25:43.479 I/RobotCore(17240): my_debug left_front_encoder 18
+01-09 11:25:43.479 I/RobotCore(17240): my_debug right_back_encoder 15
+01-09 11:25:43.479 I/RobotCore(17240): my_debug left_back_encoder 15
+01-09 11:25:43.479 I/RobotCore(17240): my_debug right_front_encoder 32
+01-09 11:25:43.479 I/RobotCore(17240): my_debug left_front_encoder 36
+01-09 11:25:43.479 I/RobotCore(17240): my_debug right_back_encoder 3
+01-09 11:25:43.479 I/RobotCore(17240): my_debug left_back_encoder 3
+01-09 11:25:43.479 I/RobotCore(17240): my_debug right_front_encoder 8
+01-09 11:25:43.479 I/RobotCore(17240): my_debug left_front_encoder 9
+01-09 11:25:43.479 I/RobotCore(17240): my_debug right_back_encoder 11
+01-09 11:25:43.479 I/RobotCore(17240): my_debug left_back_encoder 10
+01-09 11:25:43.479 I/RobotCore(17240): my_debug right_front_encoder 27
+01-09 11:25:43.479 I/RobotCore(17240): my_debug left_front_encoder 30
+01-09 11:25:43.479 I/RobotCore(17240): my_debug right_back_encoder 3
+01-09 11:25:43.479 I/RobotCore(17240): my_debug left_back_encoder 4
+01-09 11:25:43.479 I/RobotCore(17240): my_debug right_front_encoder 9
+01-09 11:25:43.479 I/RobotCore(17240): my_debug left_front_encoder 11
+01-09 11:25:43.479 I/RobotCore(17240): my_debug right_back_encoder 11
+01-09 11:25:43.479 I/RobotCore(17240): my_debug left_back_encoder 13
+01-09 11:25:43.479 I/RobotCore(17240): my_debug right_front_encoder 28
+01-09 11:25:43.479 I/RobotCore(17240): my_debug left_front_encoder 32
+01-09 11:25:43.479 I/RobotCore(17240): my_debug right_back_encoder 7
+01-09 11:25:43.479 I/RobotCore(17240): my_debug left_back_encoder 8
+01-09 11:25:43.479 I/RobotCore(17240): my_debug right_front_encoder 16
+01-09 11:25:43.479 I/RobotCore(17240): my_debug left_front_encoder 20
+01-09 11:25:43.479 I/RobotCore(17240): my_debug right_back_encoder 5
+01-09 11:25:43.479 I/RobotCore(17240): my_debug left_back_encoder 5
+01-09 11:25:43.479 I/RobotCore(17240): my_debug right_front_encoder 10
+01-09 11:25:43.479 I/RobotCore(17240): my_debug left_front_encoder 11
+01-09 11:25:43.479 I/RobotCore(17240): my_debug right_back_encoder 15
+01-09 11:25:43.479 I/RobotCore(17240): my_debug left_back_encoder 16
+01-09 11:25:43.479 I/RobotCore(17240): my_debug right_front_encoder 32
+01-09 11:25:43.479 I/RobotCore(17240): my_debug left_front_encoder 39
+01-09 11:25:43.479 I/RobotCore(17240): my_debug right_back_encoder 0
+01-09 11:25:43.479 I/RobotCore(17240): my_debug left_back_encoder 0
+01-09 11:25:43.479 I/RobotCore(17240): my_debug right_front_encoder 20
+01-09 11:25:43.479 I/RobotCore(17240): my_debug left_front_encoder 23
+01-09 11:25:43.489 I/RobotCore(17240): my_debug right_back_encoder 14
+01-09 11:25:43.489 I/RobotCore(17240): my_debug left_back_encoder 17
+01-09 11:25:43.489 I/RobotCore(17240): my_debug right_front_encoder 17
+01-09 11:25:43.489 I/RobotCore(17240): my_debug left_front_encoder 21
+01-09 11:25:43.489 I/RobotCore(17240): my_debug right_back_encoder 5
+01-09 11:25:43.489 I/RobotCore(17240): my_debug left_back_encoder 6
+01-09 11:25:43.489 I/RobotCore(17240): my_debug right_front_encoder 8
+01-09 11:25:43.489 I/RobotCore(17240): my_debug left_front_encoder 11
+01-09 11:25:43.489 I/RobotCore(17240): my_debug right_back_encoder 7
+01-09 11:25:43.489 I/RobotCore(17240): my_debug left_back_encoder 7
+01-09 11:25:43.489 I/RobotCore(17240): my_debug right_front_encoder 21
+01-09 11:25:43.489 I/RobotCore(17240): my_debug left_front_encoder 27
+01-09 11:25:43.489 I/RobotCore(17240): my_debug right_back_encoder 13
+01-09 11:25:43.489 I/RobotCore(17240): my_debug left_back_encoder 12
+01-09 11:25:43.489 I/RobotCore(17240): my_debug right_front_encoder 10
+01-09 11:25:43.489 I/RobotCore(17240): my_debug left_front_encoder 12
+01-09 11:25:43.489 I/RobotCore(17240): my_debug right_back_encoder 0
+01-09 11:25:43.489 I/RobotCore(17240): my_debug left_back_encoder 0
+01-09 11:25:43.489 I/RobotCore(17240): my_debug right_front_encoder 22
+01-09 11:25:43.489 I/RobotCore(17240): my_debug left_front_encoder 26
+01-09 11:25:43.489 I/RobotCore(17240): my_debug right_back_encoder 8
+01-09 11:25:43.489 I/RobotCore(17240): my_debug left_back_encoder 8
+01-09 11:25:43.489 I/RobotCore(17240): my_debug right_front_encoder 14
+01-09 11:25:43.489 I/RobotCore(17240): my_debug left_front_encoder 16
+01-09 11:25:43.489 I/RobotCore(17240): my_debug right_back_encoder 15
+01-09 11:25:43.489 I/RobotCore(17240): my_debug left_back_encoder 14
+01-09 11:25:43.489 I/RobotCore(17240): my_debug right_front_encoder 17
+01-09 11:25:43.489 I/RobotCore(17240): my_debug left_front_encoder 21
+01-09 11:25:43.489 I/RobotCore(17240): my_debug right_back_encoder 8
+01-09 11:25:43.489 I/RobotCore(17240): my_debug left_back_encoder 6
+01-09 11:25:43.489 I/RobotCore(17240): my_debug right_front_encoder 29
+01-09 11:25:43.489 I/RobotCore(17240): my_debug left_front_encoder 35
+01-09 11:25:43.489 I/RobotCore(17240): my_debug right_back_encoder 3
+01-09 11:25:43.489 I/RobotCore(17240): my_debug left_back_encoder 3
+01-09 11:25:43.489 I/RobotCore(17240): my_debug right_front_encoder 7
+01-09 11:25:43.489 I/RobotCore(17240): my_debug left_front_encoder 9
+01-09 11:25:43.489 I/RobotCore(17240): my_debug right_back_encoder 11
+01-09 11:25:43.489 I/RobotCore(17240): my_debug left_back_encoder 10
+01-09 11:25:43.489 I/RobotCore(17240): my_debug right_front_encoder 23
+01-09 11:25:43.489 I/RobotCore(17240): my_debug left_front_encoder 27
+01-09 11:25:43.489 I/RobotCore(17240): my_debug right_back_encoder 7
+01-09 11:25:43.489 I/RobotCore(17240): my_debug left_back_encoder 8
+01-09 11:25:43.489 I/RobotCore(17240): my_debug right_front_encoder 10
+01-09 11:25:43.489 I/RobotCore(17240): my_debug left_front_encoder 12
+01-09 11:25:43.489 I/RobotCore(17240): my_debug right_back_encoder 10
+01-09 11:25:43.489 I/RobotCore(17240): my_debug left_back_encoder 9
+01-09 11:25:43.489 I/RobotCore(17240): my_debug right_front_encoder 16
+01-09 11:25:43.489 I/RobotCore(17240): my_debug left_front_encoder 20
+01-09 11:25:43.489 I/RobotCore(17240): my_debug right_back_encoder 12
+01-09 11:25:43.489 I/RobotCore(17240): my_debug left_back_encoder 13
+01-09 11:25:43.489 I/RobotCore(17240): my_debug right_front_encoder 22
+01-09 11:25:43.489 I/RobotCore(17240): my_debug left_front_encoder 35
+01-09 11:25:43.489 I/RobotCore(17240): my_debug right_back_encoder 11
+01-09 11:25:43.489 I/RobotCore(17240): my_debug left_back_encoder 12
+01-09 11:25:43.489 I/RobotCore(17240): my_debug right_front_encoder 0
+01-09 11:25:43.489 I/RobotCore(17240): my_debug left_front_encoder 0
+01-09 11:25:43.489 I/RobotCore(17240): my_debug right_back_encoder 37
+01-09 11:25:43.489 I/RobotCore(17240): my_debug left_back_encoder 37
+01-09 11:25:43.499 I/RobotCore(17240): my_debug right_front_encoder 61
+01-09 11:25:43.499 I/RobotCore(17240): my_debug left_front_encoder 79
+01-09 11:25:43.499 I/RobotCore(17240): my_debug right_back_encoder 6
+01-09 11:25:43.499 I/RobotCore(17240): my_debug left_back_encoder 6
+01-09 11:25:43.499 I/RobotCore(17240): my_debug right_front_encoder 7
+01-09 11:25:43.499 I/RobotCore(17240): my_debug left_front_encoder 10
+01-09 11:25:43.499 I/RobotCore(17240): my_debug right_back_encoder 9
+01-09 11:25:43.499 I/RobotCore(17240): my_debug left_back_encoder 9
+01-09 11:25:43.499 I/RobotCore(17240): my_debug right_front_encoder 12
+01-09 11:25:43.499 I/RobotCore(17240): my_debug left_front_encoder 20
+01-09 11:25:43.499 I/RobotCore(17240): my_debug right_back_encoder 20
+01-09 11:25:43.499 I/RobotCore(17240): my_debug left_back_encoder 20
+01-09 11:25:43.499 I/RobotCore(17240): my_debug right_front_encoder 28
+01-09 11:25:43.499 I/RobotCore(17240): my_debug left_front_encoder 38
+01-09 11:25:43.499 I/RobotCore(17240): my_debug right_back_encoder 9
+01-09 11:25:43.499 I/RobotCore(17240): my_debug left_back_encoder 10
+01-09 11:25:43.499 I/RobotCore(17240): my_debug right_front_encoder 9
+01-09 11:25:43.499 I/RobotCore(17240): my_debug left_front_encoder 12
+01-09 11:25:43.499 I/RobotCore(17240): my_debug right_back_encoder 5
+01-09 11:25:43.499 I/RobotCore(17240): my_debug left_back_encoder 5
+01-09 11:25:43.499 I/RobotCore(17240): my_debug right_front_encoder 27
+01-09 11:25:43.499 I/RobotCore(17240): my_debug left_front_encoder 32
+01-09 11:25:43.499 I/RobotCore(17240): my_debug right_back_encoder 12
+01-09 11:25:43.499 I/RobotCore(17240): my_debug left_back_encoder 13
+01-09 11:25:43.499 I/RobotCore(17240): my_debug right_front_encoder 0
+01-09 11:25:43.499 I/RobotCore(17240): my_debug left_front_encoder 0
+01-09 11:25:43.499 I/RobotCore(17240): my_debug right_back_encoder 9
+01-09 11:25:43.499 I/RobotCore(17240): my_debug left_back_encoder 10
+01-09 11:25:43.499 I/RobotCore(17240): my_debug right_front_encoder 33
+01-09 11:25:43.499 I/RobotCore(17240): my_debug left_front_encoder 44
+01-09 11:25:43.499 W/RobotCore(17240): my_debug minDiff 0
+01-09 11:25:43.499 W/RobotCore(17240): my_debug avgDiff 14
+01-09 11:25:43.499 W/RobotCore(17240): my_debug batteryVoltage 12.363636363636363
+01-09 11:25:43.969 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 44% free 6264K/11144K, paused 19ms, total 19ms
+01-09 11:25:44.749 D/dalvikvm(17240): GC_FOR_ALLOC freed 2048K, 44% free 6264K/11144K, paused 16ms, total 16ms
+01-09 11:25:44.779 I/FIRST   (17240): Processing Command: CMD_INIT_OP_MODE Stop Robot
+01-09 11:25:44.789 V/RobotCore(17240): Sending command: CMD_INIT_OP_MODE_RESP, attempt 0
+01-09 11:25:44.789 I/RobotCore(17240): Attempting to switch to op mode Stop Robot
+01-09 11:25:44.819 I/FIRST   (17240): Processing Command: CMD_RUN_OP_MODE Stop Robot
+01-09 11:25:44.889 V/RobotCore(17240): Sending command: CMD_RUN_OP_MODE_RESP, attempt 0
+01-09 11:25:45.459 D/dalvikvm(17240): GC_FOR_ALLOC freed 2045K, 44% free 6266K/11144K, paused 15ms, total 15ms
+01-09 11:25:46.139 D/dalvikvm(17240): GC_FOR_ALLOC freed 2049K, 44% free 6264K/11144K, paused 16ms, total 16ms
+01-09 11:25:46.869 D/dalvikvm(17240): GC_FOR_ALLOC freed 2048K, 44% free 6264K/11144K, paused 18ms, total 18ms
+01-09 11:25:47.599 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 44% free 6264K/11144K, paused 18ms, total 18ms
+01-09 11:25:48.339 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 44% free 6264K/11144K, paused 17ms, total 17ms
+01-09 11:25:49.059 D/dalvikvm(17240): GC_FOR_ALLOC freed 2048K, 44% free 6264K/11144K, paused 17ms, total 17ms
+01-09 11:25:49.759 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 44% free 6264K/11144K, paused 17ms, total 17ms
+01-09 11:25:50.469 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 44% free 6264K/11144K, paused 18ms, total 18ms
+01-09 11:25:51.189 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 44% free 6264K/11144K, paused 17ms, total 17ms
+01-09 11:25:51.939 D/dalvikvm(17240): GC_FOR_ALLOC freed 2048K, 44% free 6264K/11144K, paused 15ms, total 16ms
+01-09 11:25:52.729 D/dalvikvm(17240): GC_FOR_ALLOC freed 2048K, 44% free 6264K/11144K, paused 24ms, total 24ms
+01-09 11:25:53.539 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 44% free 6264K/11144K, paused 16ms, total 16ms
+01-09 11:25:54.299 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 44% free 6264K/11144K, paused 18ms, total 18ms
+01-09 11:25:55.029 D/dalvikvm(17240): GC_FOR_ALLOC freed 2048K, 44% free 6264K/11144K, paused 19ms, total 19ms
+01-09 11:25:55.769 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 44% free 6264K/11144K, paused 16ms, total 16ms
+01-09 11:25:56.469 D/dalvikvm(17240): GC_FOR_ALLOC freed 2048K, 44% free 6264K/11144K, paused 16ms, total 16ms
+01-09 11:25:57.239 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 44% free 6264K/11144K, paused 17ms, total 17ms
+01-09 11:25:57.999 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 44% free 6264K/11144K, paused 22ms, total 22ms
+01-09 11:25:58.769 D/dalvikvm(17240): GC_FOR_ALLOC freed 2048K, 44% free 6264K/11144K, paused 17ms, total 17ms
+01-09 11:25:59.519 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 44% free 6264K/11144K, paused 17ms, total 17ms
+01-09 11:26:00.229 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 44% free 6264K/11144K, paused 17ms, total 17ms
+01-09 11:26:00.999 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 44% free 6264K/11144K, paused 17ms, total 17ms
+01-09 11:26:01.709 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 44% free 6264K/11144K, paused 16ms, total 16ms
+01-09 11:26:02.409 D/dalvikvm(17240): GC_FOR_ALLOC freed 2048K, 44% free 6264K/11144K, paused 16ms, total 16ms
+01-09 11:26:03.129 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 44% free 6264K/11144K, paused 17ms, total 17ms
+01-09 11:26:03.849 D/dalvikvm(17240): GC_FOR_ALLOC freed 2048K, 44% free 6264K/11144K, paused 18ms, total 18ms
+01-09 11:26:04.529 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 44% free 6264K/11144K, paused 17ms, total 17ms
+01-09 11:26:05.249 D/dalvikvm(17240): GC_FOR_ALLOC freed 2048K, 44% free 6264K/11144K, paused 15ms, total 15ms
+01-09 11:26:05.979 D/dalvikvm(17240): GC_FOR_ALLOC freed 2047K, 44% free 6264K/11144K, paused 19ms, total 19ms
+01-09 11:26:06.329 D/ProcessRequestThread::(17240): Device has been closed.
+01-09 11:26:06.329 W/System.err(17240): java.lang.InterruptedException
+01-09 11:26:06.329 D/UsbDeviceConnectionJNI(17240): close
+01-09 11:26:06.329 D/BulkIn::(17240): Stop BulkIn thread
+01-09 11:26:06.329 W/System.err(17240): java.lang.NullPointerException
+01-09 11:26:06.329 W/System.err(17240): 	at com.ftdi.j2xx.o.d(SourceFile:2306)
+01-09 11:26:06.329 W/RobotCore(17240): could not write to device AL00VFK6: FTDI Null Pointer Exception
+01-09 11:26:06.329 E/RobotCore(17240): java.lang.NullPointerException
+01-09 11:26:06.329 W/System.err(17240): 	at 	at com.ftdi.j2xx.o.f(SourceFile:2676)
+01-09 11:26:06.329 W/System.err(17240): 	at java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireSharedInterruptibly(AbstractQueuedSynchronizer.java:975)
+01-09 11:26:06.339 E/RobotCore(17240): com.ftdi.j2xx.o.a(SourceFile:2520)
+01-09 11:26:06.339 E/RobotCore(17240): com.ftdi.j2xx.FT_Device.read(SourceFile:666)
+01-09 11:26:06.339 E/RobotCore(17240): com.qualcomm.robotcore.hardware.usb.ftdi.RobotUsbDeviceFtdi.read(SourceFile:94)
+01-09 11:26:06.339 E/RobotCore(17240): com.qualcomm.modernrobotics.ReadWriteRunnableUsbHandler.a(SourceFile:89)
+01-09 11:26:06.339 E/RobotCore(17240): com.qualcomm.modernrobotics.ReadWriteRunnableUsbHandler.read(SourceFile:66)
+01-09 11:26:06.339 E/RobotCore(17240): com.qualcomm.hardware.ReadWriteRunnableStandard.run(SourceFile:242)
+01-09 11:26:06.339 E/RobotCore(17240): java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1112)
+01-09 11:26:06.339 E/RobotCore(17240): java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:587)
+01-09 11:26:06.339 E/RobotCore(17240): java.lang.Thread.run(Thread.java:841)
+01-09 11:26:06.339 V/RobotCore(17240): stopped read/write loop for device AL00VFK6
+01-09 11:26:06.339 W/System.err(17240): 	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireSharedInterruptibly(AbstractQueuedSynchronizer.java:1281)
+01-09 11:26:06.339 W/System.err(17240): 	at java.util.concurrent.Semaphore.acquire(Semaphore.java:283)
+01-09 11:26:06.339 W/System.err(17240): 	at com.ftdi.j2xx.o.c(SourceFile:2294)
+01-09 11:26:06.339 W/System.err(17240): 	at com.ftdi.j2xx.p.run(SourceFile:2764)
+01-09 11:26:06.339 W/System.err(17240): 	at java.lang.Thread.run(Thread.java:841)
+01-09 11:26:06.339 W/System.err(17240): com.ftdi.j2xx.a.run(SourceFile:2879)
+01-09 11:26:06.339 W/System.err(17240): 	at java.lang.Thread.run(Thread.java:841)
+01-09 11:26:06.339 D/UsbDeviceConnectionJNI(17240): close
+01-09 11:26:06.339 D/ProcessRequestThread::(17240): Device has been closed.
+01-09 11:26:06.339 W/System.err(17240): java.lang.InterruptedException
+01-09 11:26:06.339 W/System.err(17240): 	at java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireSharedInterruptibly(AbstractQueuedSynchronizer.java:975)
+01-09 11:26:06.339 W/System.err(17240): 	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireSharedInterruptibly(AbstractQueuedSynchronizer.java:1281)
+01-09 11:26:06.339 W/System.err(17240): 	at java.lang.NullPointerException
+01-09 11:26:06.339 W/System.err(17240): 	at com.ftdi.j2xx.o.e(SourceFile:2593)
+01-09 11:26:06.339 W/RobotCore(17240): could not write to device AL00VSDY: FTDI Null Pointer Exception
+01-09 11:26:06.339 E/RobotCore(17240): java.lang.NullPointerException
+01-09 11:26:06.339 W/System.err(17240): 	at com.ftdi.j2xx.a.run(SourceFile:2880)
+01-09 11:26:06.339 W/System.err(17240): 	at java.lang.Thread.run(Thread.java:841)
+01-09 11:26:06.339 D/BulkIn::(17240): Stop BulkIn thread
+01-09 11:26:06.339 W/System.err(17240): java.lang.NullPointerException
+01-09 11:26:06.339 E/RobotCore(17240): com.ftdi.j2xx.o.a(SourceFile:2520)
+01-09 11:26:06.339 E/RobotCore(17240): com.ftdi.j2xx.FT_Device.read(SourceFile:666)
+01-09 11:26:06.339 W/System.err(17240): 	at com.ftdi.j2xx.o.h(SourceFile:2562)
+01-09 11:26:06.339 W/System.err(17240): 	at com.ftdi.j2xx.o.e(SourceFile:2599)
+01-09 11:26:06.339 E/RobotCore(17240): com.qualcomm.robotcore.hardware.usb.ftdi.RobotUsbDeviceFtdi.read(SourceFile:94)
+01-09 11:26:06.339 W/System.err(17240): 	at com.ftdi.j2xx.a.run(SourceFile:2880)
+01-09 11:26:06.339 E/RobotCore(17240): com.qualcomm.modernrobotics.ReadWriteRunnableUsbHandler.a(SourceFile:89)
+01-09 11:26:06.339 E/RobotCore(17240): com.qualcomm.modernrobotics.ReadWriteRunnableUsbHandler.read(SourceFile:66)
+01-09 11:26:06.339 W/System.err(17240): 	at java.lang.Thread.run(Thread.java:841)
+01-09 11:26:06.339 E/RobotCore(17240): com.qualcomm.hardware.ReadWriteRunnableStandard.run(SourceFile:242)
+01-09 11:26:06.339 E/RobotCore(17240): java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1112)
+01-09 11:26:06.339 W/System.err(17240): java.util.concurrent.Semaphore.acquire(Semaphore.java:283)
+01-09 11:26:06.339 W/System.err(17240): 	at com.ftdi.j2xx.o.c(SourceFile:2294)
+01-09 11:26:06.339 W/System.err(17240): 	at com.ftdi.j2xx.p.run(SourceFile:2764)
+01-09 11:26:06.339 W/System.err(17240): 	at java.lang.Thread.run(Thread.java:841)
+01-09 11:26:06.339 E/RobotCore(17240): java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:587)
+01-09 11:26:06.339 E/RobotCore(17240): java.lang.Thread.run(Thread.java:841)
+01-09 11:26:06.339 V/RobotCore(17240): stopped read/write loop for device AL00VSDY
+01-09 11:26:06.349 D/ProcessRequestThread::(17240): Device has been closed.
+01-09 11:26:06.349 W/System.err(17240): java.lang.InterruptedException
+01-09 11:26:06.349 W/System.err(17240): 	at java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireSharedInterruptibly(AbstractQueuedSynchronizer.java:975)
+01-09 11:26:06.349 W/System.err(17240): 	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireSharedInterruptibly(AbstractQueuedSynchronizer.java:1281)
+01-09 11:26:06.349 W/System.err(17240): 	at java.util.concurrent.Semaphore.acquire(Semaphore.java:283)
+01-09 11:26:06.349 W/System.err(17240): 	at com.ftdi.j2xx.o.c(SourceFile:2294)
+01-09 11:26:06.349 W/System.err(17240): 	at com.ftdi.j2xx.p.run(SourceFile:2764)
+01-09 11:26:06.349 W/System.err(17240): 	at java.lang.Thread.run(Thread.java:841)
+01-09 11:26:06.349 D/UsbDeviceConnectionJNI(17240): close
+01-09 11:26:06.349 D/BulkIn::(17240): Stop BulkIn thread
+01-09 11:26:06.349 W/System.err(17240): java.lang.NullPointerException
+01-09 11:26:06.349 W/System.err(17240): 	at com.ftdi.j2xx.o.e(SourceFile:2602)
+01-09 11:26:06.359 W/System.err(17240): 	at com.ftdi.j2xx.a.run(SourceFile:2880)
+01-09 11:26:06.359 D/ProcessRequestThread::(17240): Device has been closed.
+01-09 11:26:06.359 D/UsbDeviceConnectionJNI(17240): close
+01-09 11:26:06.359 W/System.err(17240): 	at java.lang.InterruptedException
+01-09 11:26:06.359 W/System.err(17240): 	at java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireSharedInterruptibly(AbstractQueuedSynchronizer.java:975)
+01-09 11:26:06.359 W/System.err(17240): 	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireSharedInterruptibly(AbstractQueuedSynchronizer.java:1281)
+01-09 11:26:06.359 W/System.err(17240): 	at java.util.concurrent.Semaphore.acquire(Semaphore.java:283)
+01-09 11:26:06.359 W/System.err(17240): 	at com.ftdi.j2xx.o.c(SourceFile:2294)
+01-09 11:26:06.359 W/System.err(17240): 	at com.ftdi.j2xx.p.run(SourceFile:2764)
+01-09 11:26:06.359 W/System.err(17240): 	at java.lang.Thread.run(Thread.java:841)
+01-09 11:26:06.359 W/System.err(17240): java.lang.Thread.run(Thread.java:841)
+01-09 11:26:06.359 D/UsbDeviceConnectionJNI(17240): close
+01-09 11:26:06.359 D/ProcessRequestThread::(17240): Device has been closed.
+01-09 11:26:06.359 W/System.err(17240): java.lang.NullPointerException
+01-09 11:26:06.359 W/System.err(17240): 	at com.ftdi.j2xx.o.e(SourceFile:2593)
+01-09 11:26:06.359 W/System.err(17240): 	at com.ftdi.j2xx.a.run(SourceFile:2880)
+01-09 11:26:06.359 W/System.err(17240): 	at java.lang.Thread.run(Thread.java:841)
+01-09 11:26:06.359 D/BulkIn::(17240): Stop BulkIn thread
+01-09 11:26:06.359 W/System.err(17240): java.lang.InterruptedException
+01-09 11:26:06.359 W/System.err(17240): 	at java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireSharedInterruptibly(AbstractQueuedSynchronizer.java:975)
+01-09 11:26:06.359 W/System.err(17240): 	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireSharedInterruptibly(AbstractQueuedSynchronizer.java:1281)
+01-09 11:26:06.359 W/System.err(17240): 	at java.util.concurrent.Semaphore.acquire(Semaphore.java:283)
+01-09 11:26:06.359 W/System.err(17240): 	at com.ftdi.j2xx.o.c(SourceFile:2294)
+01-09 11:26:06.359 W/System.err(17240): 	at com.ftdi.j2xx.p.run(SourceFile:2764)
+01-09 11:26:06.359 W/RobotCore(17240): Modern Robotics USB header sync bytes are incorrect
+01-09 11:26:06.359 W/System.err(17240): 	at java.lang.Thread.run(Thread.java:841)
+01-09 11:26:06.359 W/System.err(17240): java.lang.NullPointerException
+01-09 11:26:06.359 W/System.err(17240): 	at com.ftdi.j2xx.o.h(SourceFile:2562)
+01-09 11:26:06.359 W/System.err(17240): 	at com.ftdi.j2xx.o.e(SourceFile:2599)
+01-09 11:26:06.359 D/ProcessRequestThread::(17240): Device has been closed.
+01-09 11:26:06.359 W/System.err(17240): 	at com.ftdi.j2xx.a.run(SourceFile:2880)
+01-09 11:26:06.359 W/System.err(17240): 	at java.lang.Thread.run(Thread.java:841)
+01-09 11:26:06.359 D/UsbDeviceConnectionJNI(17240): close
+01-09 11:26:06.359 W/System.err(17240): java.lang.InterruptedException
+01-09 11:26:06.359 W/System.err(17240): 	at java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireSharedInterruptibly(AbstractQueuedSynchronizer.java:975)
+01-09 11:26:06.359 W/System.err(17240): 	at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireSharedInterruptibly(AbstractQueuedSynchronizer.java:1281)
+01-09 11:26:06.359 W/System.err(17240): 	at java.util.concurrent.Semaphore.acquire(Semaphore.java:283)
+01-09 11:26:06.369 W/System.err(17240): 	at com.ftdi.j2xx.o.c(SourceFile:2294)
+01-09 11:26:06.369 W/System.err(17240): 	at com.ftdi.j2xx.p.run(SourceFile:2764)
+01-09 11:26:06.369 W/System.err(17240): 	at java.lang.Thread.run(Thread.java:841)
+01-09 11:26:06.369 W/RobotCore(17240): Modern Robotics USB header sync bytes are incorrect
+01-09 11:26:06.369 W/RobotCore(17240): [55 aa 80 40 1e] -> [00 00 00 00 00]
+01-09 11:26:06.369 W/RobotCore(17240): could not read from device AL00VG65: comm timeout
+01-09 11:26:06.369 W/RobotCore(17240): [55 aa 80 40 1e] -> [00 00 00 00 00]
+01-09 11:26:06.369 W/RobotCore(17240): could not read from device AL00VLUU: comm timeout
+01-09 11:26:06.369 W/RobotCore(17240): sync device block requested, but device is shut down - AL00VFK6
+01-09 11:26:06.369 V/RobotCore(17240): RobotCoreException in EventLoopManager: cannot block, device is shut down
+01-09 11:26:06.369 V/RobotCore(17240): EventLoopManager state is EMERGENCY_STOP
+01-09 11:26:06.369 I/FIRST   (17240): Robot Status: EMERGENCY STOP
+01-09 11:26:06.369 I/FIRST   (17240): ======= TEARDOWN =======
+01-09 11:26:06.369 I/FIRST   (17240): Stopping DC Motor Controller Actuators2
+01-09 11:26:06.369 V/RobotCore(17240): Shutting down device AL00VG65
+01-09 11:26:06.369 W/RobotCore(17240): Modern Robotics USB header sync bytes are incorrect
+01-09 11:26:06.369 W/RobotCore(17240): [55 aa 00 40 1e] -> [00 00 00 00 00]
+01-09 11:26:06.369 W/RobotCore(17240): could not write to device AL00VG65: comm timeout
+01-09 11:26:06.369 V/RobotCore(17240): stopped read/write loop for device AL00VG65
+01-09 11:26:06.369 I/FIRST   (17240): Stopping DC Motor Controller Back Motors
+01-09 11:26:06.369 V/RobotCore(17240): Shutting down device AL00XQN7
+01-09 11:26:06.369 W/RobotCore(17240): Modern Robotics USB header sync bytes are incorrect
+01-09 11:26:06.379 W/RobotCore(17240): [55 aa 00 40 1e] -> [00 00 00 00 00]
+01-09 11:26:06.379 W/RobotCore(17240): could not write to device AL00XQN7: comm timeout
+01-09 11:26:06.379 V/RobotCore(17240): stopped read/write loop for device AL00XQN7
+01-09 11:26:06.379 I/FIRST   (17240): Stopping DC Motor Controller Actuators1
+01-09 11:26:06.379 V/RobotCore(17240): Shutting down device AL00VLUU
+01-09 11:26:06.379 W/RobotCore(17240): Modern Robotics USB header sync bytes are incorrect
+01-09 11:26:06.379 W/RobotCore(17240): [55 aa 00 40 1e] -> [00 00 00 00 00]
+01-09 11:26:06.379 W/RobotCore(17240): could not write to device AL00VLUU: comm timeout
+01-09 11:26:06.379 V/RobotCore(17240): stopped read/write loop for device AL00VLUU
+01-09 11:26:06.379 I/FIRST   (17240): Stopping DC Motor Controller Front Motors
+01-09 11:26:06.379 V/RobotCore(17240): Shutting down device AL00UW4Z
+01-09 11:26:06.379 W/RobotCore(17240): Modern Robotics USB header sync bytes are incorrect
+01-09 11:26:06.379 W/RobotCore(17240): [55 aa 00 40 1e] -> [00 00 00 00 00]
+01-09 11:26:06.379 W/RobotCore(17240): could not write to device AL00UW4Z: comm timeout
+01-09 11:26:06.379 V/RobotCore(17240): stopped read/write loop for device AL00UW4Z
+01-09 11:26:06.379 I/FIRST   (17240): Stopping Servo Controller Doors
+01-09 11:26:06.379 V/RobotCore(17240): Shutting down device AL00VSDY
+01-09 11:26:06.479 W/RobotCore(17240): sync device block requested, but device is shut down - AL00VSDY
+01-09 11:26:06.489 W/RobotCore(17240): Exception while closing USB device: cannot block, device is shut down
+01-09 11:26:06.489 I/FIRST   (17240): Stopping Core Interface Device Module Device Interface Module 3
+01-09 11:26:06.489 V/RobotCore(17240): Shutting down device AL00VFK6
+01-09 11:26:06.489 W/RobotCore(17240): sync device block requested, but device is shut down - AL00VFK6
+01-09 11:26:06.489 W/RobotCore(17240): Exception while closing USB device: cannot block, device is shut down
+01-09 11:26:06.489 I/FIRST   (17240): ======= TEARDOWN COMPLETE =======
+01-09 11:26:06.489 V/RobotCore(17240): EventLoopRunnable has exited
+01-09 11:26:16.909 I/jdwp    (17240): Ignoring second debugger -- accepting and dropping

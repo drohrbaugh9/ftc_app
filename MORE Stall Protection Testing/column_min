@@ -1,0 +1,42 @@
+#!/usr/bin/perl
+
+use Getopt::Std;
+ 
+# declare the perl command line flags/options we want to allow
+my %options=();
+getopts("h:l:", \%options);
+ 
+$length = $options{l} if defined $options{l};
+$sets = 0;
+while (<>)
+{
+  @fields = split;
+  if ($fields[0] eq "DATA_SET_NAME")
+  {
+    $header = $fields[1];
+    $count = 0;
+  }
+  else
+  {
+    $data[$sets][$count++] = $fields[0];
+    if ($count == $length)
+    {
+      $sets++;
+    }
+  }
+}
+
+$header =~ s/_.$/_min/;
+$header = $options{h} if defined $options{h};
+print "DATA_SET_NAME $header\n";
+
+for ($i=0;$i<$length;$i++)
+{
+  $min = 999999;
+  for ($j=0;$j<$sets;$j++)
+  {
+    $min = $data[$j][$i] if ($data[$j][$i] < $min);
+  }
+  printf("%6.2f\n",$min);
+}
+

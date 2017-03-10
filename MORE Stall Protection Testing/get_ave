@@ -1,0 +1,16 @@
+#!/usr/bin/perl
+
+$sum = 0;
+$count = 0;
+
+while (<>)
+{
+  @fields = split;
+  $sum = $sum + $fields[0];
+  $count++;
+}
+
+$ave = $sum / $count;
+
+print "Average is: $ave\n";
+

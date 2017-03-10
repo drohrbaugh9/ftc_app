@@ -1,0 +1,17 @@
+#!/usr/bin/perl
+
+use Getopt::Std;
+ 
+# declare the perl command line flags/options we want to allow
+my %options=();
+getopts("n:", \%options);
+ 
+$dataset_number = $options{n} if defined $options{n};
+$count = 0;
+ 
+while (<>)
+{
+  $count++ if (m/my_debug BEGIN/);
+  print $_ if ($count == $dataset_number);
+}
+

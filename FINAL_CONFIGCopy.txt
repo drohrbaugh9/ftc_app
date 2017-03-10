@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+
+<Robot>
+    <!-- drive motors -->
+    <MotorController name="FrontMotors" serialNumber="AL00UW4Z">
+        <Motor name="leftFront" port="1" />
+        <Motor name="rightFront" port="2" />
+    </MotorController>
+    <MotorController name="BackMotors" serialNumber="AL00VUTY">
+        <Motor name="left" port="1" />
+        <Motor name="right" port="2" />
+    </MotorController>
+    <!-- actuators -->
+    <MotorController name="Actuators1" serialNumber="AL00VLUU">
+        <Motor name="arm" port="1" />
+    </MotorController>
+    <MotorController name="Actuators2" serialNumber="AL00VG65">
+        <Motor name="intake" port="1" />
+	<Motor name="hanger" port="2" />
+    </MotorController>
+    <!-- servos -->
+    <ServoController name="Servos" serialNumber="AL00VSDY">
+        <Servo name="leftDoor" port="1" />
+        <Servo name="rightDoor" port="2" />
+        <Servo name="rightTrigger" port="3" />
+	<Servo name="leftTrigger" port="4" />
+    </ServoController>
+    <!-- sensors -->
+    <DeviceInterfaceModule name="Sensors" serialNumber="AL00VFK6">
+	<Gyro name="gyro" port="0" />
+        <!-- currently we are not using any color sensors
+        <ColorSensor name="colorSensor1" port="1" /> -->
+    </DeviceInterfaceModule>
+</Robot>
