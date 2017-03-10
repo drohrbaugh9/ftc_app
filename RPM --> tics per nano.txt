@@ -1,8 +1,0 @@
-rotations    1 minute             1 seconds          44.4 tics
---------- x ---------- x ------------------------- x ----------
- minute     60 seconds   1,000,000,000 nanoseconds   1 rotation
-
-rotations / minute:     1250
-rotations / second:     20.8333333333
-rotations / nanosecond: 2.08333333e-8
-tics      / nanosecond: 9.25e-7
