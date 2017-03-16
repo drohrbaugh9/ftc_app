@@ -72,7 +72,7 @@ public class RedStandardCorner extends LinearOpMode {
 
         waitForStart();
 
-        AutoLoopTest.driveAndShoot(1700, 2);
+        AutoLoopTest.driveAndShoot(1600, 2);
 
         offBeaconPower = AutoUtil.offBeaconPower; onBeaconPower = AutoUtil.onBeaconPower;
 
@@ -212,7 +212,7 @@ public class RedStandardCorner extends LinearOpMode {
         Util.setRightPowers(-0.6);
         Util.setLeftPowers(-0.1);
 
-        Thread.sleep(1000);
+        Thread.sleep(1300);
 
         Util.setAllPowers(0);
 

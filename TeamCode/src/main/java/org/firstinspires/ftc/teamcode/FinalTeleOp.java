@@ -60,6 +60,9 @@ public class FinalTeleOp extends LinearOpMode {
 
         this.ods = Util.ods;
 
+        ShooterPID.realRPMtarget = 1050;
+        ShooterPID.calcuateTicsTarget(1050);
+
         Util.upDown.setPosition(Util.BEACON_DOWN);
 
         waitForStart();
@@ -315,7 +318,7 @@ public class FinalTeleOp extends LinearOpMode {
     }
 
     private boolean SHOOTER_ON = true, SHOOTER_OFF = false;
-    private int shooterPID = 1200, shooterSpinUp = 1500, shooterLoad = 2000, shooterFire = 400;
+    private int shooterPID = 1200, shooterSpinUp = 0 /* 1500 */, shooterLoad = 2000, shooterFire = 400;
     private double shooter1Power = 0, shooter2Power = 0;
 
     private void handleShooter() throws InterruptedException {
@@ -368,7 +371,7 @@ public class FinalTeleOp extends LinearOpMode {
 
     protected static double calculateShooterPower() {
         double voltage = Util.getBatteryVoltage();
-        if (voltage >= 13.6) return -0.033*voltage + 0.72; //0.696
-        else return -0.04*Util.getBatteryVoltage() + 0.81; //0.784
+        if (voltage >= 13.6) return -0.033*voltage + 0.71; //0.696
+        else return -0.04*Util.getBatteryVoltage() + 0.80; //0.784
     }
 }

@@ -72,7 +72,7 @@ public class RedStandardCenter extends LinearOpMode {
 
         waitForStart();
 
-        AutoLoopTest.driveAndShoot(1700, 2);
+        AutoLoopTest.driveAndShoot(1600, 2);
 
         offBeaconPower = AutoUtil.offBeaconPower; onBeaconPower = AutoUtil.onBeaconPower;
 
