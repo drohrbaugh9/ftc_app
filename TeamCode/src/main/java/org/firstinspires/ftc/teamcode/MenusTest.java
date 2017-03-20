@@ -21,7 +21,10 @@ public class MenusTest extends OpMode {
 
     int activeItem = 0, ACTIVE_ITEM_MAX = 3;
 
-    public void init() { displayMenu(); }
+    public void init() {
+        initializeArrays();
+        displayMenu();
+    }
 
     public void loop() {
         if (gamepad1.dpad_down) {
