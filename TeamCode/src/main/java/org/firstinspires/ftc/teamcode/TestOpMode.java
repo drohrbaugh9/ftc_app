@@ -4,7 +4,6 @@ package org.firstinspires.ftc.teamcode;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
-import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.CRServo;
 import com.qualcomm.robotcore.hardware.DcMotor;
 
@@ -27,11 +26,11 @@ public class TestOpMode extends LinearOpMode {
 
         waitForStart();
 
-        Move.accelerate(0.5);
+        Move.accelerateForward(0.5);
 
         Thread.sleep(2000);
 
-        Move.decelerate(0.5);
+        Move.decelerateForward(0.5);
     }
     /**/
 
