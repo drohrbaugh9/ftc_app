@@ -11,9 +11,9 @@ import java.util.ArrayList;
 
 public class MenusTest extends OpMode {
 
-    ArrayList<String> COLORS; // = {"RED", "BLUE"};
-    ArrayList<String> PARTICLES; // = {"1", "2", "3"};
-    ArrayList<String> PARKS; // = {"CORNER", "CENTER"};
+    ArrayList<String> COLORS;
+    ArrayList<String> PARTICLES;
+    ArrayList<String> PARKS;
     int DELAYS = 0; final int DELAY_MAX = 20;
 
     String[] menuItems = {"COLOR", "balls", " park", "delay"};
@@ -71,5 +71,13 @@ public class MenusTest extends OpMode {
         telemetry.addData("park", menuItems[2] + S + PARKS.get(0));
         telemetry.addData("delay", menuItems[3] + S + DELAYS);
         telemetry.update();
+    }
+
+    private void initializeArrays() {
+        COLORS.add("RED"); COLORS.add("BLUE");
+
+        PARTICLES.add("1"); PARTICLES.add("2"); PARTICLES.add("3");
+
+        PARKS.add("CORNER"); PARKS.add("CENTER");
     }
 }
