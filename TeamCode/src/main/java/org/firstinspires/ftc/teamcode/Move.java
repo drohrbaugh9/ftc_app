@@ -22,13 +22,14 @@ public class Move {
         currentPower -= 0.06;
         while ((currentPower - 0.06) > 0) {
             Util.setAllPowers(Range.clip(currentPower, -1, 1));
-            currentPower -= -0.06;
-            Thread.sleep(20);
+            currentPower -= 0.06;
+            Thread.sleep(100);
         }
         Util.setAllPowers(0);
     }
 
     public static void accelerateBackward(double targetPower) throws InterruptedException {
+        targetPower = Math.abs(targetPower);
         double currentPower = -0.06;
         while ((currentPower - 0.06) > (-targetPower)) {
             Util.setAllPowers(Range.clip(currentPower, -1, 1));
@@ -39,11 +40,11 @@ public class Move {
     }
 
     public static void decelerateBackward(double currentPower) throws InterruptedException {
-        currentPower += 0.06;
+        currentPower = -Math.abs(currentPower) + 0.06;
         while ((currentPower + 0.06) < 0) {
             Util.setAllPowers(Range.clip(currentPower, -1, 1));
             currentPower += 0.06;
-            Thread.sleep(20);
+            Thread.sleep(100);
         }
         Util.setAllPowers(0);
     }
