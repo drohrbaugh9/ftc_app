@@ -31,6 +31,14 @@ public class TestOpMode extends LinearOpMode {
         Thread.sleep(2000);
 
         Move.decelerateForward(0.5);
+
+        Thread.sleep(1000);
+
+        Move.accelerateBackward(0.8);
+
+        Thread.sleep(2000);
+
+        Move.decelerateBackward(0.8);
     }
     /**/
 
