@@ -9,6 +9,7 @@
         <Gyro name="gyro" port="3" />
         <I2cDevice name="colorBack" port="4" />
         <OpticalDistanceSensor name="ods" port="7" />
+	<OpticalDistanceSensor name="ods2" port="6" />
     </DeviceInterfaceModule>
     <MotorController name="Back Motors" serialNumber="A104OQ1P">
         <Motor name="rightBack" port="1" />
