@@ -143,7 +143,7 @@ public class RedStandardCenter extends LinearOpMode {
         }
 
         // move to the closer beacon
-        if (AutoUtil.encoderSteerBackwardLineSafe(0.5, 0.1, 3700, true) == -1) {
+        if (AutoUtil.encoderSteerBackwardLineSafe(0.5, 0.1, 3700, false) == -1) {
             //Util.telemetry("failsafe", "------FAILSAFE ENGAGED------", true);
             Util.setDriveModeFloat();
             Util.setAllPowers(0);
@@ -151,10 +151,8 @@ public class RedStandardCenter extends LinearOpMode {
         }
         //Util.telemetry("failsafe", "-----FAILSAFE DIDN'T ENGAGE-----", true);
 
-        Thread.sleep(100);
-
         // center the robot on the beacon
-        AutoUtil.encoderSteerForward(220, 0.1, true);
+        AutoUtil.encoderSteerBackward(80, 0.1, true);
 
         /* based on which side is red, move to that side,
          * lower our button pusher,

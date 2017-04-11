@@ -20,7 +20,7 @@ public class FinalTeleOp extends LinearOpMode {
 
     //final String NORMAL = "normal", STRAIGHT = "straight";
     private final double POWER_FACTOR = 1, POSITIVE_STEP = 0.2, NEGATIVE_STEP = 0.5;
-    protected static final double SHOOTER2_OFFSET = 0.02; // 0.07
+    protected static final double SHOOTER2_OFFSET = 0.04; // 0.07
     private final double INTAKE_POWER = 0.9;
     private final double SHOOT = Util.SHOOT, LOAD = Util.LOAD;
     protected static final long MILLIS_PER_NANO = 1000000;
@@ -318,7 +318,7 @@ public class FinalTeleOp extends LinearOpMode {
     }
 
     private boolean SHOOTER_ON = true, SHOOTER_OFF = false;
-    private int shooterPID = 1200, shooterSpinUp = 0 /* 1500 */, shooterLoad = 2000, shooterFire = 400;
+    private int shooterPID = 1200, shooterSpinUp = 1000 /* 1500 */, shooterLoad = 2000, shooterFire = 300;
     private double shooter1Power = 0, shooter2Power = 0;
 
     private void handleShooter() throws InterruptedException {
@@ -358,8 +358,16 @@ public class FinalTeleOp extends LinearOpMode {
 
             if (gamepad1.b && (time - shooterStart) > shooterSpinUp) { // && (time - shooterLoadTimer) > shooterLoad) {
                 ballFeeder.setPosition(this.SHOOT);
+                Util.log("STATUS: shots fired as of now");
                 Thread.sleep(shooterFire);
+                shooter1.setPower(0.5);
+                shooter2.setPower(0.5);
+                Thread.sleep(50);
                 ballFeeder.setPosition(this.LOAD);
+                Thread.sleep(100);
+                shooter1.setPower(shooter1Power);
+                shooter2.setPower(shooter2Power);
+                shooterStart = time;
                 //shooterLoadTimer = System.nanoTime();
             }
         } else {

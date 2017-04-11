@@ -9,7 +9,7 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 
 //@TeleOp(name = "Test", group = "Test")
 @Autonomous(name = "Test", group = "Test")
-@Disabled
+//@Disabled
 public class TestOpMode extends LinearOpMode {
 
     DcMotor shooter1, shooter2;
@@ -17,7 +17,7 @@ public class TestOpMode extends LinearOpMode {
 
     CRServo servo1;
 
-    /**/ //autonmous movement test
+    /*/ //autonmous movement test
     public void runOpMode() throws InterruptedException {
         Util.otherSensors = false; Util.colorSensors = false; Util.servos = false;
         Util.init(this);
@@ -157,7 +157,7 @@ public class TestOpMode extends LinearOpMode {
         }
     }/**/
 
-    /*/ // color sensors test
+    /**/ // color sensors test
     public void runOpMode() throws InterruptedException {
         Util.linearOpMode = this;
         I2C_ColorSensor.init(this);
@@ -177,8 +177,10 @@ public class TestOpMode extends LinearOpMode {
 
             Util.telemetry("frontRed", I2C_ColorSensor.normalizedRed(I2C_ColorSensor.synchFront), false);
             Util.telemetry("frontBlue", I2C_ColorSensor.normalizedBlue(I2C_ColorSensor.synchFront), false);
-            Util.telemetry("backRed", I2C_ColorSensor.normalizedRed(synchBack), false);
-            Util.telemetry("backBlue", I2C_ColorSensor.normalizedBlue(synchBack), true);
+            Util.telemetry("backRed", I2C_ColorSensor.normalizedRed(I2C_ColorSensor.synchBack), false);
+            Util.telemetry("backBlue", I2C_ColorSensor.normalizedBlue(I2C_ColorSensor.synchBack), false);
+            Util.telemetry("blueFrontRatio", I2C_ColorSensor.blueFrontRatio(), false);
+            Util.telemetry("bluebackRatio", I2C_ColorSensor.blueBackRatio(), true);
 
             Thread.sleep(100);
         }

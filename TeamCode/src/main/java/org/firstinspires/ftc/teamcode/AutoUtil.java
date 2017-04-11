@@ -134,7 +134,7 @@ public final class AutoUtil {
         Util.setRightPowers(-power * FORWARD_STEER);
         Util.setLeftPowers(-power / FORWARD_STEER);
 
-        while ((Util.ods.getLightDetected() < threshold) && (start - Util.rightFront.getCurrentPosition()) < maxDist) Thread.sleep(20);
+        while ((Util.ods2.getLightDetected() < threshold) && (start - Util.rightFront.getCurrentPosition()) < maxDist) Thread.sleep(20);
 
         if (stop) Util.setAllPowers(0);
 

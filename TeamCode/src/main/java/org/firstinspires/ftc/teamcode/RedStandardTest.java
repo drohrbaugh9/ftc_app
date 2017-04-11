@@ -1,6 +1,7 @@
 package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DeviceInterfaceModule;
@@ -85,27 +86,17 @@ public class RedStandardTest extends LinearOpMode {
 
         // drive near to the closer beacon
         AutoUtil.PID_Forward(2800, 0.3, false, gyro);
-        AutoUtil.PID_Forward(1000, 0.2, false, gyro);
+        AutoUtil.PID_Forward(1000, 0.2, true, gyro);
 
-        //Thread.sleep(100);
+        Thread.sleep(100);
 
         // turn toward far beacon
-        //AutoUtil.encoderTurnRight(52, 0.25);
+        AutoUtil.encoderTurnRight(52, 0.25);
 
-        Util.setRightPowers(0.1);
-        Util.setLeftPowers(0.35);
-
-        Thread.sleep(250);
-
-        Util.setRightPowers(0);
-        Util.setLeftPowers(0.5);
-
-        Thread.sleep(1000);
+        Thread.sleep(100);
 
         // move toward the wall
-        AutoUtil.PID_Forward(2250, 0.4, true, gyro);
-
-        while(opModeIsActive()) Thread.sleep(100);
+        AutoUtil.PID_Forward(2250, 0.4, false, gyro);
 
         // enable the color sensors 'cause we're about to use them
         I2C_ColorSensor.enable();
@@ -129,10 +120,23 @@ public class RedStandardTest extends LinearOpMode {
          * lower our button pusher,
          * and roll over the button
          */
+        boolean redBlue = false, blueRed = false;
         if (I2C_ColorSensor.beaconIsRedRed()) {
             AutoUtil.encoderSteerBackward(3000, 0.3, false);
             AutoUtil.beaconUp(upDown);
-        } else if (I2C_ColorSensor.beaconIsRedBlue()) {
+        } else if (I2C_ColorSensor.beaconIsBlueBlue()) {
+            double bB = I2C_ColorSensor.blueBackRatio();
+            double bF = I2C_ColorSensor.blueFrontRatio();
+            Util.telemetry("bBack2", bB, false);
+            Util.telemetry("bFront2", bF, true);
+            if (bB > bF) {
+                redBlue = true;
+            } else {
+                blueRed = true;
+            }
+        } else if (I2C_ColorSensor.beaconIsRedBlue()) redBlue = true;
+        else if (I2C_ColorSensor.beaconIsBlueRed()) blueRed = true;
+        if (redBlue) {
             AutoUtil.encoderSteerForward(BEACON_MOVE, offBeaconPower, true);
             AutoUtil.beaconDown(upDown);
             AutoUtil.encoderSteerBackward(BEACON_MOVE, onBeaconPower, true);
@@ -146,7 +150,7 @@ public class RedStandardTest extends LinearOpMode {
             AutoUtil.encoderSteerForward(BEACON_MOVE, offBeaconPower, true);
             AutoUtil.beaconUp(upDown);
             AutoUtil.encoderSteerBackward(2800 + BEACON_MOVE, 0.3, false);
-        } else if (I2C_ColorSensor.beaconIsBlueRed()) {
+        } else if (blueRed) {
             AutoUtil.encoderSteerBackward(BEACON_MOVE, offBeaconPower, true);
             AutoUtil.beaconDown(upDown);
             AutoUtil.encoderSteerForward(BEACON_MOVE, onBeaconPower, true);
@@ -163,7 +167,7 @@ public class RedStandardTest extends LinearOpMode {
         }
 
         // move to the closer beacon
-        if (AutoUtil.encoderSteerBackwardLineSafe(0.5, 0.1, 3700, true) == -1) {
+        if (AutoUtil.encoderSteerBackwardLineSafe(0.5, 0.1, 3700, false) == -1) {
             //Util.telemetry("failsafe", "------FAILSAFE ENGAGED------", true);
             Util.setDriveModeFloat();
             Util.setAllPowers(0);
@@ -174,14 +178,27 @@ public class RedStandardTest extends LinearOpMode {
         Thread.sleep(100);
 
         // center the robot on the beacon
-        AutoUtil.encoderSteerForward(220, 0.1, true);
+        AutoUtil.encoderSteerBackward(80, 0.1, true);
 
         /* based on which side is red, move to that side,
          * lower our button pusher,
          * and roll over the button
          */
+        redBlue = false; blueRed = false;
         if (I2C_ColorSensor.beaconIsRedRed()) AutoUtil.beaconUp(upDown);
-        else if (I2C_ColorSensor.beaconIsRedBlue()) {
+        else if (I2C_ColorSensor.beaconIsBlueBlue()) {
+            double bB = I2C_ColorSensor.blueBackRatio();
+            double bF = I2C_ColorSensor.blueFrontRatio();
+            Util.telemetry("bBack2", bB, false);
+            Util.telemetry("bFront2", bF, true);
+            if (bB > bF) {
+                redBlue = true;
+            } else {
+                blueRed = true;
+            }
+        } else if (I2C_ColorSensor.beaconIsRedBlue()) redBlue = true;
+        else if (I2C_ColorSensor.beaconIsBlueRed()) blueRed = true;
+        if (redBlue) {
             AutoUtil.encoderSteerForward(BEACON_MOVE, offBeaconPower, true);
             AutoUtil.beaconDown(upDown);
             AutoUtil.encoderSteerBackward(BEACON_MOVE, onBeaconPower, true);
@@ -195,7 +212,7 @@ public class RedStandardTest extends LinearOpMode {
             AutoUtil.encoderSteerForward(BEACON_MOVE, offBeaconPower, false);
             AutoUtil.beaconUp(upDown);
             AutoUtil.encoderSteerForward(BEACON_MOVE, 0.3, true);
-        } else if (I2C_ColorSensor.beaconIsBlueRed()) {
+        } else if (blueRed) {
             AutoUtil.encoderSteerBackward(BEACON_MOVE, offBeaconPower, true);
             AutoUtil.beaconDown(upDown);
             AutoUtil.encoderSteerForward(BEACON_MOVE, onBeaconPower, true);

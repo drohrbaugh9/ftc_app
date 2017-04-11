@@ -104,6 +104,38 @@ public class I2C_ColorSensor {
         return (redMSBval * 256) + redLSBval;
     }
 
+    public static int frontBlueVal() {
+        return normalizedBlue(synchFront);
+    }
+
+    public static int frontRedVal() {
+        return normalizedRed(synchFront);
+    }
+
+    public static int backBlueVal() {
+        return normalizedBlue(synchBack);
+    }
+
+    public static int backRedVal() {
+        return normalizedRed(synchBack);
+    }
+
+    public static double blueFrontRatio() {
+        return (double)frontBlueVal() / (double)frontRedVal();
+    }
+
+    public static double redFrontRatio() {
+        return (double)frontRedVal() / (double)frontBlueVal();
+    }
+
+    public static double blueBackRatio() {
+        return (double)backBlueVal() / (double)backRedVal();
+    }
+
+    public static double redBackRatio() {
+        return (double)backRedVal() / (double)backBlueVal();
+    }
+
     public static void setThreshold(int t) { threshold = t; }
 
     public static void enable() {

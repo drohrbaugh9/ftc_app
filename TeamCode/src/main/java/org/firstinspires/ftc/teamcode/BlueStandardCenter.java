@@ -112,10 +112,8 @@ public class BlueStandardCenter extends LinearOpMode {
         }
         Util.telemetry("failsafe", "-----FAILSAFE DIDN'T ENGAGE-----", true);
 
-        Thread.sleep(100);
-
         // ...and center the robot on the beacon
-        AutoUtil.encoderSteerForward(200, 0.1, true);
+        AutoUtil.encoderSteerBackward(80, 0.1, true);
 
         /* based on which side is blue, move to that side,
          * lower our button pusher,
