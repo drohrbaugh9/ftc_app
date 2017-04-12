@@ -364,7 +364,6 @@ public class FinalTeleOp extends LinearOpMode {
                 shooter2.setPower(0.5);
                 Thread.sleep(50);
                 ballFeeder.setPosition(this.LOAD);
-                Thread.sleep(100);
                 shooter1.setPower(shooter1Power);
                 shooter2.setPower(shooter2Power);
                 shooterStart = time;
