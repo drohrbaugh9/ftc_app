@@ -182,7 +182,13 @@ public final class AutoUtil {
         Util.setRightPowers(-power);
         Util.setLeftPowers(power);
 
-        while (((Math.abs(r.getCurrentPosition()) + Math.abs(l.getCurrentPosition())) / 2) < dist) Thread.sleep(20);
+        while (((Math.abs(r.getCurrentPosition()) + Math.abs(l.getCurrentPosition())) / 2) < dist) {
+            Util.telemetry("rf", Util.rightFront.getCurrentPosition(), false);
+            Util.telemetry("lf", Util.leftFront.getCurrentPosition(), false);
+            Util.telemetry("rb", Util.rightBack.getCurrentPosition(), false);
+            Util.telemetry("lb", Util.leftBack.getCurrentPosition(), true);
+            Thread.sleep(20);
+        }
 
         Util.setAllPowers(0);
     }

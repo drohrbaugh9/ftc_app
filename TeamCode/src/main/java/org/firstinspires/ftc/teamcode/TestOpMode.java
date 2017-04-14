@@ -9,7 +9,7 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 
 //@TeleOp(name = "Test", group = "Test")
 @Autonomous(name = "Test", group = "Test")
-//@Disabled
+@Disabled
 public class TestOpMode extends LinearOpMode {
 
     DcMotor shooter1, shooter2;

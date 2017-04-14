@@ -16,7 +16,7 @@ public class FinalTeleOp extends LinearOpMode {
 
     private Servo ballFeeder;
 
-    private OpticalDistanceSensor ods;
+    private OpticalDistanceSensor ods, ods2;
 
     //final String NORMAL = "normal", STRAIGHT = "straight";
     private final double POWER_FACTOR = 1, POSITIVE_STEP = 0.2, NEGATIVE_STEP = 0.5;
@@ -30,7 +30,7 @@ public class FinalTeleOp extends LinearOpMode {
     private double targetPowerR = 1, targetPowerL = 1, currentR = 1, currentL = 1;
     private boolean shooterStatus = false; //, aHasBeenPressed = false;
 
-    private int intakeStatus = 0;
+    private static int intakeStatus = 0;
     private boolean intakeChanged = false;
     private long oldLoopTime;
 
@@ -59,6 +59,7 @@ public class FinalTeleOp extends LinearOpMode {
         this.ballFeeder = Util.ballFeeder;
 
         this.ods = Util.ods;
+        this.ods2 = Util.ods2;
 
         ShooterPID.realRPMtarget = 1050;
         ShooterPID.calcuateTicsTarget(1050);
@@ -234,7 +235,7 @@ public class FinalTeleOp extends LinearOpMode {
     }
 
     private int lookForLineAndCheckJoystick(double lightThreshold) throws InterruptedException {
-        while (ods.getLightDetected() < lightThreshold) {
+        while ((ods.getLightDetected() < lightThreshold) && (ods2.getLightDetected() < lightThreshold)) {
             if (Math.abs(gamepad1.right_stick_y) > JOYSTICK_DEADZONE_LIMIT || Math.abs(gamepad1.left_stick_y) > JOYSTICK_DEADZONE_LIMIT) return -1;
             Thread.sleep(20);
         }
@@ -252,7 +253,7 @@ public class FinalTeleOp extends LinearOpMode {
     }
 
     // intake variables
-    private final int INTAKE_OFF = 0, INTAKE = 1, OUTTAKE = 2;
+    private static final int INTAKE_OFF = 0, INTAKE = 1, OUTTAKE = 2;
 
     private void handleIntake() {
         /*if ((gamepad1.right_bumper && gamepad1.left_bumper) && !intakeChanged) {
@@ -378,7 +379,9 @@ public class FinalTeleOp extends LinearOpMode {
 
     protected static double calculateShooterPower() {
         double voltage = Util.getBatteryVoltage();
+        // if the collector is running, the battery appears lower
+        if (intakeStatus == INTAKE) voltage += 0.1;
         if (voltage >= 13.6) return -0.033*voltage + 0.71; //0.696
-        else return -0.04*Util.getBatteryVoltage() + 0.80; //0.784
+        else return -0.04*voltage + 0.80; //0.784
     }
 }
