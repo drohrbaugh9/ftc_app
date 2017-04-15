@@ -61,8 +61,8 @@ public class FinalTeleOp extends LinearOpMode {
         this.ods = Util.ods;
         this.ods2 = Util.ods2;
 
-        ShooterPID.realRPMtarget = 1050;
-        ShooterPID.calcuateTicsTarget(1050);
+        ShooterPID.realRPMtarget = 1100;
+        ShooterPID.calcuateTicsTarget(1100);
 
         Util.upDown.setPosition(Util.BEACON_DOWN);
 
@@ -319,7 +319,7 @@ public class FinalTeleOp extends LinearOpMode {
     }
 
     private boolean SHOOTER_ON = true, SHOOTER_OFF = false;
-    private int shooterPID = 1200, shooterSpinUp = 1000 /* 1500 */, shooterLoad = 2000, shooterFire = 300;
+    private int shooterPID = 1200, shooterSpinUp = 1050 /* 1500 */, shooterLoad = 2000, shooterFire = 300;
     private double shooter1Power = 0, shooter2Power = 0;
 
     private void handleShooter() throws InterruptedException {
