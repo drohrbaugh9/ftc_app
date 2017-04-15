@@ -235,45 +235,4 @@ public class BlueStandardTest extends LinearOpMode {
 
         while(opModeIsActive()) Thread.sleep(100);
     }
-
-    private void shoot2() throws InterruptedException {
-        ballFeeder.setPosition(Util.SHOOT);
-
-        sleepAndShooterPID(400);
-
-        //Thread.sleep(400);
-
-        ballFeeder.setPosition(Util.LOAD);
-
-        sleepAndShooterPID(1500);
-
-        //Thread.sleep(1300);
-
-        ballFeeder.setPosition(Util.SHOOT);
-
-        sleepAndShooterPID(500);
-
-        //Thread.sleep(500);
-
-        shooter1.setPower(0);
-        shooter2.setPower(0);
-        ballFeeder.setPosition(Util.LOAD);
-    }
-
-    private void sleepAndShooterPID(int sleep) throws InterruptedException {
-        long start = System.nanoTime() / FinalTeleOp.MILLIS_PER_NANO;
-        long currentTime = start, oldTime = start - 10;
-
-        while ((currentTime - start) < sleep) {
-            currentTime = System.nanoTime() / FinalTeleOp.MILLIS_PER_NANO;
-            ShooterPID.manageEncoderData(currentTime - oldTime);
-            double[] powers = ShooterPID.PID_calculateShooterPower(shooter1Power, shooter2Power);
-            shooter1Power = powers[0];
-            shooter2Power = powers[1];
-            shooter1.setPower(shooter1Power);
-            shooter2.setPower(shooter2Power);
-            oldTime = currentTime;
-            Thread.sleep(10);
-        }
-    }
 }
