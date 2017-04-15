@@ -90,7 +90,7 @@ public class BlueStandardTest extends LinearOpMode {
         Thread.sleep(100);
 
         // turn toward far beacon
-        AutoUtil.rampEncoderTurnLeft(57, 0.6);
+        AutoUtil.rampEncoderTurnLeft(57, 0.4);
 
         Thread.sleep(100);
 

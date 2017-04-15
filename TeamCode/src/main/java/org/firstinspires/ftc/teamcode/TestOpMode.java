@@ -17,7 +17,23 @@ public class TestOpMode extends LinearOpMode {
 
     CRServo servo1;
 
-    /**/ //ODS sensors test
+    /**/ //steer test
+    public void runOpMode() throws InterruptedException {
+        Util.otherSensors = false; Util.colorSensors = false; Util.servos = false;
+        Util.init(this);
+
+        Util.setDriveModeBrake();
+
+        waitForStart();
+
+        AutoUtil.encoderSteerForward(4000, 0.3, false);
+
+        Util.setAllPowers(0);
+
+        Thread.sleep(1000);
+    }
+
+    /*/ //ODS sensors test
     public void runOpMode() throws InterruptedException {
         Util.otherSensors = true; Util.colorSensors = false; Util.servos = false;
         Util.init(this);

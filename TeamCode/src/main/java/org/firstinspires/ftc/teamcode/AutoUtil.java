@@ -49,7 +49,7 @@ public final class AutoUtil {
         if (stop) Util.setAllPowers(0);
     }
 
-    private static double FORWARD_STEER = 1.15, BACKWARD_STEER = 1.12;
+    private static double FORWARD_STEER = 1.17, BACKWARD_STEER = 1.17;
 
     public static void encoderSteerForward(int dist, double powerR, double powerL, boolean stop) throws InterruptedException {
         int pos = (r.getCurrentPosition() + l.getCurrentPosition()) / 2;
@@ -180,10 +180,10 @@ public final class AutoUtil {
         Util.setLeftPowers(power);
 
         while (((Math.abs(r.getCurrentPosition()) + Math.abs(l.getCurrentPosition())) / 2) < dist) {
-            Util.telemetry("rf", Util.rightFront.getCurrentPosition(), false);
+            /*Util.telemetry("rf", Util.rightFront.getCurrentPosition(), false);
             Util.telemetry("lf", Util.leftFront.getCurrentPosition(), false);
             Util.telemetry("rb", Util.rightBack.getCurrentPosition(), false);
-            Util.telemetry("lb", Util.leftBack.getCurrentPosition(), true);
+            Util.telemetry("lb", Util.leftBack.getCurrentPosition(), true);*/
             Thread.sleep(20);
         }
 
