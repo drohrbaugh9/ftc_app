@@ -10,7 +10,7 @@ import com.qualcomm.robotcore.hardware.OpticalDistanceSensor;
 import com.qualcomm.robotcore.hardware.Servo;
 
 @Autonomous(name="BlueAlternateCenter", group = "Competition")
-@Disabled
+//@Disabled
 public class BlueAlternateCenter extends LinearOpMode {
     // motors
     DcMotor rightBack, leftBack, rightFront, leftFront;
