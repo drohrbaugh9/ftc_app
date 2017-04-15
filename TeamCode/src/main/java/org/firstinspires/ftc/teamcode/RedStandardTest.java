@@ -120,8 +120,55 @@ public class RedStandardTest extends LinearOpMode {
          * lower our button pusher,
          * and roll over the button
          */
-        boolean redBlue = false, blueRed = false;
-        if (I2C_ColorSensor.beaconIsRedRed()) {
+        boolean tryAgain = false;
+        int frontRed, backRed;
+        double frontRatio, backRatio;
+        final int TRUE = 1, FALSE = 0, UNKNOWN = -1;
+
+        do {
+            tryAgain = !tryAgain;
+
+            double frontRedVal = I2C_ColorSensor.frontRedVal();   Util.log("BEACON frontRed " + frontRedVal);
+            double frontBlueVal = I2C_ColorSensor.frontBlueVal(); Util.log("BEACON frontBlue " + frontBlueVal);
+            double backRedVal = I2C_ColorSensor.backRedVal();     Util.log("BEACON backRed " + backRedVal);
+            double backBlueVal = I2C_ColorSensor.backBlueVal();   Util.log("BEACON backBlue " + backBlueVal);
+            frontRatio = frontRedVal / frontBlueVal;
+            backRatio = backRedVal / backBlueVal;
+
+            if (frontRatio > 1.1) frontRed = TRUE;
+            else if (frontRatio < 0.9) frontRed = FALSE;
+            else frontRed = UNKNOWN;
+
+            if (backRatio > 1.1) backRed = TRUE;
+            else if (backRatio < 0.9) backRed = FALSE;
+            else backRed = UNKNOWN;
+        } while (frontRed == UNKNOWN && backRed == UNKNOWN && tryAgain);
+
+        Util.telemetry("frontRatio", frontRatio); Util.log("BEACON frontRatio " + frontRatio);
+        Util.telemetry("backRatio", backRatio);   Util.log("BEACON backRatio " + backRatio);
+        Util.telemetry("frontRed", frontRed);     Util.log("BEACON frontRed " + frontRed);
+        Util.telemetry("backRed", backRed);       Util.log("BEACON backRed " + backRed);
+
+        if (frontRed == TRUE && backRed == TRUE) {
+            AutoUtil.encoderSteerBackward(3000, 0.3, false);
+            AutoUtil.beaconUp(upDown);
+        } else if (frontRed == TRUE && backRed != TRUE) {
+            AutoUtil.encoderSteerForward(BEACON_MOVE, offBeaconPower, true);
+            AutoUtil.beaconDown(upDown);
+            AutoUtil.encoderSteerBackward(BEACON_MOVE, onBeaconPower, true);
+            Thread.sleep(100);
+
+            AutoUtil.encoderSteerForward(BEACON_MOVE / 2, onBeaconPower, true);
+            Thread.sleep(100);
+            AutoUtil.encoderSteerBackward(BEACON_MOVE / 2, onBeaconPower, true);
+            Thread.sleep(100);
+
+            AutoUtil.encoderSteerForward(BEACON_MOVE, offBeaconPower, true);
+            AutoUtil.beaconUp(upDown);
+            AutoUtil.encoderSteerBackward(2800 + BEACON_MOVE, 0.3, false);
+        }
+
+        /*if (I2C_ColorSensor.beaconIsRedRed()) {
             AutoUtil.encoderSteerBackward(3000, 0.3, false);
             AutoUtil.beaconUp(upDown);
         } else if (I2C_ColorSensor.beaconIsBlueBlue()) {
@@ -164,7 +211,7 @@ public class RedStandardTest extends LinearOpMode {
             AutoUtil.encoderSteerBackward(BEACON_MOVE, offBeaconPower, false);
             AutoUtil.encoderSteerBackward(2800 - BEACON_MOVE, 0.3, false);
             AutoUtil.beaconUp(upDown);
-        }
+        }*/
 
         // move to the closer beacon
         if (AutoUtil.encoderSteerBackwardLineSafe(0.5, 0.1, 3700, false) == -1) {
