@@ -79,7 +79,7 @@ public class BlueStandardCorner extends LinearOpMode {
         Util.setDriveModeBrake();
 
         // turn toward the closer beacon and corner vortex
-        AutoUtil.encoderTurnLeft(105, 0.25); // 110
+        AutoUtil.rampEncoderTurnLeft(105, 0.5); // 110
 
         Thread.sleep(100);
 
@@ -90,21 +90,21 @@ public class BlueStandardCorner extends LinearOpMode {
         Thread.sleep(100);
 
         // turn toward far beacon
-        AutoUtil.encoderTurnLeft(46, 0.25);
+        AutoUtil.rampEncoderTurnLeft(57, 0.4);
 
         Thread.sleep(100);
 
         // move toward the wall
-        AutoUtil.PID_Backward(2250, 0.4, false, gyro);
+        AutoUtil.PID_Backward(2250, 0.45, false, gyro);
 
         // enable the color sensors 'cause we're about to use them
         I2C_ColorSensor.enable();
 
         // follow the wall...
-        AutoUtil.encoderSteerBackward(850, 0.3, false);
+        AutoUtil.encoderSteerBackward(1850, 0.3, false);
 
         // ...find the white line...
-        if (AutoUtil.encoderSteerBackwardLineSafe(0.5, 0.1, 3650, false) == -1) { // TODO: adjust maxDist value
+        if (AutoUtil.encoderSteerBackwardLineSafe(0.5, 0.1, 2650, false) == -1) { // TODO: adjust maxDist value
             Util.telemetry("failsafe", "------FAILSAFE ENGAGED------", true);
             Util.setDriveModeFloat();
             Util.setAllPowers(0);
@@ -207,7 +207,7 @@ public class BlueStandardCorner extends LinearOpMode {
 
         Thread.sleep(100);
 
-        AutoUtil.encoderSteerForward(1200, 0.05, 0.9, false);
+        AutoUtil.encoderSteerForward(1200, 0.05, 1, false);
 
         Util.setRightPowers(0.6);
         Util.setLeftPowers(0.1);
@@ -234,46 +234,5 @@ public class BlueStandardCorner extends LinearOpMode {
         Util.setDriveModeBrake();
 
         while(opModeIsActive()) Thread.sleep(100);
-    }
-
-    private void shoot2() throws InterruptedException {
-        ballFeeder.setPosition(Util.SHOOT);
-
-        sleepAndShooterPID(400);
-
-        //Thread.sleep(400);
-
-        ballFeeder.setPosition(Util.LOAD);
-
-        sleepAndShooterPID(1500);
-
-        //Thread.sleep(1300);
-
-        ballFeeder.setPosition(Util.SHOOT);
-
-        sleepAndShooterPID(500);
-
-        //Thread.sleep(500);
-
-        shooter1.setPower(0);
-        shooter2.setPower(0);
-        ballFeeder.setPosition(Util.LOAD);
-    }
-
-    private void sleepAndShooterPID(int sleep) throws InterruptedException {
-        long start = System.nanoTime() / FinalTeleOp.MILLIS_PER_NANO;
-        long currentTime = start, oldTime = start - 10;
-
-        while ((currentTime - start) < sleep) {
-            currentTime = System.nanoTime() / FinalTeleOp.MILLIS_PER_NANO;
-            ShooterPID.manageEncoderData(currentTime - oldTime);
-            double[] powers = ShooterPID.PID_calculateShooterPower(shooter1Power, shooter2Power);
-            shooter1Power = powers[0];
-            shooter2Power = powers[1];
-            shooter1.setPower(shooter1Power);
-            shooter2.setPower(shooter2Power);
-            oldTime = currentTime;
-            Thread.sleep(10);
-        }
     }
 }
