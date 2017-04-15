@@ -116,9 +116,7 @@ public class I2C_ColorSensor {
         return normalizedBlue(synchBack);
     }
 
-    public static int backRedVal() {
-        return normalizedRed(synchBack);
-    }
+    public static int backRedVal() { return normalizedRed(synchBack); }
 
     public static double blueFrontRatio() {
         return (double)frontBlueVal() / (double)frontRedVal();
