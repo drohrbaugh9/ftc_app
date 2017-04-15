@@ -9,13 +9,45 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 
 //@TeleOp(name = "Test", group = "Test")
 @Autonomous(name = "Test", group = "Test")
-@Disabled
+//@Disabled
 public class TestOpMode extends LinearOpMode {
 
     DcMotor shooter1, shooter2;
     DcMotor[] motors;
 
     CRServo servo1;
+
+    /**/ //ODS sensors test
+    public void runOpMode() throws InterruptedException {
+        Util.otherSensors = true; Util.colorSensors = false; Util.servos = false;
+        Util.init(this);
+
+        waitForStart();
+
+        while (opModeIsActive()) {
+            Util.telemetry("ods", Util.ods.getLightDetected(), false);
+            Util.telemetry("ods2", Util.ods2.getLightDetected(), true);
+            Thread.sleep(100);
+        }
+    }
+    /**/
+
+    /*/ //new auto turn test
+    public void runOpMode() throws InterruptedException {
+        Util.otherSensors = false; Util.colorSensors = false; Util.servos = false;
+        Util.init(this);
+
+        Util.setDriveModeBrake();
+
+        waitForStart();
+
+        AutoUtil.rampEncoderTurnRight(180, 0.6);
+
+        Thread.sleep(1000);
+
+        AutoUtil.rampEncoderTurnLeft(180, 0.6);
+    }
+    /**/
 
     /*/ //autonmous movement test
     public void runOpMode() throws InterruptedException {
@@ -157,7 +189,7 @@ public class TestOpMode extends LinearOpMode {
         }
     }/**/
 
-    /**/ // color sensors test
+    /*/ // color sensors test
     public void runOpMode() throws InterruptedException {
         Util.linearOpMode = this;
         I2C_ColorSensor.init(this);
