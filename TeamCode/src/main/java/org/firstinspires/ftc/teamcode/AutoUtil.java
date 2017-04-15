@@ -170,9 +170,6 @@ public final class AutoUtil {
         if (stop) Util.setAllPowers(0);
     }
 
-    final static double RAMP_UP_DELTA = 0.02, RAMP_DOWN_DELTA = 0.03;
-    final static int EXTRA_DEGREES = 3; // 1
-
     public static void encoderTurnRight(double degrees, double power) throws InterruptedException {
         Util.resetEncoders();
 
@@ -195,9 +192,79 @@ public final class AutoUtil {
 
     public static void encoderTurnLeft(int degrees, double power) throws InterruptedException { encoderTurnRight(degrees, -power); }
 
+    final static double RAMP_UP_DELTA = 0.02, RAMP_DOWN_DELTA = 0.025;
+    final static int EXTRA_DEGREES = 3; // 1
+
+    public static void rampEncoderTurnRight(double targetDegrees, double targetPower) throws InterruptedException {
+        Util.resetEncoders();
+
+        double dist = targetDegrees / 360;
+        dist = dist * 15 / 4 * 1120;
+
+        double power = MIN_POWER - RAMP_UP_DELTA;
+        boolean reachedTargetPower = false;
+        while (((Math.abs(r.getCurrentPosition()) + Math.abs(l.getCurrentPosition())) / 2) < (dist / 2)) {
+            if (!reachedTargetPower) power += RAMP_UP_DELTA;
+            if (power > targetPower) {
+                power = targetPower;
+                reachedTargetPower = true;
+            }
+            Util.setRightPowers(-power);
+            Util.setLeftPowers(power);
+            Thread.sleep(10);
+        }
+        power = targetPower;
+        boolean reachedMinPower = false;
+        while (((Math.abs(r.getCurrentPosition()) + Math.abs(l.getCurrentPosition())) / 2) < dist) {
+            if (!reachedMinPower) power -= RAMP_DOWN_DELTA;
+            if (power < MIN_POWER) {
+                power = MIN_POWER;
+                reachedMinPower = true;
+            }
+            Util.setRightPowers(-power);
+            Util.setLeftPowers(power);
+            Thread.sleep(10);
+        }
+        Util.setAllPowers(0);
+    }
+
+    public static void rampEncoderTurnLeft(double targetDegrees, double targetPower) throws InterruptedException {
+        Util.resetEncoders();
+
+        double dist = targetDegrees / 360;
+        dist = dist * 15 / 4 * 1120;
+
+        double power = MIN_POWER - RAMP_UP_DELTA;
+        boolean reachedTargetPower = false;
+        while (((Math.abs(r.getCurrentPosition()) + Math.abs(l.getCurrentPosition())) / 2) < (dist / 2)) {
+            if (!reachedTargetPower) power += RAMP_UP_DELTA;
+            if (power > targetPower) {
+                power = targetPower;
+                reachedTargetPower = true;
+            }
+            Util.setRightPowers(power);
+            Util.setLeftPowers(-power);
+            Thread.sleep(10);
+        }
+        power = targetPower;
+        boolean reachedMinPower = false;
+        while (((Math.abs(r.getCurrentPosition()) + Math.abs(l.getCurrentPosition())) / 2) < dist) {
+            if (!reachedMinPower) power -= RAMP_DOWN_DELTA;
+            if (power < MIN_POWER) {
+                power = MIN_POWER;
+                reachedMinPower = true;
+            }
+            Util.setRightPowers(power);
+            Util.setLeftPowers(-power);
+            Thread.sleep(10);
+        }
+        Util.setAllPowers(0);
+    }
+
     public static void gyroTurnRight(double degreeTarget, double targetPower, GyroSensor gyro) throws InterruptedException {
         resetGyroHeading(gyro);
         double power = MIN_POWER;
+        boolean reachedMinPower = false;
         while (PID.heading(gyro) < (degreeTarget / 2)) {
             power += RAMP_UP_DELTA;
             if (power > targetPower) {
