@@ -58,8 +58,8 @@ public class AutoLoopTest {
 
         AutoUtil.onBeaconPower *= (13.6 / Util.getBatteryVoltage());
 
-        ShooterPID.realRPMtarget = 1030;
-        ShooterPID.calcuateTicsTarget(1030);
+        ShooterPID.realRPMtarget = 1080;
+        ShooterPID.calcuateTicsTarget(1080);
 
         long start = System.nanoTime() / FinalTeleOp.MILLIS_PER_NANO, currentTime, oldTime = start - 10;
 
