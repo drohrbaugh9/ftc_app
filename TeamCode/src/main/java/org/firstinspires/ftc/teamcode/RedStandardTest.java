@@ -10,7 +10,7 @@ import com.qualcomm.robotcore.hardware.OpticalDistanceSensor;
 import com.qualcomm.robotcore.hardware.Servo;
 
 @Autonomous(name="RedStandardTest", group="Test")
-//@Disabled
+@Disabled
 public class RedStandardTest extends LinearOpMode {
 
     // motors
