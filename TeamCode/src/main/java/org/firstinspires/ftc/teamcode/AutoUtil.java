@@ -49,7 +49,7 @@ public final class AutoUtil {
         if (stop) Util.setAllPowers(0);
     }
 
-    private static double FORWARD_STEER = 1.17, BACKWARD_STEER = 1.17;
+    private static double FORWARD_STEER = 1.15, BACKWARD_STEER = 1.17;
 
     public static void encoderSteerForward(int dist, double powerR, double powerL, boolean stop) throws InterruptedException {
         int pos = (r.getCurrentPosition() + l.getCurrentPosition()) / 2;
