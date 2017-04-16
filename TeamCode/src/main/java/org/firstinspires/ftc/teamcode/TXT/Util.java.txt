@@ -22,7 +22,7 @@ public final class Util {
 
     protected static Servo ballFeeder, upDown;
 
-    protected static OpticalDistanceSensor ods;
+    protected static OpticalDistanceSensor ods, ods2;
 
     protected static GyroSensor gyro;
 
@@ -92,6 +92,7 @@ public final class Util {
         // other sensors
         if (otherSensors) {
             ods = opMode.hardwareMap.opticalDistanceSensor.get("ods");
+            ods2 = opMode.hardwareMap.opticalDistanceSensor.get("ods2");
             gyro = opMode.hardwareMap.gyroSensor.get("gyro");
         }
 

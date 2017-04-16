@@ -11,11 +11,14 @@ public final class ShooterPID {
     private static final float shooterKi = 0.0f;
 
     static final double MOVING_AVERAGE_LENGTH = 50, MEASURING_INTERVAL = 10;
-    static final double RPM_TARGET = 1075.0; // 1050.0
+    static final double RPM_TARGET = 1050.0; // 1050.0
     static final double TICS_PER_ROTATION = Util.NEVEREST_37_TICS_PER_ROTATION;
     static final double TICS_TARGET = TICS_PER_ROTATION * (RPM_TARGET / 60.0) * (MEASURING_INTERVAL / 1000.0); // tics per MEASURING_INTERVAL, is 46.25 if target is 1250
 
     private static double shooterIntegral1 = 0, shooterIntegral2 = 0;
+
+    public static double realRPMtarget = RPM_TARGET;
+    private static double realTicsTarget = TICS_PER_ROTATION * (realRPMtarget / 60.0) * (MEASURING_INTERVAL / 1000.0);
 
     private static Queue<Double> shooter1Queue, shooter2Queue;
     private static Queue<Long> elapsedTimeQueue;
@@ -43,7 +46,7 @@ public final class ShooterPID {
         Util.telemetry("delta2", delta2, false);
         Util.telemetry("shooter1Sum", shooter1Sum, false);*/
 
-        return PI_Shooter(delta1, delta2, TICS_TARGET, power1, power2);
+        return PI_Shooter(delta1, delta2, realTicsTarget, power1, power2);
     }
 
     public static double[] PI_Shooter(double tics1, double tics2, double tics_target, double power1, double power2) {
@@ -74,8 +77,8 @@ public final class ShooterPID {
         shooter1Diff = (MEASURING_INTERVAL / elapsedTime) * shooter1Diff;
         shooter2Diff = (MEASURING_INTERVAL / elapsedTime) * shooter2Diff;
 
-        if (shooter1Diff > (TICS_TARGET * 2)) shooter1Diff = TICS_TARGET * 2;
-        if (shooter2Diff > (TICS_TARGET * 2)) shooter2Diff = TICS_TARGET * 2;
+        if (shooter1Diff > (realTicsTarget * 2)) shooter1Diff = realTicsTarget * 2;
+        if (shooter2Diff > (realTicsTarget * 2)) shooter2Diff = realTicsTarget * 2;
 
         shooter1Sum = shooter1Sum + shooter1Diff - shooter1Queue.poll();
         shooter1Queue.add(shooter1Diff);
@@ -88,11 +91,11 @@ public final class ShooterPID {
         lastShooter2Pos = shooter2Pos;
 
 
-        if (!ledOn && (shooter1Sum / MOVING_AVERAGE_LENGTH) > (TICS_TARGET)) {
+        if (!ledOn && (shooter1Sum / MOVING_AVERAGE_LENGTH) > (realTicsTarget)) {
             Util.led.setPower(1);
             ledOn = true;
         }
-        else if (ledOn && (shooter1Sum / MOVING_AVERAGE_LENGTH ) < (TICS_TARGET * 0.9)) {
+        else if (ledOn && (shooter1Sum / MOVING_AVERAGE_LENGTH ) < (realTicsTarget * 0.9)) {
             Util.led.setPower(0);
             ledOn = false;
         }
@@ -127,7 +130,11 @@ public final class ShooterPID {
         queueClear = true;
     }
 
-    public static void fillQueue() throws InterruptedException {
+    public static void calcuateTicsTarget(double realRPM) {
+        realTicsTarget = TICS_PER_ROTATION * (realRPM / 60.0) * (MEASURING_INTERVAL / 1000.0);
+    }
+
+    /*public static void fillQueue() throws InterruptedException {
         shooter1Sum = TICS_TARGET * MOVING_AVERAGE_LENGTH;
         shooter2Sum = TICS_TARGET * MOVING_AVERAGE_LENGTH;
 
@@ -146,7 +153,7 @@ public final class ShooterPID {
         lastShooter2Pos = Util.shooter2.getCurrentPosition();
 
         Thread.sleep(10);
-    }
+    }*/
 
     public static void printQueue() {
         Util.telemetry("q", shooter1Queue.toString(), true);

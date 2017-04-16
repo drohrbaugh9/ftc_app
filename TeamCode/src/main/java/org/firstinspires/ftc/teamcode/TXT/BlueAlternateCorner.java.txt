@@ -1,6 +1,7 @@
 package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DeviceInterfaceModule;
@@ -67,11 +68,11 @@ public class BlueAlternateCorner extends LinearOpMode {
 
         telemetry.update();
 
-        Thread.sleep(15 * 1000); // 12*/
+        Thread.sleep(15 * 1000); // 12
 
         AutoLoopTest.driveAndShoot(3200, 2);
 
-        AutoUtil.encoderTurnRight(60, 0.2);
+        AutoUtil.rampEncoderTurnRight(70, 0.4);
 
         Thread.sleep(200);
 

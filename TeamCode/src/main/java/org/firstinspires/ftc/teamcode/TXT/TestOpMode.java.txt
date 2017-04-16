@@ -1,14 +1,14 @@
 package org.firstinspires.ftc.teamcode;
 
 
+import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
-import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.CRServo;
 import com.qualcomm.robotcore.hardware.DcMotor;
 
-@TeleOp(name = "Test", group = "Test")
-//@Autonomous(name = "Test", group = "Test")
+//@TeleOp(name = "Test", group = "Test")
+@Autonomous(name = "Test", group = "Test")
 @Disabled
 public class TestOpMode extends LinearOpMode {
 
@@ -17,7 +17,80 @@ public class TestOpMode extends LinearOpMode {
 
     CRServo servo1;
 
-    /**/ // low power test
+    /**/ //steer test
+    public void runOpMode() throws InterruptedException {
+        Util.otherSensors = false; Util.colorSensors = false; Util.servos = false;
+        Util.init(this);
+
+        Util.setDriveModeBrake();
+
+        waitForStart();
+
+        AutoUtil.encoderSteerForward(4000, 0.3, false);
+
+        Util.setAllPowers(0);
+
+        Thread.sleep(1000);
+    }
+
+    /*/ //ODS sensors test
+    public void runOpMode() throws InterruptedException {
+        Util.otherSensors = true; Util.colorSensors = false; Util.servos = false;
+        Util.init(this);
+
+        waitForStart();
+
+        while (opModeIsActive()) {
+            Util.telemetry("ods", Util.ods.getLightDetected(), false);
+            Util.telemetry("ods2", Util.ods2.getLightDetected(), true);
+            Thread.sleep(100);
+        }
+    }
+    /**/
+
+    /*/ //new auto turn test
+    public void runOpMode() throws InterruptedException {
+        Util.otherSensors = false; Util.colorSensors = false; Util.servos = false;
+        Util.init(this);
+
+        Util.setDriveModeBrake();
+
+        waitForStart();
+
+        AutoUtil.rampEncoderTurnRight(180, 0.6);
+
+        Thread.sleep(1000);
+
+        AutoUtil.rampEncoderTurnLeft(180, 0.6);
+    }
+    /**/
+
+    /*/ //autonmous movement test
+    public void runOpMode() throws InterruptedException {
+        Util.otherSensors = false; Util.colorSensors = false; Util.servos = false;
+        Util.init(this);
+
+        Util.setDriveModeBrake();
+
+        waitForStart();
+
+        Move.accelerateForward(0.5);
+
+        Thread.sleep(2000);
+
+        Move.decelerateForward(0.5);
+
+        Thread.sleep(1000);
+
+        Move.accelerateBackward(0.8);
+
+        Thread.sleep(2000);
+
+        Move.decelerateBackward(0.8);
+    }
+    /**/
+
+    /*/ // low power test
     public void runOpMode() throws InterruptedException {
         Util.otherSensors = false; Util.colorSensors = false; Util.servos = false;
         Util.init(this);
@@ -152,8 +225,10 @@ public class TestOpMode extends LinearOpMode {
 
             Util.telemetry("frontRed", I2C_ColorSensor.normalizedRed(I2C_ColorSensor.synchFront), false);
             Util.telemetry("frontBlue", I2C_ColorSensor.normalizedBlue(I2C_ColorSensor.synchFront), false);
-            Util.telemetry("backRed", I2C_ColorSensor.normalizedRed(synchBack), false);
-            Util.telemetry("backBlue", I2C_ColorSensor.normalizedBlue(synchBack), true);
+            Util.telemetry("backRed", I2C_ColorSensor.normalizedRed(I2C_ColorSensor.synchBack), false);
+            Util.telemetry("backBlue", I2C_ColorSensor.normalizedBlue(I2C_ColorSensor.synchBack), false);
+            Util.telemetry("blueFrontRatio", I2C_ColorSensor.blueFrontRatio(), false);
+            Util.telemetry("bluebackRatio", I2C_ColorSensor.blueBackRatio(), true);
 
             Thread.sleep(100);
         }

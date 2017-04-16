@@ -13,7 +13,7 @@ public final class AutoUtil {
     private static double powerFactor = Util.POWER_LIMIT;
     protected static DcMotor r, l;
     private static final double MOTOR_POWER_THRESHOLD = 0.8 * Util.POWER_LIMIT, TIME_THRESHOLD = 0.3 * Util.SEC_TO_NSEC;
-    private static final double MIN_POWER = 0.2;
+    private static final double MIN_POWER = 0.25;
     public static double offBeaconPower = 0.15, onBeaconPower = 0.11;
 
     private AutoUtil() throws Exception {
@@ -49,7 +49,7 @@ public final class AutoUtil {
         if (stop) Util.setAllPowers(0);
     }
 
-    private static double FORWARD_STEER = 1.15, BACKWARD_STEER = 1.12;
+    private static double FORWARD_STEER = 1.15, BACKWARD_STEER = 1.17;
 
     public static void encoderSteerForward(int dist, double powerR, double powerL, boolean stop) throws InterruptedException {
         int pos = (r.getCurrentPosition() + l.getCurrentPosition()) / 2;
@@ -134,7 +134,7 @@ public final class AutoUtil {
         Util.setRightPowers(-power * FORWARD_STEER);
         Util.setLeftPowers(-power / FORWARD_STEER);
 
-        while ((Util.ods.getLightDetected() < threshold) && (start - Util.rightFront.getCurrentPosition()) < maxDist) Thread.sleep(20);
+        while ((Util.ods2.getLightDetected() < threshold) && (start - Util.rightFront.getCurrentPosition()) < maxDist) Thread.sleep(20);
 
         if (stop) Util.setAllPowers(0);
 
@@ -170,9 +170,6 @@ public final class AutoUtil {
         if (stop) Util.setAllPowers(0);
     }
 
-    final static double RAMP_UP_DELTA = 0.02, RAMP_DOWN_DELTA = 0.03;
-    final static int EXTRA_DEGREES = 3; // 1
-
     public static void encoderTurnRight(double degrees, double power) throws InterruptedException {
         Util.resetEncoders();
 
@@ -182,16 +179,92 @@ public final class AutoUtil {
         Util.setRightPowers(-power);
         Util.setLeftPowers(power);
 
-        while (((Math.abs(r.getCurrentPosition()) + Math.abs(l.getCurrentPosition())) / 2) < dist) Thread.sleep(20);
+        while (((Math.abs(r.getCurrentPosition()) + Math.abs(l.getCurrentPosition())) / 2) < dist) {
+            /*Util.telemetry("rf", Util.rightFront.getCurrentPosition(), false);
+            Util.telemetry("lf", Util.leftFront.getCurrentPosition(), false);
+            Util.telemetry("rb", Util.rightBack.getCurrentPosition(), false);
+            Util.telemetry("lb", Util.leftBack.getCurrentPosition(), true);*/
+            Thread.sleep(20);
+        }
 
         Util.setAllPowers(0);
     }
 
     public static void encoderTurnLeft(int degrees, double power) throws InterruptedException { encoderTurnRight(degrees, -power); }
 
+    final static double RAMP_UP_DELTA = 0.02, RAMP_DOWN_DELTA = 0.025;
+    final static int EXTRA_DEGREES = 3; // 1
+
+    public static void rampEncoderTurnRight(double targetDegrees, double targetPower) throws InterruptedException {
+        Util.resetEncoders();
+
+        double dist = targetDegrees / 360;
+        dist = dist * 15 / 4 * 1120;
+
+        double power = MIN_POWER - RAMP_UP_DELTA;
+        boolean reachedTargetPower = false;
+        while (((Math.abs(r.getCurrentPosition()) + Math.abs(l.getCurrentPosition())) / 2) < (dist / 2)) {
+            if (!reachedTargetPower) power += RAMP_UP_DELTA;
+            if (power > targetPower) {
+                power = targetPower;
+                reachedTargetPower = true;
+            }
+            Util.setRightPowers(-power);
+            Util.setLeftPowers(power);
+            Thread.sleep(10);
+        }
+        power = targetPower;
+        boolean reachedMinPower = false;
+        while (((Math.abs(r.getCurrentPosition()) + Math.abs(l.getCurrentPosition())) / 2) < dist) {
+            if (!reachedMinPower) power -= RAMP_DOWN_DELTA;
+            if (power < MIN_POWER) {
+                power = MIN_POWER;
+                reachedMinPower = true;
+            }
+            Util.setRightPowers(-power);
+            Util.setLeftPowers(power);
+            Thread.sleep(10);
+        }
+        Util.setAllPowers(0);
+    }
+
+    public static void rampEncoderTurnLeft(double targetDegrees, double targetPower) throws InterruptedException {
+        Util.resetEncoders();
+
+        double dist = targetDegrees / 360;
+        dist = dist * 15 / 4 * 1120;
+
+        double power = MIN_POWER - RAMP_UP_DELTA;
+        boolean reachedTargetPower = false;
+        while (((Math.abs(r.getCurrentPosition()) + Math.abs(l.getCurrentPosition())) / 2) < (dist / 2)) {
+            if (!reachedTargetPower) power += RAMP_UP_DELTA;
+            if (power > targetPower) {
+                power = targetPower;
+                reachedTargetPower = true;
+            }
+            Util.setRightPowers(power);
+            Util.setLeftPowers(-power);
+            Thread.sleep(10);
+        }
+        power = targetPower;
+        boolean reachedMinPower = false;
+        while (((Math.abs(r.getCurrentPosition()) + Math.abs(l.getCurrentPosition())) / 2) < dist) {
+            if (!reachedMinPower) power -= RAMP_DOWN_DELTA;
+            if (power < MIN_POWER) {
+                power = MIN_POWER;
+                reachedMinPower = true;
+            }
+            Util.setRightPowers(power);
+            Util.setLeftPowers(-power);
+            Thread.sleep(10);
+        }
+        Util.setAllPowers(0);
+    }
+
     public static void gyroTurnRight(double degreeTarget, double targetPower, GyroSensor gyro) throws InterruptedException {
         resetGyroHeading(gyro);
         double power = MIN_POWER;
+        boolean reachedMinPower = false;
         while (PID.heading(gyro) < (degreeTarget / 2)) {
             power += RAMP_UP_DELTA;
             if (power > targetPower) {

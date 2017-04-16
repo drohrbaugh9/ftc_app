@@ -16,11 +16,11 @@ public class FinalTeleOp extends LinearOpMode {
 
     private Servo ballFeeder;
 
-    private OpticalDistanceSensor ods;
+    private OpticalDistanceSensor ods, ods2;
 
     //final String NORMAL = "normal", STRAIGHT = "straight";
     private final double POWER_FACTOR = 1, POSITIVE_STEP = 0.2, NEGATIVE_STEP = 0.5;
-    protected static final double SHOOTER2_OFFSET = 0.02; // 0.07
+    protected static final double SHOOTER2_OFFSET = 0.04; // 0.07
     private final double INTAKE_POWER = 0.9;
     private final double SHOOT = Util.SHOOT, LOAD = Util.LOAD;
     protected static final long MILLIS_PER_NANO = 1000000;
@@ -30,7 +30,7 @@ public class FinalTeleOp extends LinearOpMode {
     private double targetPowerR = 1, targetPowerL = 1, currentR = 1, currentL = 1;
     private boolean shooterStatus = false; //, aHasBeenPressed = false;
 
-    private int intakeStatus = 0;
+    private static int intakeStatus = 0;
     private boolean intakeChanged = false;
     private long oldLoopTime;
 
@@ -59,6 +59,10 @@ public class FinalTeleOp extends LinearOpMode {
         this.ballFeeder = Util.ballFeeder;
 
         this.ods = Util.ods;
+        this.ods2 = Util.ods2;
+
+        ShooterPID.realRPMtarget = 1100;
+        ShooterPID.calcuateTicsTarget(1100);
 
         Util.upDown.setPosition(Util.BEACON_DOWN);
 
@@ -228,7 +232,7 @@ public class FinalTeleOp extends LinearOpMode {
     }
 
     private int lookForLineAndCheckJoystick(double lightThreshold) throws InterruptedException {
-        while (ods.getLightDetected() < lightThreshold) {
+        while ((ods.getLightDetected() < lightThreshold) && (ods2.getLightDetected() < lightThreshold)) {
             if (Math.abs(gamepad1.right_stick_y) > JOYSTICK_DEADZONE_LIMIT || Math.abs(gamepad1.left_stick_y) > JOYSTICK_DEADZONE_LIMIT) return -1;
             Thread.sleep(20);
         }
@@ -246,7 +250,7 @@ public class FinalTeleOp extends LinearOpMode {
     }
 
     // intake variables
-    private final int INTAKE_OFF = 0, INTAKE = 1, OUTTAKE = 2;
+    private static final int INTAKE_OFF = 0, INTAKE = 1, OUTTAKE = 2;
 
     private void handleIntake() {
         /*if ((gamepad1.right_bumper && gamepad1.left_bumper) && !intakeChanged) {
@@ -312,7 +316,7 @@ public class FinalTeleOp extends LinearOpMode {
     }
 
     private boolean SHOOTER_ON = true, SHOOTER_OFF = false;
-    private int shooterPID = 1200, shooterSpinUp = 1500, shooterLoad = 2000, shooterFire = 400;
+    private int shooterPID = 1200, shooterSpinUp = 1050 /* 1500 */, shooterLoad = 2000, shooterFire = 300;
     private double shooter1Power = 0, shooter2Power = 0;
 
     private void handleShooter() throws InterruptedException {
@@ -352,7 +356,13 @@ public class FinalTeleOp extends LinearOpMode {
             if (gamepad1.b && (time - shooterStart) > shooterSpinUp) { // && (time - shooterLoadTimer) > shooterLoad) {
                 ballFeeder.setPosition(this.SHOOT);
                 Thread.sleep(shooterFire);
+                shooter1.setPower(0.5);
+                shooter2.setPower(0.5);
+                Thread.sleep(50);
                 ballFeeder.setPosition(this.LOAD);
+                shooter1.setPower(shooter1Power);
+                shooter2.setPower(shooter2Power);
+                shooterStart = time;
                 //shooterLoadTimer = System.nanoTime();
             }
         } else {
@@ -364,7 +374,9 @@ public class FinalTeleOp extends LinearOpMode {
 
     protected static double calculateShooterPower() {
         double voltage = Util.getBatteryVoltage();
-        if (voltage >= 13.6) return -0.033*voltage + 0.72; //0.696
-        else return -0.04*Util.getBatteryVoltage() + 0.81; //0.784
+        // if the collector is running, the battery appears lower
+        if (intakeStatus == INTAKE) voltage += 0.1;
+        if (voltage >= 13.6) return -0.033*voltage + 0.71; //0.696
+        else return -0.04*voltage + 0.80; //0.784
     }
 }
