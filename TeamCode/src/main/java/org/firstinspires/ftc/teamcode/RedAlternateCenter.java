@@ -66,10 +66,10 @@ public class RedAlternateCenter extends LinearOpMode {
 
         waitForStart();
 
-        /*telemetry.addData("auto status", "waiting 12 seconds");
+        telemetry.addData("auto status", "waiting 12 seconds");
         telemetry.update();
 
-        Thread.sleep(15 * 1000); // 12*/
+        Thread.sleep(15 * 1000); // 12
 
         AutoLoopTest.driveAndShoot(3200, 2); Thread.sleep(100);
 

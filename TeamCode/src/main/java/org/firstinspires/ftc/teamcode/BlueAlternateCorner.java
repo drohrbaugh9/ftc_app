@@ -66,14 +66,14 @@ public class BlueAlternateCorner extends LinearOpMode {
 
         waitForStart();
 
-        /*telemetry.addData("auto status", "waiting 12 seconds");
+        telemetry.addData("auto status", "waiting 12 seconds");
         telemetry.update();
 
-        Thread.sleep(15 * 1000); // 12*/
+        Thread.sleep(15 * 1000); // 12
 
         AutoLoopTest.driveAndShoot(3200, 2);
 
-        AutoUtil.encoderTurnRight(60, 0.2);
+        AutoUtil.rampEncoderTurnRight(70, 0.4);
 
         Thread.sleep(200);
 
