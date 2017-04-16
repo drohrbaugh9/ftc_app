@@ -90,7 +90,7 @@ public class RedStandardCenter extends LinearOpMode {
         Thread.sleep(100);
 
         // turn toward far beacon
-        AutoUtil.rampEncoderTurnRight(52, 0.4);
+        AutoUtil.rampEncoderTurnRight(50, 0.4);
 
         Thread.sleep(100);
 
