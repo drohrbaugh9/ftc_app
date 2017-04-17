@@ -79,7 +79,7 @@ public class RedStandardCenter extends LinearOpMode {
         Util.setDriveModeBrake();
 
         // turn toward the closer beacon and corner vortex
-        AutoUtil.rampEncoderTurnLeft(62, 0.4);
+        AutoUtil.rampEncoderTurnLeft(65, 0.4);
 
         Thread.sleep(100);
 
