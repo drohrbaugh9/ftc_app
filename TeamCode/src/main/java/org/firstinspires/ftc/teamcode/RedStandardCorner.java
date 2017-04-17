@@ -79,7 +79,7 @@ public class RedStandardCorner extends LinearOpMode {
         Util.setDriveModeBrake();
 
         // turn toward the closer beacon and corner vortex
-        AutoUtil.rampEncoderTurnLeft(60, 0.4);
+        AutoUtil.rampEncoderTurnLeft(62, 0.4);
 
         Thread.sleep(100);
 
@@ -90,7 +90,7 @@ public class RedStandardCorner extends LinearOpMode {
         Thread.sleep(100);
 
         // turn toward far beacon
-        AutoUtil.rampEncoderTurnRight(50, 0.4);
+        AutoUtil.rampEncoderTurnRight(48, 0.4);
 
         Thread.sleep(100);
 
