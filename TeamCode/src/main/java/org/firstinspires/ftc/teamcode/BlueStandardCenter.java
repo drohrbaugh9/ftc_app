@@ -91,7 +91,7 @@ public class BlueStandardCenter extends LinearOpMode {
         Util.setDriveModeBrake();
 
         // turn toward the closer beacon and corner vortex
-        AutoUtil.rampEncoderTurnLeft(105, 0.5); // 110
+        AutoUtil.rampEncoderTurnLeft(100, 0.5); // 110
 
         Thread.sleep(100);
 
@@ -102,7 +102,7 @@ public class BlueStandardCenter extends LinearOpMode {
         Thread.sleep(100);
 
         // turn toward far beacon
-        AutoUtil.rampEncoderTurnLeft(57, 0.4);
+        AutoUtil.rampEncoderTurnLeft(52, 0.4);
 
         Thread.sleep(100);
 
@@ -303,7 +303,7 @@ public class BlueStandardCenter extends LinearOpMode {
 
         Thread.sleep(100);
 
-        AutoUtil.rampEncoderTurnLeft(105, 0.5);
+        AutoUtil.rampEncoderTurnLeft(95, 0.5);
 
         Thread.sleep(100);
 
