@@ -1,7 +1,0 @@
-<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
-<Robot>
-    <MotorController name="Motor Controller 1" serialNumber="AL00VWH0">
-        <Motor name="right" port="1" />
-        <Motor name="left" port="2" />
-    </MotorController>
-</Robot>
