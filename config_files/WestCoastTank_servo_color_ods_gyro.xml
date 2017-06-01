@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<Robot>
+    <MotorController name="Motor Controller 2" serialNumber="A104OQ1P">
+        <Motor name="rightBack" port="1" />
+        <Motor name="leftBack" port="2" />
+    </MotorController>
+    <MotorController name="Motor Controller 1" serialNumber="AL00VWH0">
+        <Motor name="rightFront" port="1" />
+        <Motor name="leftFront" port="2" />
+    </MotorController>
+    <ServoController name="Servo Controller 1" serialNumber="AL00VSDY">
+	<Servo name="upDown" port="1" />
+    </ServoController>
+    <DeviceInterfaceModule name="Device Interface Module 1" serialNumber="AL00VFK6">
+        <I2cDevice name="color" port="4" />
+	<OpticalDistanceSensor name="ods" port="7" />
+	<GyroSensor name="gyro" port="3" />
+    </DeviceInterfaceModule>
+</Robot>
