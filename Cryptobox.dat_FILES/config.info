@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<QCARInfo>
+    <TargetSet version="5.0" toolVersion="2.7.4">
+        <ImageTarget name="Blue_Cryptobox" targetId="495a96886f434a7a889af9e66eb525ea" version="2.6" toolVersion="2.7.4">
+            <UnpaddedImage size="320 301" />
+        </ImageTarget>
+    </TargetSet>
+</QCARInfo>

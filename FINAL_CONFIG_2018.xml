@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<Robot type="FirstInspires-FTC">
+    <LynxUsbDevice name="Expansion Hub Portal 1" serialNumber="DQ1471OH" parentModuleAddress="3">
+        <LynxModule name="Expansion Hub 2" port="2">
+            <NeveRest20Gearmotor name="leftBack" port="0" />
+            <NeveRest20Gearmotor name="leftFront" port="1" />
+            <NeveRest40Gearmotor name="intake_left" port="2" />
+            <NeveRest20Gearmotor name="lift" port="3" />
+            <Servo name="colorServo" port="0" />
+            <Servo name="leftTiltServo" port="1" />
+            <Servo name="relicArm" port="2" />
+            <Servo name="relicGrabber" port="3" />
+            <Servo name="tableBackstopServo" port="5" />
+            <DigitalDevice name="glyphCounter" port="6" />
+            <LynxEmbeddedIMU name="imu2" port="0" bus="0" />
+            <LynxColorSensor name="LeftColorSensor" port="0" bus="1" />
+            <LynxColorSensor name="glyphCounterDistanceColor" port="0" bus="2" />
+        </LynxModule>
+        <LynxModule name="Expansion Hub 1" port="3">
+            <NeveRest20Gearmotor name="rightFront" port="0" />
+            <NeveRest20Gearmotor name="rightBack" port="1" />
+            <NeveRest40Gearmotor name="intake_right" port="2" />
+            <NeveRest60Gearmotor name="relic" port="3" />
+            <Servo name="JewelArmServo" port="0" />
+            <Servo name="rightTiltServo" port="1" />
+            <Servo name="JewelWhackerServo" port="2" />
+            <Servo name="distanceSensorArm" port="3" />
+            <LynxEmbeddedIMU name="imu" port="0" bus="0" />
+            <LynxColorSensor name="RightColorSensor" port="0" bus="1" />
+            <LynxColorSensor name="BallColorSensor" port="0" bus="2" />
+            <LynxColorSensor name="columnDistanceSensor" port="0" bus="3" />
+        </LynxModule>
+    </LynxUsbDevice>
+</Robot>

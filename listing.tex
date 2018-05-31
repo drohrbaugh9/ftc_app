@@ -1,0 +1,129 @@
+\documentclass[letterpaper,10pt]{article}
+
+\usepackage{color}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage[scaled=0.9]{sourcecodepro}
+\usepackage[letterpaper, margin=0.75in]{geometry}
+\usepackage{graphicx}
+
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+
+\definecolor{commentGrey}{rgb}{0.3, 0.3, 0.3}
+\definecolor{keywordBlue}{rgb}{0, 0, 0.5}
+
+\newcommand{\latex}{\LaTeX}
+
+\pagenumbering{gobble}
+
+\lstset{
+    %frame=single,
+    breaklines=true,
+    postbreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\color{keywordBlue}\hookrightarrow\space}}
+}
+
+\lstdefinestyle{FTCjava}{tabsize=2, language=java, basicstyle=\ttfamily, keywordstyle=\color{keywordBlue}, commentstyle=\color{commentGrey} }
+
+\lstdefinestyle{FTCxml}{tabsize=2, language = XML, basicstyle=\ttfamily, keywordstyle=\color{keywordBlue}, commentstyle=\color{commentGrey}, morekeywords={Robot, MotorController, Motor, ServoController, Servo, DeviceInterfaceModule, Gyro, ColorSensor, I2cDevice, OpticalDistanceSensor} }
+
+\begin{document}
+
+\begin{flushleft}
+
+\includegraphics{./CodeListingArial14.png}
+
+\medskip
+
+Typeset using \latex.
+
+\medskip
+
+\medskip
+
+Tele-Op:
+
+\lstinputlisting[style=FTCjava]{./TeamCode/src/main/java/org/firstinspires/ftc/teamcode/TXT/MecanumTeleop.java.txt}
+
+\pagebreak
+
+Near Red Autonomous (Near Blue Autonomous is very similar):
+
+\lstinputlisting[style=FTCjava]{./TeamCode/src/main/java/org/firstinspires/ftc/teamcode/TXT/NearRedAutoMultiNoVision.java.txt}
+
+\pagebreak
+
+Far Red Autonomous (Far Blue Autonomous is very similar):
+
+\lstinputlisting[style=FTCjava]{./TeamCode/src/main/java/org/firstinspires/ftc/teamcode/TXT/FarRedMultiGlyph.java.txt}
+
+\pagebreak
+
+Move class:
+
+\lstinputlisting[style=FTCjava]{./TeamCode/src/main/java/org/firstinspires/ftc/teamcode/TXT/Move.java.txt}
+
+\pagebreak
+
+Autonomous Glyphs State Machine:
+
+\lstinputlisting[style=FTCjava]{./TeamCode/src/main/java/org/firstinspires/ftc/teamcode/TXT/getGlyphs.java.txt}
+
+\pagebreak
+
+goToColumnBasedOnMultiGlyphs:
+
+\lstinputlisting[style=FTCjava]{./TeamCode/src/main/java/org/firstinspires/ftc/teamcode/TXT/goToColumnBasedOnMultiGlyphs.java.txt}
+
+\pagebreak
+
+Intake Control class:
+
+\lstinputlisting[style=FTCjava]{./TeamCode/src/main/java/org/firstinspires/ftc/teamcode/TXT/IntakeControl.java.txt}
+
+%\pagebreak
+
+%Autonomous State Machine:
+
+%\lstinputlisting[style=FTCjava]{./TeamCode/src/main/java/org/firstinspires/ftc/teamcode/TXT/AutoLoopTest.java.txt}
+
+%\pagebreak
+
+%Util class:
+
+%\lstinputlisting[style=FTCjava]{./TeamCode/src/main/java/org/firstinspires/ftc/teamcode/TXT/Util.java.txt}
+
+%\pagebreak
+
+%AutoUtil class:
+
+%\lstinputlisting[style=FTCjava]{./TeamCode/src/main/java/org/firstinspires/ftc/teamcode/TXT/AutoUtil.java.txt}
+
+%\pagebreak
+
+%StallProtection class:
+
+%\lstinputlisting[style=FTCjava]{./TeamCode/src/main/java/org/firstinspires/ftc/teamcode/TXT/StallProtection.java.txt}
+
+%\pagebreak
+
+%PID class:
+
+%\lstinputlisting[style=FTCjava]{./TeamCode/src/main/java/org/firstinspires/ftc/teamcode/TXT/PID.java.txt}
+
+%\pagebreak
+
+%ShooterPID class:
+
+%\lstinputlisting[style=FTCjava]{./TeamCode/src/main/java/org/firstinspires/ftc/teamcode/TXT/ShooterPID.java.txt}
+
+%\pagebreak
+
+%Our robot configuration file (updated January 11th, 2018):
+
+%\lstinputlisting[style=FTCxml]{./FINAL_CONFIG_2018_TXT.txt}
+
+\end{flushleft}
+
+\end{document}

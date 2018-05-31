@@ -1,0 +1,21 @@
+Moto G4 Setup
+
+Take out sim card (tiny little latch)
+Put battery in
+Set up phone - skip and or say no to everything but terms and conditions
+turn on airplane mode
+turned on wifi
+set up wifi direct 
+	Rename phones (####-<letter>-<RC or DS>)
+	Create a group on RC phone
+	Connect DS phone to group
+Make sure bluetooth is off
+Enable developer options
+	Settings > About phone > tap on build version alot
+Turn on USB debugging
+	Settings > developer options
+Used adb to download driver station app (see website)
+Used Andriod studio to download RC app
+connected DS to RC from DS app
+Let RC phone access REV hub (plug it in)
+

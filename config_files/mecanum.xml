@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<Robot type="FirstInspires-FTC">
+    <LynxUsbDevice name="Expansion Hub Portal 1" serialNumber="DQ168CXS" parentModuleAddress="1">
+        <LynxModule name="Expansion Hub 1" port="2">
+            <AdafruitBNO055IMU name="ai" port="0" bus="2" />
+            <NeveRest40Gearmotor name="rightBack" port="0" />
+            
+	    
+           
+        </LynxModule>
+    </LynxUsbDevice>
+</Robot>

@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<Robot type="FirstInspires-FTC">
+    <LynxUsbDevice name="Expansion Hub Portal 1" serialNumber="DQ1471OH" parentModuleAddress="2">
+        <LynxModule name="Expansion Hub 1" port="2">
+            <AdafruitBNO055IMU name="ai" port="0" bus="2" />
+            <AdafruitColorSensor name="acs" port="0" bus="1" />
+            <AnalogInput name="ad" port="0" />
+            <ColorSensor name="co" port="2" bus="2" />
+            <ContinuousRotationServo name="b" port="1" />
+            <DigitalDevice name="aa" port="0" />
+            <Gyro name="gyro" port="4" bus="2" />
+            <I2cDeviceSynch name="yo" port="1" bus="2" />
+            <IrSeekerV3 name="ir" port="5" bus="2" />
+            <KauaiLabsNavxMicro name="navX" port="8" bus="2" />
+            <Led name="ab" port="1" />
+            <LynxColorSensor name="corang" port="7" bus="2" />
+            <LynxEmbeddedIMU name="imu" port="0" bus="0" />
+            <ModernRoboticsAnalogTouchSensor name="t" port="2" />
+            <ModernRoboticsI2cCompassSensor name="cp" port="3" bus="2" />
+            <ModernRoboticsI2cRangeSensor name="range" port="6" bus="2" />
+            <NeveRest20Gearmotor name="a1" port="0" />
+            <NeveRest3.7v1Gearmotor name="b1" port="1" />
+            <NeveRest40Gearmotor name="c" port="2" />
+            <NeveRest60Gearmotor name="d" port="3" />
+            <OpticalDistanceSensor name="ods" port="1" />
+            <PulseWidthDevice name="ac" port="0" />
+            <Servo name="a" port="0" />
+        </LynxModule>
+    </LynxUsbDevice>
+</Robot>

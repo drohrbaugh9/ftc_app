@@ -1,0 +1,5 @@
+<root>
+    <item name='com.google.blocks.ftcrobotcontroller.runtime.VuforiaLocalizerAccess'>
+        <annotation name='java.lang.Deprecated' />
+    </item>
+</root>

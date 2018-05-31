@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<Robot>
+    <MotorController name="Shooter Module" serialNumber="AI049QOP">
+        <Motor name="shooter1" port="1" />
+        <Motor name="shooter2" port="2" />
+    </MotorController>
+</Robot>
